@@ -1,4 +1,4 @@
-# Environment
+template/.gitignore# Environment
 .env
 .env.backup
 .env.bak
