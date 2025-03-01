@@ -1,0 +1,67 @@
+# Env
+.env
+.env.backup
+.env.bak
+
+# Python build artifacts
+*.py[cdo]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+*.log
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+.Python
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Build
+.pytest_cache/
+.ruff_cache/
+.nox
+junit.xml
+.coverage*
+coverage.xml
+coverage_html/
+vulnerabilities.json
+licenses.json
+licenses-inverted.json
+sbom.json
+
+# mypy
+.dmypy.json
+.mypy_cache/
+
+# direnv
+.envrc
+
+# Node.js
+node_modules/
+
+# AI workflow
+.fixme
+
+# Copier
+*.rej
+
+# Application specific
