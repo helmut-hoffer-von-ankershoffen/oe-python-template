@@ -1,13 +1,10 @@
 
 _subdirectory: template
 
-#project_type:
-#  type: str
-#  help: Is this project a shared library or an app?
-#  choices:
-#    - application
-#    - shared library
-#  default: package
+project_icon:
+  type: str
+  help: What is your projects's icon (utf-8 character)? You can set to an empty string.
+  default: "🧠"
 
 project_name:
   type: str
@@ -20,16 +17,60 @@ project_name:
 
 project_name_kebab_case:
   when: false
-  default: "{{ project_name | lower | replace(' ', '-') }}"
+  default: "{{ project_name | lower | replace(' ', '-') | replace('_', '-') }}"
+
+project_name_kebab_case_upper:
+  when: false
+  default: "{{ project_name | upper | replace(' ', '-') | replace('_', '-') }}"
 
 project_name_snake_case:
   when: false
-  default: "{{ project_name | lower | replace(' ', '_') }}"
+  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
+
+project_name_snake_case_upper:
+  when: false
+  default: "{{ project_name | upper | replace(' ', '_') | replace('-', '_') }}"
+
+project_description:
+  type: str
+  help: What does project {{ project_name }} do in one sentence?
+  placeholder: Python project complying with operational excellence practices.
+  validator: >-
+    {% if not project_description.strip() %}
+    Invalid project description
+    {% endif %}
+
+author_name:
+  type: str
+  help: What is the name of the primary author?
+  placeholder: John Smith
+  validator: >-
+    {% if not author_name %}
+    Invalid author name
+    {% endif %}
+
+author_email:
+  type: str
+  help: What is the email address of the primary author?
+  placeholder: john@example.com
+  validator: >-
+    {% if not "@" in author_email %}
+    Invalid author email address
+    {% endif %}
+
+author_github_username:
+  type: str
+  help: What is the GitHub username of the primary author?
+  default: "{{ author_name | lower | replace(' ', '-') }}"
+  validator: >-
+    {% if not author_github_username %}
+    Invalid author name
+    {% endif %}
 
 org_name:
   type: str
-  help: What is your org's name?
-  placeholder: "My Org"
+  help: What is the name of the organisation owning and hosting the project {{ project_name }}? Accept the author's name if the project is not hosted by an organisation but privately.
+  default: "{{ author_name }}"
   validator: >-
     {% if not org_name.strip() %}
     Invalid org name
@@ -37,48 +78,118 @@ org_name:
 
 org_name_kebab_case:
   when: false
-  default: "{{ org_name | lower | replace(' ', '-') }}"
+  default: "{{ org_name | lower | replace(' ', '-') | replace('_', '-') }}"
 
 org_name_snake_case:
   when: false
-  default: "{{ org_name | lower | replace(' ', '_') }}"
+  default: "{{ org_name | lower | replace(' ', '_') | replace('-', '_') }}"
 
-# 
-# project_description:
-#   type: str
-#   help: What does your {{ project_type }} do in one sentence?
-#   placeholder: A Python {{ project_type }} that reticulates splines.
-#   validator: >-
-#     {% if not project_description.strip() %}
-#     Invalid project description
-#     {% endif %}
-# 
-# project_url:
-#   type: str
-#   help: What is the URL of your project's repository?
-#   placeholder: https://github.com/user/{{ project_type }}
-#   validator: >-
-#     {% if not project_url.startswith("https://") %}
-#     Invalid project URL
-#     {% endif %}
-# 
-# author_name:
-#   type: str
-#   help: What is the name of your {{ project_type }}'s primary author?
-#   placeholder: John Smith
-#   validator: >-
-#     {% if not author_name %}
-#     Invalid author name
-#     {% endif %}
-# 
-# author_email:
-#   type: str
-#   help: What is the email address of your {{ project_type }}'s primary author?
-#   placeholder: john@example.com
-#   validator: >-
-#     {% if not "@" in author_email %}
-#     Invalid author email address
-#     {% endif %}
+org_email:
+  type: str
+  help: What is the email of the organisation owning and hosting project {{ project_name }}? Accept the author's email if the project is not hosted by an organisation by privately.
+  default: "{{ author_email }}"
+  validator: >-
+    {% if not org_email.strip() %}
+    Invalid org email
+    {% endif %}
+
+github_repository_owner:
+  type: str
+  help: What is the owner of the repository on GitHub? You likely want to accept the default.
+  default: "{{ org_name_kebab_case }}"
+  validator: >-
+    {% if not github_repository_owner %}
+    Invalid GitHub repository owner
+    {% endif %}
+
+github_repository_name:
+  type: str
+  help: What is the name of the repository on GitHub? You likely want to accept the default.
+  default: "{{ project_name_kebab_case }}"
+  validator: >-
+    {% if not github_repository_name %}
+    Invalid GitHub repository name
+    {% endif %}
+
+github_repository_url_https:
+  type: str
+  help: What is the URL of the repository on GitHub? You likely want to accept the default.
+  default: "https://github.com/{{ github_repository_owner }}/{{ github_repository_name }}"
+  validator: >-
+    {% if not github_repository_url_https %}
+    Invalid GitHub repository https URL
+    {% endif %}
+
+github_repository_url_ssh:
+  type: str
+  help: What is the URL of the repository on GitHub? You likely want to accept the default.
+  default: "git@github.com:{{ github_repository_owner }}/{{ github_repository_name }}.git"
+  validator: >-
+    {% if not github_repository_url_https %}
+    Invalid GitHub repository https URL
+    {% endif %}
+
+pypi_distribution_name:
+  type: str
+  help: What is the distribution name of this project at the Python Package Index (PyPI)? You likely want to accept the default.
+  default: "{{ github_repository_name }}"
+  validator: >-
+    {% if not pypi_distribution_name %}
+    Invalid PyPi distribution name
+    {% endif %}
+
+readthedocs_project_key:
+  type: str
+  help: What is the key of the project at Read The Docs (about.readthedocs.com)? You likely want to accept the default.
+  default: "{{ pypi_distribution_name }}"
+  validator: >-
+    {% if not readthedocs_project_key %}
+    Invalid Read The Docs project name
+    {% endif %}
+
+sonarqube_key:
+  type: str
+  help: What is the project key at sonarqube? You likely want to accept the default.
+  default: "{{ github_repository_owner }}_{{ github_repository_name }}"
+  validator: >-
+    {% if not sonarqube_key %}
+    Invalid sonarqube key
+    {% endif %}
+
+docker_io_owner:
+  type: str
+  help: What is the name of the owner of images published to docker.io? You likely want to accept the default.
+  default: "{{ github_repository_owner }}"
+  validator: >-
+    {% if not docker_io_owner %}
+    Invalid docker.io owner
+    {% endif %}
+
+docker_io_image_name:
+  type: str
+  help: What is the name of the images published to docker.io? You likely want to accept the default.
+  default: "{{ github_repository_name }}"
+  validator: >-
+    {% if not docker_io_image_name %}
+    Invalid docker.io imag name
+    {% endif %}
+
+streamlit_project_key:
+  type: str
+  help: What is the project key at streamlit.io? You likely want to accept the default.
+  default: "{{ pypi_distribution_name }}"
+  validator: >-
+    {% if not streamlit_project_key %}
+    Invalid streamlit.io project key
+    {% endif %}
+
+# project_type:
+#  type: str
+#  help: Is this project a shared library or an app?
+#  choices:
+#    - application
+#    - shared library
+#  default: package
 # 
 # python_version:
 #   type: str
@@ -117,11 +228,3 @@ org_name_snake_case:
 #   type: bool
 #   help: Does your {{ project_type }} need a Typer CLI?
 #   default: false
-# 
-# project_name_kebab_case:
-#   when: false
-#   default: "{{ project_name | lower | replace(' ', '-') }}"
-# 
-# project_name_snake_case:
-#   when: false
-#   default: "{{ project_name | lower | replace(' ', '_') }}"

@@ -40,10 +40,15 @@
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
         "-v",
-        "--cov=oe_python_template",
+        "--cov=oe_python_template"
     ],
     "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.enable": {
+        "plaintext": true,
+        "markdown": true,
+        "scminput": true
+    },
     "github.copilot.advanced": {
 
     },

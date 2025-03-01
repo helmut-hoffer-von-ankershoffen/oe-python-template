@@ -1,0 +1,12 @@
+sonar.projectKey={{ sonarqube_key}}
+sonar.organization={{ github_repository_organisation}}
+sonar.projectVersion=0.0.1
+sonar.projectDescription={{ project_name }}
+sonar.links.homepage=https://{{ readthedocs_project_key}}.readthedocs.io
+sonar.links.scm={{ github_repository_url_https }}
+sonar.links.ci={{ github_repository_url_https }}/actions
+sonar.links.issues={{ github_repository_url_https }}/issues
+sonar.python.coverage.reportPaths=coverage.xml
+sonar.python.version=3.11, 3.12, 3.13
+sonar.coverage.exclusions=noxfile.py, tests/**, examples/**, docs/**
+sonar.exclusions=examples/**, docs/**

@@ -1,5 +1,155 @@
-# oe-python-template
-Copier template for python projects
+# 🧠 OE Python Template
 
-## Setup
-uv tool install copier
+[![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
+](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/oe-python-template.svg?logo=python&color=204361&labelColor=1E2933)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
+[![CI](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml/badge.svg)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml)
+[![Read the Docs](https://img.shields.io/readthedocs/oe-python-template)](https://oe-python-template.readthedocs.io/)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
+[![Security](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
+[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
+[![Coverage](https://codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template/graph/badge.svg?token=SX34YRP30E)](https://codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template)
+[![Ruff](https://img.shields.io/badge/style-Ruff-blue?color=D6FF65)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
+[![GitHub - Version](https://img.shields.io/github/v/release/helmut-hoffer-von-ankershoffen/oe-python-template?label=GitHub&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases)
+[![GitHub - Commits](https://img.shields.io/github/commit-activity/m/helmut-hoffer-von-ankershoffen/oe-python-template/main?label=commits&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commits/main/)
+[![PyPI - Version](https://img.shields.io/pypi/v/oe-python-template.svg?label=PyPI&logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/oe-python-template)
+[![PyPI - Status](https://img.shields.io/pypi/status/oe-python-template?logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/oe-python-template)
+[![Docker - Version](https://img.shields.io/docker/v/helmuthva/oe-python-template?sort=semver&label=Docker&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
+[![Docker - Size](https://img.shields.io/docker/image-size/helmuthva/oe-python-templatesort=semver&arch=arm64&label=image&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/helmuthva/oe-python-template/)
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
+<!---
+[![ghcr.io - Version](https://ghcr-badge.egpl.dev/helmut-hoffer-von-ankershoffen/oe-python-template/tags?color=%2344cc11&ignore=0.0%2C0%2Clatest&n=3&label=ghcr.io&trim=)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template)
+[![ghcr.io - Sze](https://ghcr-badge.egpl.dev/helmut-hoffer-von-ankershoffen/oe-python-template/size?color=%2344cc11&tag=latest&label=size&trim=)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template)
+-->
+
+> [!TIP]
+> 📚 [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) - 📖 [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
+---
+
+Copier template to scaffold Python projects compliant with best practices and modern tooling.
+
+Use Cases:
+1) Lorem Ipsum
+2) Dolor Sit Amet
+3) Consectetur Adipiscing Elit
+
+## Overview
+
+Adding OE Python Template to your project as a dependency is easy. 
+
+```shell
+uv add oe-python-template             # add dependency to your project
+```
+
+If you don't have uv installed follow [these instructions](https://docs.astral.sh/uv/getting-started/installation/). If you still prefer pip over the modern and fast package manager [uv](https://github.com/astral-sh/uv), you can install the library like this:
+
+```shell
+pip install oe-python-template        # add dependency to your project
+```
+
+Executing the command line interface (CLI) is just as easy:
+
+```shell
+uvx oe-python-template
+```
+
+The CLI provides extensive help:
+
+```shell
+uvx oe-python-template --help              # all CLI commands
+uvx oe-python-template command --help      # all options for command
+```
+
+## Highlights
+
+* Copier template to scaffold Python projects compliant with best practices and modern tooling.
+* Various Examples:
+  - [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
+  - [Jupyter notebook](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/jupyter.ipynb)
+  - [Simple Python script]https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
+* [Complete reference documenation](https://oe-python-template.readthedocs.io/en/latest/reference.html) on Read the Docs
+* [Transparent test coverage](https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template) including unit and E2E tests (reported on Codecov)
+* Matrix tested with [multiple python versions](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
+* Compliant with modern linting and formatting standards (powered by [Ruff](https://github.com/astral-sh/ruff))
+* Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate))
+* [A-grade code quality](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template) in security, maintainability, and reliability with low technical debt and low codesmell (verified by SonarQube)
+* 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
+* Setup for developing inside a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) included (supports VSCode and GitHub Codespaces)
+
+## Usage Examples
+
+### Streamlit App
+
+[Try it out!](https://oe-python-template.streamlit.app) - [Show the code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/streamlit.py)
+
+
+### Minimal Python Script:
+
+```python
+"""
+Example script demonstrating the usage of OE Python Template.
+
+"""
+
+print("Hello World")
+```
+
+[Show script code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py) - [Read the reference documentation](https://oe-python-template.readthedocs.io/en/latest/reference.html)
+
+## Jupyter Notebook
+
+[Show notebook code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/jupyter.ipynb)
+
+## Command Line Interface (CLI)
+
+### Run with [uvx](https://docs.astral.sh/uv/guides/tools/)
+
+Show available commands:
+
+```shell
+uvx oe-python-template --help
+```
+
+Execute command:
+
+```shell
+uvx oe-python-template command "Lorem Ipsum"
+```
+
+### Run with Docker
+
+Note: Replace ENV_KEY_TEST with Lorem Ipsum.
+
+Show available commands:
+
+```bash
+docker run helmuthva/oe-python-template --help
+```
+
+Execute command:
+
+```bash
+docker run --env ENV_KEY_TEST=ENV_VALUE_TEST helmuthva/oe-python-template command "Lorem Ipsum"
+```
+
+## Extra: Lorem Ipsum
+
+Dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam.
+
+## Further Reading
+
+* Check out the [reference](https://oe-python-template.readthedocs.io/en/latest/reference.html) with detailed documentation of public classes and functions.
+* Our [release notes](https://oe-python-template.readthedocs.io/en/latest/release-notes.html) provide a complete log of recent improvements and changes.
+* In case you want to help us improve 🧠 OE Python Template: The [contribution guidelines](https://oe-python-template.readthedocs.io/en/latest/contributing.html) explain how to setup your development environment and create pull requests.
+
+## Star History
+
+<a href="https://star-history.com/#helmut-hoffer-von-ankershoffen/oe-python-template">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=helmut-hoffer-von-ankershoffen/oe-python-template&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=helmut-hoffer-von-ankershoffen/oe-python-template&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=helmut-hoffer-von-ankershoffen/oe-python-template&type=Date" />
+ </picture>
+</a>

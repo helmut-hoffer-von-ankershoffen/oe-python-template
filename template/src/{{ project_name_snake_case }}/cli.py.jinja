@@ -1,0 +1,56 @@
+"""Command line interface of {{ project_name }}."""
+
+from typing import Annotated
+
+import typer
+from dotenv import load_dotenv
+from rich.console import Console
+
+from {{ project_name_snake_case }} import __version__
+
+load_dotenv()
+
+console = Console()
+
+cli = typer.Typer(name="Command Line Interface of {{ project_name }}")
+
+
+@cli.command()
+def echo(  # noqa: PLR0913, PLR0917
+    text: Annotated[str, typer.Argument(help="The text to echo")]
+        = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    json: Annotated[
+        bool,
+        typer.Option(
+            help=(
+                "Print as JSON"
+            ),
+        ),
+    ] = False
+) -> None:
+    """Echo the text."""
+    if (json):
+        console.print_json(data={"text": text})
+    else:
+        console.print(text)
+
+
+@cli.command()
+def hello_world() -> None:
+    """Print hello world."""
+    console.prin("Hello, world!")
+
+
+def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:
+    """Add epilog to all typers in the tree and configure default behavior."""
+    cli.info.epilog = epilog
+    cli.info.no_args_is_help = True
+    for command in cli.registered_commands:
+        command.epilog = cli.info.epilog
+        command.no_args_is_help = True
+
+
+_apply_cli_settings(
+    cli,
+    f"{{ project_icon }} {{ project_name }} v{__version__} - built with love in Berlin 🐻",
+)

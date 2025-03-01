@@ -1,0 +1,109 @@
+{{ project_description }}
+
+Use Cases:
+1) Lorem Ipsum
+2) Dolor Sit Amet
+3) Consectetur Adipiscing Elit
+
+## Overview
+
+Adding {{ project_name }} to your project as a dependency is easy. 
+
+```shell
+uv add {{ pypi_distribution_name }}             # add dependency to your project
+```
+
+If you don't have uv installed follow [these instructions](https://docs.astral.sh/uv/getting-started/installation/). If you still prefer pip over the modern and fast package manager [uv](https://github.com/astral-sh/uv), you can install the library like this:
+
+```shell
+pip install {{ pypi_distribution_name }}        # add dependency to your project
+```
+
+Executing the command line interface (CLI) is just as easy:
+
+```shell
+uvx {{ pypi_distribution_name}}
+```
+
+The CLI provides extensive help:
+
+```shell
+uvx {{ pypi_distribution_name}} --help              # all CLI commands
+uvx {{ pypi_distribution_name}} command --help      # all options for command
+```
+
+## Highlights
+
+* {{ project_description}}
+* Various Examples:
+  - [Streamlit web application](https://{{ streamlit_project_key }}.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
+  - [Jupyter notebook]({{ github_repository_url_https }}/blob/main/examples/jupyter.ipynb)
+  - [Simple Python script]{{ github_repository_url_https }}/blob/main/examples/script.py)
+* [Complete reference documenation](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/reference.html) on Read the Docs
+* [Transparent test coverage](https://app.codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }}) including unit and E2E tests (reported on Codecov)
+* Matrix tested with [multiple python versions]({{ github_repository_url_https}}/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
+* Compliant with modern linting and formatting standards (powered by [Ruff](https://github.com/astral-sh/ruff))
+* Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate))
+* [A-grade code quality](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key}}) in security, maintainability, and reliability with low technical debt and low codesmell (verified by SonarQube)
+* 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/tags)
+* Setup for developing inside a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) included (supports VSCode and GitHub Codespaces)
+
+## Usage Examples
+
+### Streamlit App
+
+[Try it out!](https://{{ streamlit_project_key }}.streamlit.app) - [Show the code]({{ github_repository_url_https}}/blob/main/examples/streamlit.py)
+
+
+### Minimal Python Script:
+
+```python
+"""
+Example script demonstrating the usage of {{ project_name }}.
+
+"""
+
+print("Hello World")
+```
+
+[Show script code]({{ github_repository_url_https}}/blob/main/examples/script.py) - [Read the reference documentation](https://{{ readthedocs_project_key}}.readthedocs.io/en/latest/reference.html)
+
+## Jupyter Notebook
+
+[Show notebook code]({{ github_repository_url_https}}/blob/main/examples/jupyter.ipynb)
+
+## Command Line Interface (CLI)
+
+### Run with [uvx](https://docs.astral.sh/uv/guides/tools/)
+
+Show available commands:
+
+```shell
+uvx {{ pypi_distribution_name}} --help
+```
+
+Execute command:
+
+```shell
+uvx {{ pypi_distribution_name}} command "Lorem Ipsum"
+```
+
+### Run with Docker
+
+Note: Replace ENV_KEY_TEST with Lorem Ipsum.
+
+Show available commands:
+
+```bash
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}} --help
+```
+
+Execute command:
+
+```bash
+docker run --env ENV_KEY_TEST=ENV_VALUE_TEST {{ docker_io_owner}}/{{ docker_io_image_name}} command "Lorem Ipsum"
+```
+
+## Extra: Lorem Ipsum
+
+Dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam.

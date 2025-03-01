@@ -1,0 +1,21 @@
+_commit: be961bc
+_src_path: .
+author_email: helmuthva@gmail.com
+author_github_username: helmut-hoffer-von-ankershoffen
+author_name: Helmut Hoffer von Ankershoffen
+docker_io_image_name: oe-python-template
+docker_io_owner: helmuthva
+github_repository_name: oe-python-template
+github_repository_owner: helmut-hoffer-von-ankershoffen
+github_repository_url_https: https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template
+github_repository_url_ssh: git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git
+org_email: helmuthva@gmail.com
+org_name: Helmut Hoffer von Ankershoffen
+project_description: Copier template to scaffold Python projects compliant with best
+    practices and modern tooling.
+project_icon: 🧠
+project_name: OE Python Template
+pypi_distribution_name: oe-python-template
+readthedocs_project_key: oe-python-template
+sonarqube_key: helmut-hoffer-von-ankershoffen_oe-python-template
+streamlit_project_key: oe-python-template

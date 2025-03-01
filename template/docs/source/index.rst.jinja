@@ -1,0 +1,36 @@
+.. only:: html
+   
+   .. include:: main.rst
+
+.. toctree::
+	:hidden:
+
+	Home<self>
+
+.. toctree::
+   :maxdepth: 2
+
+   main
+   reference
+   release-notes
+   contributing
+
+.. sidebar-links::
+   :caption: Links
+   :github:
+   :pypi: {{ pypi_distribution_name }}
+
+   Docker <https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/tags>
+   SonarQube <https://sonarcloud.io/summary/new_code?id={{ sonarcloud_key }}>
+   Codecov <https://app.codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }}>
+   ghcr.io <{{ github_repository_url_https }}/pkgs/container/{{ github_repository_name }}>
+   License <{{ github_repository_url_https }}/blob/main/LICENSE>
+
+.. only:: html
+
+   Indices and tables
+   ==================
+
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`

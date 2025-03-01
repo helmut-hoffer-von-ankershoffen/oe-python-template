@@ -1,4 +1,6 @@
-template/.gitignore# Environment
+# .gitignore of project OE Python Template
+
+# Environment
 .env
 .env.backup
 .env.bak

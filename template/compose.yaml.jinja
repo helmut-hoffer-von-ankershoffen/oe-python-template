@@ -1,0 +1,13 @@
+services:
+  {{ project_name_snake_case }}:
+    build: .
+    env_file:
+      - path: .env
+        required: true
+    develop:
+      watch:
+        - path: src
+          action: rebuild
+    restart: no
+    tty: true
+    stdin_open: true
