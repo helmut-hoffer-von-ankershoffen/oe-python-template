@@ -1,6 +1,7 @@
 """Nox configuration for test automation and development tasks."""
 
 import json
+import os
 from pathlib import Path
 
 import nox
@@ -21,6 +22,11 @@ def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
             "UV_PYTHON": str(session.python),
         },
     )
+
+
+def _is_act_environment() -> bool:
+    """Check if running in GitLab ACT environment."""  # noqa: DOC201
+    return os.environ.get("GITLAB_WORKFLOW_RUNTIME") == "ACT"
 
 
 @nox.session(python=["3.13"])
@@ -85,13 +91,10 @@ def audit(session: nox.Session) -> None:
 def test(session: nox.Session) -> None:
     """Run tests with pytest."""
     _setup_venv(session)
-    session.run(
-        "pytest",
-        "--disable-warnings",
-        "--junitxml=junit.xml",
-        "-n",
-        "auto",
-    )
+    pytest_args = ["pytest", "--disable-warnings", "--junitxml=junit.xml", "-n", "auto", "--dist", "loadgroup"]
+    if _is_act_environment():
+        pytest_args.extend(["-k", "not skip_with_act"])
+    session.run(*pytest_args)
 
 
 @nox.session(python=["3.13"], default=False)
@@ -100,7 +103,7 @@ def setup_dev(session: nox.Session) -> None:
     session.run("ruff", "check", ".", external=True)
     session.run("ruff", "format", ".", external=True)
     session.run("uv", "run", "pre-commit", "install", external=True)
-    with Path.open(".secrets.baseline", "w", encoding="utf-8") as out:
+    with Path(".secrets.baseline").open("w", encoding="utf-8") as out:
         session.run("detect-secrets", "scan", stdout=out, external=True)
     session.run("git", "add", ".", external=True)
     session.run("pre-commit", external=True)

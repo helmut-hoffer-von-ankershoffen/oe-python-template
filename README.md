@@ -28,6 +28,7 @@
 > 📚 [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) - 📖 [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
 ---
 
+
 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
 Use Cases:
@@ -37,7 +38,7 @@ Use Cases:
 
 ## Overview
 
-Adding OE Python Template to your project as a dependency is easy. 
+Adding OE Python Template to your project as a dependency is easy.
 
 ```shell
 uv add oe-python-template             # add dependency to your project
@@ -134,9 +135,19 @@ Execute command:
 docker run --env ENV_KEY_TEST=ENV_VALUE_TEST helmuthva/oe-python-template command "Lorem Ipsum"
 ```
 
+Or use docker compose
+
+File .env is passed through
+
+```bash
+docker compose up
+docker compose run oe-python-template --help
+```
+
 ## Extra: Lorem Ipsum
 
 Dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam.
+
 
 ## Further Reading
 

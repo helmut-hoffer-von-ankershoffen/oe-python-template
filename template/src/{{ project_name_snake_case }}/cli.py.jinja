@@ -16,20 +16,19 @@ cli = typer.Typer(name="Command Line Interface of {{ project_name }}")
 
 
 @cli.command()
-def echo(  # noqa: PLR0913, PLR0917
-    text: Annotated[str, typer.Argument(help="The text to echo")]
-        = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+def echo(
+    text: Annotated[
+        str, typer.Argument(help="The text to echo")
+    ] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     json: Annotated[
         bool,
         typer.Option(
-            help=(
-                "Print as JSON"
-            ),
+            help=("Print as JSON"),
         ),
-    ] = False
+    ] = False,
 ) -> None:
     """Echo the text."""
-    if (json):
+    if json:
         console.print_json(data={"text": text})
     else:
         console.print(text)

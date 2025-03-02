@@ -7,7 +7,7 @@ Use Cases:
 
 ## Overview
 
-Adding OE Python Template to your project as a dependency is easy. 
+Adding OE Python Template to your project as a dependency is easy.
 
 ```shell
 uv add oe-python-template             # add dependency to your project
@@ -102,6 +102,15 @@ Execute command:
 
 ```bash
 docker run --env ENV_KEY_TEST=ENV_VALUE_TEST helmuthva/oe-python-template command "Lorem Ipsum"
+```
+
+Or use docker compose
+
+File .env is passed through
+
+```bash
+docker compose up
+docker compose run oe-python-template --help
 ```
 
 ## Extra: Lorem Ipsum

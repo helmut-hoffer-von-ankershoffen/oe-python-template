@@ -67,5 +67,9 @@
     "sonarlint.connectedMode.project": {
         "connectionId": "{{ org_name_kebab_case }}",
         "projectKey": "{{ org_name_kebab_case }}_{{ project_name_kebab_case }}"
-    }
+    },
+    "pre-commit-helper.runOnSave": "fixes",
+    "pre-commit-helper.excludedHookIds": [
+        "nox"
+    ],
 }
