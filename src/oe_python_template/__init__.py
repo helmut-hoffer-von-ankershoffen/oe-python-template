@@ -5,11 +5,12 @@ from .constants import (
     __project_path__,
     __version__,
 )
+
 from .service import Service
 
 __all__ = [
-    "Service",
     "__project_name__",
     "__project_path__",
     "__version__",
+    "Service",
 ]

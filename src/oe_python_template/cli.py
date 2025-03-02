@@ -5,7 +5,7 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
-from oe_python_template import Service, __version__
+from oe_python_template import __version__, Service
 
 console = Console()
 

@@ -74,7 +74,7 @@ html_static_path = ["_static"]
 html_logo = "../../logo.png"
 html_theme_options = {
     "announcement": (
-        '<a target="_blank" href="https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template">GitHub</a> - '
+        '<a target="_blank" href="https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template">GitHub</a> - '  # noqa: E501
         '<a target="_blank" href="https://pypi.org/project/oe-python-template">PyPI</a> - '
         '<a target="_blank" href="https://hub.docker.com/r/helmuthva/oe-python-template/tags">Docker</a> - '
         '<a target="_blank" href="https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template">SonarQube</a> - '  # noqa: E501
