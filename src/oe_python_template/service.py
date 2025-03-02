@@ -1,10 +1,12 @@
 """Service of OE Python Template."""
 
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
-THE_VAR = os.getenv("THE_VAR","not defined")
+THE_VAR = os.getenv("THE_VAR", "not defined")
+
 
 class Service:
     """Service of OE Python Template."""
