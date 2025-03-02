@@ -1,4 +1,3 @@
-# .github/workflows/test.yml
 name: "CI"
 
 on:
@@ -72,9 +71,9 @@ jobs:
             exit 1
             fi
 
-      - name: Smoke test
+      - name: Smoke tests
         run: |
-          uv run oe-python-template hello_world
+          uv run oe-python-template hello-world
 
       - name: Run unit tests, measure coverage, lint, and check vulnerabilities
         run: |
@@ -82,7 +81,7 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && (env.RUNTIME != 'ACT') }}
         with:
           name: test-results
           path: |
@@ -96,16 +95,18 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
+        if: ${{ !cancelled() && (env.RUNTIME != 'ACT') }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: {{ github_repository_owner }}/{{ github_repository_name}}
+          slug: helmut-hoffer-von-ankershoffen/oe-python-template
 
       - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && (env.RUNTIME != 'ACT') }}
         uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: SonarQube Scan
+        if: ${{ !cancelled() && (env.RUNTIME != 'ACT') }}
         uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

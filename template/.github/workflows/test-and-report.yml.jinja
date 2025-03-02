@@ -1,4 +1,3 @@
-# .github/workflows/test.yml
 name: "CI"
 
 on:
@@ -72,9 +71,9 @@ jobs:
             exit 1
             fi
 
-      - name: Smoke test
+      - name: Smoke tests
         run: |
-          uv run {{ project_name_kebab_case }} hello_world
+          uv run {{ project_name_kebab_case }} hello-world
 
       - name: Run unit tests, measure coverage, lint, and check vulnerabilities
         run: |
@@ -82,7 +81,7 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: {% raw %}${{ always() && (env.RUNTIME != 'ACT') }}{% endraw %}
         with:
           name: test-results
           path: |
@@ -96,16 +95,18 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
+        if: {% raw %}${{ !cancelled() && (env.RUNTIME != 'ACT') }}{% endraw %}
         with:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
-          slug: {% raw %}{{ github_repository_owner }}/{{ github_repository_name}}{% endraw %}
+          slug: {{ github_repository_owner }}/{{ github_repository_name }}
 
       - name: Upload test results to Codecov
-        if: {% raw %}${{ !cancelled() }}{% endraw %}
+        if: {% raw %}${{ !cancelled() && (env.RUNTIME != 'ACT') }}{% endraw %}
         uses: codecov/test-results-action@v1
         with:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
       - name: SonarQube Scan
+        if: {% raw %}${{ !cancelled() && (env.RUNTIME != 'ACT') }}{% endraw %}
         uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
