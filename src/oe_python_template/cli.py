@@ -3,12 +3,9 @@
 from typing import Annotated
 
 import typer
-from dotenv import load_dotenv
 from rich.console import Console
 
-from oe_python_template import __version__
-
-load_dotenv()
+from oe_python_template import __version__, Service
 
 console = Console()
 
@@ -36,8 +33,8 @@ def echo(
 
 @cli.command()
 def hello_world() -> None:
-    """Print hello world."""
-    console.print("Hello, world!")
+    """Print hello world message and what's in the environment variable THE_VAR."""
+    console.print(Service.get_hello_world())
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:
@@ -46,10 +43,13 @@ def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:
     cli.info.no_args_is_help = True
     for command in cli.registered_commands:
         command.epilog = cli.info.epilog
-        command.no_args_is_help = True
 
 
 _apply_cli_settings(
     cli,
     f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻",
 )
+
+
+if __name__ == "__main__":
+    cli()

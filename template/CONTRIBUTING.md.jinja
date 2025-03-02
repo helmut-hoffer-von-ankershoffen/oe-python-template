@@ -50,37 +50,34 @@ examples/                # Example code demonstrating use of the project
 
 ### .env file
 
-Don't forget to run
+Don't forget to configure your `.env` file with the required environment variables.
 
-### CLI
+Notes:
+* .env.example is provided as a template.
+* .env is excluded from version control, so feel free to add secret values.
 
-```shell
-uv run {{ project_name_kebab_case }} --help
-```
-
-### Example: Streamlit Example App
+### update dependencies and create virtual environment
 
 ```shell
-uv sync --all-extras # required streamlit dependency part of the examples extra, see pyproject.toml
-sreamlit run examples/streamlit.py
+uv sync                      # install dependencies
+uv sync --all-extras         # install all extras, required for examples
+uv venv                      # create a virtual environment
+source .venv/bin/activate    # activate it
+uv run pre-commit install    # Install pre-commit hook etc.
 ```
 
-### Example: Jupyter Notebook
+### run the CLI
 
-```bash
-uv sync --all-extras # required streamlit dependency part of the examples extra, see pyproject.toml
+```shell
+uv run {{ pypi_distribution_name }} # shows help
 ```
-
-Install the [Jupyter extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-
-Click on `examples/jupyter.ipynb` in VSCode and run it
 
 ## Build
 
 All build steps are defined in `noxfile.py`.
 
 ```shell
-uv run nox
+uv run nox        # Runs all build steps except setup_dev
 ```
 
 You can run individual build steps - called sessions in nox as follows:
@@ -110,7 +107,7 @@ docker build -t {{ project_name_kebab_case }} .
 ```
 
 ```shell
-docker run --env ENV_KEY_TEST=ENV_VALUE_TEST {{ pypi_distribution_name }} --help
+docker run --env THE_VAR=THE_VALUE {{ pypi_distribution_name }} --help
 ```
 
 ## Pull Request Guidelines

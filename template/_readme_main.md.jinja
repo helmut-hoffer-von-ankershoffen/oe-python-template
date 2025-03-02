@@ -36,9 +36,9 @@ uvx {{ pypi_distribution_name}} command --help      # all options for command
 
 * {{ project_description}}
 * Various Examples:
+  - [Simple Python script]{{ github_repository_url_https }}/blob/main/examples/script.py)
   - [Streamlit web application](https://{{ streamlit_project_key }}.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
   - [Jupyter notebook]({{ github_repository_url_https }}/blob/main/examples/jupyter.ipynb)
-  - [Simple Python script]{{ github_repository_url_https }}/blob/main/examples/script.py)
 * [Complete reference documenation](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/reference.html) on Read the Docs
 * [Transparent test coverage](https://app.codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }}) including unit and E2E tests (reported on Codecov)
 * Matrix tested with [multiple python versions]({{ github_repository_url_https}}/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
@@ -50,27 +50,50 @@ uvx {{ pypi_distribution_name}} command --help      # all options for command
 
 ## Usage Examples
 
-### Streamlit App
-
-[Try it out!](https://{{ streamlit_project_key }}.streamlit.app) - [Show the code]({{ github_repository_url_https}}/blob/main/examples/streamlit.py)
-
-
 ### Minimal Python Script:
 
 ```python
-"""
-Example script demonstrating the usage of {{ project_name }}.
+"""Example script demonstrating the usage of the service provided by {{ project_name }}."""
 
-"""
+from dotenv import load_dotenv
+from rich.console import Console
 
-print("Hello World")
+from {{ project_name_snake_case }} import Service
+
+console = Console()
+
+load_dotenv()
+
+message = Service.get_hello_world()
+console.print(f"[blue]{message}[/blue]")
 ```
 
 [Show script code]({{ github_repository_url_https}}/blob/main/examples/script.py) - [Read the reference documentation](https://{{ readthedocs_project_key}}.readthedocs.io/en/latest/reference.html)
 
+### Streamlit App
+
+Serve the functionality provided by {{ project_name }} in the web by easily integrating the service into a Streamlit application.
+
+[Try it out!](https://{{ streamlit_project_key }}.streamlit.app) - [Show the code]({{ github_repository_url_https}}/blob/main/examples/streamlit.py)
+
+... or serve the app locally
+```shell
+uv sync --all-extras                                # Install streamlit dependency part of the examples extra, see pyproject.toml
+uv run streamlit run examples/streamlit.py          # Serve on localhost:8501, opens browser
+```
+
 ## Jupyter Notebook
 
 [Show notebook code]({{ github_repository_url_https}}/blob/main/examples/jupyter.ipynb)
+
+... or run within VSCode
+
+```shell
+uv sync --all-extras                                # Install ipykernel dependency part of the examples extra, see pyproject.toml
+```
+Install the [Jupyter extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+Click on `examples/jupyter.ipynb` in VSCode and run it.
 
 ## Command Line Interface (CLI)
 
@@ -82,33 +105,47 @@ Show available commands:
 uvx {{ pypi_distribution_name}} --help
 ```
 
-Execute command:
+Execute commands:
 
 ```shell
-uvx {{ pypi_distribution_name}} command "Lorem Ipsum"
+uvx {{ pypi_distribution_name}} hello-world
+uvx {{ pypi_distribution_name}} hello-world --json
+uvx {{ pypi_distribution_name}} echo "Lorem Ipsum"
 ```
+
+### Environment
+
+The service loads environment variables including support for .env files.
+
+```shell
+cp .env.example .env              # copy example file
+echo "THE_VAR=MY_VALUE" > .env    # overwrite with your values
+```
+
+Now run the usage examples again.
 
 ### Run with Docker
 
-Note: Replace ENV_KEY_TEST with Lorem Ipsum.
+You can as well run the CLI within Docker.
 
-Show available commands:
-
-```bash
+```shell
 docker run {{ docker_io_owner}}/{{ docker_io_image_name}} --help
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}} hello-world
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}} hello-world --json
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}} echo "Lorem"
 ```
 
 Execute command:
 
-```bash
-docker run --env ENV_KEY_TEST=ENV_VALUE_TEST {{ docker_io_owner}}/{{ docker_io_image_name}} command "Lorem Ipsum"
+```shell
+docker run --env THE_VAR=MY_VALUE {{ docker_io_owner}}/{{ docker_io_image_name}} echo "Lorem Ipsum"
 ```
 
 Or use docker compose
 
-File .env is passed through
+The .env is passed through from the host to the Docker container.
 
-```bash
+```shell
 docker compose up
 docker compose run {{ pypi_distribution_name}} --help
 ```

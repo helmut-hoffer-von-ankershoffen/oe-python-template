@@ -6,8 +6,11 @@ from .constants import (
     __version__,
 )
 
+from .service import Service
+
 __all__ = [
     "__project_name__",
     "__project_path__",
     "__version__",
+    "Service",
 ]

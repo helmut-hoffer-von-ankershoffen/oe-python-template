@@ -9,6 +9,7 @@
         "github.copilot",
         "github.copilot-chat",
         "gruntfuggly.todo-tree",
+        "joshrmosier.streamlit-runner",
         "kaih2o.python-resource-monitor",
         "mikestead.dotenv",
         "ms-azuretools.vscode-docker",

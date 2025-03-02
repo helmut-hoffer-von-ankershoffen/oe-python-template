@@ -43,7 +43,6 @@ requires-python = ">=3.11,<4.0"
 dependencies = [
     "pydantic >= 2.10.6",
     "python-dotenv>=1.0.1",
-    "streamlit>=1.42.2",
     "typer>=0.15.1",
 ]
 
@@ -62,7 +61,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.optional-dependencies]
-examples = ["jupyter>=1.1.1"]
+examples = ["streamlit>=1.42.2", "marimo>=0.11.13","jupyter>=1.1.1"]
 
 [dependency-groups]
 dev = [
