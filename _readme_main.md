@@ -1,9 +1,60 @@
 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
 Use Cases:
-1) Lorem Ipsum
-2) Dolor Sit Amet
-3) Consectetur Adipiscing Elit
+1) Fast and easy to use project setup
+2) Consistent update of already scaffolded projects to benefit from new and improved features.
+3) Dummy CLI application and service demonstrating example usage of the generated directory structure and build pipeline
+
+## Scaffolding Instructions
+
+Step 1: Install uv package manager and copier
+```shell
+if [[ "$OSTYPE" == "darwin"* ]]; then                 # Install dependencies for macOS X
+  if ! command -v brew &> /dev/null; then             ## Install Homebrew if not present
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then            # Install dependencies for Linux
+  sudo apt-get update -y && sudo apt-get install curl -y # Install curl
+fi
+if ! command -v uvx &> /dev/null; then                # Install uv package manager if not present
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  source $HOME/.local/bin/env
+fi
+uv tool install copier                                # Install copier as global tool
+```
+
+Step 2: Now create an empty repo on GitHub and clone it to your local machine in a directory of your choice. Change to that directory.
+
+Step 3: Scaffold the project
+```shell 
+copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
+```
+Step 4: Setup the local environment
+
+```shell
+uv run nox -s setup_eev
+```
+
+Step 5: Perform inital commit and push
+```shell
+git add .
+git commit -m "feat: Initial commit"
+```
+
+Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step, 
+as this external service is not yet configured for our new repository.
+
+Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services 
+such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
+
+Step 7: Release the first versions
+```shell
+./bump
+```
+Notes: 
+* You can remove this section post having successfully scafolded your project.
+* The following sections refer to the dummy application and service provided by this template. 
+  Use them as inspiration and adapt them to your own project.
 
 ## Overview
 
@@ -32,6 +83,7 @@ uvx oe-python-template --help              # all CLI commands
 uvx oe-python-template command --help      # all options for command
 ```
 
+
 ## Highlights
 
 * Copier template to scaffold Python projects compliant with best practices and modern tooling.
@@ -47,6 +99,7 @@ uvx oe-python-template command --help      # all options for command
 * [A-grade code quality](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template) in security, maintainability, and reliability with low technical debt and low codesmell (verified by SonarQube)
 * 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
 * Setup for developing inside a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) included (supports VSCode and GitHub Codespaces)
+
 
 ## Usage Examples
 
