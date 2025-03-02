@@ -42,7 +42,8 @@ tests/                   # Unit and E2E tests
 └── fixtures/            # Fixtures and mock data
 examples/                # Example code demonstrating use of the project
 ├── streamlit.py         # Streamlit App, deployed in Streamlit Community Cloud
-├── jupyter.ipynb        # Jupyter notebook
+├── notebook.py          # Marimo notebook
+├── notebook.ipynb       # Jupyter notebook
 └── script.py            # Minimal script
 ```
 

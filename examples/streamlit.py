@@ -14,7 +14,7 @@ from oe_python_template import (
 
 sidebar = st.sidebar
 sidebar.write(
-    f" [OE Python Template v{__version__}](https://oe-python-template.readthedocs.io/)",
+    f" [OE Python Template v{__version__}](https://oe-python-template.readthedocs.io/en/latest/)",
 )
 sidebar.write("Built with love in Berlin 🐻")
 

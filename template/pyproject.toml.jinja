@@ -50,8 +50,8 @@ dependencies = [
 {{ pypi_distribution_name }} = "{{ project_name_snake_case }}.cli:cli"
 
 [project.urls]
-Homepage = "https://{{ readthedocs_project_key }}.readthedocs.io/"
-Documentation = "https://{{ readthedocs_project_key }}.readthedocs.io/"
+Homepage = "https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/"
+Documentation = "https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/"
 Source = "{{ github_repository_url_https }}"
 Changelog = "{{ github_repository_url_https }}/releases"
 Issues = "{{ github_repository_url_https }}/issues"
@@ -104,7 +104,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-exclude = [".fixme"]
+exclude = [".fixme","notebook.py"]
 
 
 [tool.ruff.lint]
@@ -156,6 +156,10 @@ ignore = [
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
+"examples/notebook.py" = [
+    # we are more relaxed in notebooks, while sill applying hundreds of rules
+    "B018",     # notebooks surface variable without print
+]
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -236,7 +240,7 @@ output = "CHANGELOG.md"
 render = true
 # template for the changelog header
 header = """
-[{{ project_icon }} {{ project_name }}](https://{{ readthedocs_project_key }}.readthedocs.io/)\n
+[{{ project_icon }} {{ project_name }}](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/)\n
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction

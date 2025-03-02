@@ -1,6 +1,6 @@
 # Setup service connections
 
-## Reporting code coverage via CodeCov
+## Reporting code coverage via CodeCov (codecov.io)
 
 1. Sign-Up at https://app.codecov.io/
 2. Configure via https://app.codecov.io/gh/{{ github_repository_owner }}
@@ -8,7 +8,7 @@
 4. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `CODECOV_TOKEN`, pasting the token from your clipboard as value
 5. Re-run the `CI / test` GitHub job in case you tried before and it failed as Codecov was not yet wired up
 
-## Analyzing code quality and security analysis via SonarQube cloud
+## Analyzing code quality and security analysis via SonarQube cloud (sonarcloud.io)
 
 1. Sign-Up at https://sonarcloud.io
 2. Grant access to your new repo via https://github.com/settings/installations -> Configure
@@ -19,7 +19,7 @@
 7. Goto https://sonarcloud.io/project/settings?id={{ sonarqube_key }} and select "Quality Gate" in the left menu. Select "Sonar way" as default quality gate.
 8. Re-run the `CI / test` GitHub job in case you tried before and it failed as SonarQube was not yet wired up
 
-## Generating and publishing documentation via ReadTheDocs
+## Generating and publishing documentation via ReadTheDocs (readthedocs.org)
 
 1. Sign-Up at https://readthed§cs.org/
 2. Goto https://app.readthedocs.org/dashboard/import/ and search for your repo by enterin {{ github_repository_name}} in the search bar
@@ -27,7 +27,7 @@
 4. On https://app.readthedocs.org/projects/{{ github_repository_name }}/ wait for the build of the documentation to finish
 5. Goto https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/
 
-## Publishing package to Python Package Index (PyPI)
+## Publishing package to Python Package Index (pypi.org)
 
 1. Execute `uv run build`. This will generate the build files (wheel and tar.gz) in the `dist` folder
 2. Sign-Up at https://pypi.org/
@@ -52,3 +52,11 @@
 
 1. This just works, no further setup required.
 2. Just `bump` to release and publish.
+
+## Streamlit app (streamlit.io)
+
+1. Sign-up at https://streamlit.io
+2. In settings connect your GitHub account
+3. Goto https://share.streamlit.io/new and click "Deploy a public app from GitHub"
+4. Select the {{ github_repository_name }} repo, for "Main file path" select `examples/streamlit.py`, for App URL enter `{{ streamlit_project_key }}`.streamlit.app. Click "Deploy"
+5. Goto https://{{ streamlit_project_key }}.streamlit.app

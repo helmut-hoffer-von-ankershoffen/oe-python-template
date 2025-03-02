@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.1.3"
+version = "0.0.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [
@@ -50,8 +50,8 @@ dependencies = [
 oe-python-template = "oe_python_template.cli:cli"
 
 [project.urls]
-Homepage = "https://oe-python-template.readthedocs.io/"
-Documentation = "https://oe-python-template.readthedocs.io/"
+Homepage = "https://oe-python-template.readthedocs.io/en/latest/"
+Documentation = "https://oe-python-template.readthedocs.io/en/latest/"
 Source = "https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template"
 Changelog = "https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases"
 Issues = "https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues"
@@ -104,7 +104,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-exclude = [".fixme"]
+exclude = [".fixme","notebook.py"]
 
 
 [tool.ruff.lint]
@@ -156,6 +156,10 @@ ignore = [
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
+"examples/notebook.py" = [
+    # we are more relaxed in notebooks, while sill applying hundreds of rules
+    "B018",     # notebooks surface variable without print
+]
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -189,7 +193,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.1.3"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
@@ -236,7 +240,7 @@ output = "CHANGELOG.md"
 render = true
 # template for the changelog header
 header = """
-[🧠 OE Python Template](https://oe-python-template.readthedocs.io/)\n
+[🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)\n
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction

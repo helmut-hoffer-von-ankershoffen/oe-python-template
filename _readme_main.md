@@ -38,7 +38,7 @@ uvx oe-python-template command --help      # all options for command
 * Various Examples:
   - [Simple Python script]https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
   - [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
-  - [Jupyter notebook](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/jupyter.ipynb)
+  - [Jupyter](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb) and [Marimo](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py) notebook
 * [Complete reference documenation](https://oe-python-template.readthedocs.io/en/latest/reference.html) on Read the Docs
 * [Transparent test coverage](https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template) including unit and E2E tests (reported on Codecov)
 * Matrix tested with [multiple python versions](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
@@ -82,9 +82,11 @@ uv sync --all-extras                                # Install streamlit dependen
 uv run streamlit run examples/streamlit.py          # Serve on localhost:8501, opens browser
 ```
 
-## Jupyter Notebook
+## Notebooks
 
-[Show notebook code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/jupyter.ipynb)
+### Jupyter
+
+[Show the Jupyter code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb)
 
 ... or run within VSCode
 
@@ -93,7 +95,31 @@ uv sync --all-extras                                # Install ipykernel dependen
 ```
 Install the [Jupyter extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-Click on `examples/jupyter.ipynb` in VSCode and run it.
+Click on `examples/notebook.ipynb` in VSCode and run it.
+
+### Marimo
+
+[Show the marimo code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py)
+
+Execute the notebook as a WASM based web app
+
+```shell
+uv sync --all-extras                                # Install ipykernel dependency part of the examples extra, see pyproject.toml
+uv run marimo run examples/notebook.py --watch      # Serve on localhost:2718, opens browser
+```
+
+or edit interactively in your browser
+
+```shell
+uv sync --all-extras                                # Install ipykernel dependency part of the examples extra, see pyproject.toml
+uv run marimo edit examples/notebook.py --watch     # Edit on localhost:2718, opens browser
+```
+
+... or edit interactively within VSCode
+
+Install the [Marimo extension for VSCode](https://marketplace.visualstudio.com/items?itemName=marimo-team.vscode-marimo)
+
+Click on `examples/notebook.py` in VSCode and click on the caret next to the Run icon above the code (looks like a pencil) > "Start in marimo editor" (edit).
 
 ## Command Line Interface (CLI)
 
