@@ -31,7 +31,7 @@
 6. Now create an new API token, again called {{ github_repository_name }}, but this time of scope "Project: {{ github_repository_name }}". Copy the token into your clipboard.
 7. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and delete the previously created token.
 8. Then create a new repository secret called `UV_PUBLISH_TOKEN`, pasting the token from your clipboard as value
-9. Re-run the `CI / publish` GitHub job in case you tried before and it failed as PyPI was not yet wired up
+9. In case your `CI / test` job passed, and you are ready to release and publish, bump the version of your project by executing `bump`. In case you tried before completing this setup script, you can as well go to {{ github_repository_url_https }}/actions/workflows/package-build-publish-release.yml, click on the failed job, and re-run.
 
 ### Publishing Docker images to Docker Hub (docker.io)
 
@@ -40,7 +40,9 @@
 3. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_LOGIN`, setting your username at Docker Hub as the value
 4. Goto https://app.docker.com/settings/personal-access-tokens/create and create a new access token setting the description to {{ github_repository_name }}, permissions Read & Write & Delete. Copy the value of the token into your clipboard.
 5. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_PASSWORD`, pasting the token from your clipboard as the value
+6. In case your `CI / test` job passed, and you are ready to release and publish, bump the version of your project by executing `bump`. In case you tried before completing this setup script, you can as well go to {{ github_repository_url_https }}/actions/workflows/package-build-publish-release.yml, click on the failed job, and re-run.
 
 ### Publishing Docker images to GitHub Container Registry (ghcr.io)
 
 1. This just works, no further setup required.
+2. Just `bump` to release and publish.
