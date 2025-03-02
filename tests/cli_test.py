@@ -36,4 +36,4 @@ def test_cli_hello_world(runner: CliRunner) -> None:
     """Check hello world printed."""
     result = runner.invoke(cli, ["hello-world"])
     assert result.exit_code == 0
-    assert "hello world" in result.output
+    assert "Hello, world!" in result.output

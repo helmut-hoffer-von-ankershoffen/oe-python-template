@@ -28,7 +28,13 @@
 3. Goto https://pypi.org/manage/account/ and create an API token of scope "Entire account", calling it {{ github_repository_name }}. Copy the value of the token into your clipboard.
 4. Execute `uv run publish`, entering __token__ as username and paste the token from your clipboard as password. This will register your package on PyPI and upload the build files
 5. Goto https://pypi.org/manage/account/ again and delete the previously created token {{ github_repository_name }} of scope "Entire account".
-6. Nw create an new API token, again called {{ github_repository_name }}, but this time of scope "Project: {{ github_repository_name }}". Copy the token into your clipboard.
+6. Now create an new API token, again called {{ github_repository_name }}, but this time of scope "Project: {{ github_repository_name }}". Copy the token into your clipboard.
 7. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and delete the previously created token.
 8. Then create a new repository secret called `UV_PUBLISH_TOKEN`, pasting the token from your clipboard as value
 9. Re-run the `CI / publish` GitHub job in case you tried before and it failed as PyPI was not yet wired up
+
+### Publishing Docker images to Docker Hub (docker.io)
+
+1. Sign-Up at https://hub.docker.com/
+2. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_LOGIN`, setting your username at Docker Hub as the value
+2. Goto https://app.docker.com/settings/personal-access-tokens/create and create a new access token setting the description to {{ github_repository_name }}, permissions Read & Write. Copy the value of the token into your clipboard.
