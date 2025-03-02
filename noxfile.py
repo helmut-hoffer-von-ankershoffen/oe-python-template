@@ -92,3 +92,16 @@ def test(session: nox.Session) -> None:
         "-n",
         "auto",
     )
+
+
+@nox.session(python=["3.13"], default=False)
+def setup_dev(session: nox.Session) -> None:
+    """Setup dev environment post project creation."""
+    session.run("ruff", "check", ".", external=True)
+    session.run("ruff", "format", ".", external=True)
+    session.run("uv", "run", "pre-commit", "install", external=True)
+    with Path.open(".secrets.baseline", "w", encoding="utf-8") as out:
+        session.run("detect-secrets", "scan", stdout=out, external=True)
+    session.run("git", "add", ".", external=True)
+    session.run("pre-commit", external=True)
+    session.run("git", "add", ".", external=True)

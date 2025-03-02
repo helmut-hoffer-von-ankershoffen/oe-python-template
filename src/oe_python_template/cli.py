@@ -37,7 +37,7 @@ def echo(
 @cli.command()
 def hello_world() -> None:
     """Print hello world."""
-    console.prin("Hello, world!")
+    console.print("Hello, world!")
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:
