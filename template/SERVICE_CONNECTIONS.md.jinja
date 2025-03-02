@@ -4,7 +4,7 @@
 
 1. Sign-Up at https://app.codecov.io/
 2. Configure via https://app.codecov.io/gh/{{ github_repository_owner }}
-3. Copy value of `CODECOV_TOKEN` into your clipboard
+3. Select (o) Repository token. Copy value of `CODECOV_TOKEN` into your clipboard
 4. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `CODECOV_TOKEN`, pasting the token from your clipboard as value
 5. Re-run the `CI / test` GitHub job in case you tried before and it failed as Codecov was not yet wired up
 
@@ -21,7 +21,7 @@
 
 ## Generating and publishing documentation via ReadTheDocs (readthedocs.org)
 
-1. Sign-Up at https://readthed§cs.org/
+1. Sign-Up at https://readthedocs.org/
 2. Goto https://app.readthedocs.org/dashboard/import/ and search for your repo by enterin {{ github_repository_name}} in the search bar
 3. Select the repo and click Continue, then Next.
 4. On https://app.readthedocs.org/projects/{{ github_repository_name }}/ wait for the build of the documentation to finish
@@ -42,8 +42,8 @@
 ## Publishing Docker images to Docker Hub (docker.io)
 
 1. Sign-Up at https://hub.docker.com/
-2. Click on your avatar or profile pic and copy the username belwo that into your clipboard.
-3. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_LOGIN`, setting your username at Docker Hub as the value
+2. Click on your avatar or profile pic and copy the username below that into your clipboard.
+3. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_USERNAME`, setting your username at Docker Hub as the value
 4. Goto https://app.docker.com/settings/personal-access-tokens/create and create a new access token setting the description to {{ github_repository_name }}, permissions Read & Write & Delete. Copy the value of the token into your clipboard.
 5. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_PASSWORD`, pasting the token from your clipboard as the value
 6. In case your `CI / test` job passed, and you are ready to release and publish, bump the version of your project by executing `bump`. In case you tried before completing this setup script, you can as well go to {{ github_repository_url_https }}/actions/workflows/package-build-publish-release.yml, click on the failed job, and re-run.
