@@ -1,6 +1,6 @@
 # Readme of the template
 
-## Wiring external Services
+## Setup service connections
 
 ### Reporting code coverage via CodeCov
 
@@ -17,7 +17,7 @@
 3. Goto https://sonarcloud.io/projects/create and select the repo
 4. Select Previous Code when prompted
 5. Configure by going to https://sonarcloud.io/project/configuration?id={{ sonarqube_key }} and clicking on "With GitHub Actions". Copy the value of `SONAR_TOKEN` into your clipboard.
-6. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `SONAR_TOKEN`, pasting the token from your clipboard as value
+6. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `SONAR_TOKEN`, pasting the token from your clipboard as the value
 7. Goto https://sonarcloud.io/project/settings?id={{ sonarqube_key }} and select "Quality Gate" in the left menu. Select "Sonar way" as default quality gate.
 8. Re-run the `CI / test` GitHub job in case you tried before and it failed as SonarQube was not yet wired up
 
@@ -36,5 +36,11 @@
 ### Publishing Docker images to Docker Hub (docker.io)
 
 1. Sign-Up at https://hub.docker.com/
-2. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_LOGIN`, setting your username at Docker Hub as the value
-2. Goto https://app.docker.com/settings/personal-access-tokens/create and create a new access token setting the description to {{ github_repository_name }}, permissions Read & Write. Copy the value of the token into your clipboard.
+2. Click on your avatar or profile pic and copy the username belwo that into your clipboard.
+3. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_LOGIN`, setting your username at Docker Hub as the value
+4. Goto https://app.docker.com/settings/personal-access-tokens/create and create a new access token setting the description to {{ github_repository_name }}, permissions Read & Write & Delete. Copy the value of the token into your clipboard.
+5. Goto {{ github_repository_url_https }}/settings/secrets/actions/new and create a new repository secret called `DOCKER_PASSWORD`, pasting the token from your clipboard as the value
+
+### Publishing Docker images to GitHub Container Registry (ghcr.io)
+
+1. This just works, no further setup required.
