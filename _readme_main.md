@@ -26,7 +26,7 @@ uv tool install copier                                # Install copier as global
 Step 2: Now create an empty repo on GitHub and clone it to your local machine in a directory of your choice. Change to that directory.
 
 Step 3: Scaffold the project
-```shell 
+```shell
 copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
 Step 4: Setup the local environment
@@ -41,19 +41,19 @@ git add .
 git commit -m "feat: Initial commit"
 ```
 
-Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step, 
+Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
 as this external service is not yet configured for our new repository.
 
-Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services 
+Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services
 such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
 
 Step 7: Release the first versions
 ```shell
 ./bump
 ```
-Notes: 
+Notes:
 * You can remove this section post having successfully scafolded your project.
-* The following sections refer to the dummy application and service provided by this template. 
+* The following sections refer to the dummy application and service provided by this template.
   Use them as inspiration and adapt them to your own project.
 
 ## Overview

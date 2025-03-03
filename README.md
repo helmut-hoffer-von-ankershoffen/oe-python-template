@@ -19,6 +19,9 @@
 [![Docker - Version](https://img.shields.io/docker/v/helmuthva/oe-python-template?sort=semver&label=Docker&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
 [![Docker - Size](https://img.shields.io/docker/image-size/helmuthva/oe-python-templatesort=semver&arch=arm64&label=image&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/helmuthva/oe-python-template/)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3IDE2VjdsLTYgNU0yIDlWOGwxLTFoMWw0IDMgOC04aDFsNCAyIDEgMXYxNGwtMSAxLTQgMmgtMWwtOC04LTQgM0gzbC0xLTF2LTFsMy0zIi8+PC9zdmc+)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
+[![Open in GitHub Codespaces](https://img.shields.io/static/v1?label=GitHub%20Codespaces&message=Open&color=blue&logo=github)](https://github.com/codespaces/new/helmut-hoffer-von-ankershoffen/oe-python-template)
+
 <!---
 [![ghcr.io - Version](https://ghcr-badge.egpl.dev/helmut-hoffer-von-ankershoffen/oe-python-template/tags?color=%2344cc11&ignore=0.0%2C0%2Clatest&n=3&label=ghcr.io&trim=)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template)
 [![ghcr.io - Sze](https://ghcr-badge.egpl.dev/helmut-hoffer-von-ankershoffen/oe-python-template/size?color=%2344cc11&tag=latest&label=size&trim=)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template)
@@ -57,7 +60,7 @@ uv tool install copier                                # Install copier as global
 Step 2: Now create an empty repo on GitHub and clone it to your local machine in a directory of your choice. Change to that directory.
 
 Step 3: Scaffold the project
-```shell 
+```shell
 copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
 Step 4: Setup the local environment
@@ -72,19 +75,19 @@ git add .
 git commit -m "feat: Initial commit"
 ```
 
-Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step, 
+Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
 as this external service is not yet configured for our new repository.
 
-Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services 
+Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services
 such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
 
 Step 7: Release the first versions
 ```shell
 ./bump
 ```
-Notes: 
+Notes:
 * You can remove this section post having successfully scafolded your project.
-* The following sections refer to the dummy application and service provided by this template. 
+* The following sections refer to the dummy application and service provided by this template.
   Use them as inspiration and adapt them to your own project.
 
 ## Overview

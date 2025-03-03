@@ -1,6 +1,13 @@
 
 _subdirectory: template
 
+_tasks:
+  - "touch README.md"
+  - uv sync --all-extras
+  - uv venv
+  - source .venv/bin/activate
+  - uv run nox -s setup_dev
+
 project_icon:
   type: str
   help: What is your projects's icon (utf-8 character)? You can set to an empty string.
