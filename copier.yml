@@ -1,5 +1,7 @@
 
 _subdirectory: template
+_skip_if_exists:
+    - logo.png
 
 _tasks:
   - "touch README.md"
