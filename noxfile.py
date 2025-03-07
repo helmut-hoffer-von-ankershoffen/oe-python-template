@@ -40,10 +40,7 @@ def lint(session: nox.Session) -> None:
         "--check",
         ".",
     )
-    session.run(
-        "mypy",
-        "src"
-    )
+    session.run("mypy", "src")
 
 
 @nox.session(python=["3.13"])
@@ -112,6 +109,6 @@ def setup_dev(session: nox.Session) -> None:
     session.run("git", "add", ".", external=True)
     try:
         session.run("pre-commit", external=True)
-    except Exception: # noqa: BLE001
+    except Exception:  # noqa: BLE001
         session.log("pre-commit run failed, continuing anyway")
     session.run("git", "add", ".", external=True)
