@@ -39,7 +39,7 @@
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
         "-v",
-        "--cov={{ project_name_snake_case }}"
+        "--cov=oe_python_template"
     ],
     "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "github.copilot.nextEditSuggestions.enabled": true,
@@ -64,7 +64,7 @@
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.chat.search.semanticTextResults": true,
     "sonarlint.connectedMode.project": {
-        "connectionId": "{{ org_name_kebab_case }}",
-        "projectKey": "{{ org_name_kebab_case }}_{{ project_name_kebab_case }}"
+        "connectionId": "helmut-hoffer-von-ankershoffen",
+        "projectKey": "helmut-hoffer-von-ankershoffen_oe-python-template"
     }
 }

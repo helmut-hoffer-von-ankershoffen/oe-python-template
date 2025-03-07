@@ -31,11 +31,6 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - run: npm install @modelcontextprotocol/inspector@0.3.0
-
       - name: Install Python, venv and dependencies
         run: |
           uv sync --all-extras --frozen --link-mode=copy
@@ -52,7 +47,7 @@ jobs:
           fi
 
       - name: Print development version info
-        if: s${{ !startsWith(github.ref, 'refs/tags/v') }}
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         run: |
           TOML_VERSION=$(uv run python -c "import tomli; print(tomli.load(open('pyproject.toml', 'rb'))['project']['version'])")
           echo "Development build - Current version in pyproject.toml: $TOML_VERSION"
@@ -81,7 +76,7 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: ${{ always() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}
+        if: ${{ always() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         with:
           name: test-results
           path: |
@@ -95,18 +90,18 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
-        if: ${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: helmut-hoffer-von-ankershoffen/oe-python-template
 
       - name: Upload test results to Codecov
-        if: ${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: SonarQube Scan
-        if: ${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

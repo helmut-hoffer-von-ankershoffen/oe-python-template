@@ -31,11 +31,6 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - run: npm install @modelcontextprotocol/inspector@0.3.0
-
       - name: Install Python, venv and dependencies
         run: |
           uv sync --all-extras --frozen --link-mode=copy
@@ -52,7 +47,7 @@ jobs:
           fi
 
       - name: Print development version info
-        if: {% raw %}s${{ !startsWith(github.ref, 'refs/tags/v') }}{% endraw %}
+        if: {% raw %}${{ !startsWith(github.ref, 'refs/tags/v') }}{% endraw %}
         run: |
           TOML_VERSION=$(uv run python -c "import tomli; print(tomli.load(open('pyproject.toml', 'rb'))['project']['version'])")
           echo "Development build - Current version in pyproject.toml: $TOML_VERSION"
@@ -81,7 +76,7 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: {% raw %}${{ always() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: {% raw %}${{ always() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
         with:
           name: test-results
           path: |
@@ -95,18 +90,18 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
-        if: {% raw %}${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
         with:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
           slug: {{ github_repository_owner }}/{{ github_repository_name }}
 
       - name: Upload test results to Codecov
-        if: {% raw %}${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
         uses: codecov/test-results-action@v1
         with:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
       - name: SonarQube Scan
-        if: {% raw %}${{ !cancelled() && (env.GITLAB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
         uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}

@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.2.5"
+version = "0.0.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [
@@ -10,11 +10,31 @@ license = { file = "LICENSE" }
 
 keywords = [
     "oe-python-template",
+    "act",
     "codecov",
+    "copier",
+    "cyclonedx",
+    "devcontainer",
+    "detect-secrets",
     "docker",
+    "git-cliff",
+    "jupyter",
+    "marimo",
+    "mypy",
+    "nox",
+    "pip-audit",
+    "pip-licenses",
+    "pre-commit",
     "pydantic",
+    "pytest",
     "python",
+    "pypi",
+    "readthedocs",
     "ruff",
+    "sonarqube",
+    "sonarcloud",
+    "sphinx",
+    "streamlit",
     "typer",
     "uv",
 ]
@@ -66,7 +86,7 @@ examples = ["streamlit>=1.42.2", "marimo>=0.11.13","jupyter>=1.1.1", "jinja2 >=3
 [dependency-groups]
 dev = [
     "autodoc-pydantic>=2.2.0",
-    "bump-my-version>=0.32.2",
+    "bump-my-version>=1.0.1",
     "cyclonedx-py>=1.0.1",
     "detect-secrets>=1.5.0",
     "enum-tools>=0.12.0",
@@ -84,8 +104,8 @@ dev = [
     "pytest-docker>=3.2.0",
     "pytest-env>=1.1.5",
     "pytest-xdist[psutil]>=3.6.1",
-    "ruff>=0.9.7",
-    "sphinx>=8.2.1",
+    "ruff>=0.9.10",
+    "sphinx>=8.2.3",
     "sphinx-autobuild>=2024.10.3",
     "sphinx-copybutton>=0.5.2",
     "sphinx-inline-tabs>=2023.4.21",
@@ -93,10 +113,10 @@ dev = [
     "sphinxext.opengraph>=0.9.1",
     "sphinx-pydantic>=0.1.1",
     "sphinx-rtd-theme>=3.0.2",
-    "sphinx-toolbox>=3.8.3",
+    "sphinx-toolbox>=3.9.0",
     "sphinxext-opengraph>=0.9.1",
     "tomli>=2.1.0",
-    "matplotlib>=3.10.0",
+    "matplotlib>=3.10.1",
     "pytest-regressions>=2.7.0",
 ]
 
@@ -213,7 +233,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.2.5"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"

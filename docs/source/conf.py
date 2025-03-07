@@ -25,7 +25,7 @@ extensions = [
 project = "oe-python-template"
 author = "Helmut Hoffer von Ankershoffen"
 copyright = f" (c) 2025-{datetime.now(UTC).year}, {author}"  # noqa: A001
-version = "0.2.5"
+version = "0.0.1"
 release = version
 github_username = "helmut-hoffer-von-ankershoffen"
 github_repository = "oe-python-template"
@@ -33,7 +33,7 @@ github_repository = "oe-python-template"
 language = "en"
 
 ogp_site_name = "OE Python Template"
-ogp_image = "https://.readthedocs.io/en/latest/_static/logo.png"
+ogp_image = "https://oe-python-template.readthedocs.io/en/latest/_static/logo.png"
 ogp_custom_meta_tags = [
     '<meta name="twitter:card" content="OE Python Template" />',
 ]
