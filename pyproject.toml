@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.2.3"
+version = "0.0.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [
@@ -61,7 +61,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.optional-dependencies]
-examples = ["streamlit>=1.42.2", "marimo>=0.11.13","jupyter>=1.1.1"]
+examples = ["streamlit>=1.42.2", "marimo>=0.11.13","jupyter>=1.1.1", "jinja2 >=3.1.6"]
 
 [dependency-groups]
 dev = [
@@ -72,6 +72,7 @@ dev = [
     "enum-tools>=0.12.0",
     "furo>=2024.8.6",
     "git-cliff>=2.8.0",
+    "mypy>=1.5.0",
     "nox[uv]>=2025.2.9",
     "pip-audit>=2.8.0",
     "pip-licenses>=5.0.0",
@@ -167,6 +168,25 @@ docstring-code-format = true
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
+[tool.mypy]  # https://mypy.readthedocs.io/en/latest/config_file.html
+junit_xml = "mypi_junit.xml"
+plugins = "pydantic.mypy"
+strict = true
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+ignore_missing_imports = true
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+warn_unreachable = true
+
+[tool.pydantic-mypy]  # https://docs.pydantic.dev/latest/integrations/mypy/#configuring-the-plugin
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
 [tool.pytest.ini_options]
 addopts = "-v --cov=oe_python_template --cov-report=term-missing --cov-report=xml:coverage.xml --cov-report=html:coverage_html"
 testpaths = ["tests"]
@@ -193,7 +213,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.2.3"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"

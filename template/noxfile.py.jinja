@@ -25,13 +25,13 @@ def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
 
 
 def _is_act_environment() -> bool:
-    """Check if running in GitLab ACT environment."""  # noqa: DOC201
-    return os.environ.get("GITLAB_WORKFLOW_RUNTIME") == "ACT"
+    """Check if running in Github ACT environment."""  # noqa: DOC201
+    return os.environ.get("GITHUB_WORKFLOW_RUNTIME") == "ACT"
 
 
 @nox.session(python=["3.13"])
 def lint(session: nox.Session) -> None:
-    """Run code linting and formatting checks."""
+    """Run code formatting checks, linting, and static type checking."""
     _setup_venv(session)
     session.run("ruff", "check", ".")
     session.run(
@@ -39,6 +39,10 @@ def lint(session: nox.Session) -> None:
         "format",
         "--check",
         ".",
+    )
+    session.run(
+        "mypy",
+        "src"
     )
 
 

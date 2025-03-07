@@ -43,6 +43,7 @@ vulnerabilities.json
 licenses.json
 licenses-inverted.json
 sbom.json
+mypi_junit.xml
 
 # IDE
 .idea/

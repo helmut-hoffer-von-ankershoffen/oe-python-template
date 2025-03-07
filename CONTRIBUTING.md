@@ -111,6 +111,12 @@ docker build -t oe-python-template .
 docker run --env THE_VAR=THE_VALUE oe-python-template --help
 ```
 
+### Updating demo application
+
+```shell
+copier copy -r HEAD . . --force --trust
+```
+
 ## Pull Request Guidelines
 
 - **Pre-Commit Hooks:** We use pre-commit hooks to ensure code quality. Please install the pre-commit hooks by running `uv run pre-commit install`. This ensure all tests, linting etc. pass locally before you can commit.
