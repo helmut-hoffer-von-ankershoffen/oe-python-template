@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.2.13"
+version = "0.0.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [
@@ -130,7 +130,10 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-exclude = [".venv",".fixme","notebook.py"]
+extend-exclude = [
+    ".fixme",
+    "notebook.py"
+]
 
 
 [tool.ruff.lint]
@@ -238,7 +241,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.2.13"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
