@@ -1,6 +1,6 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.3.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.3.0..0.3.1) - 2025-03-08
+## [0.3.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.3.0..v0.3.1) - 2025-03-08
 
 ### 🚜 Refactor
 
