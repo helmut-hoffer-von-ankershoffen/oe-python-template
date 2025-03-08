@@ -1518,7 +1518,7 @@ wheels = [
 
 [[package]]
 name = "marimo"
-version = "0.11.13"
+version = "0.11.17"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1539,9 +1539,9 @@ dependencies = [
     { name = "uvicorn" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0a/62/709b7c288c6be55dd0c75727fbc2d69adea305de807f219b5e5a0a3e2460/marimo-0.11.13.tar.gz", hash = "sha256:e5cef8593dbfe577088bbec659090cf4cbeca7785261eb8c625c74360c821477", size = 10644867 }
+sdist = { url = "https://files.pythonhosted.org/packages/a3/c4/fa473598d184842ffc11dae37bd426255faf442212f213242377c13d0b91/marimo-0.11.17.tar.gz", hash = "sha256:8ca0cd6c18439d0cb368f7b524b5e93596888509add3fd4b22ead3e5600a88d7", size = 10659595 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3c/18/bafdd907f03f636ce67d13cad4de77213edb1c29e5e0bd4ab3f530bf1a55/marimo-0.11.13-py3-none-any.whl", hash = "sha256:b5c0bee4ede7cd21f22ce6405974be2375be08da7a85b9b5495ca668b14510d8", size = 10989347 },
+    { url = "https://files.pythonhosted.org/packages/cb/a0/9d68f55dcc15a0fbce1c63f2450961b9940a34e8ef15f3c2ba0fb3e502e9/marimo-0.11.17-py3-none-any.whl", hash = "sha256:15092b0f284ea11a9768cfdd4538922ae13683bb549077e7ba56df7d3d6f6d5d", size = 11005717 },
 ]
 
 [[package]]
@@ -1967,7 +1967,7 @@ wheels = [
 
 [[package]]
 name = "oe-python-template"
-version = "0.2.10"
+version = "0.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "pydantic" },
@@ -2023,10 +2023,10 @@ dev = [
 requires-dist = [
     { name = "jinja2", marker = "extra == 'examples'", specifier = ">=3.1.6" },
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
-    { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.11.13" },
+    { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.11.17" },
     { name = "pydantic", specifier = ">=2.10.6" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
-    { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.42.2" },
+    { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.43.1" },
     { name = "typer", specifier = ">=0.15.1" },
 ]
 provides-extras = ["examples"]
@@ -3548,7 +3548,7 @@ wheels = [
 
 [[package]]
 name = "streamlit"
-version = "1.42.2"
+version = "1.43.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "altair" },
@@ -3564,16 +3564,15 @@ dependencies = [
     { name = "pyarrow" },
     { name = "pydeck" },
     { name = "requests" },
-    { name = "rich" },
     { name = "tenacity" },
     { name = "toml" },
     { name = "tornado" },
     { name = "typing-extensions" },
     { name = "watchdog", marker = "sys_platform != 'darwin'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/08/58/b1875ccb6901cec7a721059bfd9122107d29e0b0ccfdcea9d353af6b5c52/streamlit-1.42.2.tar.gz", hash = "sha256:62026dbdcb482790933f658b096d7dd58fa70da89c1f06fbc3658b91dcd4dab2", size = 9169615 }
+sdist = { url = "https://files.pythonhosted.org/packages/48/a6/4806b73a5296961f7654a3426496bd463f2b92f6e1b75c359e29317e7a15/streamlit-1.43.1.tar.gz", hash = "sha256:4bb1e1235f6d84c279da567bf314f6e12310d53f1fb2350176ee462e189baebb", size = 9344698 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e4/08/c962e38f4450dafb98af49f8988a736dd67ae9cc26a5704c43269f506bc8/streamlit-1.42.2-py2.py3-none-any.whl", hash = "sha256:e2516c7fcd17a11a85cc1999fae58ace0a6458e2b4c1a411ed3d75b1aee2eb93", size = 9559800 },
+    { url = "https://files.pythonhosted.org/packages/bf/14/a95ac354fe9ca59ee9d030dc738dac8ac04bd32f9d7c3f2c790eb6431ab1/streamlit-1.43.1-py2.py3-none-any.whl", hash = "sha256:ed8a6bd01e2b087e25b1b534835a341c2f71964822ac94b065c5496d2b5b49c2", size = 9734547 },
 ]
 
 [[package]]
