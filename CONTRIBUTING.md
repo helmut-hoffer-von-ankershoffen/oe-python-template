@@ -111,7 +111,15 @@ docker build -t oe-python-template .
 docker run --env THE_VAR=THE_VALUE oe-python-template --help
 ```
 
-### Updating demo application
+### Copier
+
+Update scaffold from template
+
+```shell
+copier update --trust --skip-tasks --skip-answered
+```
+
+### Updating demo application contained within oe-python-template
 
 ```shell
 copier copy -r HEAD . . --force --trust
