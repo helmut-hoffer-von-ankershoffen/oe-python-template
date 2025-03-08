@@ -29,10 +29,10 @@
 
 ## Publishing package to Python Package Index (pypi.org)
 
-1. Execute `uv run build`. This will generate the build files (wheel and tar.gz) in the `dist` folder
+1. Execute `uv build`. This will generate the build files (wheel and tar.gz) in the `dist` folder
 2. Sign-Up at https://pypi.org/
 3. Goto https://pypi.org/manage/account/ and create an API token of scope "Entire account", calling it oe-python-template. Copy the value of the token into your clipboard.
-4. Execute `uv run publish`, entering __token__ as username and paste the token from your clipboard as password. This will register your package on PyPI and upload the build files
+4. Execute `uv publish`, entering __token__ as username and paste the token from your clipboard as password. This will register your package on PyPI and upload the build files
 5. Goto https://pypi.org/manage/account/ again and delete the previously created token oe-python-template of scope "Entire account".
 6. Now create an new API token, again called oe-python-template, but this time of scope "Project: oe-python-template". Copy the token into your clipboard.
 7. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new and delete the previously created token.
@@ -60,3 +60,12 @@
 3. Goto https://share.streamlit.io/new and click "Deploy a public app from GitHub"
 4. Select the oe-python-template repo, for "Main file path" select `examples/streamlit.py`, for App URL enter `oe-python-template`.streamlit.app. Click "Deploy"
 5. Goto https://oe-python-template.streamlit.app
+
+## Polishing GitHub repository
+
+1. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template
+2. Click on the cogs icon in the top right corner next to about
+4. Copy oe-python-template.readthedocs.io into the website field
+3. Copy the description from the pyproject.toml file into the description field
+5. Copy up to 20 tags from the pyproject.toml file into the topics field
+6. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings and upload a soclial media image (e.g. logo.png) into the "Social preview" field
