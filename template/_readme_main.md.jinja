@@ -32,7 +32,7 @@ copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 Step 4: Setup the local environment
 
 ```shell
-uv run nox -s setup_eev
+uv run nox -s setup_dev
 ```
 
 Step 5: Perform inital commit and push
@@ -79,8 +79,8 @@ uvx {{ pypi_distribution_name}}
 The CLI provides extensive help:
 
 ```shell
-uvx {{ pypi_distribution_name}} --help              # all CLI commands
-uvx {{ pypi_distribution_name}} command --help      # all options for command
+uvx {{ pypi_distribution_name}} --help                # all CLI commands
+uvx {{ pypi_distribution_name}} hello-world --help    # help for specific command
 ```
 
 

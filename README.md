@@ -67,7 +67,7 @@ copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 Step 4: Setup the local environment
 
 ```shell
-uv run nox -s setup_eev
+uv run nox -s setup_dev
 ```
 
 Step 5: Perform inital commit and push
@@ -114,8 +114,8 @@ uvx oe-python-template
 The CLI provides extensive help:
 
 ```shell
-uvx oe-python-template --help              # all CLI commands
-uvx oe-python-template command --help      # all options for command
+uvx oe-python-template --help                # all CLI commands
+uvx oe-python-template hello-world --help    # help for specific command
 ```
 
 
