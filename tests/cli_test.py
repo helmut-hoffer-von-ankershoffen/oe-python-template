@@ -1,5 +1,8 @@
 """Tests to verify the CLI functionality of OE Python Template."""
 
+import json
+from unittest.mock import patch
+
 import pytest
 from typer.testing import CliRunner
 
