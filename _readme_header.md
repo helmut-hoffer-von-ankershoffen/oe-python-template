@@ -12,6 +12,7 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
 [![Coverage](https://codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template/graph/badge.svg?token=SX34YRP30E)](https://codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template)
 [![Ruff](https://img.shields.io/badge/style-Ruff-blue?color=D6FF65)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
+[![MyPy](https://img.shields.io/badge/mypy-checked-blue)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
 [![GitHub - Version](https://img.shields.io/github/v/release/helmut-hoffer-von-ankershoffen/oe-python-template?label=GitHub&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases)
 [![GitHub - Commits](https://img.shields.io/github/commit-activity/m/helmut-hoffer-von-ankershoffen/oe-python-template/main?label=commits&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commits/main/)
 [![PyPI - Version](https://img.shields.io/pypi/v/oe-python-template.svg?label=PyPI&logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/oe-python-template)
