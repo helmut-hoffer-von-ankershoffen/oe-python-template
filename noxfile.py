@@ -59,7 +59,13 @@ def docs(session: nox.Session) -> None:
     footer = Path("_readme_footer.md").read_text(encoding="utf-8")
     readme_content = f"{header}\n\n{main}\n\n{footer}"
     Path("README.md").write_text(readme_content, encoding="utf-8")
+    # Dump openapi schema to file
+    with Path("docs/api/openapi.yaml").open("w", encoding="utf-8") as f:
+        session.run("oe-python-template", "openapi", stdout=f, external=True)
+    with Path("docs/api/openapi.json").open("w", encoding="utf-8") as f:
+        session.run("oe-python-template", "openapi", "--output-format=json", stdout=f, external=True)
     # Build docs
+    session.run("make", "-C", "docs", "clean", external=True)
     session.run("make", "-C", "docs", "html", external=True)
 
 

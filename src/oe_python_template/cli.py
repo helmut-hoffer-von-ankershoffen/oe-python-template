@@ -3,9 +3,12 @@
 from typing import Annotated
 
 import typer
+import uvicorn
+import yaml
 from rich.console import Console
 
 from oe_python_template import Service, __version__
+from oe_python_template.api import app as api
 
 console = Console()
 
@@ -35,6 +38,36 @@ def echo(
 def hello_world() -> None:
     """Print hello world message and what's in the environment variable THE_VAR."""
     console.print(Service.get_hello_world())
+
+
+@cli.command()
+def serve(
+    host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
+    port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
+    reload: Annotated[bool, typer.Option(help="Enable auto-reload")] = True,
+) -> None:
+    """Start the API server."""
+    console.print(f"Starting API server at http://{host}:{port}")
+    uvicorn.run(
+        "oe_python_template.api:app",
+        host=host,
+        port=port,
+        reload=reload,
+    )
+
+
+@cli.command()
+def openapi(
+    output_format: Annotated[
+        str, typer.Option(help="Output format (yaml or json), defaults to yaml", case_sensitive=False)
+    ] = "yaml",
+) -> None:
+    """Dump the OpenAPI specification to stdout (YAML by default)."""
+    schema = api.openapi()
+    if output_format.lower() == "json":
+        console.print_json(data=schema)
+    else:
+        console.print(yaml.dump(schema, default_flow_style=False))
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:

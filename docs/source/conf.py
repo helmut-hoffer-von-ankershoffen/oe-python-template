@@ -20,12 +20,13 @@ extensions = [
     "sphinx_inline_tabs",
     "sphinx_mdinclude",
     "sphinxext.opengraph",
+    "swagger_plugin_for_sphinx",  # https://github.com/SAP/swagger-plugin-for-sphinx?tab=readme-ov-file
 ]
 
 project = "oe-python-template"
 author = "Helmut Hoffer von Ankershoffen"
 copyright = f" (c) 2025-{datetime.now(UTC).year}, {author}"  # noqa: A001
-version = "0.3.5"
+version = "0.0.1"
 release = version
 github_username = "helmut-hoffer-von-ankershoffen"
 github_repository = "oe-python-template"

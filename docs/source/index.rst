@@ -11,6 +11,7 @@
    :maxdepth: 2
 
    main
+   api
    reference
    release-notes
    contributing

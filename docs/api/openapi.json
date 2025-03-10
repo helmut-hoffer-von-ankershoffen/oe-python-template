@@ -1,0 +1,186 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OE Python Template - API",
+    "summary": "Copier template to scaffold Python projects compliant with best practices and modern tooling.",
+    "termsOfService": "https://oe-python-template.readthedocs.io/en/latest/",
+    "contact": {
+      "name": "Helmut Hoffer von Ankershoffen",
+      "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+      "email": "helmuthva@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/hello-world": {
+      "get": {
+        "tags": [
+          "Basics"
+        ],
+        "summary": "Hello World",
+        "description": "Return a hello world message.\n\nReturns:\n    HelloWorldResponse: A response containing the hello world message.",
+        "operationId": "hello_world_hello_world_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloWorldResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/echo": {
+      "post": {
+        "tags": [
+          "Basics"
+        ],
+        "summary": "Echo",
+        "description": "Echo back the provided text.\n\nArgs:\n    request (EchoRequest): The request containing the text to echo back.\n\nReturns:\n    EchoResponse: A response containing the echoed text.\n\nRaises:\n    422 Unprocessable Entity: If text is not provided or empty.",
+        "operationId": "echo_echo_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EchoRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EchoResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EchoRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Text",
+            "description": "The text to echo back",
+            "examples": [
+              "Hello, world!"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "EchoRequest",
+        "description": "Request model for echo endpoint."
+      },
+      "EchoResponse": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Message",
+            "description": "The message content",
+            "examples": [
+              "Hello, world!"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "EchoResponse",
+        "description": "Response model for echo endpoint."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HelloWorldResponse": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "The hello world message",
+            "examples": [
+              "Hello, world!"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "HelloWorldResponse",
+        "description": "Response model for hello-world endpoint."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
