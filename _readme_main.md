@@ -88,7 +88,7 @@ uvx oe-python-template hello-world --help    # help for specific command
 
 * Copier template to scaffold Python projects compliant with best practices and modern tooling.
 * Various Examples:
-  - [Simple Python script]https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
+  - [Simple Python script]({ github_repository_url_https }/blob/main/examples/script.py)
   - [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
   - [Jupyter](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb) and [Marimo](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py) notebook
 * [Complete reference documenation](https://oe-python-template.readthedocs.io/en/latest/reference.html) on Read the Docs
