@@ -1,5 +1,5 @@
 API
 ===
 
-.. swagger-plugin:: ../api/openapi.yaml
+.. swagger-plugin:: _static/openapi.yaml
     :full-page:

@@ -12,16 +12,18 @@ from pydantic import BaseModel, Field
 
 from {{ project_name_snake_case }} import Service
 
+HELLO_WORLD_EXAMPLE = "Hello, world!"
+
+
 app = FastAPI(
     version="1.0.0",
-    terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
-    title="{{ project_name }} - API",
-    summary="{{ project_description }}",
+    title="{{ project_name }}",
     contact={
         "name": "{{ org_name }}",
         "email": "{{ org_email }}",
         "url": "https://github.com/{{ github_repository_owner }}",
     },
+    terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
 )
 
 
@@ -31,7 +33,7 @@ class HelloWorldResponse(BaseModel):
     message: str = Field(
         ...,
         description="The hello world message",
-        examples=["Hello, world!"],
+        examples=[HELLO_WORLD_EXAMPLE],
     )
 
 
@@ -42,7 +44,7 @@ class EchoResponse(BaseModel):
         ...,
         min_length=1,
         description="The message content",
-        examples=["Hello, world!"],
+        examples=[HELLO_WORLD_EXAMPLE],
     )
 
 
@@ -53,7 +55,7 @@ class EchoRequest(BaseModel):
         ...,
         min_length=1,
         description="The text to echo back",
-        examples=["Hello, world!"],
+        examples=[HELLO_WORLD_EXAMPLE],
     )
 
 

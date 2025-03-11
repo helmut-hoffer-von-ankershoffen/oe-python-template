@@ -67,7 +67,7 @@ def openapi(
     if output_format.lower() == "json":
         console.print_json(data=schema)
     else:
-        console.print(yaml.dump(schema, default_flow_style=False))
+        console.print(yaml.dump(schema, default_flow_style=False), end="")
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:

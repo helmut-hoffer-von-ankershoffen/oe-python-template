@@ -76,11 +76,8 @@ info:
     email: helmuthva@gmail.com
     name: Helmut Hoffer von Ankershoffen
     url: https://github.com/helmut-hoffer-von-ankershoffen
-  summary: Copier template to scaffold Python projects compliant with best 
-practices
-    and modern tooling.
   termsOfService: https://oe-python-template.readthedocs.io/en/latest/
-  title: OE Python Template - API
+  title: OE Python Template
   version: 1.0.0
 openapi: 3.1.0
 paths:
@@ -132,4 +129,3 @@ HelloWorldResponse:\
       summary: Hello World
       tags:
       - Basics
-

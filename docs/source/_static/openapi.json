@@ -1,8 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OE Python Template - API",
-    "summary": "Copier template to scaffold Python projects compliant with best practices and modern tooling.",
+    "title": "OE Python Template",
     "termsOfService": "https://oe-python-template.readthedocs.io/en/latest/",
     "contact": {
       "name": "Helmut Hoffer von Ankershoffen",

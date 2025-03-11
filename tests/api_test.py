@@ -5,6 +5,8 @@ from fastapi.testclient import TestClient
 
 from oe_python_template.api import app
 
+ECHO_PATH = "/echo"
+
 
 @pytest.fixture
 def client() -> TestClient:
@@ -29,18 +31,18 @@ def test_hello_world_endpoint(client: TestClient) -> None:
 def test_echo_endpoint_valid_input(client: TestClient) -> None:
     """Test that the echo endpoint returns the input text."""
     test_text = "Test message"
-    response = client.post("/echo", json={"text": test_text})
+    response = client.post(ECHO_PATH, json={"text": test_text})
     assert response.status_code == 200
     assert response.json() == {"message": test_text}
 
 
 def test_echo_endpoint_empty_text(client: TestClient) -> None:
     """Test that the echo endpoint validates empty text."""
-    response = client.post("/echo", json={"text": ""})
+    response = client.post(ECHO_PATH, json={"text": ""})
     assert response.status_code == 422  # Validation error
 
 
 def test_echo_endpoint_missing_text(client: TestClient) -> None:
     """Test that the echo endpoint validates missing text field."""
-    response = client.post("/echo", json={})
+    response = client.post(ECHO_PATH, json={})
     assert response.status_code == 422  # Validation error
