@@ -1,5 +1,7 @@
 """Tests to verify the CLI functionality of OE Python Template."""
 
+from unittest.mock import patch
+
 import pytest
 from typer.testing import CliRunner
 
@@ -37,3 +39,37 @@ def test_cli_hello_world(runner: CliRunner) -> None:
     result = runner.invoke(cli, ["hello-world"])
     assert result.exit_code == 0
     assert "Hello, world!" in result.output
+
+
+@patch("uvicorn.run")
+def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
+    """Check serve command starts the server."""
+    result = runner.invoke(cli, ["serve", "--host", "127.0.0.1", "--port", "8000", "--no-reload"])
+    assert result.exit_code == 0
+    assert "Starting API server at http://127.0.0.1:8000" in result.output
+    mock_uvicorn_run.assert_called_once_with(
+        "oe_python_template.api:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=False,
+    )
+
+
+def test_cli_openapi_yaml(runner: CliRunner) -> None:
+    """Check openapi command outputs YAML schema."""
+    result = runner.invoke(cli, ["openapi"])
+    assert result.exit_code == 0
+    # Check for common OpenAPI YAML elements
+    assert "openapi:" in result.output
+    assert "info:" in result.output
+    assert "paths:" in result.output
+
+
+def test_cli_openapi_json(runner: CliRunner) -> None:
+    """Check openapi command outputs JSON schema."""
+    result = runner.invoke(cli, ["openapi", "--output-format", "json"])
+    assert result.exit_code == 0
+    # Check for common OpenAPI JSON elements
+    assert '"openapi":' in result.output
+    assert '"info":' in result.output
+    assert '"paths":' in result.output
