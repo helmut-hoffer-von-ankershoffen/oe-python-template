@@ -2075,7 +2075,7 @@ wheels = [
 
 [[package]]
 name = "oe-python-template"
-version = "0.0.1"
+version = "0.0.2"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["all", "standard"] },
@@ -2132,7 +2132,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fastapi", extras = ["all", "standard"], specifier = ">=0.115.11" },
+    { name = "fastapi", extras = ["standard", "all"], specifier = ">=0.115.11" },
     { name = "jinja2", marker = "extra == 'examples'", specifier = ">=3.1.6" },
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
     { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.11.17" },
