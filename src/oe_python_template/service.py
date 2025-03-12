@@ -13,6 +13,7 @@ class Service:
 
     def __init__(self) -> None:
         """Initialize service."""
+        self.is_healthy = True
 
     @staticmethod
     def get_hello_world() -> str:
@@ -23,3 +24,12 @@ class Service:
             str: Hello world message.
         """
         return f"Hello, world! The value of THE_VAR is {THE_VAR}"
+
+    def healthy(self) -> bool:
+        """
+        Check if the service is healthy.
+
+        Returns:
+            bool: True if the service is healthy, False otherwise.
+        """
+        return self.is_healthy

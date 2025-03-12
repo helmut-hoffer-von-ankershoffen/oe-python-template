@@ -1,18 +1,37 @@
-"""FastAPI application with REST API endpoints.
+"""Webservice API of {{ project_name }}.
 
-This module provides a FastAPI application with several endpoints:
+This module provides a webservice API with several endpoints:
+- A health/healthz endpoint that returns the health status of the service
 - A hello-world endpoint that returns a greeting message
 - An echo endpoint that echoes back the provided text
 
 The endpoints use Pydantic models for request and response validation.
 """
 
-from fastapi import FastAPI
+from collections.abc import Generator
+from enum import StrEnum
+from typing import Annotated
+
+from fastapi import Depends, FastAPI, Response, status
 from pydantic import BaseModel, Field
 
 from {{ project_name_snake_case }} import Service
 
 HELLO_WORLD_EXAMPLE = "Hello, world!"
+
+
+def get_service() -> Generator[Service, None, None]:
+    """Get the service instance.
+
+    Yields:
+        Service: The service instance.
+    """
+    service = Service()
+    try:
+        yield service
+    finally:
+        # Cleanup code if needed
+        pass
 
 
 app = FastAPI(
@@ -27,6 +46,68 @@ app = FastAPI(
 )
 
 
+class _HealthStatus(StrEnum):
+    """Health status enumeration.
+
+    Args:
+        StrEnum (_type_): _description_
+    """
+
+    UP = "UP"
+    DOWN = "DOWN"
+
+
+class Health(BaseModel):
+    """Health status model.
+
+    Args:
+        BaseModel (_type_): _description_
+    """
+
+    status: _HealthStatus
+    reason: str | None = None
+
+
+class HealthResponse(BaseModel):
+    """Response model for health endpoint."""
+
+    health: str = Field(
+        ...,
+        description="The hello world message",
+        examples=[HELLO_WORLD_EXAMPLE],
+    )
+
+
+@app.get("/healthz", tags=["Observability"])
+@app.get("/health", tags=["Observability"])
+async def health(service: Annotated[Service, Depends(get_service)], response: Response) -> Health:
+    """Check the health of the service.
+
+    This endpoint returns the health status of the service.
+    The health status can be either UP or DOWN.
+    If the service is healthy, the status will be UP.
+    If the service is unhealthy, the status will be DOWN and a reason will be provided.
+    The response will have a 200 OK status code if the service is healthy,
+    and a 500 Internal Server Error status code if the service is unhealthy.
+
+    Args:
+        service (Annotated[Service, Depends): _description_
+        response (Response): _description_
+
+    Returns:
+        Health: The health status of the service.
+    """
+    if service.healthy():
+        health_result = Health(status=_HealthStatus.UP)
+    else:
+        health_result = Health(status=_HealthStatus.DOWN, reason="Service is unhealthy")
+
+    if health_result.status == _HealthStatus.DOWN:
+        response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+
+    return health_result
+
+
 class HelloWorldResponse(BaseModel):
     """Response model for hello-world endpoint."""
 
@@ -35,6 +116,17 @@ class HelloWorldResponse(BaseModel):
         description="The hello world message",
         examples=[HELLO_WORLD_EXAMPLE],
     )
+
+
+@app.get("/hello-world", tags=["Basics"])
+async def hello_world() -> HelloWorldResponse:
+    """
+    Return a hello world message.
+
+    Returns:
+        HelloWorldResponse: A response containing the hello world message.
+    """
+    return HelloWorldResponse(message=Service.get_hello_world())
 
 
 class EchoResponse(BaseModel):
@@ -57,17 +149,6 @@ class EchoRequest(BaseModel):
         description="The text to echo back",
         examples=[HELLO_WORLD_EXAMPLE],
     )
-
-
-@app.get("/hello-world", tags=["Basics"])
-async def hello_world() -> HelloWorldResponse:
-    """
-    Return a hello world message.
-
-    Returns:
-        HelloWorldResponse: A response containing the hello world message.
-    """
-    return HelloWorldResponse(message=Service.get_hello_world())
 
 
 @app.post("/echo", tags=["Basics"])

@@ -1,5 +1,6 @@
-"""Command line interface of OE Python Template."""
+"""CLI (Command Line Interface) of OE Python Template."""
 
+from enum import StrEnum
 from typing import Annotated
 
 import typer
@@ -44,7 +45,7 @@ def hello_world() -> None:
 def serve(
     host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
     port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
-    reload: Annotated[bool, typer.Option(help="Enable auto-reload")] = True,
+    watch: Annotated[bool, typer.Option(help="Enable auto-reload")] = True,
 ) -> None:
     """Start the API server."""
     console.print(f"Starting API server at http://{host}:{port}")
@@ -52,22 +53,40 @@ def serve(
         "oe_python_template.api:app",
         host=host,
         port=port,
-        reload=reload,
+        reload=watch,
     )
+
+
+class OutputFormat(StrEnum):
+    """
+    Enum representing the supported output formats.
+
+    This enum defines the possible formats for output data:
+    - YAML: Output data in YAML format
+    - JSON: Output data in JSON format
+
+    Usage:
+        format = OutputFormat.YAML
+        print(f"Using {format} format")
+    """
+
+    YAML = "yaml"
+    JSON = "json"
 
 
 @cli.command()
 def openapi(
     output_format: Annotated[
-        str, typer.Option(help="Output format (yaml or json), defaults to yaml", case_sensitive=False)
-    ] = "yaml",
+        OutputFormat, typer.Option(help="Output format", case_sensitive=False)
+    ] = OutputFormat.YAML,
 ) -> None:
     """Dump the OpenAPI specification to stdout (YAML by default)."""
     schema = api.openapi()
-    if output_format.lower() == "json":
-        console.print_json(data=schema)
-    else:
-        console.print(yaml.dump(schema, default_flow_style=False), end="")
+    match output_format:
+        case OutputFormat.JSON:
+            console.print_json(data=schema)
+        case OutputFormat.YAML:
+            console.print(yaml.dump(schema, default_flow_style=False), end="")
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:

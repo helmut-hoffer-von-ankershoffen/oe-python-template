@@ -223,8 +223,12 @@ Execute commands:
 
 ```shell
 uvx oe-python-template hello-world
-uvx oe-python-template hello-world --json
-uvx oe-python-template echo "Lorem Ipsum"
+uvx oe-python-template echo --help
+uvx oe-python-template echo "Lorem"
+uvx oe-python-template echo "Lorem" --json
+uvx oe-python-template openapi
+uvx oe-python-template openapi --output-format=json
+uvx oe-python-template serve
 ```
 
 ### Environment
@@ -245,8 +249,12 @@ You can as well run the CLI within Docker.
 ```shell
 docker run helmuthva/oe-python-template --help
 docker run helmuthva/oe-python-template hello-world
-docker run helmuthva/oe-python-template hello-world --json
+docker run helmuthva/oe-python-template echo --help
 docker run helmuthva/oe-python-template echo "Lorem"
+docker run helmuthva/oe-python-template echo "Lorem" --json
+docker run helmuthva/oe-python-template openapi
+docker run helmuthva/oe-python-template openapi --output-format=json
+docker run helmuthva/oe-python-template serve
 ```
 
 Execute command:
@@ -260,8 +268,15 @@ Or use docker compose
 The .env is passed through from the host to the Docker container.
 
 ```shell
-docker compose up
 docker compose run oe-python-template --help
+docker compose run oe-python-template hello-world
+docker compose run oe-python-template echo --help
+docker compose run oe-python-template echo "Lorem"
+docker compose run oe-python-template echo "Lorem" --json
+docker compose run oe-python-template openapi
+docker compose run oe-python-template openapi --output-format=json
+docker compose up
+curl http://127.0.0.1 8000
 ```
 
 ## Extra: Lorem Ipsum

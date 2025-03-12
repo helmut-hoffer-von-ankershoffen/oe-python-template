@@ -35,5 +35,8 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 ENV {{ project_name_snake_case_upper }}_RUNNING_IN_CONTAINER=1
 
+# API will run on port 8000 by default
+EXPOSE 8000/tcp
+
 # But feel free to add arguments and options as needed when doing a docker run
 ENTRYPOINT ["uv", "run", "--no-dev", "{{ pypi_distribution_name }}"]

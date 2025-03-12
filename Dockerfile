@@ -35,5 +35,8 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 ENV OE_PYTHON_TEMPLATE_RUNNING_IN_CONTAINER=1
 
+# API will run on port 8000 by default
+EXPOSE 8000/tcp
+
 # But feel free to add arguments and options as needed when doing a docker run
 ENTRYPOINT ["uv", "run", "--no-dev", "oe-python-template"]
