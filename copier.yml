@@ -1,7 +1,7 @@
-
 _subdirectory: template
 _skip_if_exists:
-    - logo.png
+  - logo.png
+  - CHANGELOG.md
 
 _tasks:
   - "touch README.md"
@@ -45,12 +45,12 @@ project_description:
   help: What does project {{ project_name }} do in one sentence?
   placeholder: "Python project complying with operational excellence practices."
   validator: >-
-      {% if not project_description.strip() %}
-      Project description must not be empty.
-      {% endif %}
-      {% if not project_description.strip().endswith('.') %}
-      Project description must end with a dot.
-      {% endif %}
+    {% if not project_description.strip() %}
+    Project description must not be empty.
+    {% endif %}
+    {% if not project_description.strip().endswith('.') %}
+    Project description must end with a dot.
+    {% endif %}
 
 author_name:
   type: str

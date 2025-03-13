@@ -84,8 +84,8 @@ build-backend = "hatchling.build"
 
 [project.optional-dependencies]
 examples = [
-    "streamlit>=1.43.1",
-    "marimo>=0.11.17",
+    "streamlit>=1.43.2",
+    "marimo>=0.11.19",
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
@@ -134,10 +134,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-extend-exclude = [
-    ".fixme",
-    "notebook.py"
-]
+extend-exclude = [".fixme", "notebook.py"]
 
 
 [tool.ruff.lint]
@@ -191,7 +188,7 @@ ignore = [
 [tool.ruff.lint.extend-per-file-ignores]
 "examples/notebook.py" = [
     # we are more relaxed in notebooks, while sill applying hundreds of rules
-    "B018",     # notebooks surface variable without print
+    "B018", # notebooks surface variable without print
 ]
 
 [tool.ruff.format]
@@ -200,7 +197,7 @@ docstring-code-format = true
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.mypy]  # https://mypy.readthedocs.io/en/latest/config_file.html
+[tool.mypy] # https://mypy.readthedocs.io/en/latest/config_file.html
 junit_xml = "mypi_junit.xml"
 plugins = "pydantic.mypy"
 strict = true
@@ -213,7 +210,7 @@ show_error_codes = true
 show_error_context = true
 warn_unreachable = true
 
-[tool.pydantic-mypy]  # https://docs.pydantic.dev/latest/integrations/mypy/#configuring-the-plugin
+[tool.pydantic-mypy] # https://docs.pydantic.dev/latest/integrations/mypy/#configuring-the-plugin
 init_forbid_extra = true
 init_typed = true
 warn_required_dynamic_aliases = true
@@ -245,7 +242,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.4.5"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
