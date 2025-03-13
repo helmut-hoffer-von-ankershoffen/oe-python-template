@@ -1,5 +1,6 @@
 """CLI (Command Line Interface) of OE Python Template."""
 
+import os
 from enum import StrEnum
 from typing import Annotated
 
@@ -49,6 +50,8 @@ def serve(
 ) -> None:
     """Start the API server."""
     console.print(f"Starting API server at http://{host}:{port}")
+    os.environ["UVICORN_HOST"] = host
+    os.environ["UVICORN_PORT"] = str(port)
     uvicorn.run(
         "oe_python_template.api:api",
         host=host,

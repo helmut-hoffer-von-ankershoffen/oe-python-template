@@ -8,6 +8,7 @@ This module provides a webservice API with several endpoints:
 The endpoints use Pydantic models for request and response validation.
 """
 
+import os
 from collections.abc import Generator
 from enum import StrEnum
 from typing import Annotated
@@ -18,6 +19,8 @@ from pydantic import BaseModel, Field
 from oe_python_template import Service
 
 HELLO_WORLD_EXAMPLE = "Hello, world!"
+UVICORN_HOST = os.environ.get("UVICORN_HOST", "127.0.0.1")
+UVICORN_PORT = os.environ.get("UVICORN_PORT", "8000")
 
 
 def get_service() -> Generator[Service, None, None]:
@@ -47,12 +50,18 @@ api = FastAPI(
         {
             "name": "v1",
             "description": "API version 1, check link on the right",
-            "externalDocs": {"description": "sub-docs", "url": "/api/v1/docs"},
+            "externalDocs": {
+                "description": "sub-docs",
+                "url": f"http://{UVICORN_HOST}:{UVICORN_PORT}/api/v1/docs",
+            },
         },
         {
             "name": "v2",
             "description": "API version 2, check link on the right",
-            "externalDocs": {"description": "sub-docs", "url": "/api/v2/docs"},
+            "externalDocs": {
+                "description": "sub-docs",
+                "url": f"http://{UVICORN_HOST}:{UVICORN_PORT}/api/v2/docs",
+            },
         },
     ],
 )

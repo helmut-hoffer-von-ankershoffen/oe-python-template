@@ -76,16 +76,14 @@ Executing the command line interface (CLI) in an isolated Python environment is 
 ```shell
 uvx {{ pypi_distribution_name}} hello-world     # prints "Hello, world! [..]"
 uvx {{ pypi_distribution_name}} serve           # serves webservice API
+uvx {{ pypi_distribution_name}} serve --port=4711 # serves webservice API on port 4711
 ```
 
-When serving the API, go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the result.
+Notes:
+* The API is versioned, mounted at ```/api/v1``` resp. ```/api/v2```
+* While serving the webservice API go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the respons of the ```hello-world``` operation.
+* Interactive documentation is provided at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
 
-The API is versioned and provides interactive documentation at [http://127.0.0.1:8000/api/v1/docs](http://127.0.0.1:8000/api/v1/docs) resp. [http://127.0.0.1:8000/api/v2/docs](http://127.0.0.1:8000/api/v2/docs)
-
-
-```shell
-
-When running the webservice API, goto http://127.0.0.1:8000/api/v1/docs
 
 The CLI provides extensive help:
 

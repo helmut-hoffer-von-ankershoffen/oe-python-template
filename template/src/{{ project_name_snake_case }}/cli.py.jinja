@@ -3,6 +3,7 @@
 from enum import StrEnum
 from typing import Annotated
 
+import os
 import typer
 import uvicorn
 import yaml
@@ -49,6 +50,8 @@ def serve(
 ) -> None:
     """Start the API server."""
     console.print(f"Starting API server at http://{host}:{port}")
+    os.environ["UVICORN_HOST"] = host
+    os.environ["UVICORN_PORT"] = str(port)
     uvicorn.run(
         "{{ project_name_snake_case }}.api:api",
         host=host,
