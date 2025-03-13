@@ -90,22 +90,14 @@ api_v2 = FastAPI(
 
 
 class _HealthStatus(StrEnum):
-    """Health status enumeration.
-
-    Args:
-        StrEnum (_type_): _description_
-    """
+    """Health status enumeration."""
 
     UP = "UP"
     DOWN = "DOWN"
 
 
 class Health(BaseModel):
-    """Health status model.
-
-    Args:
-        BaseModel (_type_): _description_
-    """
+    """Health status model."""
 
     status: _HealthStatus
     reason: str | None = None
@@ -134,10 +126,6 @@ async def health(service: Annotated[Service, Depends(get_service)], response: Re
     If the service is unhealthy, the status will be DOWN and a reason will be provided.
     The response will have a 200 OK status code if the service is healthy,
     and a 500 Internal Server Error status code if the service is unhealthy.
-
-    Args:
-        service (Annotated[Service, Depends): _description_
-        response (Response): _description_
 
     Returns:
         Health: The health status of the service.
@@ -231,7 +219,7 @@ async def echo_v2(request: Utterance) -> EchoResponse:
     Echo back the provided utterance.
 
     Args:
-        request (EchoRequestV2): The request containing the utterance to echo back.
+        request (Utterance): The request containing the utterance to echo back.
 
     Returns:
         EchoResponse: A response containing the echoed utterance.
