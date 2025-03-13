@@ -43,6 +43,7 @@ def test_hello_world_endpoint(client: TestClient) -> None:
     assert response.status_code == 200
     assert response.json()["message"].startswith("Hello, world!")
 
+
 def test_echo_endpoint_valid_input(client: TestClient) -> None:
     """Test that the echo endpoint returns the input text."""
     test_text = "Test message"
@@ -95,6 +96,7 @@ def test_health_endpoint(client: TestClient) -> None:
     assert response.status_code == 200
     assert response.json()["status"] == "UP"
     assert response.json()["reason"] is None
+
 
 @patch("{{ project_name_snake_case }}.api.Service")
 def test_health_endpoint_down(mock_service, client: TestClient) -> None:

@@ -48,22 +48,22 @@ api = FastAPI(
     terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
     openapi_tags=[
         {
-            'name': 'v1',
+            "name": "v1",
             "description": "API version 1, check link on the right",
-            'externalDocs': {
-                'description': 'sub-docs',
+            "externalDocs": {
+                "description": "sub-docs",
                 "url": f"http://{UVICORN_HOST}:{UVICORN_PORT}/api/v1/docs",
-            }
+            },
         },
         {
-            'name': 'v2',
+            "name": "v2",
             "description": "API version 2, check link on the right",
-            'externalDocs': {
-                'description': 'sub-docs',
+            "externalDocs": {
+                "description": "sub-docs",
                 "url": f"http://{UVICORN_HOST}:{UVICORN_PORT}/api/v2/docs",
-            }
+            },
         },
-    ]
+    ],
 )
 
 api_v1 = FastAPI(
@@ -87,6 +87,7 @@ api_v2 = FastAPI(
     },
     terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
 )
+
 
 class _HealthStatus(StrEnum):
     """Health status enumeration.

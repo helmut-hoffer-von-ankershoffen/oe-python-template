@@ -30,4 +30,5 @@
 
 > [!TIP]
 > 📚 [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) - 📖 [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
+
 ---
