@@ -10,7 +10,7 @@ def _():
 
     service = Service()
     message = service.get_hello_world()
-    message
+    message # type: ignore
     return Service, message, service
 
 

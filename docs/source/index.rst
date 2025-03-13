@@ -11,7 +11,8 @@
    :maxdepth: 2
 
    main
-   api
+   api_v1
+   api_v2
    reference
    release-notes
    contributing

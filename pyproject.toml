@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.3.9"
+version = "0.0.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [
@@ -126,6 +126,7 @@ dev = [
     "swagger-plugin-for-sphinx>=5.1.0",
     "tomli>=2.1.0",
     "types-pyyaml>=6.0.12.20241230",
+    "watchdog>=6.0.0",
 ]
 
 [tool.ruff]
@@ -244,7 +245,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.3.9"
+current_version = "0.0.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"

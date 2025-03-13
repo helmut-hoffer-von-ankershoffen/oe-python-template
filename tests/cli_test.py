@@ -48,7 +48,7 @@ def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
     assert result.exit_code == 0
     assert "Starting API server at http://127.0.0.1:8000" in result.output
     mock_uvicorn_run.assert_called_once_with(
-        "oe_python_template.api:app",
+        "oe_python_template.api:api",
         host="127.0.0.1",
         port=8000,
         reload=False,
@@ -63,6 +63,17 @@ def test_cli_openapi_yaml(runner: CliRunner) -> None:
     assert "openapi:" in result.output
     assert "info:" in result.output
     assert "paths:" in result.output
+    # Check for specific v1 elements
+    assert "EchoRequest:" in result.output
+
+    result = runner.invoke(cli, ["openapi", "--api-version", "v2"])
+    assert result.exit_code == 0
+    # Check for common OpenAPI YAML elements
+    assert "openapi:" in result.output
+    assert "info:" in result.output
+    assert "paths:" in result.output
+    # Check for specific v2 elements
+    assert "Utterance:" in result.output
 
 
 def test_cli_openapi_json(runner: CliRunner) -> None:

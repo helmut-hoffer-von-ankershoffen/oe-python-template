@@ -1,8 +1,9 @@
 """Tests to verify the CLI functionality of {{ project_name }}."""
 
+from unittest.mock import patch
+
 import pytest
 from typer.testing import CliRunner
-from unittest.mock import patch
 
 from {{ project_name_snake_case }} import (
     __version__,
@@ -28,7 +29,7 @@ def test_cli_built_with_love(runner) -> None:
 
 def test_cli_echo(runner: CliRunner) -> None:
     """Check hello world printed."""
-    result = runner.invoke(cli, ["echo","4711"])
+    result = runner.invoke(cli, ["echo", "4711"])
     assert result.exit_code == 0
     assert "4711" in result.output
 
@@ -47,7 +48,7 @@ def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
     assert result.exit_code == 0
     assert "Starting API server at http://127.0.0.1:8000" in result.output
     mock_uvicorn_run.assert_called_once_with(
-        "{{ project_name_snake_case }}.api:app",
+        "oe_python_template.api:api",
         host="127.0.0.1",
         port=8000,
         reload=False,
@@ -62,6 +63,17 @@ def test_cli_openapi_yaml(runner: CliRunner) -> None:
     assert "openapi:" in result.output
     assert "info:" in result.output
     assert "paths:" in result.output
+    # Check for specific v1 elements
+    assert "EchoRequest:" in result.output
+
+    result = runner.invoke(cli, ["openapi", "--api-version", "v2"])
+    assert result.exit_code == 0
+    # Check for common OpenAPI YAML elements
+    assert "openapi:" in result.output
+    assert "info:" in result.output
+    assert "paths:" in result.output
+    # Check for specific v2 elements
+    assert "Utterance:" in result.output
 
 
 def test_cli_openapi_json(runner: CliRunner) -> None:

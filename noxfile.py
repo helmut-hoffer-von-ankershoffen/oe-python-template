@@ -60,10 +60,18 @@ def docs(session: nox.Session) -> None:
     readme_content = f"{header}\n\n{main}\n\n{footer}"
     Path("README.md").write_text(readme_content, encoding="utf-8")
     # Dump openapi schema to file
-    with Path("docs/source/_static/openapi.yaml").open("w", encoding="utf-8") as f:
-        session.run("oe-python-template", "openapi", stdout=f, external=True)
-    with Path("docs/source/_static/openapi.json").open("w", encoding="utf-8") as f:
-        session.run("oe-python-template", "openapi", "--output-format=json", stdout=f, external=True)
+    with Path("docs/source/_static/openapi_v1.yaml").open("w", encoding="utf-8") as f:
+        session.run("oe-python-template", "openapi", "--api-version=v1", stdout=f, external=True)
+    with Path("docs/source/_static/openapi_v1.json").open("w", encoding="utf-8") as f:
+        session.run(
+            "oe-python-template", "openapi", "--api-version=v1", "--output-format=json", stdout=f, external=True
+        )
+    with Path("docs/source/_static/openapi_v2.yaml").open("w", encoding="utf-8") as f:
+        session.run("oe-python-template", "openapi", "--api-version=v2", stdout=f, external=True)
+    with Path("docs/source/_static/openapi_v2.json").open("w", encoding="utf-8") as f:
+        session.run(
+            "oe-python-template", "openapi", "--api-version=v2", "--output-format=json", stdout=f, external=True
+        )
     # Build docs
     session.run("make", "-C", "docs", "clean", external=True)
     session.run("make", "-C", "docs", "html", external=True)

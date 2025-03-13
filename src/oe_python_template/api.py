@@ -34,8 +34,42 @@ def get_service() -> Generator[Service, None, None]:
         pass
 
 
-app = FastAPI(
+api = FastAPI(
+    root_path="/api",
+    title="OE Python Template",
+    contact={
+        "name": "Helmut Hoffer von Ankershoffen",
+        "email": "helmuthva@gmail.com",
+        "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+    },
+    terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
+    openapi_tags=[
+        {
+            "name": "v1",
+            "description": "API version 1, check link on the right",
+            "externalDocs": {"description": "sub-docs", "url": "/api/v1/docs"},
+        },
+        {
+            "name": "v2",
+            "description": "API version 2, check link on the right",
+            "externalDocs": {"description": "sub-docs", "url": "/api/v2/docs"},
+        },
+    ],
+)
+
+api_v1 = FastAPI(
     version="1.0.0",
+    title="OE Python Template",
+    contact={
+        "name": "Helmut Hoffer von Ankershoffen",
+        "email": "helmuthva@gmail.com",
+        "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+    },
+    terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
+)
+
+api_v2 = FastAPI(
+    version="2.0.0",
     title="OE Python Template",
     contact={
         "name": "Helmut Hoffer von Ankershoffen",
@@ -78,8 +112,10 @@ class HealthResponse(BaseModel):
     )
 
 
-@app.get("/healthz", tags=["Observability"])
-@app.get("/health", tags=["Observability"])
+@api_v1.get("/healthz", tags=["Observability"])
+@api_v1.get("/health", tags=["Observability"])
+@api_v2.get("/healthz", tags=["Observability"])
+@api_v2.get("/health", tags=["Observability"])
 async def health(service: Annotated[Service, Depends(get_service)], response: Response) -> Health:
     """Check the health of the service.
 
@@ -118,7 +154,8 @@ class HelloWorldResponse(BaseModel):
     )
 
 
-@app.get("/hello-world", tags=["Basics"])
+@api_v1.get("/hello-world", tags=["Basics"])
+@api_v2.get("/hello-world", tags=["Basics"])
 async def hello_world() -> HelloWorldResponse:
     """
     Return a hello world message.
@@ -151,7 +188,7 @@ class EchoRequest(BaseModel):
     )
 
 
-@app.post("/echo", tags=["Basics"])
+@api_v1.post("/echo", tags=["Basics"])
 async def echo(request: EchoRequest) -> EchoResponse:
     """
     Echo back the provided text.
@@ -166,3 +203,35 @@ async def echo(request: EchoRequest) -> EchoResponse:
         422 Unprocessable Entity: If text is not provided or empty.
     """
     return EchoResponse(message=request.text)
+
+
+class Utterance(BaseModel):
+    """Request model for echo endpoint."""
+
+    utterance: str = Field(
+        ...,
+        min_length=1,
+        description="The utterance to echo back",
+        examples=[HELLO_WORLD_EXAMPLE],
+    )
+
+
+@api_v2.post("/echo", tags=["Basics"])
+async def echo_v2(request: Utterance) -> EchoResponse:
+    """
+    Echo back the provided utterance.
+
+    Args:
+        request (EchoRequestV2): The request containing the utterance to echo back.
+
+    Returns:
+        EchoResponse: A response containing the echoed utterance.
+
+    Raises:
+        422 Unprocessable Entity: If utterance is not provided or empty.
+    """
+    return EchoResponse(message=request.utterance)
+
+
+api.mount("/v1", api_v1)
+api.mount("/v2", api_v2)

@@ -40,9 +40,9 @@ Use Cases:
 2) Consistent update of already scaffolded projects to benefit from new and improved features.
 3) Dummy CLI application and service demonstrating example usage of the generated directory structure and build pipeline
 
-## Scaffolding Instructions
+## Scaffolding
 
-Step 1: Install uv package manager and copier
+**Step 1**: Install uv package manager and copier
 ```shell
 if [[ "$OSTYPE" == "darwin"* ]]; then                 # Install dependencies for macOS X
   if ! command -v brew &> /dev/null; then             ## Install Homebrew if not present
@@ -58,31 +58,32 @@ fi
 uv tool install copier                                # Install copier as global tool
 ```
 
-Step 2: Now create an empty repo on GitHub and clone it to your local machine in a directory of your choice. Change to that directory.
+**Step 2**: Now create an empty repository on GitHubm, clone to your local machine, and change into it's directory.
 
-Step 3: Scaffold the project
+**Step 3**: Scaffold the project
 ```shell
 copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
-Step 4: Setup the local environment
+**Step 4**: Setup the local environment
 
 ```shell
 uv run nox -s setup_dev
 ```
 
-Step 5: Perform inital commit and push
+**Step 5**: Perform initial commit and push
 ```shell
 git add .
 git commit -m "feat: Initial commit"
+git push
 ```
 
 Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
 as this external service is not yet configured for our new repository.
 
-Step 6: Follow the instructions in SERVICE_CONNECTIONS.md to setup the connections to external services
-such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
+**Step 6**: Follow the [SERVICE_INSTRUCTIONS.md](instructions) to wire up
+external services such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
 
-Step 7: Release the first versions
+**Step 7**: Release the first versions
 ```shell
 ./bump
 ```
@@ -105,24 +106,38 @@ If you don't have uv installed follow [these instructions](https://docs.astral.s
 pip install oe-python-template        # add dependency to your project
 ```
 
-Executing the command line interface (CLI) is just as easy:
+Executing the command line interface (CLI) in an isolated Python environment is just as easy:
 
 ```shell
-uvx oe-python-template
+uvx oe-python-template hello-world     # prints "Hello, world! [..]"
+uvx oe-python-template serve           # serves webservice API
 ```
+
+When serving the API, go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the result.
+
+The API is versioned and provides interactive documentation at [http://127.0.0.1:8000/api/v1/docs](http://127.0.0.1:8000/api/v1/docs) resp. [http://127.0.0.1:8000/api/v2/docs](http://127.0.0.1:8000/api/v2/docs)
+
+
+```shell
+
+When running the webservice API, goto http://127.0.0.1:8000/api/v1/docs
 
 The CLI provides extensive help:
 
 ```shell
 uvx oe-python-template --help                # all CLI commands
 uvx oe-python-template hello-world --help    # help for specific command
+uvx oe-python-template echo --help
+uvx oe-python-template openapi --help
+uvx oe-python-template serve --help
 ```
 
 
-## Highlights
+## Operational Excellence
 
-* Copier template to scaffold Python projects compliant with best practices and modern tooling.
-* Various Examples:
+This project is designed with operational excellence in mind, using modern Python tooling and practices. It includes:
+
+* Various examples demonstrating usage:
   - [Simple Python script](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
   - [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
   - [Jupyter](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb) and [Marimo](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py) notebook
@@ -137,6 +152,9 @@ uvx oe-python-template hello-world --help    # help for specific command
 
 
 ## Usage Examples
+
+The following examples run from source. Clone this repository first using
+`git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git`.
 
 ### Minimal Python Script:
 
@@ -179,7 +197,7 @@ uv run streamlit run examples/streamlit.py          # Serve on localhost:8501, o
 ... or run within VSCode
 
 ```shell
-uv sync --all-extras                                # Install ipykernel dependency part of the examples extra, see pyproject.toml
+uv sync --all-extras                                # Install dependencies required for examples such as Juypyter kernel, see pyproject.toml
 ```
 Install the [Jupyter extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
@@ -276,7 +294,10 @@ docker compose run oe-python-template echo "Lorem" --json
 docker compose run oe-python-template openapi
 docker compose run oe-python-template openapi --output-format=json
 docker compose up
-curl http://127.0.0.1 8000
+curl http://127.0.0.1:8000/api/v1/hello-world
+curl http://127.0.0.1:8000/api/v1/docs
+curl http://127.0.0.1:8000/api/v2/hello-world
+curl http://127.0.0.1:8000/api/v2/docs
 ```
 
 ## Extra: Lorem Ipsum
