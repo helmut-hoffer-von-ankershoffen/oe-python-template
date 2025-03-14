@@ -61,6 +61,14 @@
 4. Select the oe-python-template repo, for "Main file path" select `examples/streamlit.py`, for App URL enter `oe-python-template`.streamlit.app. Click "Deploy"
 5. Goto https://oe-python-template.streamlit.app
 
+## GitHub repository settings
+
+1. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/security_analysis
+2. Enable Private vulnerability reporting
+3. Enable Dependabot alerts
+4. Enable Dependabot security updates
+5. CodeQL analyis will be automatically set up via a GitHub action
+
 ## Polishing GitHub repository
 
 1. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template

@@ -61,6 +61,14 @@
 4. Select the {{ github_repository_name }} repo, for "Main file path" select `examples/streamlit.py`, for App URL enter `{{ streamlit_project_key }}`.streamlit.app. Click "Deploy"
 5. Goto https://{{ streamlit_project_key }}.streamlit.app
 
+## GitHub repository settings
+
+1. Goto {{ github_repository_url_https }}/settings/security_analysis
+2. Enable Private vulnerability reporting
+3. Enable Dependabot alerts
+4. Enable Dependabot security updates
+5. CodeQL analyis will be automatically set up via a GitHub action
+
 ## Polishing GitHub repository
 
 1. Goto {{ github_repository_url_https }}

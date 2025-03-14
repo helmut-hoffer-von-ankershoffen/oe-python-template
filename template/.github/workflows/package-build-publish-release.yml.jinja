@@ -46,11 +46,14 @@ jobs:
       - name: Publish package to PyPI
         run: uv publish -t {% raw %}${{ secrets.UV_PUBLISH_TOKEN }}{% endraw %}
 
+      - name: Build package into dist/
+        run: uv run nox -s audit
+
       - name: Create GitHub release
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         run: |
-          gh release create {% raw %}${{ github.ref_name }} ./dist/* --notes-file ${{ steps.git-cliff.outputs.changelog }}{% endraw %}
+          gh release create {% raw %}${{ github.ref_name }} ./dist/* sbom.json licenses.json licenses-inverted.json vulnerabilities.json --notes-file ${{ steps.git-cliff.outputs.changelog }}{% endraw %}
 
       - name: Allow other workflows to trigger on release
         env:

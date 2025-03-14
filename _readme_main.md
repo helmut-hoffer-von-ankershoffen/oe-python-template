@@ -45,7 +45,7 @@ git push
 Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
 as this external service is not yet configured for our new repository.
 
-**Step 6**: Follow the [SERVICE_INSTRUCTIONS.md](instructions) to wire up
+**Step 6**: Follow the [instructions](SERVICE_CONNECTIONS.md) to wire up
 external services such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
 
 **Step 7**: Release the first versions
