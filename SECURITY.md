@@ -2,7 +2,7 @@
 
 ## Reporting Security Issues
 
-If you discover a security vulnerability in OE Python Template, please report it by sending an email to helmuthva@gmail.com.
+If you discover a security vulnerability in OE Python Template, please [report it here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/advisories/new).
 
 We take all security reports seriously. Upon receiving a security report, we will:
 1. Confirm receipt of the vulnerability report
