@@ -21,12 +21,15 @@ extensions = [
     "sphinx_mdinclude",
     "sphinxext.opengraph",
     "swagger_plugin_for_sphinx",  # https://github.com/SAP/swagger-plugin-for-sphinx?tab=readme-ov-file
+    "sphinx_selective_exclude.eager_only",  # https://github.com/pfalcon/sphinx_selective_exclude?tab=readme-ov-file
+    "sphinx_selective_exclude.search_auto_exclude",
+    "sphinx_selective_exclude.modindex_exclude",
 ]
 
 project = "oe-python-template"
 author = "Helmut Hoffer von Ankershoffen"
 copyright = f" (c) 2025-{datetime.now(UTC).year}, {author}"  # noqa: A001
-version = "0.4.7"
+version = "0.0.1"
 release = version
 github_username = "helmut-hoffer-von-ankershoffen"
 github_repository = "oe-python-template"
