@@ -6,6 +6,6 @@ API V2
    .. swagger-plugin:: _static/openapi_v2.yaml
       :full-page:
 
-.. only:: html
+.. only:: latex
 
    Visit the `Interactive API Documentation <https://oe-python-template.readthedocs.io/en/latest/api_v2.html>`_
