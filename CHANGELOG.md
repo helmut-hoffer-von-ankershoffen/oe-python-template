@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.4.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.4.7..0.4.8) - 2025-03-14
+## [0.0.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.4.8..0.0.2) - 2025-03-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(dependabot)* Fix config - ([a947199](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a947199f09cc8917eff433f06c20ced39e70af5a))
+
+
+## [0.4.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.4.7..v0.4.8) - 2025-03-14
 
 ### ⛰️  Features
 
