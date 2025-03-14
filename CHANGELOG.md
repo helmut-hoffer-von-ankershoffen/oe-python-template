@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.5.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.5.4..0.5.5) - 2025-03-14
+## [0.0.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.5.5..0.0.2) - 2025-03-14
+
+### 📚 Documentation
+
+- SECURITY.md with links - ([4ebd8cb](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4ebd8cb78c76e3f6ffff1bbbfd19c79ad5a1385d))
+
+
+## [0.5.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.5.4..v0.5.5) - 2025-03-14
 
 ### Deps
 
