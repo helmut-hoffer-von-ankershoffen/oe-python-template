@@ -14,9 +14,9 @@
    api_v1
    api_v2
    reference
-   contributing
-   security
    release-notes
+   security
+   contributing
 
 .. sidebar-links::
    :caption: Links
