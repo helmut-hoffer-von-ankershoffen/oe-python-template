@@ -22,12 +22,12 @@ We currently provide security updates for the latest minor version.
 
 - **GitHub Dependabot**: Monitors dependencies for known vulnerabilities and automatically creates pull requests to update them when security issues are found. [Dependendabot alerts]({{ github_repository_url_https }}/security/dependabot) published.
 - **Renovate Bot**: Automatically creates pull requests to update dependencies when new versions are available, with a focus on security patches. [Dependency Dashboard]({{ github_repository_url_https }}/issues) published.
-- **pip-audit**: Regularly scans Python dependencies for known vulnerabilities using data from the Python Advisory Database. ```vulnerabilities.json``` published [per release]({{ github_repository_url_https }}/releases).
+- **pip-audit**: Regularly scans Python dependencies for known vulnerabilities using data from the Python Advisory Database. `vulnerabilities.json` published [per release]({{ github_repository_url_https }}/releases).
 
 ### 2. Dependency Compliance
 
-- **cyclonedx-py**: Generates a Software Bill of Materials (SBOM) in SPDX format, listing all components and dependencies used in the project. ```sbom.json``` (SPDX format) published [per release]({{ github_repository_url_https }}/releases).
-- **pip-licenses**: Exports the licenses of all dependencies to ensure compliance with licensing requirements and avoid using components with problematic licenses. ```licenses.json``` and ```licenses-inverted.json``` published [per release]({{ github_repository_url_https }}/releases).
+- **cyclonedx-py**: Generates a Software Bill of Materials (SBOM) in SPDX format, listing all components and dependencies used in the project. `sbom.json` (SPDX format) published [per release]({{ github_repository_url_https }}/releases).
+- **pip-licenses**: Exports the licenses of all dependencies to ensure compliance with licensing requirements and avoid using components with problematic licenses. `licenses.csv`, `licenses.json` and `licenses-grouped.json` published [per release]({{ github_repository_url_https }}/releases).
 
 ### 3. Static Code Analysis
 

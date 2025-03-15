@@ -198,7 +198,7 @@ docstring-code-format = true
 convention = "google"
 
 [tool.mypy]  # https://mypy.readthedocs.io/en/latest/config_file.html
-junit_xml = "mypi_junit.xml"
+junit_xml = "reports/mypy_junit.xml"
 plugins = "pydantic.mypy"
 strict = true
 disallow_subclassing_any = false
@@ -217,7 +217,7 @@ warn_required_dynamic_aliases = true
 warn_untyped_fields = true
 
 [tool.pytest.ini_options]
-addopts = "-v --cov={{ project_name_snake_case }} --cov-report=term-missing --cov-report=xml:coverage.xml --cov-report=html:coverage_html"
+addopts = "-v --cov={{ project_name_snake_case }} --cov-report=term-missing --cov-report=xml:reports/coverage.xml --cov-report=html:reports/coverage_html"
 testpaths = ["tests"]
 python_files = ["*_test.py"]
 asyncio_mode = "auto"

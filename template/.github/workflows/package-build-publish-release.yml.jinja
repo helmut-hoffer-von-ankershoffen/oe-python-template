@@ -53,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
         run: |
-          gh release create {% raw %}${{ github.ref_name }} ./dist/* sbom.json licenses.json licenses-inverted.json vulnerabilities.json --notes-file ${{ steps.git-cliff.outputs.changelog }}{% endraw %}
+          gh release create {% raw %}${{ github.ref_name }} ./dist/* ./reports/* --notes-file ${{ steps.git-cliff.outputs.changelog }}{% endraw %}
 
       - name: Allow other workflows to trigger on release
         env:

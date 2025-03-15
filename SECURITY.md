@@ -22,12 +22,12 @@ OE Python Template employs several automated tools to continuously monitor and i
 
 - **GitHub Dependabot**: Monitors dependencies for known vulnerabilities and automatically creates pull requests to update them when security issues are found. [Dependendabot alerts](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/dependabot) published.
 - **Renovate Bot**: Automatically creates pull requests to update dependencies when new versions are available, with a focus on security patches. [Dependency Dashboard](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues) published.
-- **pip-audit**: Regularly scans Python dependencies for known vulnerabilities using data from the Python Advisory Database. ```vulnerabilities.json``` published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
+- **pip-audit**: Regularly scans Python dependencies for known vulnerabilities using data from the Python Advisory Database. `vulnerabilities.json` published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
 
 ### 2. Dependency Compliance
 
-- **cyclonedx-py**: Generates a Software Bill of Materials (SBOM) in SPDX format, listing all components and dependencies used in the project. ```sbom.json``` (SPDX format) published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
-- **pip-licenses**: Exports the licenses of all dependencies to ensure compliance with licensing requirements and avoid using components with problematic licenses. ```licenses.json``` and ```licenses-inverted.json``` published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
+- **cyclonedx-py**: Generates a Software Bill of Materials (SBOM) in SPDX format, listing all components and dependencies used in the project. `sbom.json` (SPDX format) published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
+- **pip-licenses**: Exports the licenses of all dependencies to ensure compliance with licensing requirements and avoid using components with problematic licenses. `licenses.csv`, `licenses.json` and `licenses-grouped.json` published [per release](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases).
 
 ### 3. Static Code Analysis
 
