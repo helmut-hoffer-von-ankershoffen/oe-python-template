@@ -82,7 +82,7 @@ def docs(session: nox.Session) -> None:
 @nox.session(python=["3.13"])
 def audit(session: nox.Session) -> None:
     """Run security audit and license checks."""
-    _setup_venv(session,True)
+    _setup_venv(session, True)
     session.run("pip-audit", "-f", "json", "-o", "reports/vulnerabilities.json")
     session.run("jq", ".", "reports/vulnerabilities.json", external=True)
     session.run("pip-licenses", "--format=csv", "--order=license", "--output-file=reports/licenses.csv")
