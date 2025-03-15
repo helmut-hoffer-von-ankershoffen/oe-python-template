@@ -102,11 +102,11 @@ def audit(session: nox.Session) -> None:
         licenses_grouped[license_name].append(package_info)
 
     # Write grouped data
-    Path("reports/licenses-grouped.json").write_text(
+    Path("reports/licenses_grouped.json").write_text(
         json.dumps(licenses_grouped, indent=2),
         encoding="utf-8",
     )
-    session.run("jq", ".", "reports/licenses-grouped.json", external=True)
+    session.run("jq", ".", "reports/licenses_grouped.json", external=True)
     session.run("cyclonedx-py", "environment", "-o", "reports/sbom.json")
     session.run("jq", ".", "reports/sbom.json", external=True)
 
