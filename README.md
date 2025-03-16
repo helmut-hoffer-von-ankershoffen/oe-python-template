@@ -1,3 +1,6 @@
+
+[//]: # (README.md generated from docs/partials/README_*.md)
+
 # 🧠 OE Python Template
 
 [![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
