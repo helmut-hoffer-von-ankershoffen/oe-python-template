@@ -19,12 +19,12 @@
 7. Goto https://sonarcloud.io/project/settings?id={{ sonarqube_key }} and select "Quality Gate" in the left menu. Select "Sonar way" as default quality gate.
 8. Re-run the `CI / test` GitHub job in case you tried before and it failed as SonarQube was not yet wired up
 
-## Generating and publishing documentation via ReadTheDocs (readthedocs.org)
+## Generating and publishing documentation via ReadTheDocs ({{ readthedocs_domain }})
 
-1. Sign-Up at https://readthedocs.org/
-2. Goto https://app.readthedocs.org/dashboard/import/ and search for your repo by enterin {{ github_repository_name}} in the search bar
+1. Sign-Up at https://{{ readthedocs_domain }}/
+2. Goto https://app.{{ readthedocs_domain }}/dashboard/import/ and search for your repo by enterin {{ github_repository_name}} in the search bar
 3. Select the repo and click Continue, then Next.
-4. On https://app.readthedocs.org/projects/{{ github_repository_name }}/ wait for the build of the documentation to finish
+4. On https://app.{{ readthedocs_domain }}/projects/{{ github_repository_name }}/ wait for the build of the documentation to finish
 5. Goto https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/
 
 ## Publishing package to Python Package Index (pypi.org)

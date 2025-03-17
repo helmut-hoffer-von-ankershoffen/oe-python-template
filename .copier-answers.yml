@@ -1,4 +1,4 @@
-_commit: v0.6.5-1-gba7e2db
+_commit: v0.6.6-1-g3894b2a
 _src_path: .
 author_email: helmuthva@gmail.com
 author_github_username: helmut-hoffer-von-ankershoffen
@@ -16,6 +16,7 @@ project_description: Copier template to scaffold Python projects compliant with 
 project_icon: 🧠
 project_name: OE Python Template
 pypi_distribution_name: oe-python-template
+readthedocs_domain: readthedocs.org
 readthedocs_project_key: oe-python-template
 sonarqube_key: helmut-hoffer-von-ankershoffen_oe-python-template
 streamlit_project_key: oe-python-template

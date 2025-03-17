@@ -151,6 +151,14 @@ pypi_distribution_name:
     Invalid PyPi distribution name
     {% endif %}
 
+readthedocs_domain:
+  type: str
+  help: What is the domain name of the Read The Docs instance? Use readthedocs.org for the community edition and readthedocs.com for the business edition.
+  choices:
+    readthedocs.org
+    readthedocs.com
+  default: readthedocs.org
+
 readthedocs_project_key:
   type: str
   help: What is the key of the project at Read The Docs (about.readthedocs.com)? You likely want to accept the default.
