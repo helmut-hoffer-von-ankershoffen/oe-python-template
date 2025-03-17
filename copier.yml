@@ -1,6 +1,7 @@
 _subdirectory: template
 _skip_if_exists:
   - logo.png
+  - README.md
   - CHANGELOG.md
 
 _tasks:

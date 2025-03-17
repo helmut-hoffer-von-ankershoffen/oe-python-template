@@ -65,7 +65,7 @@ fi
 uv tool install copier                                # Install copier as global tool
 ```
 
-**Step 2**: Now create an empty repository on GitHubm, clone to your local machine, and change into it's directory.
+**Step 2**: Now create an empty repository on GitHub, clone to your local machine, and change into it's directory.
 
 **Step 3**: Scaffold the project
 ```shell
@@ -92,7 +92,7 @@ external services such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, G
 
 **Step 7**: Release the first versions
 ```shell
-./bump
+./n bump
 ```
 Notes:
 * You can remove this section post having successfully scafolded your project.
