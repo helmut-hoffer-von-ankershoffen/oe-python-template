@@ -27,15 +27,10 @@ uv tool install copier                                # Install copier as global
 
 **Step 3**: Scaffold the project
 ```shell
-copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template .
-```
-**Step 4**: Setup the local environment
-
-```shell
-uv run nox -s setup_dev
+copier copy gh:helmut-hoffer-von-ankershoffen/oe-python-template . --trust
 ```
 
-**Step 5**: Perform initial commit and push
+**Step 4**: Perform initial commit and push
 ```shell
 git add .
 git commit -m "feat: Initial commit"
@@ -45,10 +40,10 @@ git push
 Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
 as this external service is not yet configured for our new repository.
 
-**Step 6**: Follow the [instructions](SERVICE_CONNECTIONS.md) to wire up
+**Step 5**: Follow the [instructions](SERVICE_CONNECTIONS.md) to wire up
 external services such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
 
-**Step 7**: Release the first versions
+**Step 6**: Release the first versions
 ```shell
 ./n bump
 ```
