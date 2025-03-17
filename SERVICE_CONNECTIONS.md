@@ -27,6 +27,12 @@
 4. On https://app.readthedocs.org/projects/oe-python-template/ wait for the build of the documentation to finish
 5. Goto https://oe-python-template.readthedocs.io/en/latest/
 
+## Automatic dependency updates via Rennovate (https://github.com/apps/renovate)
+
+1. Goto https://github.com/apps/renovate and click the "Configure" button
+2. Select the owner of your project's repository and configure "Repository access"
+3. Rennovate creates a [Dependency Dashboard](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues) as an issue in your repository
+
 ## Publishing package to Python Package Index (pypi.org)
 
 1. Execute `uv build`. This will generate the build files (wheel and tar.gz) in the `dist` folder
