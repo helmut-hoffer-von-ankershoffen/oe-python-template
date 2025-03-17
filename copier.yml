@@ -153,11 +153,11 @@ pypi_distribution_name:
 
 readthedocs_domain:
   type: str
-  help: What is the domain name of the Read The Docs instance? Use readthedocs.org for the community edition and readthedocs.com for the business edition.
+  help: What is the domain name of the Read The Docs instance? Select readthedocs.org for Read The Docs Community and readthedocs.com for Read The Docs for Business.
   choices:
-    readthedocs.org
-    readthedocs.com
-  default: readthedocs.org
+    - "readthedocs.org"
+    - "readthedocs.com"
+  default: "readthedocs.org"
 
 readthedocs_project_key:
   type: str
