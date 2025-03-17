@@ -1,9 +1,9 @@
-_commit: v0.6.9-1-g848aa2e
+_commit: v0.6.10-1-g63e0719
 _src_path: .
 author_email: helmuthva@gmail.com
 author_github_username: helmut-hoffer-von-ankershoffen
 author_name: Helmut Hoffer von Ankershoffen
-docker_io_enabled: false
+docker_io_enabled: true
 docker_io_image_name: oe-python-template
 docker_io_owner: helmuthva
 github_repository_name: oe-python-template
