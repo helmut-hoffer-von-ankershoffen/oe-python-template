@@ -24,6 +24,7 @@ UVICORN_PORT = os.environ.get("UVICORN_PORT", "8000")
 CONTACT_NAME = "Helmut Hoffer von Ankershoffen"
 CONTACT_EMAIL = "helmuthva@gmail.com"
 CONTACT_URL = "https://github.com/helmut-hoffer-von-ankershoffen"
+TERMS_OF_SERVICE_URL = "https://oe-python-template.readthedocs.io/en/latest/"
 
 
 def get_service() -> Generator[Service, None, None]:
@@ -48,7 +49,7 @@ api = FastAPI(
         "email": CONTACT_EMAIL,
         "url": CONTACT_URL,
     },
-    terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
+    terms_of_service=TERMS_OF_SERVICE_URL,
     openapi_tags=[
         {
             "name": "v1",
@@ -77,7 +78,7 @@ api_v1 = FastAPI(
         "email": CONTACT_EMAIL,
         "url": CONTACT_URL,
     },
-    terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
+    terms_of_service=TERMS_OF_SERVICE_URL,
 )
 
 api_v2 = FastAPI(
@@ -88,7 +89,7 @@ api_v2 = FastAPI(
         "email": CONTACT_EMAIL,
         "url": CONTACT_URL,
     },
-    terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
+    terms_of_service=TERMS_OF_SERVICE_URL,
 )
 
 
