@@ -27,7 +27,7 @@ uv tool install copier                                # Install copier as global
 
 **Step 3**: Scaffold the project
 ```shell
-copier copy --trust gh:helmut-hoffer-von-ankershoffen/oe-python-template . --trust
+copier copy --trust gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
 
 **Step 4**: Perform initial commit and push
