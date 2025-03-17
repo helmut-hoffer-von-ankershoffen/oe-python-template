@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.7..0.6.8) - 2025-03-17
+## [0.6.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.8..0.6.9) - 2025-03-17
+
+### ⚙️ Miscellaneous Tasks
+
+- *(docker)* Try to push to ghcr.io. only - ([6b7146a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/6b7146aaee8b9e55dcd3a401a550a49e86b92981))
+
+
+## [0.6.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.7..v0.6.8) - 2025-03-17
 
 ### 🐛 Bug Fixes
 
