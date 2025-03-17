@@ -6,19 +6,19 @@ components:
         message:
           description: The message content
           examples:
-            - Hello, world!
+          - Hello, world!
           minLength: 1
           title: Message
           type: string
       required:
-        - message
+      - message
       title: EchoResponse
       type: object
     HTTPValidationError:
       properties:
         detail:
           items:
-            $ref: "#/components/schemas/ValidationError"
+            $ref: '#/components/schemas/ValidationError'
           title: Detail
           type: array
       title: HTTPValidationError
@@ -28,13 +28,13 @@ components:
       properties:
         reason:
           anyOf:
-            - type: string
-            - type: "null"
+          - type: string
+          - type: 'null'
           title: Reason
         status:
-          $ref: "#/components/schemas/_HealthStatus"
+          $ref: '#/components/schemas/_HealthStatus'
       required:
-        - status
+      - status
       title: Health
       type: object
     HelloWorldResponse:
@@ -43,11 +43,11 @@ components:
         message:
           description: The hello world message
           examples:
-            - Hello, world!
+          - Hello, world!
           title: Message
           type: string
       required:
-        - message
+      - message
       title: HelloWorldResponse
       type: object
     Utterance:
@@ -56,12 +56,12 @@ components:
         utterance:
           description: The utterance to echo back
           examples:
-            - Hello, world!
+          - Hello, world!
           minLength: 1
           title: Utterance
           type: string
       required:
-        - utterance
+      - utterance
       title: Utterance
       type: object
     ValidationError:
@@ -69,8 +69,8 @@ components:
         loc:
           items:
             anyOf:
-              - type: string
-              - type: integer
+            - type: string
+            - type: integer
           title: Location
           type: array
         msg:
@@ -80,16 +80,16 @@ components:
           title: Error Type
           type: string
       required:
-        - loc
-        - msg
-        - type
+      - loc
+      - msg
+      - type
       title: ValidationError
       type: object
     _HealthStatus:
       description: Health status enumeration.
       enum:
-        - UP
-        - DOWN
+      - UP
+      - DOWN
       title: _HealthStatus
       type: string
 info:
@@ -113,24 +113,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Utterance"
+              $ref: '#/components/schemas/Utterance'
         required: true
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EchoResponse"
+                $ref: '#/components/schemas/EchoResponse'
           description: Successful Response
-        "422":
+        '422':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
           description: Validation Error
       summary: Echo V2
       tags:
-        - Basics
+      - Basics
   /health:
     get:
       description: "Check the health of the service.\n\nThis endpoint returns the\
@@ -142,15 +142,15 @@ paths:
         \ The health status of the service."
       operationId: health_health_get
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Health"
+                $ref: '#/components/schemas/Health'
           description: Successful Response
       summary: Health
       tags:
-        - Observability
+      - Observability
   /healthz:
     get:
       description: "Check the health of the service.\n\nThis endpoint returns the\
@@ -162,27 +162,27 @@ paths:
         \ The health status of the service."
       operationId: health_healthz_get
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Health"
+                $ref: '#/components/schemas/Health'
           description: Successful Response
       summary: Health
       tags:
-        - Observability
+      - Observability
   /hello-world:
     get:
       description: "Return a hello world message.\n\nReturns:\n    HelloWorldResponse:\
         \ A response containing the hello world message."
       operationId: hello_world_hello_world_get
       responses:
-        "200":
+        '200':
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HelloWorldResponse"
+                $ref: '#/components/schemas/HelloWorldResponse'
           description: Successful Response
       summary: Hello World
       tags:
-        - Basics
+      - Basics
