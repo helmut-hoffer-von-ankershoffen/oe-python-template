@@ -19,6 +19,12 @@ HEALTH_PATH_V2 = "/api/v2/health"
 HEALTHZ_PATH_V1 = "/api/v1/healthz"
 HEALTHZ_PATH_V2 = "/api/v2/healthz"
 
+HELLO_WORLD = "Hello, world!"
+
+SERVICE_UP = "UP"
+SERVICE_DOWN = "DOWN"
+SERVICE_IS_UNHEALTHY = "Service is unhealthy"
+
 
 @pytest.fixture
 def client() -> TestClient:
@@ -37,11 +43,11 @@ def test_hello_world_endpoint(client: TestClient) -> None:
     """Test that the hello-world endpoint returns the expected message."""
     response = client.get(HELLO_WORLD_PATH_V1)
     assert response.status_code == 200
-    assert response.json()["message"].startswith("Hello, world!")
+    assert response.json()["message"].startswith(HELLO_WORLD)
 
     response = client.get(HELLO_WORLD_PATH_V2)
     assert response.status_code == 200
-    assert response.json()["message"].startswith("Hello, world!")
+    assert response.json()["message"].startswith(HELLO_WORLD)
 
 
 def test_echo_endpoint_valid_input(client: TestClient) -> None:
@@ -79,22 +85,22 @@ def test_health_endpoint(client: TestClient) -> None:
     """Test that the health endpoint returns UP status."""
     response = client.get(HEALTH_PATH_V1)
     assert response.status_code == 200
-    assert response.json()["status"] == "UP"
+    assert response.json()["status"] == SERVICE_UP
     assert response.json()["reason"] is None
 
     response = client.get(HEALTH_PATH_V2)
     assert response.status_code == 200
-    assert response.json()["status"] == "UP"
+    assert response.json()["status"] == SERVICE_UP
     assert response.json()["reason"] is None
 
     response = client.get(HEALTHZ_PATH_V1)
     assert response.status_code == 200
-    assert response.json()["status"] == "UP"
+    assert response.json()["status"] == SERVICE_UP
     assert response.json()["reason"] is None
 
     response = client.get(HEALTHZ_PATH_V2)
     assert response.status_code == 200
-    assert response.json()["status"] == "UP"
+    assert response.json()["status"] == SERVICE_UP
     assert response.json()["reason"] is None
 
 
@@ -107,20 +113,20 @@ def test_health_endpoint_down(mock_service, client: TestClient) -> None:
 
     response = client.get(HEALTH_PATH_V1)
     assert response.status_code == 500
-    assert response.json()["status"] == "DOWN"
-    assert response.json()["reason"] == "Service is unhealthy"
+    assert response.json()["status"] == SERVICE_DOWN
+    assert response.json()["reason"] == SERVICE_IS_UNHEALTHY
 
     response = client.get(HEALTH_PATH_V2)
     assert response.status_code == 500
-    assert response.json()["status"] == "DOWN"
-    assert response.json()["reason"] == "Service is unhealthy"
+    assert response.json()["status"] == SERVICE_DOWN
+    assert response.json()["reason"] == SERVICE_IS_UNHEALTHY
 
     response = client.get(HEALTHZ_PATH_V1)
     assert response.status_code == 500
-    assert response.json()["status"] == "DOWN"
-    assert response.json()["reason"] == "Service is unhealthy"
+    assert response.json()["status"] == SERVICE_DOWN
+    assert response.json()["reason"] == SERVICE_IS_UNHEALTHY
 
     response = client.get(HEALTHZ_PATH_V2)
     assert response.status_code == 500
-    assert response.json()["status"] == "DOWN"
-    assert response.json()["reason"] == "Service is unhealthy"
+    assert response.json()["status"] == SERVICE_DOWN
+    assert response.json()["reason"] == SERVICE_IS_UNHEALTHY

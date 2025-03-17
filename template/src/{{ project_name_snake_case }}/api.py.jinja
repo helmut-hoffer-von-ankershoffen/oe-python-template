@@ -21,7 +21,9 @@ from {{ project_name_snake_case }} import Service
 HELLO_WORLD_EXAMPLE = "Hello, world!"
 UVICORN_HOST = os.environ.get("UVICORN_HOST", "127.0.0.1")
 UVICORN_PORT = os.environ.get("UVICORN_PORT", "8000")
-
+CONTACT_NAME = "{{ org_name }}"
+CONTACT_EMAIL = "{{ org_email }}"
+CONTACT_URL = "https://github.com/{{ github_repository_owner }}"
 
 def get_service() -> Generator[Service, None, None]:
     """Get the service instance.
@@ -41,9 +43,9 @@ api = FastAPI(
     root_path="/api",
     title="{{ project_name }}",
     contact={
-        "name": "{{ org_name }}",
-        "email": "{{ org_email }}",
-        "url": "https://github.com/{{ github_repository_owner }}",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
     openapi_tags=[
@@ -70,9 +72,9 @@ api_v1 = FastAPI(
     version="1.0.0",
     title="{{ project_name }}",
     contact={
-        "name": "{{ org_name }}",
-        "email": "{{ org_email }}",
-        "url": "https://github.com/{{ github_repository_owner }}",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
 )
@@ -81,9 +83,9 @@ api_v2 = FastAPI(
     version="2.0.0",
     title="{{ project_name }}",
     contact={
-        "name": "{{ org_name }}",
-        "email": "{{ org_email }}",
-        "url": "https://github.com/{{ github_repository_owner }}",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/",
 )

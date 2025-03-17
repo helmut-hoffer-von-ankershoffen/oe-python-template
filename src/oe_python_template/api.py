@@ -21,6 +21,9 @@ from oe_python_template import Service
 HELLO_WORLD_EXAMPLE = "Hello, world!"
 UVICORN_HOST = os.environ.get("UVICORN_HOST", "127.0.0.1")
 UVICORN_PORT = os.environ.get("UVICORN_PORT", "8000")
+CONTACT_NAME = "Helmut Hoffer von Ankershoffen"
+CONTACT_EMAIL = "helmuthva@gmail.com"
+CONTACT_URL = "https://github.com/helmut-hoffer-von-ankershoffen"
 
 
 def get_service() -> Generator[Service, None, None]:
@@ -41,9 +44,9 @@ api = FastAPI(
     root_path="/api",
     title="OE Python Template",
     contact={
-        "name": "Helmut Hoffer von Ankershoffen",
-        "email": "helmuthva@gmail.com",
-        "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
     openapi_tags=[
@@ -70,9 +73,9 @@ api_v1 = FastAPI(
     version="1.0.0",
     title="OE Python Template",
     contact={
-        "name": "Helmut Hoffer von Ankershoffen",
-        "email": "helmuthva@gmail.com",
-        "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
 )
@@ -81,9 +84,9 @@ api_v2 = FastAPI(
     version="2.0.0",
     title="OE Python Template",
     contact={
-        "name": "Helmut Hoffer von Ankershoffen",
-        "email": "helmuthva@gmail.com",
-        "url": "https://github.com/helmut-hoffer-von-ankershoffen",
+        "name": CONTACT_NAME,
+        "email": CONTACT_EMAIL,
+        "url": CONTACT_URL,
     },
     terms_of_service="https://oe-python-template.readthedocs.io/en/latest/",
 )
