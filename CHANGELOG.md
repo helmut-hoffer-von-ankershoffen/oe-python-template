@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.20](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.19..0.6.20) - 2025-03-18
+## [0.6.21](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.20..0.6.21) - 2025-03-18
+
+### ⚙️ Miscellaneous Tasks
+
+- *(gh)* Uv action - ([bc632fe](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/bc632fee8ca1d3e3cb4495d12e134f18dc855028))
+
+
+## [0.6.20](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.19..v0.6.20) - 2025-03-18
 
 ### 🐛 Bug Fixes
 
