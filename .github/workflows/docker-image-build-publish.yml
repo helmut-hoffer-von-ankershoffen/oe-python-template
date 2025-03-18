@@ -55,7 +55,7 @@ jobs:
         with:
 
 
-           images: |
+          images: |
             ${{ env.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
 

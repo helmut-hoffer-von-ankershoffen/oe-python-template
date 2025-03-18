@@ -55,7 +55,7 @@ jobs:
         with:
 {% if docker_io_enabled %}
 {% raw %}
-           images: |
+          images: |
             ${{ env.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
 {% endraw %}
