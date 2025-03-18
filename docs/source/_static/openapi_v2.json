@@ -1,262 +1,62 @@
-{
-  "openapi": "3.1.0",
-  "info": {
-    "title": "OE Python Template",
-    "termsOfService": "https://oe-python-template.readthedocs.io/en/latest/",
-    "contact": {
-      "name": "Helmut Hoffer von Ankershoffen",
-      "url": "https://github.com/helmut-hoffer-von-ankershoffen",
-      "email": "helmuthva@gmail.com"
-    },
-    "version": "2.0.0"
-  },
-  "paths": {
-    "/health": {
-      "get": {
-        "tags": [
-          "Observability"
-        ],
-        "summary": "Health",
-        "description": "Check the health of the service.\n\nThis endpoint returns the health status of the service.\nThe health status can be either UP or DOWN.\nIf the service is healthy, the status will be UP.\nIf the service is unhealthy, the status will be DOWN and a reason will be provided.\nThe response will have a 200 OK status code if the service is healthy,\nand a 500 Internal Server Error status code if the service is unhealthy.\n\nReturns:\n    Health: The health status of the service.",
-        "operationId": "health_health_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Health"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/healthz": {
-      "get": {
-        "tags": [
-          "Observability"
-        ],
-        "summary": "Health",
-        "description": "Check the health of the service.\n\nThis endpoint returns the health status of the service.\nThe health status can be either UP or DOWN.\nIf the service is healthy, the status will be UP.\nIf the service is unhealthy, the status will be DOWN and a reason will be provided.\nThe response will have a 200 OK status code if the service is healthy,\nand a 500 Internal Server Error status code if the service is unhealthy.\n\nReturns:\n    Health: The health status of the service.",
-        "operationId": "health_healthz_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Health"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/hello-world": {
-      "get": {
-        "tags": [
-          "Basics"
-        ],
-        "summary": "Hello World",
-        "description": "Return a hello world message.\n\nReturns:\n    HelloWorldResponse: A response containing the hello world message.",
-        "operationId": "hello_world_hello_world_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HelloWorldResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/echo": {
-      "post": {
-        "tags": [
-          "Basics"
-        ],
-        "summary": "Echo V2",
-        "description": "Echo back the provided utterance.\n\nArgs:\n    request (Utterance): The request containing the utterance to echo back.\n\nReturns:\n    EchoResponse: A response containing the echoed utterance.\n\nRaises:\n    422 Unprocessable Entity: If utterance is not provided or empty.",
-        "operationId": "echo_v2_echo_post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Utterance"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EchoResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "EchoResponse": {
-        "properties": {
-          "message": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Message",
-            "description": "The message content",
-            "examples": [
-              "Hello, world!"
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "message"
-        ],
-        "title": "EchoResponse",
-        "description": "Response model for echo endpoint."
-      },
-      "HTTPValidationError": {
-        "properties": {
-          "detail": {
-            "items": {
-              "$ref": "#/components/schemas/ValidationError"
-            },
-            "type": "array",
-            "title": "Detail"
-          }
-        },
-        "type": "object",
-        "title": "HTTPValidationError"
-      },
-      "Health": {
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/_HealthStatus"
-          },
-          "reason": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Reason"
-          }
-        },
-        "type": "object",
-        "required": [
-          "status"
-        ],
-        "title": "Health",
-        "description": "Health status model."
-      },
-      "HelloWorldResponse": {
-        "properties": {
-          "message": {
-            "type": "string",
-            "title": "Message",
-            "description": "The hello world message",
-            "examples": [
-              "Hello, world!"
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "message"
-        ],
-        "title": "HelloWorldResponse",
-        "description": "Response model for hello-world endpoint."
-      },
-      "Utterance": {
-        "properties": {
-          "utterance": {
-            "type": "string",
-            "minLength": 1,
-            "title": "Utterance",
-            "description": "The utterance to echo back",
-            "examples": [
-              "Hello, world!"
-            ]
-          }
-        },
-        "type": "object",
-        "required": [
-          "utterance"
-        ],
-        "title": "Utterance",
-        "description": "Request model for echo endpoint."
-      },
-      "ValidationError": {
-        "properties": {
-          "loc": {
-            "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
-            },
-            "type": "array",
-            "title": "Location"
-          },
-          "msg": {
-            "type": "string",
-            "title": "Message"
-          },
-          "type": {
-            "type": "string",
-            "title": "Error Type"
-          }
-        },
-        "type": "object",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
-        "title": "ValidationError"
-      },
-      "_HealthStatus": {
-        "type": "string",
-        "enum": [
-          "UP",
-          "DOWN"
-        ],
-        "title": "_HealthStatus",
-        "description": "Health status enumeration."
-      }
-    }
-  }
-}
+Traceback (most recent call last):
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/bin/oe-python-template", line 4, in <module>
+    from oe_python_template.cli import cli
+  File "/Users/helmut/Code/oe-python-template/src/oe_python_template/cli.py", line 13, in <module>
+    from oe_python_template.api import api_v1, api_v2
+  File "/Users/helmut/Code/oe-python-template/src/oe_python_template/api.py", line 16, in <module>
+    from fastapi import Depends, FastAPI, Response, status
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/__init__.py", line 7, in <module>
+    from .applications import FastAPI as FastAPI
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/applications.py", line 16, in <module>
+    from fastapi import routing
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/routing.py", line 24, in <module>
+    from fastapi import params
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/params.py", line 5, in <module>
+    from fastapi.openapi.models import Example
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/openapi/models.py", line 4, in <module>
+    from fastapi._compat import (
+    ...<6 lines>...
+    )
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/_compat.py", line 21, in <module>
+    from fastapi.exceptions import RequestErrorModel
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/fastapi/exceptions.py", line 139, in <module>
+    RequestErrorModel: Type[BaseModel] = create_model("Request")
+                                         ~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/pydantic/main.py", line 1678, in create_model
+    return meta(
+        model_name,
+    ...<4 lines>...
+        **kwds,
+    )
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py", line 224, in __new__
+    complete_model_class(
+    ~~~~~~~~~~~~~~~~~~~~^
+        cls,
+        ^^^^
+    ...<4 lines>...
+        create_model_module=_create_model_module,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py", line 620, in complete_model_class
+    cls.__pydantic_validator__ = create_schema_validator(
+                                 ~~~~~~~~~~~~~~~~~~~~~~~^
+        schema,
+        ^^^^^^^
+    ...<5 lines>...
+        config_wrapper.plugin_settings,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/pydantic/plugin/_schema_validator.py", line 38, in create_schema_validator
+    plugins = get_plugins()
+  File "/Users/helmut/Code/oe-python-template/.nox/docs-3-13/lib/python3.13/site-packages/pydantic/plugin/_loader.py", line 39, in get_plugins
+    for entry_point in dist.entry_points:
+                       ^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py", line 496, in entry_points
+    return EntryPoints._from_text_for(self.read_text('entry_points.txt'), self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py", line 294, in _from_text_for
+    @classmethod
+    
+KeyboardInterrupt
