@@ -88,9 +88,10 @@ uv run nox -s test      # run tests
 uv run nox -s lint      # run formatting and linting
 uv run nox -s audit     # run security and license audit, inc. sbom generation
 uv run nox -s docs      # build documentation, output in docs/build/html
+uv run nox -s docs_pdf  # locally build pdf manual to docs/build/latex/{{ pypi_distribution_name }}.pdf
 ```
 
-As a shortcut, you can run build steps using `./n`:
+As a shortcut, you can run build steps using `./n`, e.g.
 
 ```shell
 ./n test
@@ -136,14 +137,6 @@ Update from template
 ```shell
 uv run nox -s update_from_template
 ```
-
-### Generate PDF manual
-
-```shell
-brew install mactex # install MacTeX, will take a while and requires sudo
-./n docs_pdf        # build latex, then generate pdf from it. Output in docs/build/latex/{{ pypi_distribution_name }}.pdf
-```
-
 
 ## Pull Request Guidelines
 
