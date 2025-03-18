@@ -20,6 +20,7 @@ fi
 which jq &> /dev/null || brew install jq
 which xmllint &> /dev/null || brew install xmllint
 which act &> /dev/null || brew install act
+which pinact &> /dev/null || brew install pinact
 uv run pre-commit install             # install pre-commit hooks, see https://pre-commit.com/
 ```
 
@@ -128,6 +129,12 @@ docker build -t oe-python-template .
 
 ```shell
 docker run --env THE_VAR=THE_VALUE oe-python-template --help
+```
+
+### Pinning github actions
+
+```shell
+pinact run  # See https://dev.to/suzukishunsuke/pin-github-actions-to-a-full-length-commit-sha-for-security-2n7p
 ```
 
 ### Copier
