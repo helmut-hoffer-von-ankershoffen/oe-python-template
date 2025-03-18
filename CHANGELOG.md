@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.14..0.6.15) - 2025-03-18
+## [0.6.16](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.15..0.6.16) - 2025-03-18
+
+### ⛰️  Features
+
+- *(codeql)* Enable security-extended and security-and-quality - ([0dead53](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0dead53a748967132eb80f570b44d038a88788e5))
+
+
+## [0.6.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.14..v0.6.15) - 2025-03-18
 
 ### ⚙️ Miscellaneous Tasks
 
