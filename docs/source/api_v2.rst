@@ -13,3 +13,7 @@ API V2
 .. only:: latex
 
    Visit the `Interactive API Documentation <https://oe-python-template.readthedocs.io/en/latest/api_v2.html>`_
+
+.. only:: pdf
+
+   Visit the `Interactive API Documentation <https://oe-python-template.readthedocs.io/en/latest/api_v2.html>`_
