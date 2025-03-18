@@ -131,11 +131,19 @@ docker run --env THE_VAR=THE_VALUE oe-python-template --help
 
 ### Copier
 
-Update scaffold from template
+Update from template
 
 ```shell
 uv run nox -s update_from_template
 ```
+
+### Generate PDF manual
+
+```shell
+brew install mactex # install MacTeX, will take a while and requires sudo
+./n docs_pdf        # build latex, then generate pdf from it. Output in docs/build/latex/oe-python-template.pdf
+```
+
 
 ## Pull Request Guidelines
 

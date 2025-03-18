@@ -31,7 +31,7 @@
 
 1. Goto https://github.com/apps/renovate and click the "Configure" button
 2. Select the owner of your project's repository and configure "Repository access"
-3. Rennovate creates a [Dependency Dashboard](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues) as an issue in your repository
+3. Rennovate creates a [Dependency Dashboard](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues?q=is%3Aissue%20state%3Aopen%20Dependency%20Dashboard) as an issue in your repository
 
 ## Publishing package to Python Package Index (pypi.org)
 

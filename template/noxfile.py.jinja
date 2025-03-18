@@ -78,6 +78,15 @@ def docs(session: nox.Session) -> None:
     # Build docs
     session.run("make", "-C", "docs", "clean", external=True)
     session.run("make", "-C", "docs", "html", external=True)
+    session.run("make", "-C", "docs", "singlehtml", external=True)
+    session.run("make", "-C", "docs", "latex", external=True)
+
+
+@nox.session(python=["3.13"], default=False)
+def docs_pdf(session: nox.Session) -> None:
+    """Setup dev environment post project creation."""
+    _setup_venv(session)
+    session.run("make", "-C", "docs", "latexpdf", external=True)
 
 
 @nox.session(python=["3.13"])
