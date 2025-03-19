@@ -43,9 +43,19 @@
 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
 Use Cases:
-1) Fast and easy to use project setup
-2) Consistent update of already scaffolded projects to benefit from new and improved features.
-3) Dummy CLI application and service demonstrating example usage of the generated directory structure and build pipeline
+1) Fast and easy generation of Python projects from this template
+2) Seamless updates of projects when improvements to the template are released
+3) Generates a fully-functional Python package with test and build automation featuring
+   - Service architecture suiteable for use as shared library
+   - Command-line interface (CLI)
+   - Versioned Web API
+   - Integration examples with Notebooks and Dashboards
+   - Complete developer-tooling with formatting, linting, type checking etc.
+   - CI/CD pipeline for GitHub, PyPI, and Docker registries
+   - Unit and E2E tests including parallel and matrix-testing
+   - Release artifacts include SBOM, license information, and test coverage
+   - Auto-generated documentation published to Read The Docs
+   - Service integrations monitoring code quality, dependencies, and security
 
 ## Scaffolding
 
@@ -96,13 +106,14 @@ Notes:
 
 ## Overview
 
-Adding OE Python Template to your project as a dependency is easy.
+Adding OE Python Template to your project as a dependency is easy. See below for usage examples.
 
 ```shell
 uv add oe-python-template             # add dependency to your project
 ```
 
 If you don't have uv installed follow [these instructions](https://docs.astral.sh/uv/getting-started/installation/). If you still prefer pip over the modern and fast package manager [uv](https://github.com/astral-sh/uv), you can install the library like this:
+
 
 ```shell
 pip install oe-python-template        # add dependency to your project
@@ -111,14 +122,14 @@ pip install oe-python-template        # add dependency to your project
 Executing the command line interface (CLI) in an isolated Python environment is just as easy:
 
 ```shell
-uvx oe-python-template hello-world     # prints "Hello, world! [..]"
-uvx oe-python-template serve           # serves webservice API
-uvx oe-python-template serve --port=4711 # serves webservice API on port 4711
+uvx oe-python-template hello-world       # prints "Hello, world! [..]"
+uvx oe-python-template serve             # serves web API
+uvx oe-python-template serve --port=4711 # serves web API on port 4711
 ```
 
 Notes:
 * The API is versioned, mounted at `/api/v1` resp. `/api/v2`
-* While serving the webservice API go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the respons of the `hello-world` operation.
+* While serving the web API go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the respons of the `hello-world` operation.
 * Interactive documentation is provided at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
 
 
@@ -156,7 +167,7 @@ This project is designed with operational excellence in mind, using modern Pytho
 
 ## Usage Examples
 
-The following examples run from source. Clone this repository first using
+The following examples run from source - clone this repository using
 `git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git`.
 
 ### Minimal Python Script:
