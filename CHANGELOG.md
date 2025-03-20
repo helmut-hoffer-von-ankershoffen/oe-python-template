@@ -1,6 +1,14 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.28](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.27..0.6.28) - 2025-03-20
+## [0.6.29](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.28..0.6.29) - 2025-03-20
+
+### 🐛 Bug Fixes
+
+- *(naming)* More - ([7646238](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/76462389978274f01cc6d92e2ad5fc4a6ce0d505))
+- Names - ([fc1a68d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fc1a68df487165ba2dc0b43f7d878bba92cb6e67))
+
+
+## [0.6.28](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.27..v0.6.28) - 2025-03-20
 
 ### 📚 Documentation
 
