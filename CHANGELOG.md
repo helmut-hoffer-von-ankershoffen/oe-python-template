@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.26](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.25..0.6.26) - 2025-03-20
+## [0.6.27](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.26..0.6.27) - 2025-03-20
+
+### ⛰️  Features
+
+- *(configurability)* Pypi distribution name different to import package name different to repository name - ([60fbafa](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/60fbafaa6364641775fc69e1ab77c0767dbe185f))
+
+
+## [0.6.26](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.25..v0.6.26) - 2025-03-20
 
 ### 📚 Documentation
 
