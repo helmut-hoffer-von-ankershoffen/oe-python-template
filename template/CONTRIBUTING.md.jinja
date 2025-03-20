@@ -55,8 +55,8 @@ examples/                # Example code demonstrating use of the project
 Don't forget to configure your `.env` file with the required environment variables.
 
 Notes:
-* .env.example is provided as a template.
-* .env is excluded from version control, so feel free to add secret values.
+1. .env.example is provided as a template.
+2. .env is excluded from version control, so feel free to add secret values.
 
 ### update dependencies and create virtual environment
 
@@ -117,9 +117,8 @@ uv run nox -s act
 ```
 
 Notes:
-
-- Workflow defined in `.github/workflows/*.yml`
-- test-and-report.yml calls all build steps defined in noxfile.py
+1. Workflow defined in `.github/workflows/*.yml`
+2. test-and-report.yml calls all build steps defined in noxfile.py
 
 ### Docker
 
@@ -147,10 +146,10 @@ uv run nox -s update_from_template
 
 ## Pull Request Guidelines
 
-- Before starting to write code read the [code style guide](CODE_STYLE.md) document for mandatory coding style
-  guidelines.
-- **Pre-Commit Hooks:** We use pre-commit hooks to ensure code quality. Please install the pre-commit hooks by running `uv run pre-commit install`. This ensure all tests, linting etc. pass locally before you can commit.
-- **Squash Commits:** Before submitting a pull request, please squash your commits into a single commit.
-- **Branch Naming:** Use descriptive branch names like `feature/your-feature` or `fix/issue-number`.
-- **Testing:** Ensure new features have appropriate test coverage.
-- **Documentation:** Update documentation to reflect any changes or new features.
+1. Before starting to write code read the [code style guide](CODE_STYLE.md) document for mandatory coding style
+   guidelines.
+2. **Pre-Commit Hooks:** We use pre-commit hooks to ensure code quality. Please install the pre-commit hooks by running `uv run pre-commit install`. This ensure all tests, linting etc. pass locally before you can commit.
+3. **Squash Commits:** Before submitting a pull request, please squash your commits into a single commit.
+4. **Branch Naming:** Use descriptive branch names like `feature/your-feature` or `fix/issue-number`.
+5. **Testing:** Ensure new features have appropriate test coverage.
+6. **Documentation:** Update documentation to reflect any changes or new features.
