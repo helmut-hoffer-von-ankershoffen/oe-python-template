@@ -65,7 +65,7 @@ jobs:
 
       - name: Validate installation
         run: |
-            OUTPUT=$(uv run {{ pypi_distribution_name}} --help)
+            OUTPUT=$(uv run {{ pypi_distribution_name }} --help)
             if [[ "$OUTPUT" != *"built with love in Berlin"* ]]; then
             echo "Output does not contain 'built with love in Berlin'"
             exit 1
