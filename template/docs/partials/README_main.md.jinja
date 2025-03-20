@@ -16,7 +16,7 @@ Features:
 - CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
 - Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
 - Dependency monitoring with [pip-audit](https://pypi.org/project/pip-audit/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-- Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/) and published as release artefacts
+- Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/) and published as release artifacts in CSV and JSON format for compliance checks
 - Software Bill of Materials (SBOM) generated with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) and published as release artifact
 - Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
 - Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
