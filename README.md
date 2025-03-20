@@ -46,38 +46,40 @@ This [Copier](https://copier.readthedocs.io/en/stable/) template enables you to 
 Projects generated from this template can be [easily updated](https://copier.readthedocs.io/en/stable/updating/) to benefit from improvements and new features of the template.
 
 Features:
-- Package management with [uv](https://github.com/astral-sh/uv)
-- Code formatting with [Ruff](https://github.com/astral-sh/ruff)
-- Linting with [Ruff](https://github.com/astral-sh/ruff)
-- Static type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
-- Complete set of [pre-commit](https://pre-commit.com/) hooks including [detect-secrets](https://github.com/Yelp/detect-secrets) and [pygrep](https://github.com/pre-commit/pygrep-hooks)
-- Unit and E2E testing with [pytest](https://docs.pytest.org/en/stable/) including parallel test execution
-- Matrix testing in multiple environments with [nox](https://nox.thea.codes/en/stable/)
-- Test coverage reported with [Codecov](https://codecov.io/) and published as release artifact
-- CI/CD pipeline automated with [GitHub Actions](https://github.com/features/actions)
-- CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
-- Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
-- Dependency monitoring with [pip-audit](https://pypi.org/project/pip-audit/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-- Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/) and published as release artifacts in CSV and JSON format for compliance checks
-- Software Bill of Materials (SBOM) generated with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) and published as release artifact
-- Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
-- Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
-- Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation and PDF export
-- Documentation published to [Read The Docs](https://readthedocs.org/)
-- Interactive OpenAPI specification with [Swagger](https://swagger.io/)
-- Python package published to [PyPI](https://pypi.org/)
-- Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
-- One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
+1. Package management with [uv](https://github.com/astral-sh/uv)
+2. Code formatting with [Ruff](https://github.com/astral-sh/ruff)
+3. Linting with [Ruff](https://github.com/astral-sh/ruff)
+4. Static type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
+5. Complete set of [pre-commit](https://pre-commit.com/) hooks including [detect-secrets](https://github.com/Yelp/detect-secrets) and [pygrep](https://github.com/pre-commit/pygrep-hooks)
+6. Unit and E2E testing with [pytest](https://docs.pytest.org/en/stable/) including parallel test execution
+7. Matrix testing in multiple environments with [nox](https://nox.thea.codes/en/stable/)
+8. Test coverage reported with [Codecov](https://codecov.io/) and published as release artifact
+9. CI/CD pipeline automated with [GitHub Actions](https://github.com/features/actions)
+10. CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
+11. Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
+12. Dependency monitoring with [pip-audit](https://pypi.org/project/pip-audit/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
+13. Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/) and published as release artifacts in CSV and JSON format for compliance checks
+14. Software Bill of Materials (SBOM) generated with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) and published as release artifact
+15. Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
+16. Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
+17. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation and PDF export
+18. Documentation published to [Read The Docs](https://readthedocs.org/)
+19. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
+20. Python package published to [PyPI](https://pypi.org/)
+21. Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
+22. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
+23. Settings for use with [VSCode](https://code.visualstudio.com/)
+24. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
 
 The generated project includes code, documentation and configuration of a fully functioning demo-application and service, which can be used as a starting point for your own project.
-- Service architecture suitable for use as shared library
-- Validation with [pydantic](https://docs.pydantic.dev/)
-- Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
-- Versioned Web API with [FastAPI](https://fastapi.tiangolo.com/)
-- [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
-- Simple Web UI with [Streamlit](https://streamlit.io/)
-- Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
-- Documentation including badges, setup instructions, contribution guide and security policy
+1. Service architecture suitable for use as shared library
+2. Validation with [pydantic](https://docs.pydantic.dev/)
+3. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
+4. Versioned Web API with [FastAPI](https://fastapi.tiangolo.com/)
+5. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
+6. Simple Web UI with [Streamlit](https://streamlit.io/)
+7. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
+8. Documentation including badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 
@@ -126,9 +128,9 @@ external services such as CloudCov, SonarQube Cloud, Read The Docs, Docker.io, a
 ./n bump
 ```
 Notes:
-* You can remove this section post having successfully generated your project.
-* The following sections refer to the dummy application and service provided by this template.
-  Use them as inspiration and adapt them to your own project.
+1. You can remove this section post having successfully generated your project.
+2. The following sections refer to the dummy application and service provided by this template.
+   Use them as inspiration and adapt them to your own project.
 
 ## Overview
 
@@ -154,9 +156,9 @@ uvx oe-python-template serve --port=4711 # serves web API on port 4711
 ```
 
 Notes:
-* The API is versioned, mounted at `/api/v1` resp. `/api/v2`
-* While serving the web API go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the respons of the `hello-world` operation.
-* Interactive documentation is provided at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
+1. The API is versioned, mounted at `/api/v1` resp. `/api/v2`
+2. While serving the web API go to [http://127.0.0.1:8000/api/v1/hello-world](http://127.0.0.1:8000/api/v1/hello-world) to see the respons of the `hello-world` operation.
+3. Interactive documentation is provided at [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
 
 
 The CLI provides extensive help:
@@ -174,21 +176,21 @@ uvx oe-python-template serve --help
 
 This project is designed with operational excellence in mind, using modern Python tooling and practices. It includes:
 
-* Various examples demonstrating usage:
-  - [Simple Python script](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
-  - [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
-  - [Jupyter](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb) and [Marimo](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py) notebook
-* [Complete reference documentation](https://oe-python-template.readthedocs.io/en/latest/reference.html) on Read the Docs
-* [Transparent test coverage](https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template) including unit and E2E tests (reported on Codecov)
-* Matrix tested with [multiple python versions](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
-* Compliant with modern linting and formatting standards (powered by [Ruff](https://github.com/astral-sh/ruff))
-* Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate) and [Dependabot](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/dependabot))
-* [A-grade code quality](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template) in security, maintainability, and reliability with low technical debt and codesmell (verified by SonarQube)
-* Additional code security checks using [CodeQL](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/code-scanning)
-* [Security Policy](SECURITY.md)
-* [License](LICENSE) compliant with the Open Source Initiative (OSI)
-* 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
-* Setup for developing inside a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) included (supports VSCode and GitHub Codespaces)
+1. Various examples demonstrating usage:
+  a. [Simple Python script](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py)
+  b. [Streamlit web application](https://oe-python-template.streamlit.app/) deployed on [Streamlit Community Cloud](https://streamlit.io/cloud)
+  c. [Jupyter](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.ipynb) and [Marimo](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/notebook.py) notebook
+2. [Complete reference documentation](https://oe-python-template.readthedocs.io/en/latest/reference.html) on Read the Docs
+3. [Transparent test coverage](https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template) including unit and E2E tests (reported on Codecov)
+4. Matrix tested with [multiple python versions](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
+5. Compliant with modern linting and formatting standards (powered by [Ruff](https://github.com/astral-sh/ruff))
+6. Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate) and [Dependabot](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/dependabot))
+7. [A-grade code quality](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template) in security, maintainability, and reliability with low technical debt and codesmell (verified by SonarQube)
+8. Additional code security checks using [CodeQL](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/code-scanning)
+9. [Security Policy](SECURITY.md)
+10. [License](LICENSE) compliant with the Open Source Initiative (OSI)
+11. 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
+12. Setup for developing inside a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) included (supports VSCode and GitHub Codespaces)
 
 
 ## Usage Examples
