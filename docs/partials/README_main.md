@@ -1,23 +1,50 @@
 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
-Use Cases:
-1) Fast and easy generation of Python projects from this template
-2) Seamless updates of projects when improvements to the template are released
-3) Generates a fully-functional Python package with test and build automation featuring
-   - Service architecture suiteable for use as shared library
-   - Command-line interface (CLI)
-   - Versioned Web API
-   - Integration examples with Notebooks and Dashboards
-   - Complete developer-tooling with formatting, linting, type checking etc.
-   - CI/CD pipeline for GitHub, PyPI, and Docker registries
-   - Unit and E2E tests including parallel and matrix-testing
-   - Release artifacts include SBOM, license information, and test coverage
-   - Auto-generated documentation published to Read The Docs
-   - Service integrations monitoring code quality, dependencies, and security
+This [Copier](https://copier.readthedocs.io/en/stable/) template enables you to quickly generate a Python package with fully functioning build and test automation.
+Projects generated from this template can be [easily updated](https://copier.readthedocs.io/en/stable/updating/) to benefit from improvements and new features of the template.
 
-## Scaffolding
+Features:
+- Package management with [uv](https://github.com/astral-sh/uv)
+- Code formatting with [Ruff](https://github.com/astral-sh/ruff)
+- Linting with [Ruff](https://github.com/astral-sh/ruff)
+- Static type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
+- Complete set of [pre-commit](https://pre-commit.com/) hooks including [detect-secrets](https://github.com/Yelp/detect-secrets) and [pygrep](https://github.com/pre-commit/pygrep-hooks)
+- Unit and E2E testing with [pytest](https://docs.pytest.org/en/stable/) including parallel test execution
+- Matrix testing in multiple environments with [nox](https://nox.thea.codes/en/stable/)
+- Test coverage reported with [Codecov](https://codecov.io/) and published as release artifact
+- CI/CD pipeline automated with [GitHub Actions](https://github.com/features/actions)
+- CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
+- Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
+- Dependency monitoring with [pip-audit](https://pypi.org/project/pip-audit/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
+- Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/) and published as release artefacts
+- Software Bill of Materials (SBOM) generated with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) and published as release artifact
+- Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
+- Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
+- Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation and PDF export
+- Documentation published to [Read The Docs](https://readthedocs.org/)
+- Interactive OpenAPI specification with [Swagger](https://swagger.io/)
+- Python package published to [PyPI](https://pypi.org/)
+- Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
+- One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
 
-**Step 1**: Install uv package manager and copier
+The generated project includes code, documentation and configuration of a fully functioning demo-application and service, which can be used as a starting point for your own project.
+- Service architecture suitable for use as shared library
+- Validation with [pydantic](https://docs.pydantic.dev/)
+- Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
+- Versioned Web API with [FastAPI](https://fastapi.tiangolo.com/)
+- [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
+- Simple Web UI with [Streamlit](https://streamlit.io/)
+- Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
+- Documentation including badges, setup instructions, contribution guide and security policy
+
+Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
+
+## Generate a new project
+
+This template is designed to be used with the [copier](https://copier.readthedocs.io/en/stable/) project generator. It allows you to create a new project based on this template and customize it according to your needs.
+To generate a new project, follow these steps:
+
+**Step 1**: Install uv package manager and copier. Copy the following code into your terminal and execute it.
 ```shell
 if [[ "$OSTYPE" == "darwin"* ]]; then                 # Install dependencies for macOS X
   if ! command -v brew &> /dev/null; then             ## Install Homebrew if not present
@@ -33,32 +60,31 @@ fi
 uv tool install copier                                # Install copier as global tool
 ```
 
-**Step 2**: Now create an empty repository on GitHub, clone to your local machine, and change into it's directory.
+**Step 2**: [Create an empty repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository), clone to your local machine, and change into it's directory.
 
-**Step 3**: Scaffold the project
+**Step 3**: Generate the project. Copy
 ```shell
 copier copy --trust gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
 
-**Step 4**: Perform initial commit and push
+**Step 4**: Perform initial commit and push. Copy the following code into your terminal and execute it.
 ```shell
 git add .
 git commit -m "feat: Initial commit"
 git push
 ```
 
-Visit your GitHub repository and check the Actions tab. The CI workflow should fail at the SonarQube step,
-as this external service is not yet configured for our new repository.
+Visit your GitHub repository and check the Actions tab. The CI workflow should already be running! The workflow will fail at the SonarQube step, as this external service is not yet configured for our new repository.
 
 **Step 5**: Follow the [instructions](SERVICE_CONNECTIONS.md) to wire up
-external services such as Cloudcov, SonarQube Cloud, Read The Docs, Docker.io, GHCR.io and Streamlit Community Cloud.
+external services such as CloudCov, SonarQube Cloud, Read The Docs, Docker.io, and Streamlit Community Cloud.
 
 **Step 6**: Release the first versions
 ```shell
 ./n bump
 ```
 Notes:
-* You can remove this section post having successfully scafolded your project.
+* You can remove this section post having successfully generated your project.
 * The following sections refer to the dummy application and service provided by this template.
   Use them as inspiration and adapt them to your own project.
 
@@ -114,9 +140,9 @@ This project is designed with operational excellence in mind, using modern Pytho
 * [Transparent test coverage](https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template) including unit and E2E tests (reported on Codecov)
 * Matrix tested with [multiple python versions](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py) to ensure compatibility (powered by [Nox](https://nox.thea.codes/en/stable/))
 * Compliant with modern linting and formatting standards (powered by [Ruff](https://github.com/astral-sh/ruff))
-* Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate) and [GitHub Dependabot](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/dependabot))
+* Up-to-date dependencies (monitored by [Renovate](https://github.com/renovatebot/renovate) and [Dependabot](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/dependabot))
 * [A-grade code quality](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template) in security, maintainability, and reliability with low technical debt and codesmell (verified by SonarQube)
-* Additional code security checks using [GitHub CodeQL](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/code-scanning)
+* Additional code security checks using [CodeQL](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/security/code-scanning)
 * [Security Policy](SECURITY.md)
 * [License](LICENSE) compliant with the Open Source Initiative (OSI)
 * 1-liner for installation and execution of command line interface (CLI) via [uv(x)](https://github.com/astral-sh/uv) or [Docker](https://hub.docker.com/r/helmuthva/oe-python-template/tags)
