@@ -16,7 +16,7 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, Response, status
 from pydantic import BaseModel, Field
 
-from {{ project_name_snake_case }} import Service
+from {{ import_package_name }} import Service
 
 TITLE="{{ project_name }}"
 HELLO_WORLD_EXAMPLE = "Hello, world!"

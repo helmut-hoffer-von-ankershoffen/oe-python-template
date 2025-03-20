@@ -79,8 +79,14 @@ Changelog = "https://github.com/helmut-hoffer-von-ankershoffen/oe-python-templat
 Issues = "https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["src/*"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/oe_python_template"]
 
 [project.optional-dependencies]
 examples = [

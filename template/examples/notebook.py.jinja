@@ -6,7 +6,7 @@ app = marimo.App()
 
 @app.cell
 def _():
-    from {{ project_name_snake_case }} import Service
+    from {{ import_package_name }} import Service
 
     service = Service()
     message = service.get_hello_world()

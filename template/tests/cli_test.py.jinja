@@ -5,10 +5,10 @@ from unittest.mock import patch
 import pytest
 from typer.testing import CliRunner
 
-from {{ project_name_snake_case }} import (
+from {{ import_package_name }} import (
     __version__,
 )
-from {{ project_name_snake_case }}.cli import cli
+from {{ import_package_name }}.cli import cli
 
 BUILT_WITH_LOVE = "built with love in Berlin"
 
@@ -48,7 +48,7 @@ def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
     assert result.exit_code == 0
     assert "Starting API server at http://127.0.0.1:8000" in result.output
     mock_uvicorn_run.assert_called_once_with(
-        "{{ project_name_snake_case }}.api:api",
+        "{{ import_package_name }}.api:api",
         host="127.0.0.1",
         port=8000,
         reload=False,

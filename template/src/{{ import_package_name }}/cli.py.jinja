@@ -9,8 +9,8 @@ import uvicorn
 import yaml
 from rich.console import Console
 
-from {{ project_name_snake_case }} import Service, __version__
-from {{ project_name_snake_case }}.api import api_v1, api_v2
+from {{ import_package_name }} import Service, __version__
+from {{ import_package_name }}.api import api_v1, api_v2
 
 console = Console()
 
@@ -53,7 +53,7 @@ def serve(
     os.environ["UVICORN_HOST"] = host
     os.environ["UVICORN_PORT"] = str(port)
     uvicorn.run(
-        "{{ project_name_snake_case }}.api:api",
+        "{{ import_package_name }}.api:api",
         host=host,
         port=port,
         reload=watch,

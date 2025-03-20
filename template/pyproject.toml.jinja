@@ -1,5 +1,5 @@
 [project]
-name = "{{ pypi_distribution_name}}"
+name = "{{ pypi_distribution_name }}"
 version = "0.0.1"
 description = "{{ project_icon }} {{ project_description }}"
 readme = "README.md"
@@ -69,7 +69,7 @@ dependencies = [
 ]
 
 [project.scripts]
-{{ pypi_distribution_name }} = "{{ project_name_snake_case }}.cli:cli"
+{{ pypi_distribution_name }} = "{{ import_package_name }}.cli:cli"
 
 [project.urls]
 Homepage = "https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/"
@@ -79,8 +79,14 @@ Changelog = "{{ github_repository_url_https }}/releases"
 Issues = "{{ github_repository_url_https }}/issues"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["src/*"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ import_package_name }}"]
 
 [project.optional-dependencies]
 examples = [
@@ -217,7 +223,7 @@ warn_required_dynamic_aliases = true
 warn_untyped_fields = true
 
 [tool.pytest.ini_options]
-addopts = "-v --cov={{ project_name_snake_case }} --cov-report=term-missing --cov-report=xml:reports/coverage.xml --cov-report=html:reports/coverage_html"
+addopts = "-v --cov={{ import_package_name }} --cov-report=term-missing --cov-report=xml:reports/coverage.xml --cov-report=html:reports/coverage_html"
 testpaths = ["tests"]
 python_files = ["*_test.py"]
 asyncio_mode = "auto"
