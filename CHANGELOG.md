@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.30](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.29..0.6.30) - 2025-03-21
+## [0.6.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.30..0.6.31) - 2025-03-21
+
+### 📚 Documentation
+
+- Polish to better highlight removing the upper section post generation - ([4bf1d46](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4bf1d46b9f71ebc5dd2aa2e608c2c760bfdb3026))
+
+
+## [0.6.30](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.29..v0.6.30) - 2025-03-21
 
 ### 📚 Documentation
 
