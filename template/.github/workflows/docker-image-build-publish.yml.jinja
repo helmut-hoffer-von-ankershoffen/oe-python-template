@@ -89,10 +89,11 @@ jobs:
 {% endraw %}
 
 {% if docker_io_enabled %}
+{% if attestations_enabled %}
 {% raw %}
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         with:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true{% endraw %}{% endif %}
+          push-to-registry: true{% endraw %}{% endif %}{% endif %}

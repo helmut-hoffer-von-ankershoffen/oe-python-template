@@ -213,6 +213,11 @@ docker_io_image_name:
     Invalid docker.io imag name
     {% endif %}
 
+attestations_enabled:
+  type: bool
+  help: Do you want to publish attestations?
+  default: yes
+
 streamlit_project_key:
   type: str
   help: What is the project key at streamlit.io? You likely want to accept the default.
@@ -221,3 +226,8 @@ streamlit_project_key:
     {% if not streamlit_project_key %}
     Invalid streamlit.io project key
     {% endif %}
+
+codeql_enabled:
+  type: bool
+  help: Do you want to enable codeql?
+  default: yes
