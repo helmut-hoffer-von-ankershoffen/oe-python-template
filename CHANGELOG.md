@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.33](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.32..0.6.33) - 2025-03-21
+## [0.6.34](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.33..0.6.34) - 2025-03-21
+
+### ⛰️  Features
+
+- Codeql and attestations can be disabled - ([663cb7f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/663cb7f757421b0d7085bab7d1e64da1bba58b91))
+
+
+## [0.6.33](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.32..v0.6.33) - 2025-03-21
 
 ### 🐛 Bug Fixes
 
