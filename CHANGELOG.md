@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.29](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.28..0.6.29) - 2025-03-20
+## [0.6.30](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.29..0.6.30) - 2025-03-21
+
+### 📚 Documentation
+
+- Polish intro, highlight configurability during scaffolding - ([17126f3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/17126f3bca202d949b2dde3bf6c59edf14681bd1))
+
+
+## [0.6.29](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.28..v0.6.29) - 2025-03-20
 
 ### 🐛 Bug Fixes
 
