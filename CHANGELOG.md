@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.30..0.6.31) - 2025-03-21
+## [0.6.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.31..0.6.32) - 2025-03-21
+
+### 🚜 Refactor
+
+- *(app)* Extract models - ([a69d762](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a69d762930509c45b8b2574097273f71823d3322))
+
+
+## [0.6.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.30..v0.6.31) - 2025-03-21
 
 ### 📚 Documentation
 
