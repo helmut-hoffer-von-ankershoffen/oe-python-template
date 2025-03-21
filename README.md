@@ -51,7 +51,7 @@ This [Copier](https://copier.readthedocs.io/en/stable/) template enables you to 
 
 ### Development Infrastructure
 
-Projects generated with the template come with a comprehensive development toolchain and quality assurance framework that supports the entire software development lifecycle - from coding and testing to documentation, release management, and compliance auditing. This infrastructure automates routine tasks, enforces code quality standards, and streamlines the path to production:
+Projects generated with this template come with a comprehensive development toolchain and quality assurance framework that supports the entire software development lifecycle - from coding and testing to documentation, release management, and compliance auditing. This infrastructure automates routine tasks, enforces code quality standards, and streamlines the path to production:
 
 1. Linting with [Ruff](https://github.com/astral-sh/ruff)
 2. Static type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
@@ -137,9 +137,10 @@ external services such as CloudCov, SonarQube Cloud, Read The Docs, Docker.io, a
 ./n bump
 ```
 Notes:
-1. You can remove this section post having successfully generated your project.
-2. The following sections refer to the dummy application and service provided by this template.
-   Use them as inspiration and adapt them to your own project.
+1. You can remove the above sections - from "Scaffolding" to this notes - post having successfully generated your project.
+2. The following sections refer to the dummy application and service generated into the `tests` and `src` folder by this template.
+   Use the documentation and code as inspiration, adapt to your business logic, or remove and start documenting and coding from scratch.
+
 
 ## Overview
 
