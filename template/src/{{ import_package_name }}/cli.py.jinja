@@ -9,7 +9,7 @@ import uvicorn
 import yaml
 from rich.console import Console
 
-from oe_python_template import Service, Utterance, __version__
+from {{ import_package_name }} import Service, Utterance, __version__
 from {{ import_package_name }}.api import api_v1, api_v2
 
 console = Console()

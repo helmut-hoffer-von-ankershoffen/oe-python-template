@@ -101,7 +101,7 @@ def test_health_endpoint(client: TestClient) -> None:
     assert response.json()["reason"] is None
 
 
-@patch("oe_python_template.api.Service")
+@patch("{{ import_package_name }}.api.Service")
 def test_health_endpoint_down(mock_service, client: TestClient) -> None:
     """Test that the health endpoint returns 500 status when service is unhealthy."""
     # Configure the mock to return unhealthy status
