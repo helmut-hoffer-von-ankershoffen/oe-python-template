@@ -8,10 +8,7 @@ resolution-markers = [
 ]
 
 [manifest]
-overrides = [
-    { name = "rfc3987", marker = "sys_platform == 'never'" },
-    { name = "sphinx-jsonschema", marker = "sys_platform == 'never'" },
-]
+overrides = [{ name = "rfc3987", marker = "sys_platform == 'never'" }]
 
 [[package]]
 name = "alabaster"
