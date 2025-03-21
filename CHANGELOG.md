@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.31..0.6.32) - 2025-03-21
+## [0.6.33](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.32..0.6.33) - 2025-03-21
+
+### 🐛 Bug Fixes
+
+- Vars - ([dc2e3a5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/dc2e3a5453681a09547474a6f00d242d6c41d57d))
+
+
+## [0.6.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.31..v0.6.32) - 2025-03-21
 
 ### 🚜 Refactor
 
