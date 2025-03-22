@@ -5,31 +5,16 @@ Thank you for considering contributing to OE Python Template!
 
 ## Setup
 
-Install dependencies and tools required for development:
+Install or update tools required for development:
 
 ```shell
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then                  # Install Linux specifics
-  sudo apt-get update -y && sudo apt-get install curl -y  # https://curl.se/
-fi
-if ! command -v brew &> /dev/null; then                   # https://brew.sh/
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew update                                             # Update Homebrew bundles
-fi
-which uv &> /dev/null || brew install uv                  # https://docs.astral.sh/uv/
-which git &> /dev/null || brew install git                # https://git-scm.com/
-which gpg &> /dev/null || brew install gnupg              # https://gnupg.org/
-which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
-which jq &> /dev/null || brew install jq                  # https://jqlang.org/
-which libxml2 &> /dev/null || brew install libxml2        # https://en.wikipedia.org/wiki/Libxml2
-which act &> /dev/null || brew install act                # https://nektosact.com/
-which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
-if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
-  which pinentry-mac &> /dev/null || brew install gnupg   # https://github.com/GPGTools/pinentry
-fi
-uv tool install copier                                    # https://copier.readthedocs.io/en/stable/
+# Install Homebrew, uv package manager, copier and further dev tools
+curl -LsSf https://raw.githubusercontent.com/helmut-hoffer-von-ankershoffen/oe-python-template/HEAD/install.sh | sh
 ```
 
-Clone this GitHub repository via ```git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git``` and change into the directory of your local OE Python Template repository: ```cd oe-python-template```
+[Create a fork](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/fork) and clone your fork using ```git clone URL_OF_YOUR_CLONE```. Then change into the directory of your local OE Python Template repository with ```cd oe-python-template```.
+
+If you are one of the committers of https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template you can directly clone via ```git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git``` and ```cd oe-python-template```.
 
 
 ## Directory Layout
