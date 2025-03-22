@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.7.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.0..0.7.1) - 2025-03-22
+## [0.7.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.1..0.7.2) - 2025-03-22
+
+### ⛰️  Features
+
+- *(install)* Install.sh for global dev tools - ([5a87770](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5a8777090509e91a5e59003c6edf3dd22b3945c2))
+
+
+## [0.7.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.0..v0.7.1) - 2025-03-22
 
 ### 📚 Documentation
 
