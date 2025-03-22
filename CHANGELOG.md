@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.6.35](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.34..0.6.35) - 2025-03-22
+## [0.6.36](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.35..0.6.36) - 2025-03-22
+
+### 🚜 Refactor
+
+- *(Makefile)* Migrated from ./n to Makefile, with nice make help - ([01ac64c](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/01ac64c966ed574816bcdc7d17303e4194701f24))
+
+
+## [0.6.35](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.6.34..v0.6.35) - 2025-03-22
 
 ### 🚜 Refactor
 
