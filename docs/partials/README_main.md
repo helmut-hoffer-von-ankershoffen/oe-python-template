@@ -56,9 +56,7 @@ To generate a new project, follow these steps:
 
 **Step 1**: Install homebrew, uv package manager amd further tools. Copy the following code into your terminal and execute it.
 ```shell
-if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
-  # Nothing specific yet
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then                  # Install Linux specifics
   sudo apt-get update -y && sudo apt-get install curl -y  # https://curl.se/
 fi
 if ! command -v brew &> /dev/null; then                   # https://brew.sh/
@@ -74,14 +72,10 @@ which libxml2 &> /dev/null || brew install libxml2        # https://en.wikipedia
 which act &> /dev/null || brew install act                # https://nektosact.com/
 which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
 if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
-  # Nothing specific yet
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
   which pinentry-mac &> /dev/null || brew install gnupg   # https://github.com/GPGTools/pinentry
 fi
 uv tool install copier                                    # https://copier.readthedocs.io/en/stable/
 ```
-
-Notes:
 
 **Step 2**: [Create a repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository), clone to your local machine, and change into it's directory.
 
