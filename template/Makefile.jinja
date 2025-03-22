@@ -3,11 +3,12 @@
 # Define all PHONY targets
 .PHONY: all audit bump build clean docs lint setup setup test update_from_template
 
-# Main targets
+# Main target i.e. default sessions defined in noxfile.py
 all:
 	uv run nox
 
-# Improved command pattern that properly handles special cases for bump and test
+# Nox targets
+## Call nox sessions passing parameters
 nox-cmd = @if [ "$@" = "test" ]; then \
 	if [ -n "$(filter 3.%,$(MAKECMDGOALS))" ]; then \
 		uv run nox -s test -p $(filter 3.%,$(MAKECMDGOALS)); \
@@ -22,11 +23,13 @@ else \
 	uv run nox -s $@; \
 fi
 
-# Targets that use the nox-cmd pattern
+# Individual Nox sessions
 act audit bump docs lint setup test update_from_template:
 	$(nox-cmd)
 
 # Standalone targets
+
+## Clean build artifacts and caches
 clean:
 	rm -rf .mypy_cache
 	rm -rf .nox
@@ -37,6 +40,11 @@ clean:
 	rm -rf .coverage
 	make -C docs clean
 	rm -rf reports && mkdir -p reports && touch reports/.keep
+
+## Build Docker image
+docker_build:
+	docker build -t {{ pypi_distribution_name }} .
+
 
 # Special rule to catch any arguments (like patch, minor, major, pdf, Python versions, or x.y.z)
 # This prevents "No rule to make target" errors when passing arguments to make commands
@@ -53,8 +61,9 @@ help:
 	@echo "  audit               - Run security and license compliance audit"
 	@echo "  build               - Build wheel package with uv"
 	@echo "  bump patch|minor|major|x.y.z - Bump version"
-	@echo "  clean               - Clean build artifacts"
+	@echo "  clean               - Clean build artifacts and caches"
 	@echo "  docs [pdf]          - Build documentation (add pdf for PDF format)"
+	@echo "  docker_build        - Build Docker image {{ pypi_distribution_name }}"
 	@echo "  lint                - Run linting and formatting checks"
 	@echo "  setup               - Setup development environment"
 	@echo "  test [3.11|3.12|3.13] - Run tests (for specific Python version)"

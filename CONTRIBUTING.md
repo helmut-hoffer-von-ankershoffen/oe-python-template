@@ -156,12 +156,44 @@ Notes:
 
 ### Docker
 
-```shell
-docker build -t oe-python-template .
-```
+Build and run the Docker image with plain Docker
 
 ```shell
+# Build from Dockerimage
+make docker build
+# Run the CLI
 docker run --env THE_VAR=THE_VALUE oe-python-template --help
+```
+
+Build and run the Docker image with docker compose:
+
+```shell
+echo "Building the Docker image with docker compose and running CLI..."
+docker compose run --build oe-python-template --help
+echo "Building the Docker image with docker compose and running API container as a daemon ..."
+docker compose up --build -d
+echo "Waiting for the API server to start..."
+sleep 5
+echo "Checking health of v1 API ..."
+curl http://127.0.0.1:8000/api/v1/healthz
+echo ""
+echo "Saying hello world with v1 API ..."
+curl http://127.0.0.1:8000/api/v1/hello-world
+echo ""
+echo "Swagger docs of v1 API ..."
+curl http://127.0.0.1:8000/api/v1/docs
+echo ""
+echo "Checking health of v2 API ..."
+curl http://127.0.0.1:8000/api/v2/healthz
+echo ""
+echo "Saying hello world with v1 API ..."
+curl http://127.0.0.1:8000/api/v2/hello-world
+echo ""
+echo "Swagger docs of v2 API ..."
+curl http://127.0.0.1:8000/api/v2/docs
+echo ""
+echo "Shutting down the API container ..."
+docker compose down
 ```
 
 ### Pinning GitHub Actions

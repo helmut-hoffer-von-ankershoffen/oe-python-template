@@ -313,11 +313,30 @@ docker compose run {{ pypi_distribution_name}} echo "Lorem"
 docker compose run {{ pypi_distribution_name}} echo "Lorem" --json
 docker compose run {{ pypi_distribution_name}} openapi
 docker compose run {{ pypi_distribution_name}} openapi --output-format=json
-docker compose up
+echo "Running {{ project_name }}'s API container as a daemon ..."
+docker compose up -d
+echo "Waiting for the API server to start ..."
+sleep 5
+echo "Checking health of v1 API ..."
+curl http://127.0.0.1:8000/api/v1/healthz
+echo ""
+echo "Saying hello world with v1 API ..."
 curl http://127.0.0.1:8000/api/v1/hello-world
+echo ""
+echo "Swagger docs of v1 API ..."
 curl http://127.0.0.1:8000/api/v1/docs
+echo ""
+echo "Checking health of v2 API ..."
+curl http://127.0.0.1:8000/api/v2/healthz
+echo ""
+echo "Saying hello world with v1 API ..."
 curl http://127.0.0.1:8000/api/v2/hello-world
+echo ""
+echo "Swagger docs of v2 API ..."
 curl http://127.0.0.1:8000/api/v2/docs
+echo ""
+echo "Shutting down the API container ..."
+docker compose down
 ```
 
 ## Extra: Lorem Ipsum
