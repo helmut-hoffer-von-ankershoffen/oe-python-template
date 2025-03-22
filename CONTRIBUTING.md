@@ -2,118 +2,156 @@
 
 Thank you for considering contributing to OE Python Template!
 
+
 ## Setup
+
+Install dependencies and tools required for development:
+
+```shell
+if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
+  # Nothing specific yet
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
+  sudo apt-get update -y && sudo apt-get install curl -y  # https://curl.se/
+fi
+if ! command -v brew &> /dev/null; then                   # https://brew.sh/
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew update                                             # Update Homebrew bundles
+fi
+which uv &> /dev/null || brew install uv                  # https://docs.astral.sh/uv/
+which git &> /dev/null || brew install git                # https://git-scm.com/
+which gpg &> /dev/null || brew install gnupg              # https://gnupg.org/
+which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
+which jq &> /dev/null || brew install jq                  # https://jqlang.org/
+which libxml2 &> /dev/null || brew install libxml2        # https://en.wikipedia.org/wiki/Libxml2
+which act &> /dev/null || brew install act                # https://nektosact.com/
+which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
+if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
+  # Nothing specific yet
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
+  which pinentry-mac &> /dev/null || brew install gnupg   # https://github.com/GPGTools/pinentry
+fi
+uv tool install copier                                    # https://copier.readthedocs.io/en/stable/
+```
 
 Clone this GitHub repository via ```git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git``` and change into the directory of your local OE Python Template repository: ```cd oe-python-template```
 
-Install the dependencies:
 
-### macOS
-
-```shell
-if ! command -v brew &> /dev/null; then # if Homebrew package manager not present ...
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # ... install it
-else
-  which brew # ... otherwise inform where brew command was found
-fi
-# Install required tools if not present
-which jq &> /dev/null || brew install jq
-which xmllint &> /dev/null || brew install xmllint
-which act &> /dev/null || brew install act
-which pinact &> /dev/null || brew install pinact
-uv run pre-commit install             # install pre-commit hooks, see https://pre-commit.com/
-```
-
-### Linux
-
-```shell
-sudo sudo apt install -y curl jq libxml2-utils gnupg2  # tooling
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash # act
-uv run pre-commit install # see https://pre-commit.com/
-```
-
-## Code
+## Directory Layout
 
 ```
-src/oe_python_template/
+├── Makefile               # Central entrypoint for build, test, release and deploy
+├── noxfile.py             # Noxfile for running tests in multiple python environments and other tasks
+├── .pre-commit-config.yaml # Definition of hooks run on commits
+├── .github/               # GitHub specific files
+│   ├── workflows/         # GitHub Actions workflows
+│   ├── prompts/           # Custom prompots for GitHub Copilot
+│   └── copilot-instructions.md # Insructions for GitHub Copilot
+├── .vscode/               # Recommended VSCode settings and extensions
+├── .env                   # Environment variables, on .gitignore
+├── .env.example           # Example environment variables
+src/oe_python_template/  # Source code
 ├── __init__.py          # Package initialization
-└── cli.py               # Command Line Interface
+├── constants.py         # Constants used throughout the app
+├── service.py           # Service exposed for use as shared library
+├── models.py            # Models and data structures
+├── cli.py               # CLI enabling to interact with service from terminal
+└── api.py               # API exposing service as web service
 tests/                   # Unit and E2E tests
 ├── cli_tests.py         # Verifies the CLI functionality
+├── api_tests.py         # Verifies the API functionality
 └── fixtures/            # Fixtures and mock data
+docs/                    # Documentation
+├── partials/*.md        # Partials to compile README.md,  _main partial included in HTML and PDF documentation
+├── ../README.md         # Compiled README.md shown on GitHub
+├── source/*.rst         # reStructuredText files used to generate HTML and PDF documentation
+├── ../*.md              # Markdown files shown on GitHub and imported by .rst files
+├── source/conf.py       # Sphinx configuration used to generate HTML and PDF documentation
+├── build/html/*         # Generated HTML documentation as multiple pages
+├── build/singlehtml/index.html # HTML documentation as a single page
+└── build/latex/oe-python-template.pdf # PDF manual - generate with make docs pdf
 examples/                # Example code demonstrating use of the project
 ├── streamlit.py         # Streamlit App, deployed in Streamlit Community Cloud
 ├── notebook.py          # Marimo notebook
 ├── notebook.ipynb       # Jupyter notebook
 └── script.py            # Minimal script
+reports/                 # Compliance reports for auditing
+├── junit.xml            # Report of executions
+├── mypy_junit.xml       # Report of executions
+├── coverage.xml         # Test coverage in XML format
+├── coverage_html        # Report of test coverage in HTML format
+├── licenses.csv         # List of dependencies and their license types
+├── licenses.json        # .json file with dependencies their license types
+├── licenses_grouped.json  # .json file with dependencies grouped by license type
+├── notebook.ipynb       # Jupyter notebook
+└── script.py            # Minimal script
 ```
 
-## Run
 
-### .env file
+## Build, Run and Release
+
+### Setup project specific development environment
+
+```shell
+make setup
+```
 
 Don't forget to configure your `.env` file with the required environment variables.
 
 Notes:
-1. .env.example is provided as a template.
+1. .env.example is provided as a template, use ```cp .env.example .env``` and edit ```.env``` to create your environment.
 2. .env is excluded from version control, so feel free to add secret values.
 
-### update dependencies and create virtual environment
+### Build
 
 ```shell
-uv sync                      # install dependencies
-uv sync --all-extras         # install all extras, required for examples
-uv venv                      # create a virtual environment
-source .venv/bin/activate    # activate it
-uv run pre-commit install    # Install pre-commit hook etc.
+make        # Runs primary build steps, i.e. formatting, linting, testing, building HTML docs and distribution, auditing
+make help   # Shows help with additional build targets, e.g. to build PDF documentation, bump the version to release etc.
 ```
 
-### run the CLI
+Notes:
+1. Primary build steps defined in `noxfile.py`.
+2. Distribution dumped into ```dist/```
+3. Documentation dumped into ```docs/build/html/``` and ```docs/build/latex/```
+4. Audit reports dumped into ```reports/```
+
+### Run the CLI
 
 ```shell
 uv run oe-python-template # shows help
 ```
 
-## Build
-
-All build steps are defined in `noxfile.py`.
+### Commit and Push your changes
 
 ```shell
-uv run nox        # Runs all build steps except setup_dev
-```
-
-You can run individual build steps - called sessions in nox as follows:
-
-```shell
-uv run nox -s test      # run tests
-uv run nox -s lint      # run formatting and linting
-uv run nox -s audit     # run security and license audit, inc. sbom generation
-uv run nox -s docs      # build documentation, output in docs/build/html
-uv run nox -s docs_pdf  # locally build pdf manual to docs/build/latex/oe-python-template.pdf
-```
-
-As a shortcut, you can run build steps using `./n`, e.g.
-
-```shell
-./n test
-./n lint
-# ...
-```
-
-Generate a wheel using uv
-```shell
-uv build
+git add .
+git commit -m "feat(user): added new api endpoint to offboard user"
+git push
 ```
 
 Notes:
-1. Reports dumped into ```reports/```
-3. Documentation dumped into ```docs/build/html/```
-2. Distribution dumped into ```dist/```
+1. [pre-commit hooks](https://pre-commit.com/) will run automatically on commit to ensure code quality.
+2. We use the conventional commits format - see the [code style guide](CODE_STYLE.md) for the mandatory commit message format.
 
-### Running GitHub CI workflow locally
+### Publish Release
 
 ```shell
-uv run nox -s act
+make bump   # Patch release
+make minor  # Patch release
+make major  # Patch release
+make x.y.z  # Targeted release
+```
+
+Notes:
+1. Changelog generated automatically
+2. Publishes to PyPi, Docker Registries, Read The Docs, Streamlit and Auditing services
+
+
+## Advanced usage
+
+### Running GitHub CI Workflow locally
+
+```shell
+make act
 ```
 
 Notes:
@@ -130,26 +168,28 @@ docker build -t oe-python-template .
 docker run --env THE_VAR=THE_VALUE oe-python-template --help
 ```
 
-### Pinning github actions
+### Pinning GitHub Actions
 
 ```shell
 pinact run  # See https://dev.to/suzukishunsuke/pin-github-actions-to-a-full-length-commit-sha-for-security-2n7p
 ```
 
-### Copier
 
-Update from template
+## Update from Template
+
+Update project to latest version of [oe-python-template](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template) template.
 
 ```shell
-uv run nox -s update_from_template
+make update_from_template
 ```
+
 
 ## Pull Request Guidelines
 
-1. Before starting to write code read the [code style guide](CODE_STYLE.md) document for mandatory coding style
-   guidelines.
+1. Before starting to write code read the [code style](CODE_STYLE.md) document for mandatory coding style requirements.
 2. **Pre-Commit Hooks:** We use pre-commit hooks to ensure code quality. Please install the pre-commit hooks by running `uv run pre-commit install`. This ensure all tests, linting etc. pass locally before you can commit.
 3. **Squash Commits:** Before submitting a pull request, please squash your commits into a single commit.
-4. **Branch Naming:** Use descriptive branch names like `feature/your-feature` or `fix/issue-number`.
-5. **Testing:** Ensure new features have appropriate test coverage.
-6. **Documentation:** Update documentation to reflect any changes or new features.
+4. **Signed Commits:** Use [signed commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+5. **Branch Naming:** Use descriptive branch names like `feature/your-feature` or `fix/issue-number`.
+6. **Testing:** Ensure new features have appropriate test coverage.
+7. **Documentation:** Update documentation to reflect any changes or new features.

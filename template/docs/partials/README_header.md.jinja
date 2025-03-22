@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/{{ github_repository_owner }}/{{ github_repository_name }}?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
 ]({{ github_repository_url_https }}/blob/main/LICENSE)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ pypi_distribution_name }}.svg?logo=python&color=204361&labelColor=1E2933)]({{ github_repository_url_https }}/blob/main/noxfile.py)
+{% if pypi_enabled %}[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ pypi_distribution_name }}.svg?logo=python&color=204361&labelColor=1E2933)]({{ github_repository_url_https }}/blob/main/noxfile.py){% endif %}
 [![CI]({{ github_repository_url_https }}/actions/workflows/test-and-report.yml/badge.svg)]({{ github_repository_url_https }}/actions/workflows/test-and-report.yml)
 [![Read the Docs](https://img.shields.io/readthedocs/{{ readthedocs_project_key }})](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=alert_status)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
@@ -10,7 +10,7 @@
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=code_smells)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
-[![CodeQL]({{ github_repository_url_https }}/actions/workflows/codeql.yml/badge.svg)]({{ github_repository_url_https }}/security/code-scanning)
+{% if codeql_enabled %}[![CodeQL]({{ github_repository_url_https }}/actions/workflows/codeql.yml/badge.svg)]({{ github_repository_url_https }}/security/code-scanning){% endif %}
 [![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen?style=flat-square&logo=dependabot)]({{ github_repository_url_https }}/security/dependabot)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)]({{ github_repository_url_https }}/issues?q=is%3Aissue%20state%3Aopen%20Dependency%20Dashboard)
 [![Coverage](https://codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }}/graph/badge.svg?token=SX34YRP30E)](https://codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }})
@@ -18,10 +18,10 @@
 [![MyPy](https://img.shields.io/badge/mypy-checked-blue)]({{ github_repository_url_https }}/blob/main/noxfile.py)
 [![GitHub - Version](https://img.shields.io/github/v/release/{{ github_repository_owner }}/{{ github_repository_name }}?label=GitHub&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)]({{ github_repository_url_https }}/releases)
 [![GitHub - Commits](https://img.shields.io/github/commit-activity/m/{{ github_repository_owner }}/{{ github_repository_name }}/main?label=commits&style=flat&labelColor=1C2C2E&color=blue&logo=GitHub&logoColor=white)]({{ github_repository_url_https }}/commits/main/)
-[![PyPI - Version](https://img.shields.io/pypi/v/{{ pypi_distribution_name }}.svg?label=PyPI&logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/{{ pypi_distribution_name }})
-[![PyPI - Status](https://img.shields.io/pypi/status/{{ pypi_distribution_name }}?logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/{{ pypi_distribution_name }})
-[![Docker - Version](https://img.shields.io/docker/v/{{ docker_io_owner }}/{{ docker_io_image_name }}?sort=semver&label=Docker&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/tags)
-[![Docker - Size](https://img.shields.io/docker/image-size/{{ docker_io_owner }}/{{ docker_io_image_name }}?sort=semver&arch=arm64&label=image&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/)
+{% if pypi_enabled %}[![PyPI - Version](https://img.shields.io/pypi/v/{{ pypi_distribution_name }}.svg?label=PyPI&logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/{{ pypi_distribution_name }}){% endif %}
+{% if pypi_enabled %}[![PyPI - Status](https://img.shields.io/pypi/status/{{ pypi_distribution_name }}?logo=pypi&logoColor=%23FFD243&labelColor=%230073B7&color=FDFDFD)](https://pypi.python.org/pypi/{{ pypi_distribution_name }}){% endif %}
+{% if docker_io_enabled %}[![Docker - Version](https://img.shields.io/docker/v/{{ docker_io_owner }}/{{ docker_io_image_name }}?sort=semver&label=Docker&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/tags){% endif%}
+{% if docker_io_enabled %}[![Docker - Size](https://img.shields.io/docker/image-size/{{ docker_io_owner }}/{{ docker_io_image_name }}?sort=semver&arch=arm64&label=image&logo=docker&logoColor=white&labelColor=1354D4&color=10151B)](https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/){% endif%}
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3IDE2VjdsLTYgNU0yIDlWOGwxLTFoMWw0IDMgOC04aDFsNCAyIDEgMXYxNGwtMSAxLTQgMmgtMWwtOC04LTQgM0gzbC0xLTF2LTFsMy0zIi8+PC9zdmc+)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url={{ github_repository_url_https }})
 [![Open in GitHub Codespaces](https://img.shields.io/static/v1?label=GitHub%20Codespaces&message=Open&color=blue&logo=github)](https://github.com/codespaces/new/{{ github_repository_owner}}/{{ github_repository_name}})

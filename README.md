@@ -96,21 +96,34 @@ Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-templ
 This template is designed to be used with the [copier](https://copier.readthedocs.io/en/stable/) project generator. It allows you to create a new project based on this template and customize it according to your needs.
 To generate a new project, follow these steps:
 
-**Step 1**: Install uv package manager and copier. Copy the following code into your terminal and execute it.
+**Step 1**: Install homebrew, uv package manager amd further tools. Copy the following code into your terminal and execute it.
 ```shell
-if [[ "$OSTYPE" == "darwin"* ]]; then                 # Install dependencies for macOS X
-  if ! command -v brew &> /dev/null; then             ## Install Homebrew if not present
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then            # Install dependencies for Linux
-  sudo apt-get update -y && sudo apt-get install curl -y # Install curl
+if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
+  # Nothing specific yet
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
+  sudo apt-get update -y && sudo apt-get install curl -y  # https://curl.se/
 fi
-if ! command -v uvx &> /dev/null; then                # Install uv package manager if not present
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  source $HOME/.local/bin/env
+if ! command -v brew &> /dev/null; then                   # https://brew.sh/
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew update                                             # Update Homebrew bundles
 fi
-uv tool install copier                                # Install copier as global tool
+which uv &> /dev/null || brew install uv                  # https://docs.astral.sh/uv/
+which git &> /dev/null || brew install git                # https://git-scm.com/
+which gpg &> /dev/null || brew install gnupg              # https://gnupg.org/
+which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
+which jq &> /dev/null || brew install jq                  # https://jqlang.org/
+which libxml2 &> /dev/null || brew install libxml2        # https://en.wikipedia.org/wiki/Libxml2
+which act &> /dev/null || brew install act                # https://nektosact.com/
+which pinact &> /dev/null || brew install pinact          # https://github.com/suzuki-shunsuke/pinact
+if [[ "$OSTYPE" == "darwin"* ]]; then                     # Install macOS specifics
+  # Nothing specific yet
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then                # Install Linux specifics
+  which pinentry-mac &> /dev/null || brew install gnupg   # https://github.com/GPGTools/pinentry
+fi
+uv tool install copier                                    # https://copier.readthedocs.io/en/stable/
 ```
+
+Notes:
 
 **Step 2**: [Create a repository on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository), clone to your local machine, and change into it's directory.
 
@@ -129,12 +142,15 @@ git push
 
 Visit your GitHub repository and check the Actions tab. The CI workflow should already be running! The workflow will fail at the SonarQube step, as this external service is not yet configured for our new repository.
 
+Notes:
+1. Check out [this manual](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) on how to set up signed commits
+
 **Step 5**: Follow the [instructions](SERVICE_CONNECTIONS.md) to wire up
 external services such as CloudCov, SonarQube Cloud, Read The Docs, Docker.io, and Streamlit Community Cloud.
 
-**Step 6**: Release the first versions
+**Step 6**: Release the first version of your project
 ```shell
-./n bump
+make bump
 ```
 Notes:
 1. You can remove the above sections - from "Scaffolding" to this notes - post having successfully generated your project.
