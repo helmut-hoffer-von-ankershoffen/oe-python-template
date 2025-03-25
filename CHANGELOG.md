@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.7.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.1..0.7.2) - 2025-03-22
+## [0.7.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.2..0.7.3) - 2025-03-25
+
+### ⚙️ Miscellaneous Tasks
+
+- Add gmake to installs so we have a fallback in case there is an issue with xcode installed make - ([64ecb1f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/64ecb1fccfd27d9301f116c7e41d006ef21c28bb))
+
+
+## [0.7.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.1..v0.7.2) - 2025-03-22
 
 ### ⛰️  Features
 
