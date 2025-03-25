@@ -1,7 +1,7 @@
 #!/bin/sh
 # shellcheck shell=sh
 
-echo "Installing tools to enable project management with oe-python-template ..."
+echo "Installing dev tools to enable project management with oe-python-template and derivatives ..."
 
 LINUX_APT_TOOLS=(
     "curl;curl;https://curl.se/"
@@ -11,6 +11,7 @@ BREW_TOOLS=(
     "uv;uv;https://docs.astral.sh/uv/"
     "git;git;https://git-scm.com/"
     "gpg;gnupg;https://gnupg.org/"
+    "gmake;make;https://www.gnu.org/software/make/"
     "jq;jq;https://jqlang.org/"
     "xmllint;libxml2;https://en.wikipedia.org/wiki/Libxml2"
     "act;act;https://nektosact.com/"

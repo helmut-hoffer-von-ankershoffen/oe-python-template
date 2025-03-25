@@ -63,7 +63,7 @@ curl -LsSf https://raw.githubusercontent.com/helmut-hoffer-von-ankershoffen/oe-p
 
 **Step 3**: Execute the following command to generate a new project based on this template.
 ```shell
-# Ensure to stand in a git repository before executing the next command
+# Ensure to stand in your freshly created git repository before executing this command
 copier copy --trust gh:helmut-hoffer-von-ankershoffen/oe-python-template .
 ```
 
