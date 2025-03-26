@@ -1,5 +1,12 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
+## [0.7.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.4..0.7.5) - 2025-03-26
+
+### ⛰️  Features
+
+- *(settings)* Demonstrate how to use settings for configuration management - ([821a835](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/821a83560a357832dfa958363ec901288ac24ad8))
+
+
 ## [0.7.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.2..v0.7.3) - 2025-03-25
 
 ### ⚙️ Miscellaneous Tasks
