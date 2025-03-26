@@ -1,5 +1,7 @@
 """Tests to verify the CLI functionality of OE Python Template."""
 
+import os
+import subprocess
 from unittest.mock import patch
 
 import pytest
@@ -27,6 +29,29 @@ def test_cli_built_with_love(runner) -> None:
     assert __version__ in result.output
 
 
+def test_cli_health(runner: CliRunner) -> None:
+    """Check health is true."""
+    result = runner.invoke(cli, ["health"])
+    assert result.exit_code == 0
+    assert "True" in result.output
+
+
+def test_cli_info(runner: CliRunner) -> None:
+    """Check health is true."""
+    result = runner.invoke(cli, ["info"])
+    assert result.exit_code == 0
+    assert "en_US" in result.output
+
+
+def test_cli_info_de() -> None:
+    """Check hello world printed."""
+    env_de = os.environ.copy()
+    env_de.update({"OE_PYTHON_TEMPLATE_LANGUAGE": "de_DE"})
+    cli = "oe-python-template"
+    completed_process = subprocess.run([cli, "info"], capture_output=True, check=False, env=env_de)
+    assert completed_process.stdout == b'{"language":"de_DE"}\n'
+
+
 def test_cli_echo(runner: CliRunner) -> None:
     """Check hello world printed."""
     result = runner.invoke(cli, ["echo", "hello"])
@@ -40,11 +65,28 @@ def test_cli_echo_fails_on_silence(runner: CliRunner) -> None:
     assert result.exit_code == 1
 
 
+def test_cli_echo_json(runner: CliRunner) -> None:
+    """Check hello world printed."""
+    result = runner.invoke(cli, ["echo", "hello", "--json"])
+    assert result.exit_code == 0
+    assert '{\n  "text": "HELLO"\n}\n' in result.output
+
+
 def test_cli_hello_world(runner: CliRunner) -> None:
     """Check hello world printed."""
     result = runner.invoke(cli, ["hello-world"])
     assert result.exit_code == 0
     assert "Hello, world!" in result.output
+
+
+def test_cli_hello_world_german() -> None:
+    """Check hello world printed."""
+    env_de = os.environ.copy()
+    env_de.update({"OE_PYTHON_TEMPLATE_LANGUAGE": "de_DE"})
+    completed_process = subprocess.run(
+        ["oe-python-template", "hello-world"], capture_output=True, check=False, env=env_de
+    )
+    assert completed_process.stdout == b"Hallo, Welt!\n"
 
 
 @patch("uvicorn.run")
@@ -54,7 +96,7 @@ def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
     assert result.exit_code == 0
     assert "Starting API server at http://127.0.0.1:8000" in result.output
     mock_uvicorn_run.assert_called_once_with(
-        "oe_python_template.api:api",
+        "oe-python-template.api:api",
         host="127.0.0.1",
         port=8000,
         reload=False,

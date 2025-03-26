@@ -169,6 +169,10 @@ import_package_name:
     Invalid import package name
     {% endif %}
 
+import_package_name_case_upper:
+  when: false
+  default: "{{ import_package_name | upper  }}"
+
 readthedocs_domain:
   type: str
   help: What is the domain name of the Read The Docs instance? Select readthedocs.org for Read The Docs Community and readthedocs.com for Read The Docs for Business.

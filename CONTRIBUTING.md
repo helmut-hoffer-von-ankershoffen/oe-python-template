@@ -33,8 +33,9 @@ If you are one of the committers of https://github.com/helmut-hoffer-von-ankersh
 src/oe_python_template/  # Source code
 ├── __init__.py          # Package initialization
 ├── constants.py         # Constants used throughout the app
-├── service.py           # Service exposed for use as shared library
+├── settings.py          # Settings loaded from environment and .env
 ├── models.py            # Models and data structures
+├── service.py           # Service exposed for use as shared library
 ├── cli.py               # CLI enabling to interact with service from terminal
 └── api.py               # API exposing service as web service
 tests/                   # Unit and E2E tests
