@@ -1,5 +1,12 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
+## [0.7.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.7..0.7.8) - 2025-03-27
+
+### 📚 Documentation
+
+- *(contributing)* Mention of add. audit reports - ([6a07339](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/6a073398c382c8f393b4d7d00aec69a7a19c5f67))
+
+
 ## [0.7.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.5..v0.7.6) - 2025-03-26
 
 ### 🐛 Bug Fixes
