@@ -27,10 +27,12 @@ repos:
     rev: v5.0.0
     hooks:
       - id: check-added-large-files
+        exclude: "ATTRIBUTIONS.md"
       - id: check-case-conflict
       - id: check-illegal-windows-names
       - id: check-merge-conflict
         args: ["--assume-in-merge"]
+        exclude: "license.rst"
       - id: check-shebang-scripts-are-executable
       - id: check-symlinks
       - id: check-toml
