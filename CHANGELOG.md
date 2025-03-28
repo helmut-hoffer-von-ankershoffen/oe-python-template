@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.7.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.7..0.7.8) - 2025-03-27
+## [0.7.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.8..0.7.9) - 2025-03-28
+
+### ⛰️  Features
+
+- *(licenses)* Allow-list license types, generate attributions - ([699266b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/699266b9c95d2cf590dde5e97dcdb3ddeeb9fb22))
+
+
+## [0.7.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.7..v0.7.8) - 2025-03-27
 
 ### 📚 Documentation
 
