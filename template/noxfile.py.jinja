@@ -53,6 +53,77 @@ def lint(session: nox.Session) -> None:
     session.run("mypy", "src")
 
 
+@nox.session(python=["3.13"])
+def audit(session: nox.Session) -> None:
+    """Run security audit and license checks."""
+    _setup_venv(session, True)
+
+    # pip-audit to check for vulnerabilities
+    session.run("pip-audit", "-f", "json", "-o", "reports/vulnerabilities.json")
+    session.run("jq", ".", "reports/vulnerabilities.json", external=True)
+
+    # pip-licenses to check for compliance
+    pip_licenses_base_args = [
+        "pip-licenses",
+        "--with-system",
+        "--with-authors",
+        "--with-maintainer",
+        "--with-url",
+        "--with-description",
+    ]
+
+    # Filter by .license-types-allowed file if it exists
+    allowed_licenses = []
+    licenses_allow_file = Path(".license-types-allowed")
+    if licenses_allow_file.exists():
+        allowed_licenses = [
+            line.strip()
+            for line in licenses_allow_file.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith(("#", "//"))
+        ]
+        session.log(f"Found {len(allowed_licenses)} allowed licenses in .license-types-allowed")
+    if allowed_licenses:
+        allowed_licenses_str = ";".join(allowed_licenses)
+        session.log(f"Using --allow-only with: {allowed_licenses_str}")
+        pip_licenses_base_args.extend(["--partial-match", "--allow-only", allowed_licenses_str])
+
+    # Generate CSV and JSON reports
+    session.run(
+        *pip_licenses_base_args,
+        "--format=csv",
+        "--order=license",
+        "--output-file=reports/licenses.csv",
+    )
+    session.run(
+        *pip_licenses_base_args,
+        "--with-license-file",
+        "--with-notice-file",
+        "--format=json",
+        "--output-file=reports/licenses.json",
+    )
+
+    # Group by license type
+    session.run("jq", ".", "reports/licenses.json", external=True)
+    licenses_data = json.loads(Path("reports/licenses.json").read_text(encoding="utf-8"))
+    licenses_grouped: dict[str, list[dict[str, str]]] = {}
+    licenses_grouped = {}
+    for pkg in licenses_data:
+        license_name = pkg["License"]
+        package_info = {"Name": pkg["Name"], "Version": pkg["Version"]}
+        if license_name not in licenses_grouped:
+            licenses_grouped[license_name] = []
+        licenses_grouped[license_name].append(package_info)
+    Path("reports/licenses_grouped.json").write_text(
+        json.dumps(licenses_grouped, indent=2),
+        encoding="utf-8",
+    )
+    session.run("jq", ".", "reports/licenses_grouped.json", external=True)
+
+    # SBOMs
+    session.run("cyclonedx-py", "environment", "-o", "reports/sbom.json")
+    session.run("jq", ".", "reports/sbom.json", external=True)
+
+
 def _generate_third_party_licenses(session: nox.Session, licenses_json_path: Path) -> None:
     """Generate ATTRIBUTIONS.md from licenses.json.
 
@@ -288,77 +359,6 @@ def docs_pdf(session: nox.Session) -> None:
         session.error(f"Failed to parse latexmk version information: {e}")
 
 
-@nox.session(python=["3.13"])
-def audit(session: nox.Session) -> None:
-    """Run security audit and license checks."""
-    _setup_venv(session, True)
-
-    # pip-audit to check for vulnerabilities
-    session.run("pip-audit", "-f", "json", "-o", "reports/vulnerabilities.json")
-    session.run("jq", ".", "reports/vulnerabilities.json", external=True)
-
-    # pip-licenses to check for compliance
-    pip_licenses_base_args = [
-        "pip-licenses",
-        "--with-system",
-        "--with-authors",
-        "--with-maintainer",
-        "--with-url",
-        "--with-description",
-    ]
-
-    # Filter by .license-types-allowed file if it exists
-    allowed_licenses = []
-    licenses_allow_file = Path(".license-types-allowed")
-    if licenses_allow_file.exists():
-        allowed_licenses = [
-            line.strip()
-            for line in licenses_allow_file.read_text(encoding="utf-8").splitlines()
-            if line.strip() and not line.strip().startswith(("#", "//"))
-        ]
-        session.log(f"Found {len(allowed_licenses)} allowed licenses in .license-types-allowed")
-    if allowed_licenses:
-        allowed_licenses_str = ";".join(allowed_licenses)
-        session.log(f"Using --allow-only with: {allowed_licenses_str}")
-        pip_licenses_base_args.extend(["--partial-match", "--allow-only", allowed_licenses_str])
-
-    # Generate CSV and JSON reports
-    session.run(
-        *pip_licenses_base_args,
-        "--format=csv",
-        "--order=license",
-        "--output-file=reports/licenses.csv",
-    )
-    session.run(
-        *pip_licenses_base_args,
-        "--with-license-file",
-        "--with-notice-file",
-        "--format=json",
-        "--output-file=reports/licenses.json",
-    )
-
-    # Group by license type
-    session.run("jq", ".", "reports/licenses.json", external=True)
-    licenses_data = json.loads(Path("reports/licenses.json").read_text(encoding="utf-8"))
-    licenses_grouped: dict[str, list[dict[str, str]]] = {}
-    licenses_grouped = {}
-    for pkg in licenses_data:
-        license_name = pkg["License"]
-        package_info = {"Name": pkg["Name"], "Version": pkg["Version"]}
-        if license_name not in licenses_grouped:
-            licenses_grouped[license_name] = []
-        licenses_grouped[license_name].append(package_info)
-    Path("reports/licenses_grouped.json").write_text(
-        json.dumps(licenses_grouped, indent=2),
-        encoding="utf-8",
-    )
-    session.run("jq", ".", "reports/licenses_grouped.json", external=True)
-
-    # SBOMs
-    session.run("cyclonedx-py", "environment", "-o", "reports/sbom.json")
-    session.run("jq", ".", "reports/sbom.json", external=True)
-
-
 @nox.session(python=["3.11", "3.12", "3.13"])
 def test(session: nox.Session) -> None:
     """Run tests with pytest."""
@@ -406,6 +406,7 @@ def update_from_template(session: nox.Session) -> None:
         session.run("copier", "update", "--trust", "--skip-answered", "--skip-tasks", external=True)
 
     # Schedule the lint session to run after this session completes
+    session.notify("audit")
     session.notify("docs")
     session.notify("lint")
 

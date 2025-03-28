@@ -56,7 +56,7 @@ repos:
       - id: name-tests-test
       - id: requirements-txt-fixer
       - id: trailing-whitespace
-        exclude: "docs/source/_static"
+        exclude: "docs/source/_static|ATTRIBUTIONS.md"
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.5.0
     hooks:
