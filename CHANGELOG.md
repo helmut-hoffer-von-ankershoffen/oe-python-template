@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.0..0.8.1) - 2025-03-29
+## [0.8.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.1..0.8.2) - 2025-03-29
+
+### 📚 Documentation
+
+- Mention security policy in footer - ([5fb468e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5fb468e1bbfa2de41cb4b42b027ac5496480ecd5))
+
+
+## [0.8.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.0..v0.8.1) - 2025-03-29
 
 ### ⚙️ Miscellaneous Tasks
 
