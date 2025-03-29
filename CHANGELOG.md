@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.10..0.8.0) - 2025-03-29
+## [0.8.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.0..0.8.1) - 2025-03-29
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ga)* Add missing trivy tool to publish workflow - ([8e004e0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8e004e0df5fd8139ba129861b39106cbe5943f89))
+
+
+## [0.8.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.10..v0.8.0) - 2025-03-29
 
 ### ⛰️  Features
 
