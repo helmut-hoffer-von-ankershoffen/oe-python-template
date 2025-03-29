@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.7.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.9..0.7.10) - 2025-03-28
+## [0.0.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.10..0.0.2) - 2025-03-29
+
+### ⛰️  Features
+
+- *(trivy)* Additional vulnerability checks plus SBOM in .spdx - in addition to CycloneDX - using trivy - ([bec37f5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/bec37f5d0221d844ad94db7b509d6041725845a2))
+
+
+## [0.7.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.7.9..v0.7.10) - 2025-03-28
 
 ### ⚙️ Miscellaneous Tasks
 
