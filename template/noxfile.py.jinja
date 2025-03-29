@@ -16,7 +16,7 @@ NOT_SKIP_WITH_ACT = "not skip_with_act"
 LATEXMK_VERSION_MIN = 4.86
 LICENSES_JSON_PATH = "reports/licenses.json"
 SBOM_CYCLONEDX_PATH = "reports/sbom.json"
-SBOM_SPDX_PATH = "reports/sbom.spdx.json"
+SBOM_SPDX_PATH = "reports/sbom.spdx"
 
 
 def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
