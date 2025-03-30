@@ -12,6 +12,10 @@ You can host the API as a serverless function on Vercel
 pnpm i -g vercel
 ```
 
+Note:
+1. If `pnpm` is not available because you did not run `./install.sh`,
+you can install it manually with `brew install pnpm`.
+
 ## Generate, link and deploy Vercel Distribution
 
 ```shell
@@ -26,9 +30,13 @@ Visit the [production deployment](https://oe-python-template.vercel.app/)
 ## Wire the CI/CD
 
 1. Show organisation and project id by executing `cat dist_vercel/.vercel/project.json`
-2. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_PROJECT_ID` with the value of `projectId` from step 1
-3. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_ORG_ID` with the value of `orgId` from step 1
-4. Goto [Vercel Account Settings](https://vercel.com/account/settings/tokens) and create a new token with project scope, copy the token to clipboard.
-5. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_TOKEN` with the value of `projectId` from the previous command
+2. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_PROJECT_ID` with the
+value of `projectId` from step 1
+3. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_ORG_ID` with the value
+of `orgId` from step 1
+4. Goto [Vercel Account Settings](https://vercel.com/account/settings/tokens) and create a new token with project scope,
+copy the token to clipboard.
+5. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_TOKEN` with the value
+of `projectId` from the previous command
 
 That's it. The rest is automatic, deploy happening on build of main.
