@@ -2,10 +2,10 @@ _subdirectory: template
 _skip_if_exists:
   - logo.png
   - README.md
+  - ATTRIBUTIONS.md
   - CHANGELOG.md
 
 _tasks:
-  - "touch README.md"
   - uv sync --all-extras
   - uv venv
   - source .venv/bin/activate
