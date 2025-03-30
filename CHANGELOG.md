@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.5..0.8.6) - 2025-03-30
+## [0.8.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.6..0.8.7) - 2025-03-30
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Revert typo - ([5233bd0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5233bd027ec16f55f4af6cd973de8c605bb62d59))
+
+
+## [0.8.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.5..v0.8.6) - 2025-03-30
 
 ### ⚙️ Miscellaneous Tasks
 
