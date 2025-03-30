@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.9..0.8.10) - 2025-03-30
+## [0.8.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.10..0.8.11) - 2025-03-30
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Polish - ([5b38f78](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5b38f78115bf52d8763999aea049e1f71ed0477c))
+
+
+## [0.8.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.9..v0.8.10) - 2025-03-30
 
 ### ⚙️ Miscellaneous Tasks
 
