@@ -194,11 +194,11 @@ uv sync --all-extras                                # Install streamlit dependen
 uv run streamlit run examples/streamlit.py          # Serve on localhost:8501, opens browser
 ```
 
-### Vercel Serverless Function
+{% if vercel_function_enabled %}### Vercel Serverless Function
 
 Serve the API as a [serverless function on Vercel](https://{{ pypi_distribution_name }}.vercel.app/)
 
-
+{% endif %}
 ## Notebooks
 
 ### Jupyter

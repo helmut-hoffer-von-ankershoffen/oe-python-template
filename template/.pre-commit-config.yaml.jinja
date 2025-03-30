@@ -54,8 +54,8 @@ repos:
         args: ["--remove"]
       - id: mixed-line-ending
       - id: name-tests-test
-      - id: requirements-txt-fixer
-        exclude: "dist_vercel/requirements.txt"
+      - id: requirements-txt-fixer{% if vercel_function_enabled %}
+        exclude: "dist_vercel/requirements.txt"{% endif%}
       - id: trailing-whitespace
         exclude: "docs/source/_static|ATTRIBUTIONS.md"
   - repo: https://github.com/Yelp/detect-secrets
