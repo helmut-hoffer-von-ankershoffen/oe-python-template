@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.7..0.8.8) - 2025-03-30
+## [0.8.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.8..0.8.9) - 2025-03-30
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Don't create VERCEL.md if disabled - ([ea5849d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/ea5849df464f6c9ababc934dc58c5ae4997db4ec))
+
+
+## [0.8.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.7..v0.8.8) - 2025-03-30
 
 ### ⚙️ Miscellaneous Tasks
 
