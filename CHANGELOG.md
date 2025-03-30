@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.1..0.8.2) - 2025-03-29
+## [0.8.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.2..0.8.3) - 2025-03-30
+
+### ⚙️ Miscellaneous Tasks
+
+- *(attributions)* Prep on update - ([e2eba85](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e2eba85489541f757f4a19b29ae05cca0ac43172))
+
+
+## [0.8.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.1..v0.8.2) - 2025-03-29
 
 ### 📚 Documentation
 
