@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.4..0.8.5) - 2025-03-30
+## [0.8.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.5..0.8.6) - 2025-03-30
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Pin checkout - ([0b3faeb](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0b3faeb7121a76e714f9c6ae8dd6e0739b9672a1))
+
+
+## [0.8.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.4..v0.8.5) - 2025-03-30
 
 ### 🚜 Refactor
 
