@@ -21,16 +21,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+
       - name: Install dev tools
         run: |
-          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
-          echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
-          sudo apt-get update
-          sudo apt-get install -y curl jq xsltproc gnupg2 trivy
-
+          # wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          # echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          # sudo apt-get update
+          # sudo apt-get install -y curl jq xsltproc gnupg2
+          brew install gnupg jq libxml2 trivy 
+      
       - name: Install project specific dependencies
         run: |
-          sudo apt-get install -y libcairo2
+          # sudo apt-get install -y YOUR_PROJECT_DEPENDENCIES
 
       - name: Install uv (python package manager)
         uses: astral-sh/setup-uv@f94ec6bedd8674c4426838e6b50417d36b6ab231 # v5.3.1
