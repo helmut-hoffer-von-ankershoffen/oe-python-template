@@ -66,7 +66,7 @@ def serve(
     os.environ["UVICORN_HOST"] = host
     os.environ["UVICORN_PORT"] = str(port)
     uvicorn.run(
-        "oe_python_template.api:api",
+        "oe_python_template.api:app",
         host=host,
         port=port,
         reload=watch,

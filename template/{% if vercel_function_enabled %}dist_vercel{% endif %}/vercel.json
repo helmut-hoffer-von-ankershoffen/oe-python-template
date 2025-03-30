@@ -1,0 +1,13 @@
+{
+    "functions": {
+      "api/api.py": {
+        "memory": 1024,
+        "maxDuration": 60
+      }
+    },
+    "cleanUrls": true,
+    "rewrites": [
+      { "source": "/docs(.*)", "destination": "/api/api" },
+      { "source": "/api/(.*)", "destination": "/api/api" }
+    ]
+  }

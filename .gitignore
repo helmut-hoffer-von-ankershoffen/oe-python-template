@@ -75,4 +75,9 @@ node_modules/
 # Copier
 *.rej
 
+
+# Vercel
+.vercel
+
+
 # Application specific

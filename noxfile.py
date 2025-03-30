@@ -385,6 +385,33 @@ def test(session: nox.Session) -> None:
     session.run(*pytest_args)
 
 
+@nox.session(default=False)
+def dist_vercel(session: nox.Session) -> None:
+    """Create distribution to run API as Vercel Function."""
+    # Geneerate wheel and remember it's name
+    wheel_output = session.run("uv", "build", "--wheel", "--out-dir", "dist_vercel/wheels", external=True, silent=True)
+    wheel_pattern = r"Successfully built dist_vercel/wheels/([^/\s]+\.whl)"
+    match = re.search(wheel_pattern, str(wheel_output))
+    wheel_filename = match.group(1) if match else None
+
+    # Generate requirements.txt including referencing the wheel
+    session.run("uv", "sync", "--active", "--no-dev", external=True)
+    with Path("dist_vercel/requirements.txt").open("w", encoding="utf-8") as outfile:
+        session.run("uv", "pip", "freeze", "--exclude-editable", "--no-progress", stdout=outfile, external=True)
+    with Path("dist_vercel/requirements.txt").open("r", encoding="utf-8") as infile:
+        lines = infile.readlines()
+    with Path("dist_vercel/requirements.txt").open("w", encoding="utf-8") as outfile:
+        # Remove first line if it starts with "Using "
+        if lines and lines[0].startswith("Using "):
+            outfile.writelines(lines[1:])
+        else:
+            outfile.writelines(lines)
+        # Add wheel generated above
+        if wheel_filename:
+            outfile.write(f"./wheels/{wheel_filename}\n")
+            session.log(f"Added local wheel to requirements.txt: {wheel_filename}")
+
+
 @nox.session(python=["3.13"], default=False)
 def setup(session: nox.Session) -> None:
     """Setup dev environment post project creation."""
@@ -464,8 +491,7 @@ def bump(session: nox.Session) -> None:
     session.run("git", "push", external=True)
 
 
-@nox.session(python=["3.13"])
+@nox.session()
 def dist(session: nox.Session) -> None:
     """Build wheel and put in dist/."""
-    _setup_venv(session)
     session.run("uv", "build", external=True)

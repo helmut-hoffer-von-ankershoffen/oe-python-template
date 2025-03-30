@@ -1,13 +1,14 @@
 # Makefile for running common development tasks
 
 # Define all PHONY targets
-.PHONY: all act audit bump clean dist docs docker_build lint setup setup test update_from_template
+.PHONY: all act audit bump clean dist {% if vercel_function_enabled %}dist_vercel {% endif %}docs docker_build lint setup setup test update_from_template
 
 # Main target i.e. default sessions defined in noxfile.py
 all:
 	uv run nox
 
 # Nox targets
+
 ## Call nox sessions passing parameters
 nox-cmd = @if [ "$@" = "test" ]; then \
 	if [ -n "$(filter 3.%,$(MAKECMDGOALS))" ]; then \
@@ -23,8 +24,8 @@ else \
 	uv run nox -s $@; \
 fi
 
-# Individual Nox sessions
-act audit bump clean dist docs docker_build lint setup test update_from_template:
+## Individual Nox sessions
+act audit bump dist {% if vercel_function_enabled %}dist_vercel {% endif %}docs lint setup test update_from_template:
 	$(nox-cmd)
 
 # Standalone targets
@@ -45,14 +46,13 @@ clean:
 docker_build:
 	docker build -t {{ pypi_distribution_name }} .
 
-
 # Special rule to catch any arguments (like patch, minor, major, pdf, Python versions, or x.y.z)
 # This prevents "No rule to make target" errors when passing arguments to make commands
 .PHONY: %
 %:
 	@:
 
-# Help text
+# Help
 help:
 	@echo "{{ project_icon }} Available targets for {{ project_name }} (v$(shell test -f VERSION && cat VERSION || echo 'unknown version'))"
 	@echo ""
@@ -61,7 +61,8 @@ help:
 	@echo "  audit               - Run security and license compliance audit"
 	@echo "  bump patch|minor|major|x.y.z - Bump version"
 	@echo "  clean               - Clean build artifacts and caches"
-	@echo "  dist               - Build wheel package with uv"
+	@echo "  dist                - Build wheel and sdist into dist/"
+{% if vercel_function_enabled %}	@echo "  dist_vercel         - Package as Vercel Function into dist_vercel/"{% endif %}
 	@echo "  docs [pdf]          - Build documentation (add pdf for PDF format)"
 	@echo "  docker_build        - Build Docker image {{ pypi_distribution_name }}"
 	@echo "  lint                - Run linting and formatting checks"

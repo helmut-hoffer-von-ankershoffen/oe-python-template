@@ -240,3 +240,8 @@ codeql_enabled:
   type: bool
   help: Do you want to enable codeql?
   default: yes
+
+vercel_function_enabled:
+  type: bool
+  help: Do you want to deploy the API as a Vercel Function?
+  default: yes

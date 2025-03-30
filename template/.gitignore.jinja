@@ -75,4 +75,9 @@ node_modules/
 # Copier
 *.rej
 
+{% if vercel_function_enabled%}
+# Vercel
+.vercel
+{% endif %}
+
 # Application specific
