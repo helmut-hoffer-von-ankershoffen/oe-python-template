@@ -15,6 +15,9 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
       - name: Package and Deploy to Production
         run: |
           make dist_vercel
