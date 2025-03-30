@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.3..0.8.4) - 2025-03-30
+## [0.8.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.4..0.8.5) - 2025-03-30
+
+### 🚜 Refactor
+
+- *(pre-commit)* Don't apply for dist_vercel - ([30f3a7e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/30f3a7ea7dcfb4774c7b4450378700a89670792c))
+
+
+## [0.8.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.3..v0.8.4) - 2025-03-30
 
 ### ⛰️  Features
 
@@ -15,9 +22,6 @@
 - *(gha)* Vercel prod - ([8e6115d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8e6115d08441dbaf7ff03475fb63df1259c1520e))
 - Check if homebrew really works on gha - ([7fdcca4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/7fdcca40faa35c91912763cf99f0717fc81b2aa7))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.8.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.2..v0.8.3) - 2025-03-30
 
