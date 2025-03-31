@@ -1,7 +1,4 @@
 name: Vercel Production Deployment
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches:
@@ -19,16 +16,14 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
-      - name: Package for Vercel
+      - name: Make Vercel distribution
         run: |
           make dist_vercel
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-
-      - name: Deploy to Vercel Action
-        uses: helmut-hoffer-von-ankershoffen/vercel-deploy@e985a155af139ceec75bd46f03eb013c19031ee2
+      - name: Deploy to Vercel
+        uses: helmut-hoffer-von-ankershoffen/vercel-deploy@6b4d15b80083745c218b5b8203077d5dd2de9f98
         with:
+          GITHUB_DEPLOYMENT_ENV: Production
           WORKING_DIRECTORY: dist_vercel
           ARCHIVE: true
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}

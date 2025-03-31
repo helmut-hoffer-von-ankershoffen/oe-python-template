@@ -9984,7 +9984,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.8.10) - MIT License
+## oe-python-template (0.8.11) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 

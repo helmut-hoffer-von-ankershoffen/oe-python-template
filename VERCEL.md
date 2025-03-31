@@ -65,5 +65,9 @@ of `orgId` from step 1
 copy the token to clipboard.
 5. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `VERCEL_TOKEN` with the value
 of `projectId` from the previous command
+6. [Generate GitHub Personal Access Token](https://github.com/settings/tokens) with Deployments (Read and Write) and
+Pull Requests (Read and Write) permissions scoped for repository of the project. Copy the token in your buffer
+7. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `GH_PATH` with the value
+set to the token created in step 6
 
 That's it. The rest is automatic, deploy happening on build of main.
