@@ -20,6 +20,9 @@ jobs:
         run: |
           make dist_vercel
 
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
       - name: Deploy to Vercel
         uses: helmut-hoffer-von-ankershoffen/vercel-deploy@6b4d15b80083745c218b5b8203077d5dd2de9f98
         with:
