@@ -23,6 +23,9 @@ jobs:
         run: |
           make dist_vercel
 
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+          
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
