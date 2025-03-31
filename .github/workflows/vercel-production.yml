@@ -27,7 +27,7 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Deploy to Vercel Action
-        uses: helmut-hoffer-von-ankershoffen/vercel-deploy@latest
+        uses: helmut-hoffer-von-ankershoffen/vercel-deploy@e985a155af139ceec75bd46f03eb013c19031ee2
         with:
           WORKING_DIRECTORY: dist_vercel
           ARCHIVE: true
