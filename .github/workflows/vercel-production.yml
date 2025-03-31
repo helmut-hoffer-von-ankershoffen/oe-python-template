@@ -25,10 +25,12 @@ jobs:
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
-          
+
       - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@v1
+        uses: helmut-hoffer-von-ankershoffen/vercel-deploy@latest
         with:
+          WORKING_DIRECTORY: dist_vercel
+          ARCHIVE: true
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
