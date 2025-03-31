@@ -1,6 +1,22 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.10..0.8.11) - 2025-03-30
+## [0.8.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.11..0.8.12) - 2025-03-31
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Polished - ([6379804](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/63798043c9a6fa7f1ed965e76a078faa2cb7520b))
+
+### Experiment
+
+- *(vercel)* Deploy with fork - ([47375b7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/47375b7fbea989263640bcdb240073020b257278))
+- *(vercel)* Switch to fork of vercel-deploy - ([855c671](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/855c671b2da13988f2d3af6a3d4c9dbf22ebca09))
+- Vercel gh action - ([dc62586](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/dc62586589f673e48aec5c41f7743a9bba13c6a6))
+
+## New Contributors ❤️
+
+* @helmut-hoffer-von-ankershoffen made their first contribution
+
+## [0.8.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.10..v0.8.11) - 2025-03-30
 
 ### ⚙️ Miscellaneous Tasks
 
