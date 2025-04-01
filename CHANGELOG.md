@@ -1,14 +1,18 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.12..0.8.13) - 2025-04-01
+## [0.8.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.13..0.8.14) - 2025-04-01
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* On tag - ([3a963f2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/3a963f284f943cb8d04d52d92ae8711a4045483f))
+
+
+## [0.8.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.12..v0.8.13) - 2025-04-01
 
 ### Experiment
 
 - *(vercel)* Smoke test - ([4ca9d27](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4ca9d272e9db7c5aee5808fe0cfec71c4886cf4b))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.8.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.11..v0.8.12) - 2025-03-31
 
