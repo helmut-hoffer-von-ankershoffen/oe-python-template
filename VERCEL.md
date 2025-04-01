@@ -69,5 +69,11 @@ of `projectId` from the previous command
 Pull Requests (Read and Write) permissions scoped for repository of the project. Copy the token in your buffer
 7. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called `GH_PATH` with the value
 set to the token created in step 6
+8. Enable [Protection Bypass for
+Automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)
+in the Vercel dashboard of your project, and copy the created secret into your buffer.
+7. [Create secret](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new) called
+`VERCEL_AUTOMATION_BYPASS_SECRET` with the value
+set to the secret created in step 7. This is to allow the smoke test to access preview deployments.
 
 That's it. The rest is automatic, deploy happening on build of main.
