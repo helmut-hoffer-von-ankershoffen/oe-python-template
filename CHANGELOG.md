@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.13..0.8.14) - 2025-04-01
+## [0.8.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.14..0.8.15) - 2025-04-01
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Smoke test - ([56a91e7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/56a91e721d4f3e8500d95ca0a5ceca3e9a7776fe))
+
+
+## [0.8.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.13..v0.8.14) - 2025-04-01
 
 ### ⚙️ Miscellaneous Tasks
 
