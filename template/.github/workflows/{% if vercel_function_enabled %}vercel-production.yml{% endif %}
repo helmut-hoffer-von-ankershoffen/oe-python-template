@@ -38,15 +38,8 @@ jobs:
 
       - name: Smoke Test of Vercel Deployment
         run: |
-          # Wait for the deployment to be fully available
-          echo "Waiting for 5s..."
-          sleep 5
-
-          # Make the request and check the response
           response=$(curl -s -m 5 ${{ steps.deploy-vercel.outputs.DEPLOYMENT_UNIQUE_URL }}/api/v2/hello-world)
           echo "API Response: $response"
-
-          # Check if the response contains "Hello, world!"
           if [[ "$response" == *"Hello, world!"* ]]; then
             echo "✅ API response contains 'Hello, world!' as expected"
           else
