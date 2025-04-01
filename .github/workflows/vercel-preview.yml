@@ -1,10 +1,13 @@
-name: Vercel Preview Deployment
+name: Vercel Deploy on Push or Pull Request
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - "**"
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
-  Deploy-Preview:
+  deploy-preview:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -16,20 +19,40 @@ jobs:
           enable-cache: true
           cache-dependency-glob: uv.lock
 
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
       - name: Make Vercel distribution
         run: |
           make dist_vercel
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-
       - name: Deploy to Vercel
+        id: deploy-vercel
         uses: helmut-hoffer-von-ankershoffen/vercel-deploy@6b4d15b80083745c218b5b8203077d5dd2de9f98
         with:
           GITHUB_DEPLOYMENT_ENV: Preview
+          PRODUCTION: false
           WORKING_DIRECTORY: dist_vercel
           ARCHIVE: true
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Smoke Test of Vercel Deployment
+        run: |
+          # Wait for the deployment to be fully available
+          echo "Waiting for 5s..."
+          sleep 5
+
+          # Make the request and check the response
+          response=$(curl -s ${{ steps.deploy-vercel.outputs.PREVIEW_URL }}/api/v2/hello-world)
+          echo "API Response: $response"
+
+          # Check if the response contains "Hello, world!"
+          if [[ "$response" == *"Hello, world!"* ]]; then
+            echo "✅ API response contains 'Hello, world!' as expected"
+          else
+            echo "❌ API response does not contain 'Hello, world!'"
+            exit 1
+          fi
