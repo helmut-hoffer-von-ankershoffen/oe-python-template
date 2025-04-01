@@ -1,6 +1,6 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.12..0.8.10) - 2025-04-01
+## [0.8.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.12..0.8.13) - 2025-04-01
 
 ### Experiment
 
