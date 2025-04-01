@@ -1,5 +1,8 @@
 name: Vercel Deploy on Release
 on:
+  push:
+    tags:
+      - "v*.*.*"
   release:
     types: [created]
 jobs:
@@ -38,7 +41,7 @@ jobs:
 
       - name: Smoke Test of Vercel Deployment
         run: |
-          response=$(curl -s -m 5 ${{ steps.deploy-vercel.outputs.DEPLOYMENT_UNIQUE_URL }}/api/v2/hello-world)
+          response=$(curl -s -m 5 -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}" ${{ steps.deploy-vercel.outputs.DEPLOYMENT_UNIQUE_URL }}/api/v2/hello-world)
           echo "API Response: $response"
           if [[ "$response" == *"Hello, world!"* ]]; then
             echo "✅ API response contains 'Hello, world!' as expected"
