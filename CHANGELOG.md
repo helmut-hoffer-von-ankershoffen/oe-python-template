@@ -1,6 +1,6 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.14..0.8.15) - 2025-04-01
+## [0.8.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.14..v0.8.15) - 2025-04-01
 
 ### ⚙️ Miscellaneous Tasks
 
