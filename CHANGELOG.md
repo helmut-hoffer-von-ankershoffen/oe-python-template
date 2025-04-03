@@ -1,5 +1,12 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
+## [0.8.17](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.16..0.8.17) - 2025-04-03
+
+### 🐛 Bug Fixes
+
+- *(nox/pytest)* Pass through extra args - ([fdf19fd](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fdf19fd000952137094abd31b2481037b0864207))
+
+
 ## [0.8.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.14..v0.8.15) - 2025-04-01
 
 ### ⚙️ Miscellaneous Tasks
