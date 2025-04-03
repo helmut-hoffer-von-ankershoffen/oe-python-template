@@ -7592,7 +7592,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
-## marimo (0.11.28) - Apache Software License
+## marimo (0.12.2) - Apache Software License
 
 A library for making reactive notebooks and apps
 
@@ -9984,7 +9984,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.8.14) - MIT License
+## oe-python-template (0.8.15) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
@@ -16925,7 +16925,7 @@ SOFTWARE.
 
 ```
 
-## pydantic (2.10.6) - MIT License
+## pydantic (2.11.1) - MIT License
 
 Data validation using Python type hints
 
@@ -17027,12 +17027,12 @@ SOFTWARE.
 
 ```
 
-## pydantic_core (2.27.2) - MIT License
+## pydantic_core (2.33.0) - MIT License
 
 Core functionality for Pydantic validation and serialization
 
 * URL: https://github.com/pydantic/pydantic-core
-* Author(s): Samuel Colvin <s@muelcolvin.com>
+* Author(s): Samuel Colvin <s@muelcolvin.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, David Montague <david@pydantic.dev>, David Hewitt <mail@davidhewitt.dev>, Sydney Runkle <sydneymarierunkle@gmail.com>, Victorien Plot <contact@vctrn.dev>
 
 ### License Text
 
@@ -17527,7 +17527,7 @@ Apache License
 
 ```
 
-## pytest-cov (6.0.0) - MIT License
+## pytest-cov (6.1.0) - MIT License
 
 Pytest plugin for measuring coverage.
 
@@ -17710,6 +17710,41 @@ A plugin to fake subprocess for pytest
 The MIT License (MIT)
 
 Copyright (c) 2019 Andrzej Klajnert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+```
+
+## pytest-timeout (2.3.1) - DFSG approved; MIT License
+
+pytest plugin to abort hanging tests
+
+* URL: https://github.com/pytest-dev/pytest-timeout
+* Author(s): Floris Bruynooghe
+
+### License Text
+
+```
+The MIT License
+
+Copyright (C) 2012, 2014 Floris Bruynooghe
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21057,7 +21092,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
-## streamlit (1.44.0) - Apache Software License
+## streamlit (1.44.1) - Apache Software License
 
 A faster way to build and share data apps
 
@@ -22006,7 +22041,7 @@ THE SOFTWARE.
 
 ```
 
-## types-PyYAML (6.0.12.20250326) - Apache Software License
+## types-PyYAML (6.0.12.20250402) - UNKNOWN
 
 Typing stubs for PyYAML
 
@@ -22501,6 +22536,40 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 = = = = =
+
+```
+
+## typing-inspection (0.4.0) - MIT License
+
+Runtime typing introspection tools
+
+* URL: https://github.com/pydantic/typing-inspection
+* Author(s): Victorien Plot <contact@vctrn.dev>
+
+### License Text
+
+```
+MIT License
+
+Copyright (c) 2025 Victorien
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ```
 
