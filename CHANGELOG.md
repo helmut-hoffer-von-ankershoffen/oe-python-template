@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.19](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.18..0.8.19) - 2025-04-04
+## [0.8.20](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.19..0.8.20) - 2025-04-04
+
+### 🐛 Bug Fixes
+
+- Typo that broke Makefile - ([4e0da53](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4e0da538b0c98d3bb9dfd4f15832dca5c4b3ca46))
+
+
+## [0.8.19](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.18..v0.8.19) - 2025-04-04
 
 ### ⚙️ Miscellaneous Tasks
 
