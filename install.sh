@@ -18,6 +18,7 @@ BREW_TOOLS=(
     "pinact;pinact;https://github.com/suzuki-shunsuke/pinact"
     "trivy;trivy;https://trivy.dev/latest/"
     "pnpm;pnpm;https://pnpm.io/"
+    "magick;imagemagick;https://imagemagick.org/"
 )
 
 MAC_BREW_TOOLS=(
