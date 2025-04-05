@@ -49,8 +49,7 @@ class Service:
         match self._settings.language:
             case Language.GERMAN:
                 return "Hallo, Welt!"
-            case _:
-                return "Hello, world!"
+        return "Hello, world!"
 
     @staticmethod
     def echo(utterance: Utterance) -> Echo:

@@ -9,5 +9,7 @@ console = Console()
 
 load_dotenv()
 
-message = Service.get_hello_world()
+service = Service()
+
+message = service.get_hello_world()
 console.print(f"[blue]{message}[/blue]")
