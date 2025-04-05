@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.27](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.26..0.8.27) - 2025-04-05
+## [0.8.28](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.27..0.8.28) - 2025-04-05
+
+### ⚙️ Miscellaneous Tasks
+
+- *(sphinx)* Reenable fail on warn - ([8b0d16a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8b0d16aa067f96bb9f81c14135d04832e733e85f))
+
+
+## [0.8.27](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.26..v0.8.27) - 2025-04-05
 
 ### ⚙️ Miscellaneous Tasks
 
