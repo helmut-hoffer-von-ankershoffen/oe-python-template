@@ -11,9 +11,12 @@
    :maxdepth: 2
 
    main
-   api_v1
-   api_v2
-   reference
+   api_explorer_v2
+   api_explorer_v1
+   cli_reference
+   lib_reference
+   api_reference_v2
+   api_reference_v1
    security
    release-notes
    contributing

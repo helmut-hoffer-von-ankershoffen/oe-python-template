@@ -1,7 +1,9 @@
 """CLI (Command Line Interface) of OE Python Template."""
 
 import os
+import sys
 from enum import StrEnum
+from pathlib import Path
 from typing import Annotated
 
 import typer
@@ -12,7 +14,7 @@ from rich.console import Console
 from . import Service, Utterance, __version__
 from .api import api_v1, api_v2
 
-cli = typer.Typer(name="Command Line Interface of OE Python Template")
+cli = typer.Typer(help="Command Line Interface of OE Python Template")
 _service = Service()
 _console = Console()
 
@@ -129,11 +131,13 @@ def openapi(
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:
-    """Add epilog to all typers in the tree and configure default behavior."""
-    cli.info.epilog = epilog
+    """Configure default behavior and add epilog to all typers in the tree."""
     cli.info.no_args_is_help = True
-    for command in cli.registered_commands:
-        command.epilog = cli.info.epilog
+
+    if not any(arg.endswith("typer") for arg in Path(sys.argv[0]).parts):
+        cli.info.epilog = epilog
+        for command in cli.registered_commands:
+            command.epilog = cli.info.epilog
 
 
 _apply_cli_settings(

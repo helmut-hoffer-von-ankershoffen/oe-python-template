@@ -68,7 +68,9 @@ linkcheck_ignore = [
     r"http://localhost",
 ]
 
-
+suppress_warnings = [
+    "autosectionlabel.*",  # Suppress warnings about excluded toctree entries
+]
 templates_path = ["_templates"]
 exclude_patterns = []
 
