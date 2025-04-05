@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.21](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.20..0.8.21) - 2025-04-04
+## [0.8.22](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.21..0.8.22) - 2025-04-05
+
+### 📚 Documentation
+
+- CLI reference (generated), API reference (generated) - ([9fcca7d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/9fcca7d6b31d581f5838ef95e8e7cda932129d4b))
+
+
+## [0.8.21](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.20..v0.8.21) - 2025-04-04
 
 ### ⚙️ Miscellaneous Tasks
 
