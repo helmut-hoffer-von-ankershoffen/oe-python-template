@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.22](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.21..0.8.22) - 2025-04-05
+## [0.8.23](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.22..0.8.23) - 2025-04-05
+
+### ⚙️ Miscellaneous Tasks
+
+- *(ga)* Npm for github - ([918415b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/918415b57b0aa09c80ec7fb56d53e80b09a8d767))
+
+
+## [0.8.22](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.21..v0.8.22) - 2025-04-05
 
 ### 📚 Documentation
 
