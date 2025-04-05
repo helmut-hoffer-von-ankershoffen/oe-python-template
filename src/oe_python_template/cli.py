@@ -127,7 +127,7 @@ def openapi(
         case OutputFormat.JSON:
             _console.print_json(data=schema)
         case OutputFormat.YAML:
-            _console.print(yaml.dump(schema, default_flow_style=False), end="")
+            _console.print(yaml.dump(schema, width=80, default_flow_style=False), end="")
 
 
 def _apply_cli_settings(cli: typer.Typer, epilog: str) -> None:

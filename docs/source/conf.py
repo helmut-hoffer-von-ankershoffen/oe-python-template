@@ -43,6 +43,9 @@ ogp_custom_meta_tags = [
 ogp_enable_meta_description = True
 ogp_description_length = 300
 
+show_warning_types = True
+suppress_warnings = ["ref.ref", "docutils"]
+
 autodoc_pydantic_model_show_json = False
 
 napoleon_google_docstring = True
@@ -68,9 +71,6 @@ linkcheck_ignore = [
     r"http://localhost",
 ]
 
-suppress_warnings = [
-    "autosectionlabel.*",  # Suppress warnings about excluded toctree entries
-]
 templates_path = ["_templates"]
 exclude_patterns = []
 
