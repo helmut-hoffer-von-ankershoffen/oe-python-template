@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install uv (python package manager)
+      - name: Install uv
         uses: astral-sh/setup-uv@f94ec6bedd8674c4426838e6b50417d36b6ab231 # v5.3.1
         with:
           version: "0.6.3"
@@ -69,7 +69,7 @@ jobs:
         run: uv run --no-dev oe-python-template hello-world
 
       - name: Lint
-        run: make audit
+        run: make lint
 
       - name: Audit
         run: make audit
@@ -92,7 +92,7 @@ jobs:
             vulnerabilities.json
             junit.xml
             coverage.xml
-            coverage_html/
+            coverage_html
           retention-days: 30
 
       - name: Upload coverage reports to Codecov
