@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.31..0.8.32) - 2025-04-06
+## [0.8.33](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.32..0.8.33) - 2025-04-06
+
+### 🚜 Refactor
+
+- *(attributions)* Cognitive complexity - ([0e78a06](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0e78a0635730fa00aa2a70f65b6d6a1fb3f87507))
+
+
+## [0.8.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.31..v0.8.32) - 2025-04-06
 
 ### ⛰️  Features
 
