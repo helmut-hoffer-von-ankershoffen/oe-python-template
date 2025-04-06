@@ -8,9 +8,9 @@ log() {
     echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')] $*"
 }
 
-log "Starting installation of development tools specific to {{ project_name }}..."
+log "Starting installation of development tools specific to OE Python Template..."
 
 # Add your project specific installation commands here
 # sudo apt-get install -y curl jq xsltproc gnupg2 imagemagick trivy
 
-log "Completed installation of development tools specific to {{ project_name }}."
+log "Completed installation of development tools specific to OE Python Template."
