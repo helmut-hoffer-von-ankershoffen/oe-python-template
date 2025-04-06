@@ -8,8 +8,9 @@ This project includes code from the following third-party open source projects:
 
 httplib2 caching for requests
 
-* URL: https://pypi.org/project/CacheControl/
-* Author(s): Eric Larson <ericlarson@ionrock.com>, Frost Ming <me@frostming.com>, William Woodruff <william@yossarian.net>
+- URL: https://pypi.org/project/CacheControl/
+- Author(s): Eric Larson <ericlarson@ionrock.com>, Frost Ming
+  <me@frostming.com>, William Woodruff <william@yossarian.net>
 
 ### License Text
 
@@ -27,15 +28,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## GitPython (3.1.44) - BSD License
 
 GitPython is a Python library used to interact with Git repositories
 
-* URL: https://github.com/gitpython-developers/GitPython
-* Author(s): Sebastian Thiel, Michael Trier
+- URL: https://github.com/gitpython-developers/GitPython
+- Author(s): Sebastian Thiel, Michael Trier
 
 ### License Text
 
@@ -69,15 +69,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## Jinja2 (3.1.6) - BSD License
 
 A very fast and expressive template engine.
 
-* URL: https://github.com/pallets/jinja/
-* Maintainer(s): Pallets <contact@palletsprojects.com>
+- URL: https://github.com/pallets/jinja/
+- Maintainer(s): Pallets <contact@palletsprojects.com>
 
 ### License Text
 
@@ -110,16 +109,15 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## Markdown (3.7) - BSD License
 
 Python implementation of John Gruber's Markdown.
 
-* URL: https://Python-Markdown.github.io/
-* Author(s): Manfred Stienstra, Yuri Takhteyev
-* Maintainer(s): Isaac Muse
+- URL: https://Python-Markdown.github.io/
+- Author(s): Manfred Stienstra, Yuri Takhteyev
+- Maintainer(s): Isaac Muse
 
 ### License Text
 
@@ -154,15 +152,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## MarkupSafe (3.0.2) - BSD License
 
 Safely add untrusted strings to HTML/XML markup.
 
-* URL: https://github.com/pallets/markupsafe/
-* Maintainer(s): Pallets <contact@palletsprojects.com>
+- URL: https://github.com/pallets/markupsafe/
+- Maintainer(s): Pallets <contact@palletsprojects.com>
 
 ### License Text
 
@@ -195,15 +192,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## PyYAML (6.0.2) - MIT License
 
 YAML parser and emitter for Python
 
-* URL: https://pyyaml.org/
-* Author(s): Kirill Simonov
+- URL: https://pyyaml.org/
+- Author(s): Kirill Simonov
 
 ### License Text
 
@@ -228,16 +224,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## Pygments (2.19.1) - BSD License
 
 Pygments is a syntax highlighting package written in Python.
 
-* URL: https://pygments.org
-* Author(s): Georg Brandl <georg@python.org>
-* Maintainer(s): Matthäus G. Chajdas
+- URL: https://pygments.org
+- Author(s): Georg Brandl <georg@python.org>
+- Maintainer(s): Matthäus G. Chajdas
 
 ### License Text
 
@@ -267,15 +262,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## Send2Trash (1.8.3) - BSD License
 
 Send file to trash natively under Mac OS X, Windows and Linux
 
-* URL: https://github.com/arsenetar/send2trash
-* Author(s): Andrew Senetar
+- URL: https://github.com/arsenetar/send2trash
+- Author(s): Andrew Senetar
 
 ### License Text
 
@@ -290,15 +284,15 @@ Redistribution and use in source and binary forms, with or without modification,
     * Neither the name of Hardcoded Software Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## Sphinx (8.2.3) - UNKNOWN
 
 Python documentation generator
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Adam Turner <aa-turner@users.noreply.github.com>, Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Adam Turner <aa-turner@users.noreply.github.com>, Georg Brandl
+  <georg@python.org>
 
 ### License Text
 
@@ -334,15 +328,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## alabaster (1.0.0) - BSD License
 
 A light, configurable Sphinx theme
 
-* URL: https://alabaster.readthedocs.io/
-* Maintainer(s): Adam Turner
+- URL: https://alabaster.readthedocs.io/
+- Maintainer(s): Adam Turner
 
 ### License Text
 
@@ -381,15 +374,14 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS THEME, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## altair (5.5.0) - BSD License
 
 Vega-Altair: A declarative statistical visualization library for Python.
 
-* URL: https://github.com/vega/altair
-* Author(s): Vega-Altair Contributors
+- URL: https://github.com/vega/altair
+- Author(s): Vega-Altair Contributors
 
 ### License Text
 
@@ -421,16 +413,16 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
 ```
 
 ## annotated-types (0.7.0) - MIT License
 
 Reusable constraint types to use with typing.Annotated
 
-* URL: https://github.com/annotated-types/annotated-types
-* Author(s): Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Samuel Colvin <s@muelcolvin.com>, Zac Hatfield-Dodds <zac@zhd.dev>
+- URL: https://github.com/annotated-types/annotated-types
+- Author(s): Adrian Garcia Badaracco
+  <1755071+adriangb@users.noreply.github.com>, Samuel Colvin <s@muelcolvin.com>,
+  Zac Hatfield-Dodds <zac@zhd.dev>
 
 ### License Text
 
@@ -456,15 +448,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## anyio (4.8.0) - MIT License
 
-High level compatibility layer for multiple asynchronous event loop implementations
+High level compatibility layer for multiple asynchronous event loop
+implementations
 
-* URL: https://anyio.readthedocs.io/en/stable/versionhistory.html
-* Author(s): Alex Grönholm <alex.gronholm@nextday.fi>
+- URL: https://anyio.readthedocs.io/en/stable/versionhistory.html
+- Author(s): Alex Grönholm <alex.gronholm@nextday.fi>
 
 ### License Text
 
@@ -489,15 +481,14 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## apeye (1.4.1) - GNU Lesser General Public License v3 or later (LGPLv3+)
 
 Handy tools for working with URLs and APIs.
 
-* URL: https://github.com/domdfcoding/apeye
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/domdfcoding/apeye
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -657,15 +648,14 @@ If the Library as you received it specifies that a proxy can decide whether
 future versions of the GNU Lesser General Public License shall apply, that
 proxy's public statement of acceptance of any version is permanent
 authorization for you to choose that version for the Library.
-
 ```
 
 ## apeye-core (1.1.5) - BSD License
 
 Core (offline) functionality for the apeye library.
 
-* URL: https://github.com/domdfcoding/apeye-core
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/domdfcoding/apeye-core
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -695,15 +685,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## appnope (0.1.4) - BSD License
 
 Disable App Nap on macOS >= 10.9
 
-* URL: http://github.com/minrk/appnope
-* Author(s): Min Ragan-Kelley
+- URL: http://github.com/minrk/appnope
+- Author(s): Min Ragan-Kelley
 
 ### License Text
 
@@ -730,20 +719,18 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## argcomplete (3.5.3) - Apache Software License
 
 Bash tab completion for argparse
 
-* URL: https://github.com/kislyuk/argcomplete
-* Author(s): Andrey Kislyuk
+- URL: https://github.com/kislyuk/argcomplete
+- Author(s): Andrey Kislyuk
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -920,7 +907,6 @@ Bash tab completion for argparse
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
-
 ```
 
 ### Notice
@@ -930,15 +916,14 @@ argcomplete is a free open source library that integrates Python applications wi
 The argcomplete project is staffed by volunteers. If you are using this library in a for-profit project, please
 contribute to argcomplete development and maintenance using the "Sponsor" button on the argcomplete GitHub project page,
 https://github.com/kislyuk/argcomplete.
-
 ```
 
 ## argon2-cffi (23.1.0) - MIT License
 
 Argon2 for Python
 
-* URL: https://github.com/hynek/argon2-cffi/blob/main/CHANGELOG.md
-* Author(s): Hynek Schlawack <hs@ox.cx>
+- URL: https://github.com/hynek/argon2-cffi/blob/main/CHANGELOG.md
+- Author(s): Hynek Schlawack <hs@ox.cx>
 
 ### License Text
 
@@ -964,16 +949,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## argon2-cffi-bindings (21.2.0) - MIT License
 
 Low-level CFFI bindings for Argon2
 
-* URL: https://github.com/hynek/argon2-cffi-bindings
-* Author(s): Hynek Schlawack
-* Maintainer(s): Hynek Schlawack
+- URL: https://github.com/hynek/argon2-cffi-bindings
+- Author(s): Hynek Schlawack
+- Maintainer(s): Hynek Schlawack
 
 ### License Text
 
@@ -999,15 +983,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## arrow (1.3.0) - Apache Software License
 
 Better dates & times for Python
 
-* URL: https://github.com/arrow-py/arrow
-* Author(s): Chris Smith <crsmithdev@gmail.com>
+- URL: https://github.com/arrow-py/arrow
+- Author(s): Chris Smith <crsmithdev@gmail.com>
 
 ### License Text
 
@@ -1213,15 +1196,14 @@ Better dates & times for Python
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## asttokens (3.0.0) - Apache 2.0
 
 Annotate AST trees with source code positions
 
-* URL: https://github.com/gristlabs/asttokens
-* Author(s): Dmitry Sagalovskiy, Grist Labs
+- URL: https://github.com/gristlabs/asttokens
+- Author(s): Dmitry Sagalovskiy, Grist Labs
 
 ### License Text
 
@@ -1427,15 +1409,14 @@ Annotate AST trees with source code positions
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## async-lru (2.0.5) - MIT License
 
 Simple LRU cache for asyncio
 
-* URL: https://github.com/aio-libs/async-lru
-* Maintainer(s): aiohttp team <team@aiohttp.org>
+- URL: https://github.com/aio-libs/async-lru
+- Maintainer(s): aiohttp team <team@aiohttp.org>
 
 ### License Text
 
@@ -1463,15 +1444,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## attrs (25.1.0) - UNKNOWN
 
 Classes Without Boilerplate
 
-* URL: https://www.attrs.org/en/stable/changelog.html
-* Author(s): Hynek Schlawack <hs@ox.cx>
+- URL: https://www.attrs.org/en/stable/changelog.html
+- Author(s): Hynek Schlawack <hs@ox.cx>
 
 ### License Text
 
@@ -1497,15 +1477,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## autodoc_pydantic (2.2.0) - MIT License
 
 Seamlessly integrate pydantic models in your Sphinx documentation.
 
-* URL: https://github.com/mansenfranzen/autodoc_pydantic
-* Author(s): mansenfranzen
+- URL: https://github.com/mansenfranzen/autodoc_pydantic
+- Author(s): mansenfranzen
 
 ### License Text
 
@@ -1531,15 +1510,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## autodocsumm (0.2.14) - Apache Software License
 
 Extended sphinx autodoc including automatic autosummaries
 
-* URL: https://github.com/Chilipp/autodocsumm
-* Author(s): "Philipp S. Sommer" <philipp.sommer@hereon.de>
+- URL: https://github.com/Chilipp/autodocsumm
+- Author(s): "Philipp S. Sommer" <philipp.sommer@hereon.de>
 
 ### License Text
 
@@ -1745,16 +1723,15 @@ Extended sphinx autodoc including automatic autosummaries
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## babel (2.17.0) - BSD License
 
 Internationalization utilities
 
-* URL: https://babel.pocoo.org/
-* Author(s): Armin Ronacher
-* Maintainer(s): Aarni Koskela
+- URL: https://babel.pocoo.org/
+- Author(s): Armin Ronacher
+- Maintainer(s): Aarni Koskela
 
 ### License Text
 
@@ -1786,15 +1763,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## beautifulsoup4 (4.13.3) - MIT License
 
 Screen-scraping library
 
-* URL: https://www.crummy.com/software/BeautifulSoup/bs4/
-* Author(s): Leonard Richardson <leonardr@segfault.org>
+- URL: https://www.crummy.com/software/BeautifulSoup/bs4/
+- Author(s): Leonard Richardson <leonardr@segfault.org>
 
 ### License Text
 
@@ -1830,15 +1806,14 @@ and other contributors
 Beautiful Soup has an optional dependency on the soupsieve library,
 which is also made available under the MIT license. Copyright (c)
 Isaac Muse
-
 ```
 
 ## bleach (6.2.0) - Apache Software License
 
 An easy safelist-based HTML-sanitizing tool.
 
-* URL: https://github.com/mozilla/bleach
-* Maintainer(s): Will Kahn-Greene
+- URL: https://github.com/mozilla/bleach
+- Maintainer(s): Will Kahn-Greene
 
 ### License Text
 
@@ -1856,16 +1831,15 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## blinker (1.9.0) - MIT License
 
 Fast, simple object-to-object and broadcast signaling
 
-* URL: https://github.com/pallets-eco/blinker/
-* Author(s): Jason Kirtland
-* Maintainer(s): Pallets Ecosystem <contact@palletsprojects.com>
+- URL: https://github.com/pallets-eco/blinker/
+- Author(s): Jason Kirtland
+- Maintainer(s): Pallets Ecosystem <contact@palletsprojects.com>
 
 ### License Text
 
@@ -1890,15 +1864,15 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## boolean.py (4.0) - BSD-2-Clause
 
-Define boolean algebras, create and parse boolean expressions and create custom boolean DSL.
+Define boolean algebras, create and parse boolean expressions and create custom
+boolean DSL.
 
-* URL: https://github.com/bastikr/boolean.py
-* Author(s): Sebastian Kraemer
+- URL: https://github.com/bastikr/boolean.py
+- Author(s): Sebastian Kraemer
 
 ### License Text
 
@@ -1926,15 +1900,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## bracex (2.5.post1) - MIT License
 
 Bash style brace expander.
 
-* URL: https://github.com/facelessuser/bracex
-* Author(s): Isaac Muse <Isaac.Muse@gmail.com>
+- URL: https://github.com/facelessuser/bracex
+- Author(s): Isaac Muse <Isaac.Muse@gmail.com>
 
 ### License Text
 
@@ -1960,15 +1933,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## bump-my-version (1.1.1) - MIT License
 
 Version bump your Python project
 
-* URL: https://github.com/callowayproject/bump-my-version
-* Author(s): Corey Oordt <coreyoordt@gmail.com>
+- URL: https://github.com/callowayproject/bump-my-version
+- Author(s): Corey Oordt <coreyoordt@gmail.com>
 
 ### License Text
 
@@ -1994,15 +1966,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## cachetools (5.5.2) - MIT License
 
 Extensible memoizing collections and decorators
 
-* URL: https://github.com/tkem/cachetools/
-* Author(s): Thomas Kemmer
+- URL: https://github.com/tkem/cachetools/
+- Author(s): Thomas Kemmer
 
 ### License Text
 
@@ -2027,15 +1998,14 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## certifi (2025.1.31) - Mozilla Public License 2.0 (MPL 2.0)
 
 Python package for providing Mozilla's CA Bundle.
 
-* URL: https://github.com/certifi/python-certifi
-* Author(s): Kenneth Reitz
+- URL: https://github.com/certifi/python-certifi
+- Author(s): Kenneth Reitz
 
 ### License Text
 
@@ -2060,20 +2030,18 @@ one at http://mozilla.org/MPL/2.0/.
 
 ***** END LICENSE BLOCK *****
 @(#) $RCSfile: certdata.txt,v $ $Revision: 1.80 $ $Date: 2011/11/03 15:11:58 $
-
 ```
 
 ## cffi (1.17.1) - MIT License
 
 Foreign Function Interface for Python calling C code.
 
-* URL: http://cffi.readthedocs.org
-* Author(s): Armin Rigo, Maciej Fijalkowski
+- URL: http://cffi.readthedocs.org
+- Author(s): Armin Rigo, Maciej Fijalkowski
 
 ### License Text
 
 ```
-
 Except when otherwise stated (look for LICENSE files in directories or
 information at the beginning of each file) all software and
 documentation is licensed as follows: 
@@ -2098,16 +2066,14 @@ documentation is licensed as follows:
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
     DEALINGS IN THE SOFTWARE.
-
-
 ```
 
 ## cfgv (3.4.0) - MIT License
 
 Validate configuration and produce human readable error messages.
 
-* URL: https://github.com/asottile/cfgv
-* Author(s): Anthony Sottile
+- URL: https://github.com/asottile/cfgv
+- Author(s): Anthony Sottile
 
 ### License Text
 
@@ -2131,16 +2097,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## chardet (5.2.0) - GNU Lesser General Public License v2 or later (LGPLv2+)
 
 Universal encoding detector for Python 3
 
-* URL: https://github.com/chardet/chardet
-* Author(s): Mark Pilgrim
-* Maintainer(s): Daniel Blanchard
+- URL: https://github.com/chardet/chardet
+- Author(s): Mark Pilgrim
+- Maintainer(s): Daniel Blanchard
 
 ### License Text
 
@@ -2647,16 +2612,16 @@ necessary.  Here is a sample; alter the names:
   Ty Coon, President of Vice
 
 That's all there is to it!
-
 ```
 
 ## charset-normalizer (3.4.1) - MIT License
 
-The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+The Real First Universal Charset Detector. Open, modern and actively maintained
+alternative to Chardet.
 
-* URL: https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md
-* Author(s): "Ahmed R. TAHRI" <tahri.ahmed@proton.me>
-* Maintainer(s): "Ahmed R. TAHRI" <tahri.ahmed@proton.me>
+- URL: https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md
+- Author(s): "Ahmed R. TAHRI" <tahri.ahmed@proton.me>
+- Maintainer(s): "Ahmed R. TAHRI" <tahri.ahmed@proton.me>
 
 ### License Text
 
@@ -2682,15 +2647,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## click (8.1.8) - BSD License
 
 Composable command line interface toolkit
 
-* URL: https://github.com/pallets/click/
-* Maintainer(s): Pallets <contact@palletsprojects.com>
+- URL: https://github.com/pallets/click/
+- Maintainer(s): Pallets <contact@palletsprojects.com>
 
 ### License Text
 
@@ -2723,15 +2687,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## colorama (0.4.6) - BSD License
 
 Cross-platform colored terminal text.
 
-* URL: https://github.com/tartley/colorama
-* Author(s): Jonathan Hartley <tartley@tartley.com>
+- URL: https://github.com/tartley/colorama
+- Author(s): Jonathan Hartley <tartley@tartley.com>
 
 ### License Text
 
@@ -2763,15 +2726,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## colorlog (6.9.0) - MIT License
 
 Add colours to the output of Python's logging module.
 
-* URL: https://github.com/borntyping/python-colorlog
-* Author(s): Sam Clements
+- URL: https://github.com/borntyping/python-colorlog
+- Author(s): Sam Clements
 
 ### License Text
 
@@ -2796,15 +2758,14 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## comm (0.2.2) - BSD License
 
 Jupyter Python Comm implementation, for usage in ipykernel, xeus-python etc.
 
-* URL: https://github.com/ipython/comm
-* Author(s): Jupyter contributors
+- URL: https://github.com/ipython/comm
+- Author(s): Jupyter contributors
 
 ### License Text
 
@@ -2838,15 +2799,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## contourpy (1.3.1) - BSD License
 
 Python library for calculating contours of 2D quadrilateral grids
 
-* URL: https://github.com/contourpy/contourpy
-* Author(s): Ian Thomas <ianthomas23@gmail.com>
+- URL: https://github.com/contourpy/contourpy
+- Author(s): Ian Thomas <ianthomas23@gmail.com>
 
 ### License Text
 
@@ -2880,20 +2840,18 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## coverage (7.6.12) - Apache Software License
 
 Code coverage measurement for Python
 
-* URL: https://github.com/nedbat/coveragepy
-* Author(s): Ned Batchelder and 236 others
+- URL: https://github.com/nedbat/coveragepy
+- Author(s): Ned Batchelder and 236 others
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -3070,16 +3028,15 @@ Code coverage measurement for Python
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
-
 ```
 
 ## cssutils (2.11.1) - GNU Library or Lesser General Public License (LGPL)
 
 A CSS Cascading Style Sheets library for Python
 
-* URL: https://github.com/jaraco/cssutils
-* Author(s): Christof Hoeke <c@cthedot.de>
-* Maintainer(s): "Jason R. Coombs" <jaraco@jaraco.com>
+- URL: https://github.com/jaraco/cssutils
+- Author(s): Christof Hoeke <c@cthedot.de>
+- Maintainer(s): "Jason R. Coombs" <jaraco@jaraco.com>
 
 ### License Text
 
@@ -3249,15 +3206,14 @@ whether future versions of the GNU Lesser General Public License shall
 apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
-
 ```
 
 ## cycler (0.12.1) - BSD License
 
 Composable style cycles
 
-* URL: https://matplotlib.org/cycler/
-* Author(s): Thomas A Caswell <matplotlib-users@python.org>
+- URL: https://matplotlib.org/cycler/
+- Author(s): Thomas A Caswell <matplotlib-users@python.org>
 
 ### License Text
 
@@ -3293,11 +3249,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## cyclonedx-bom (5.3.0) - Apache Software License
 
-CycloneDX Software Bill of Materials (SBOM) generator for Python projects and environments
+CycloneDX Software Bill of Materials (SBOM) generator for Python projects and
+environments
 
-* URL: https://github.com/CycloneDX/cyclonedx-python/#readme
-* Author(s): Jan Kowalleck
-* Maintainer(s): Jan Kowalleck
+- URL: https://github.com/CycloneDX/cyclonedx-python/#readme
+- Author(s): Jan Kowalleck
+- Maintainer(s): Jan Kowalleck
 
 ### License Text
 
@@ -3503,7 +3460,6 @@ CycloneDX Software Bill of Materials (SBOM) generator for Python projects and en
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ### Notice
@@ -3514,22 +3470,22 @@ Copyright (c) OWASP Foundation
 
 This product includes software developed by the
 CycloneDX community (https://cyclonedx.org/).
-
 ```
 
 ## cyclonedx-py (1.0.1) - UNKNOWN
 
 Alias for package 'cyclonedx-bom'
 
-* URL: https://github.com/CycloneDX/cyclonedx-python/#package_aliases/cyclonedx-py
+- URL:
+  https://github.com/CycloneDX/cyclonedx-python/#package_aliases/cyclonedx-py
 
 ## cyclonedx-python-lib (8.9.0) - Apache Software License
 
 Python library for CycloneDX
 
-* URL: https://github.com/CycloneDX/cyclonedx-python-lib/#readme
-* Author(s): Paul Horton
-* Maintainer(s): Jan Kowalleck
+- URL: https://github.com/CycloneDX/cyclonedx-python-lib/#readme
+- Author(s): Paul Horton
+- Maintainer(s): Jan Kowalleck
 
 ### License Text
 
@@ -3735,7 +3691,6 @@ Python library for CycloneDX
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ### Notice
@@ -3746,15 +3701,14 @@ Copyright (c) OWASP Foundation
 
 This product includes software developed by the
 CycloneDX community (https://cyclonedx.org/).
-
 ```
 
 ## debugpy (1.8.13) - MIT License
 
 An implementation of the Debug Adapter Protocol for Python
 
-* URL: https://aka.ms/debugpy
-* Author(s): Microsoft Corporation
+- URL: https://aka.ms/debugpy
+- Author(s): Microsoft Corporation
 
 ### License Text
 
@@ -3782,16 +3736,14 @@ An implementation of the Debug Adapter Protocol for Python
     COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
     IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
 ```
 
 ## decorator (5.2.1) - BSD License
 
 Decorators for Humans
 
-* URL: UNKNOWN
-* Author(s): Michele Simionato <michele.simionato@gmail.com>
+- URL: UNKNOWN
+- Author(s): Michele Simionato <michele.simionato@gmail.com>
 
 ### License Text
 
@@ -3823,16 +3775,15 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
-
 ```
 
 ## defusedxml (0.7.1) - Python Software Foundation License
 
 XML bomb protection for Python stdlib modules
 
-* URL: https://github.com/tiran/defusedxml
-* Author(s): Christian Heimes
-* Maintainer(s): Christian Heimes
+- URL: https://github.com/tiran/defusedxml
+- Author(s): Christian Heimes
+- Maintainer(s): Christian Heimes
 
 ### License Text
 
@@ -3885,16 +3836,14 @@ products or services of Licensee, or any third party.
 8. By copying, installing or otherwise using Python, Licensee
 agrees to be bound by the terms and conditions of this License
 Agreement.
-
-
 ```
 
 ## dependency-groups (1.3.0) - UNKNOWN
 
 A tool for resolving PEP 735 Dependency Group data
 
-* URL: https://github.com/sirosen/dependency-groups
-* Author(s): Stephen Rosen <sirosen0@gmail.com>
+- URL: https://github.com/sirosen/dependency-groups
+- Author(s): Stephen Rosen <sirosen0@gmail.com>
 
 ### License Text
 
@@ -3908,15 +3857,14 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## detect-secrets (1.5.0) - Apache Software License
 
 Tool for detecting secrets in the codebase
 
-* URL: https://github.com/Yelp/detect-secrets
-* Author(s): Yelp, Inc.
+- URL: https://github.com/Yelp/detect-secrets
+- Author(s): Yelp, Inc.
 
 ### License Text
 
@@ -4122,15 +4070,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## dict2css (0.3.0.post1) - MIT License
 
 A μ-library for constructing cascading style sheets from Python dictionaries.
 
-* URL: https://github.com/sphinx-toolbox/dict2css
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/sphinx-toolbox/dict2css
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -4154,15 +4101,14 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## distlib (0.3.9) - Python Software Foundation License
 
 Distribution utilities
 
-* URL: https://github.com/pypa/distlib
-* Author(s): Vinay Sajip
+- URL: https://github.com/pypa/distlib
+- Author(s): Vinay Sajip
 
 ### License Text
 
@@ -4451,15 +4397,14 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## dnspython (2.7.0) - ISC License (ISCL)
 
 DNS toolkit
 
-* URL: https://www.dnspython.org
-* Author(s): Bob Halley <halley@dnspython.org>
+- URL: https://www.dnspython.org
+- Author(s): Bob Halley <halley@dnspython.org>
 
 ### License Text
 
@@ -4499,16 +4444,15 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## docutils (0.21.2) - BSD License; GNU General Public License (GPL); Public Domain; Python Software Foundation License
 
 Docutils -- Python Documentation Utilities
 
-* URL: https://docutils.sourceforge.io
-* Author(s): David Goodger <goodger@python.org>
-* Maintainer(s): docutils-develop list <docutils-develop@lists.sourceforge.net>
+- URL: https://docutils.sourceforge.io
+- Author(s): David Goodger <goodger@python.org>
+- Maintainer(s): docutils-develop list <docutils-develop@lists.sourceforge.net>
 
 ### License Text
 
@@ -4672,15 +4616,14 @@ licenses_ directory.
 .. _OSI-approved: http://opensource.org/licenses/
 .. _license-list:
 .. _GPL-compatible: https://www.gnu.org/licenses/license-list.html
-
 ```
 
 ## domdf_python_tools (3.10.0) - MIT License
 
 Helpful functions for Python 🐍 🛠️
 
-* URL: https://github.com/domdfcoding/domdf_python_tools
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/domdfcoding/domdf_python_tools
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -4704,15 +4647,14 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## email_validator (2.2.0) - The Unlicense (Unlicense)
 
 A robust email address syntax and deliverability validation library.
 
-* URL: https://github.com/JoshData/python-email-validator
-* Author(s): Joshua Tauberer
+- URL: https://github.com/JoshData/python-email-validator
+- Author(s): Joshua Tauberer
 
 ### License Text
 
@@ -4744,15 +4686,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org/>
-
 ```
 
 ## enum-tools (0.12.0) - GNU Lesser General Public License v3 or later (LGPLv3+)
 
 Tools to expand Python's enum module.
 
-* URL: https://github.com/domdfcoding/enum_tools
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/domdfcoding/enum_tools
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -4922,20 +4863,18 @@ whether future versions of the GNU Lesser General Public License shall
 apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
-
 ```
 
 ## execnet (2.1.1) - MIT License
 
 execnet: rapid multi-Python deployment
 
-* URL: https://execnet.readthedocs.io/en/latest/
-* Author(s): holger krekel and others
+- URL: https://execnet.readthedocs.io/en/latest/
+- Author(s): holger krekel and others
 
 ### License Text
 
 ```
-
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
   in the Software without restriction, including without limitation the rights
@@ -4953,15 +4892,14 @@ execnet: rapid multi-Python deployment
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-
 ```
 
 ## executing (2.2.0) - MIT License
 
 Get the currently executing AST node of a frame, and other information
 
-* URL: https://github.com/alexmojaki/executing
-* Author(s): Alex Hall
+- URL: https://github.com/alexmojaki/executing
+- Author(s): Alex Hall
 
 ### License Text
 
@@ -4987,15 +4925,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## fastapi (0.115.12) - MIT License
 
-FastAPI framework, high performance, easy to learn, fast to code, ready for production
+FastAPI framework, high performance, easy to learn, fast to code, ready for
+production
 
-* URL: https://github.com/fastapi/fastapi
-* Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
+- URL: https://github.com/fastapi/fastapi
+- Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
 
 ### License Text
 
@@ -5021,15 +4959,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## fastapi-cli (0.0.7) - MIT License
 
 Run and manage FastAPI apps from the command line with FastAPI CLI. 🚀
 
-* URL: https://github.com/fastapi/fastapi-cli
-* Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
+- URL: https://github.com/fastapi/fastapi-cli
+- Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
 
 ### License Text
 
@@ -5055,15 +4992,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## fastjsonschema (2.21.1) - BSD License
 
 Fastest Python implementation of JSON schema
 
-* URL: https://github.com/horejsek/python-fastjsonschema
-* Author(s): Michal Horejsek
+- URL: https://github.com/horejsek/python-fastjsonschema
+- Author(s): Michal Horejsek
 
 ### License Text
 
@@ -5095,15 +5031,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## filelock (3.17.0) - The Unlicense (Unlicense)
 
 A platform independent file lock.
 
-* URL: https://github.com/tox-dev/py-filelock
-* Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
+- URL: https://github.com/tox-dev/py-filelock
+- Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
 
 ### License Text
 
@@ -5132,16 +5067,15 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
-
 ```
 
 ## fonttools (4.56.0) - MIT License
 
 Tools to manipulate font files
 
-* URL: http://github.com/fonttools/fonttools
-* Author(s): Just van Rossum
-* Maintainer(s): Behdad Esfahbod
+- URL: http://github.com/fonttools/fonttools
+- Author(s): Just van Rossum
+- Maintainer(s): Behdad Esfahbod
 
 ### License Text
 
@@ -5167,15 +5101,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## fqdn (1.5.1) - Mozilla Public License 2.0 (MPL 2.0)
 
-Validates fully-qualified domain names against RFC 1123, so that they are acceptable to modern bowsers
+Validates fully-qualified domain names against RFC 1123, so that they are
+acceptable to modern bowsers
 
-* URL: https://github.com/ypcrts/fqdn
-* Author(s): ypcrts
+- URL: https://github.com/ypcrts/fqdn
+- Author(s): ypcrts
 
 ### License Text
 
@@ -5553,15 +5487,14 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
-
 ```
 
 ## furo (2024.8.6) - MIT License
 
 A clean customisable Sphinx documentation theme.
 
-* URL: UNKNOWN
-* Author(s): Pradyun Gedam <mail@pradyunsg.me>
+- URL: UNKNOWN
+- Author(s): Pradyun Gedam <mail@pradyunsg.me>
 
 ### License Text
 
@@ -5585,22 +5518,21 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
 ```
 
 ## git-cliff (2.8.0) - MIT OR Apache-2.0
 
 A highly customizable changelog generator ⛰️
 
-* URL: https://github.com/orhun/git-cliff
-* Author(s): git-cliff contributors <git-cliff@protonmail.com>
+- URL: https://github.com/orhun/git-cliff
+- Author(s): git-cliff contributors <git-cliff@protonmail.com>
 
 ## gitdb (4.0.12) - BSD License
 
 Git Object Database
 
-* URL: https://github.com/gitpython-developers/gitdb
-* Author(s): Sebastian Thiel
+- URL: https://github.com/gitpython-developers/gitdb
+- Author(s): Sebastian Thiel
 
 ### License Text
 
@@ -5647,15 +5579,14 @@ see http://en.wikipedia.org/wiki/Git_%28software%29 for more information.
 
 They are not required for the actual operation, which is why they are not found 
 in the distribution package.
-
 ```
 
 ## h11 (0.14.0) - MIT License
 
 A pure-Python, bring-your-own-I/O implementation of HTTP/1.1
 
-* URL: https://github.com/python-hyper/h11
-* Author(s): Nathaniel J. Smith
+- URL: https://github.com/python-hyper/h11
+- Author(s): Nathaniel J. Smith
 
 ### License Text
 
@@ -5682,15 +5613,14 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## html5lib (1.1) - MIT License
 
 HTML parser based on the WHATWG HTML specification
 
-* URL: https://github.com/html5lib/html5lib-python
-* Maintainer(s): James Graham
+- URL: https://github.com/html5lib/html5lib-python
+- Maintainer(s): James Graham
 
 ### License Text
 
@@ -5715,15 +5645,14 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## httpcore (1.0.7) - BSD License
 
 A minimal low-level HTTP client.
 
-* URL: https://www.encode.io/httpcore/
-* Author(s): Tom Christie <tom@tomchristie.com>
+- URL: https://www.encode.io/httpcore/
+- Author(s): Tom Christie <tom@tomchristie.com>
 
 ### License Text
 
@@ -5755,15 +5684,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## httptools (0.6.4) - MIT License
 
 A collection of framework independent HTTP protocol utils.
 
-* URL: https://github.com/MagicStack/httptools
-* Author(s): Yury Selivanov
+- URL: https://github.com/MagicStack/httptools
+- Author(s): Yury Selivanov
 
 ### License Text
 
@@ -5789,15 +5717,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## httpx (0.28.1) - BSD License
 
 The next generation HTTP client.
 
-* URL: https://github.com/encode/httpx
-* Author(s): Tom Christie <tom@tomchristie.com>
+- URL: https://github.com/encode/httpx
+- Author(s): Tom Christie <tom@tomchristie.com>
 
 ### License Text
 
@@ -5814,15 +5741,14 @@ Redistribution and use in source and binary forms, with or without modification,
 * Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## identify (2.6.8) - MIT License
 
 File identification library for Python
 
-* URL: https://github.com/pre-commit/identify
-* Author(s): Chris Kuehl
+- URL: https://github.com/pre-commit/identify
+- Author(s): Chris Kuehl
 
 ### License Text
 
@@ -5846,15 +5772,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## idna (3.10) - BSD License
 
 Internationalized Domain Names in Applications (IDNA)
 
-* URL: https://github.com/kjd/idna
-* Author(s): Kim Davies <kim+pypi@gumleaf.org>
+- URL: https://github.com/kjd/idna
+- Author(s): Kim Davies <kim+pypi@gumleaf.org>
 
 ### License Text
 
@@ -5890,15 +5815,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## imagesize (1.4.1) - MIT License
 
 Getting image size from png/jpeg/jpeg2000/gif file
 
-* URL: https://github.com/shibukawa/imagesize_py
-* Author(s): Yoshiki Shibukawa
+- URL: https://github.com/shibukawa/imagesize_py
+- Author(s): Yoshiki Shibukawa
 
 ### License Text
 
@@ -5922,47 +5846,44 @@ NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPO
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## iniconfig (2.0.0) - MIT License
 
 brain-dead simple config-ini parsing
 
-* URL: https://github.com/pytest-dev/iniconfig
-* Author(s): Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>, Holger Krekel <holger.krekel@gmail.com>
+- URL: https://github.com/pytest-dev/iniconfig
+- Author(s): Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>, Holger Krekel
+  <holger.krekel@gmail.com>
 
 ### License Text
 
 ```
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+    
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-     
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
- 
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-
-
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
 ```
 
 ## ipykernel (6.29.5) - BSD License
 
 IPython Kernel for Jupyter
 
-* URL: https://ipython.org
-* Author(s): IPython Development Team <ipython-dev@scipy.org>
+- URL: https://ipython.org
+- Author(s): IPython Development Team <ipython-dev@scipy.org>
 
 ### License Text
 
@@ -5997,15 +5918,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## ipython (9.0.2) - BSD License
 
 IPython: Productive Interactive Computing
 
-* URL: https://ipython.org
-* Author(s): The IPython Development Team
+- URL: https://ipython.org
+- Author(s): The IPython Development Team
 
 ### License Text
 
@@ -6051,15 +5971,14 @@ to indicate the copyright and license terms:
 
     # Copyright (c) IPython Development Team.
     # Distributed under the terms of the Modified BSD License.
-
 ```
 
 ## ipython_pygments_lexers (1.1.1) - BSD License
 
 Defines a variety of Pygments lexers for highlighting IPython code.
 
-* URL: https://github.com/ipython/ipython-pygments-lexers
-* Author(s): The IPython Development Team <ipython-dev@python.org>
+- URL: https://github.com/ipython/ipython-pygments-lexers
+- Author(s): The IPython Development Team <ipython-dev@python.org>
 
 ### License Text
 
@@ -6094,15 +6013,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## ipywidgets (8.1.5) - BSD License
 
 Jupyter interactive widgets
 
-* URL: http://jupyter.org
-* Author(s): Jupyter Development Team
+- URL: http://jupyter.org
+- Author(s): Jupyter Development Team
 
 ### License Text
 
@@ -6134,15 +6052,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## isoduration (20.11.0) - ISC License (ISCL)
 
 Operations with ISO 8601 durations
 
-* URL: https://github.com/bolsote/isoduration
-* Author(s): Víctor Muñoz
+- URL: https://github.com/bolsote/isoduration
+- Author(s): Víctor Muñoz
 
 ### License Text
 
@@ -6160,15 +6077,14 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## itsdangerous (2.2.0) - BSD License
 
 Safely pass data to untrusted environments and back.
 
-* URL: https://github.com/pallets/itsdangerous/
-* Maintainer(s): Pallets <contact@palletsprojects.com>
+- URL: https://github.com/pallets/itsdangerous/
+- Maintainer(s): Pallets <contact@palletsprojects.com>
 
 ### License Text
 
@@ -6201,16 +6117,15 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jedi (0.19.2) - MIT License
 
 An autocompletion tool for Python that can be used for text editors.
 
-* URL: https://github.com/davidhalter/jedi
-* Author(s): David Halter
-* Maintainer(s): David Halter
+- URL: https://github.com/davidhalter/jedi
+- Author(s): David Halter
+- Maintainer(s): David Halter
 
 ### License Text
 
@@ -6239,15 +6154,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## json5 (0.10.0) - Apache Software License
 
 A Python implementation of the JSON5 data format.
 
-* URL: https://github.com/dpranke/pyjson5
-* Author(s): Dirk Pranke <dpranke@chromium.org>
+- URL: https://github.com/dpranke/pyjson5
+- Author(s): Dirk Pranke <dpranke@chromium.org>
 
 ### License Text
 
@@ -6533,15 +6447,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## jsonpointer (3.0.0) - BSD License
 
-Identify specific nodes in a JSON document (RFC 6901) 
+Identify specific nodes in a JSON document (RFC 6901)
 
-* URL: https://github.com/stefankoegl/python-json-pointer
-* Author(s): Stefan Kögl
+- URL: https://github.com/stefankoegl/python-json-pointer
+- Author(s): Stefan Kögl
 
 ### License Text
 
@@ -6571,16 +6484,14 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
 ```
 
 ## jsonschema (4.23.0) - MIT License
 
 An implementation of JSON Schema validation for Python
 
-* URL: https://github.com/python-jsonschema/jsonschema
-* Author(s): Julian Berman <Julian+jsonschema@GrayVines.com>
+- URL: https://github.com/python-jsonschema/jsonschema
+- Author(s): Julian Berman <Julian+jsonschema@GrayVines.com>
 
 ### License Text
 
@@ -6604,15 +6515,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## jsonschema-specifications (2024.10.1) - MIT License
 
 The JSON Schema meta-schemas and vocabularies, exposed as a Registry
 
-* URL: https://github.com/python-jsonschema/jsonschema-specifications
-* Author(s): Julian Berman <Julian+jsonschema-specifications@GrayVines.com>
+- URL: https://github.com/python-jsonschema/jsonschema-specifications
+- Author(s): Julian Berman <Julian+jsonschema-specifications@GrayVines.com>
 
 ### License Text
 
@@ -6636,15 +6546,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## jupyter (1.1.1) - BSD License
 
 Jupyter metapackage. Install all the Jupyter components in one go.
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team
 
 ### License Text
 
@@ -6684,8 +6593,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Jupyter terminal console
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -6721,15 +6630,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter-events (0.12.0) - BSD License
 
 Jupyter Event System library
 
-* URL: http://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: http://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -6764,15 +6672,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter-lsp (2.2.5) - BSD License
 
 Multi-Language Server WebSocket proxy for Jupyter Notebook/Lab server
 
-* URL: https://github.com/jupyter-lsp/jupyterlab-lsp/issues
-* Author(s): jupyter-lsp Contributors
+- URL: https://github.com/jupyter-lsp/jupyterlab-lsp/issues
+- Author(s): jupyter-lsp Contributors
 
 ### License Text
 
@@ -6806,15 +6713,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter_client (8.6.3) - BSD License
 
 Jupyter protocol implementation and client libraries
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -6850,15 +6756,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter_core (5.7.2) - BSD License
 
 Jupyter core package. A base package on which Jupyter projects rely.
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.org>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.org>
 
 ### License Text
 
@@ -6893,15 +6798,15 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter_server (2.15.0) - BSD License
 
-The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web applications.
+The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web
+applications.
 
-* URL: https://jupyter-server.readthedocs.io
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter-server.readthedocs.io
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -6937,15 +6842,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyter_server_terminals (0.5.3) - BSD License
 
 A Jupyter Server Extension Providing Terminals.
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -6980,15 +6884,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyterlab (4.3.6) - BSD License
 
 JupyterLab computational environment
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -7026,15 +6929,14 @@ Semver File License
 
 The semver.py file is from https://github.com/podhmo/python-semver
 which is licensed under the "MIT" license.  See the semver.py file for details.
-
 ```
 
 ## jupyterlab_pygments (0.3.0) - BSD License
 
 Pygments theme using JupyterLab CSS variables
 
-* URL: https://github.com/jupyterlab/jupyterlab_pygments
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://github.com/jupyterlab/jupyterlab_pygments
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -7066,15 +6968,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyterlab_server (2.27.3) - BSD License
 
 A set of server components for JupyterLab and JupyterLab like applications.
 
-* URL: https://jupyterlab-server.readthedocs.io
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyterlab-server.readthedocs.io
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -7106,15 +7007,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## jupyterlab_widgets (3.0.13) - BSD License
 
 Jupyter interactive widgets for JupyterLab
 
-* URL: https://github.com/jupyter-widgets/ipywidgets
-* Author(s): Jupyter Development Team
+- URL: https://github.com/jupyter-widgets/ipywidgets
+- Author(s): Jupyter Development Team
 
 ### License Text
 
@@ -7411,16 +7311,15 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## kiwisolver (1.4.8) - BSD License
 
 A fast implementation of the Cassowary constraint solver
 
-* URL: https://github.com/nucleic/kiwi
-* Author(s): The Nucleic Development Team <sccolbert@gmail.com>
-* Maintainer(s): "Matthieu C. Dartiailh" <m.dartiailh@gmail.com>
+- URL: https://github.com/nucleic/kiwi
+- Author(s): The Nucleic Development Team <sccolbert@gmail.com>
+- Maintainer(s): "Matthieu C. Dartiailh" <m.dartiailh@gmail.com>
 
 ### License Text
 
@@ -7496,15 +7395,16 @@ to indicate the copyright and license terms:
 #
 # The full license is in the file LICENSE, distributed with this software.
 #------------------------------------------------------------------------------
-
 ```
 
 ## license-expression (30.4.1) - Apache-2.0
 
-license-expression is a comprehensive utility library to parse, compare, simplify and normalize license expressions (such as SPDX license expressions) using boolean logic.
+license-expression is a comprehensive utility library to parse, compare,
+simplify and normalize license expressions (such as SPDX license expressions)
+using boolean logic.
 
-* URL: https://github.com/aboutcode-org/license-expression
-* Author(s): nexB. Inc. and others
+- URL: https://github.com/aboutcode-org/license-expression
+- Author(s): nexB. Inc. and others
 
 ### Notice
 
@@ -7546,16 +7446,16 @@ license-expression is a comprehensive utility library to parse, compare, simplif
 # limitations under the License.
 
 #
-
 ```
 
 ## lxml (5.3.1) - BSD License
 
-Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.
+Powerful and Pythonic XML processing library combining libxml2/libxslt with the
+ElementTree API.
 
-* URL: https://lxml.de/
-* Author(s): lxml dev team
-* Maintainer(s): lxml dev team
+- URL: https://lxml.de/
+- Author(s): lxml dev team
+- Maintainer(s): lxml dev team
 
 ### License Text
 
@@ -7589,19 +7489,17 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## marimo (0.12.2) - Apache Software License
 
 A library for making reactive notebooks and apps
 
-* URL: https://github.com/marimo-team/marimo
+- URL: https://github.com/marimo-team/marimo
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -7803,15 +7701,14 @@ A library for making reactive notebooks and apps
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## markdown-it-py (3.0.0) - MIT License
 
 Python port of markdown-it. Markdown parsing, done right!
 
-* URL: https://github.com/executablebooks/markdown-it-py
-* Author(s): Chris Sewell <chrisj_sewell@hotmail.com>
+- URL: https://github.com/executablebooks/markdown-it-py
+- Author(s): Chris Sewell <chrisj_sewell@hotmail.com>
 
 ### License Text
 
@@ -7837,15 +7734,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## matplotlib (3.10.1) - Python Software Foundation License
 
 Python plotting package
 
-* URL: https://matplotlib.org
-* Author(s): John D. Hunter, Michael Droettboom
+- URL: https://matplotlib.org
+- Author(s): John D. Hunter, Michael Droettboom
 
 ### License Text
 
@@ -7955,8 +7851,8 @@ Agreement.
 
 Inline Matplotlib backend for Jupyter
 
-* URL: https://github.com/ipython/matplotlib-inline
-* Author(s): IPython Development Team <ipython-dev@python.org>
+- URL: https://github.com/ipython/matplotlib-inline
+- Author(s): IPython Development Team <ipython-dev@python.org>
 
 ### License Text
 
@@ -7990,15 +7886,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## mdurl (0.1.2) - MIT License
 
 Markdown URL utilities
 
-* URL: https://github.com/executablebooks/mdurl
-* Author(s): Taneli Hukkinen <hukkin@users.noreply.github.com>
+- URL: https://github.com/executablebooks/mdurl
+- Author(s): Taneli Hukkinen <hukkin@users.noreply.github.com>
 
 ### License Text
 
@@ -8049,15 +7944,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
 ```
 
 ## mistune (3.1.2) - BSD License
 
 A sane and fast Markdown parser with useful plugins and renderers
 
-* URL: https://github.com/lepture/mistune
-* Author(s): Hsiaoming Yang <me@lepture.com>
+- URL: https://github.com/lepture/mistune
+- Author(s): Hsiaoming Yang <me@lepture.com>
 
 ### License Text
 
@@ -8076,15 +7970,14 @@ Redistribution and use in source and binary forms, with or without modification,
 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## more-itertools (10.6.0) - MIT License
 
 More routines for operating on iterables, beyond itertools
 
-* URL: https://github.com/more-itertools/more-itertools
-* Author(s): Erik Rose <erikrose@grinchcentral.com>
+- URL: https://github.com/more-itertools/more-itertools
+- Author(s): Erik Rose <erikrose@grinchcentral.com>
 
 ### License Text
 
@@ -8108,15 +8001,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## msgpack (1.1.0) - Apache Software License
 
 MessagePack serializer
 
-* URL: https://msgpack.org/
-* Author(s): Inada Naoki <songofacandy@gmail.com>
+- URL: https://msgpack.org/
+- Author(s): Inada Naoki <songofacandy@gmail.com>
 
 ### License Text
 
@@ -8134,16 +8026,14 @@ Copyright (C) 2008-2011 INADA Naoki <songofacandy@gmail.com>
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-
 ```
 
 ## mypy (1.15.0) - MIT License
 
 Optional static typing for Python
 
-* URL: https://www.mypy-lang.org/
-* Author(s): Jukka Lehtosalo <jukka.lehtosalo@iki.fi>
+- URL: https://www.mypy-lang.org/
+- Author(s): Jukka Lehtosalo <jukka.lehtosalo@iki.fi>
 
 ### License Text
 
@@ -8377,15 +8267,14 @@ FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## mypy-extensions (1.0.0) - MIT License
 
 Type system extensions for programs checked with the mypy type checker.
 
-* URL: https://github.com/python/mypy_extensions
-* Author(s): The mypy developers
+- URL: https://github.com/python/mypy_extensions
+- Author(s): The mypy developers
 
 ### License Text
 
@@ -8417,15 +8306,14 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 = = = = =
-
 ```
 
 ## narwhals (1.28.0) - MIT License
 
 Extremely lightweight compatibility layer between dataframe libraries
 
-* URL: https://github.com/narwhals-dev/narwhals
-* Author(s): Marco Gorelli <33491632+MarcoGorelli@users.noreply.github.com>
+- URL: https://github.com/narwhals-dev/narwhals
+- Author(s): Marco Gorelli <33491632+MarcoGorelli@users.noreply.github.com>
 
 ### License Text
 
@@ -8451,15 +8339,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## natsort (8.4.0) - MIT License
 
 Simple yet flexible natural sorting in Python.
 
-* URL: https://github.com/SethMMorton/natsort
-* Author(s): Seth M. Morton
+- URL: https://github.com/SethMMorton/natsort
+- Author(s): Seth M. Morton
 
 ### License Text
 
@@ -8483,15 +8370,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## nbclient (0.10.2) - BSD License
 
-A client library for executing notebooks. Formerly nbconvert's ExecutePreprocessor.
+A client library for executing notebooks. Formerly nbconvert's
+ExecutePreprocessor.
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -8526,15 +8413,17 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## nbconvert (7.16.6) - BSD License
 
-Converting Jupyter Notebooks (.ipynb files) to other formats.  Output formats include asciidoc, html, latex, markdown, pdf, py, rst, script.  nbconvert can be used both as a Python library (`import nbconvert`) or as a command line tool (invoked as `jupyter nbconvert ...`).
+Converting Jupyter Notebooks (.ipynb files) to other formats. Output formats
+include asciidoc, html, latex, markdown, pdf, py, rst, script. nbconvert can be
+used both as a Python library (`import nbconvert`) or as a command line tool
+(invoked as `jupyter nbconvert ...`).
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -8570,15 +8459,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## nbformat (5.10.4) - BSD License
 
 The Jupyter Notebook format
 
-* URL: https://jupyter.org
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://jupyter.org
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -8614,15 +8502,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## nest-asyncio (1.6.0) - BSD License
 
 Patch asyncio to allow nested event loops
 
-* URL: https://github.com/erdewit/nest_asyncio
-* Author(s): Ewald R. de Wit
+- URL: https://github.com/erdewit/nest_asyncio
+- Author(s): Ewald R. de Wit
 
 ### License Text
 
@@ -8652,15 +8539,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## nodeenv (1.9.1) - BSD License
 
 Node.js virtual environment builder
 
-* URL: https://github.com/ekalinin/nodeenv
-* Author(s): Eugene Kalinin
+- URL: https://github.com/ekalinin/nodeenv
+- Author(s): Eugene Kalinin
 
 ### License Text
 
@@ -8697,15 +8583,14 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE AND DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
-
 ```
 
 ## notebook (7.3.3) - BSD License
 
 Jupyter Notebook - A web-based notebook environment for interactive computing
 
-* URL: https://github.com/jupyter/notebook
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://github.com/jupyter/notebook
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -8741,15 +8626,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## notebook_shim (0.2.4) - BSD License
 
 A shim layer for notebook traits and config
 
-* URL: UNKNOWN
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: UNKNOWN
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -8783,15 +8667,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## nox (2025.2.9) - Apache Software License
 
 Flexible test automation.
 
-* URL: https://github.com/wntrblm/nox
-* Author(s): Alethea Katherine Flowers <me@thea.codes>
+- URL: https://github.com/wntrblm/nox
+- Author(s): Alethea Katherine Flowers <me@thea.codes>
 
 ### License Text
 
@@ -8997,16 +8880,15 @@ Flexible test automation.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## numpy (2.2.3) - BSD License
 
 Fundamental package for array computing in Python
 
-* URL: https://numpy.org
-* Author(s): Travis E. Oliphant et al.
-* Maintainer(s): NumPy Developers <numpy-discussion@python.org>
+- URL: https://numpy.org
+- Author(s): Travis E. Oliphant et al.
+- Maintainer(s): NumPy Developers <numpy-discussion@python.org>
 
 ### License Text
 
@@ -9981,15 +9863,15 @@ License: LGPL-2.1-or-later
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
     Lesser General Public License for more details.
     https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
-
 ```
 
-## oe-python-template (0.8.31) - MIT License
+## oe-python-template (0.8.32) - MIT License
 
-🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
+🧠 Copier template to scaffold Python projects compliant with best practices and
+modern tooling.
 
-* URL: https://oe-python-template.readthedocs.io/en/latest/
-* Author(s): Helmut Hoffer von Ankershoffen <helmuthva@gmail.com>
+- URL: https://oe-python-template.readthedocs.io/en/latest/
+- Author(s): Helmut Hoffer von Ankershoffen <helmuthva@gmail.com>
 
 ### License Text
 
@@ -10015,15 +9897,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## orjson (3.10.15) - Apache Software License; MIT License
 
 Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
 
-* URL: https://github.com/ijl/orjson
-* Author(s): ijl <ijl@mailbox.org>
+- URL: https://github.com/ijl/orjson
+- Author(s): ijl <ijl@mailbox.org>
 
 ### License Text
 
@@ -10229,15 +10110,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## overrides (7.7.0) - Apache License, Version 2.0
 
 A decorator to automatically detect mismatch when overriding a method.
 
-* URL: https://github.com/mkorpela/overrides
-* Author(s): Mikko Korpela
+- URL: https://github.com/mkorpela/overrides
+- Author(s): Mikko Korpela
 
 ### License Text
 
@@ -10443,23 +10323,21 @@ A decorator to automatically detect mismatch when overriding a method.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-
 ```
 
 ## packageurl-python (0.16.0) - MIT License
 
 A purl aka. Package URL parser and builder
 
-* URL: https://github.com/package-url/packageurl-python
-* Author(s): the purl authors
+- URL: https://github.com/package-url/packageurl-python
+- Author(s): the purl authors
 
 ## packaging (24.2) - Apache Software License; BSD License
 
 Core utilities for Python packages
 
-* URL: https://github.com/pypa/packaging
-* Author(s): Donald Stufft <donald@stufft.io>
+- URL: https://github.com/pypa/packaging
+- Author(s): Donald Stufft <donald@stufft.io>
 
 ### License Text
 
@@ -10467,15 +10345,14 @@ Core utilities for Python packages
 This software is made available under the terms of *either* of the licenses
 found in LICENSE.APACHE or LICENSE.BSD. Contributions to this software is made
 under the terms of *both* these licenses.
-
 ```
 
 ## pandas (2.2.3) - BSD License
 
 Powerful data structures for data analysis, time series, and statistics
 
-* URL: https://pandas.pydata.org
-* Author(s): The Pandas Development Team <pandas-dev@python.org>
+- URL: https://pandas.pydata.org
+- Author(s): The Pandas Development Team <pandas-dev@python.org>
 
 ### License Text
 
@@ -11736,8 +11613,8 @@ third-party archives.
 
 Utilities for writing pandoc filters in python
 
-* URL: http://github.com/jgm/pandocfilters
-* Author(s): John MacFarlane
+- URL: http://github.com/jgm/pandocfilters
+- Author(s): John MacFarlane
 
 ### License Text
 
@@ -11769,16 +11646,15 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## parso (0.8.4) - MIT License
 
 A Python Parser
 
-* URL: https://github.com/davidhalter/parso
-* Author(s): David Halter
-* Maintainer(s): David Halter
+- URL: https://github.com/davidhalter/parso
+- Author(s): David Halter
+- Maintainer(s): David Halter
 
 ### License Text
 
@@ -11869,15 +11745,14 @@ products or services of Licensee, or any third party.
 8. By copying, installing or otherwise using Python, Licensee
 agrees to be bound by the terms and conditions of this License
 Agreement.
-
 ```
 
 ## pexpect (4.9.0) - ISC License (ISCL)
 
 Pexpect allows easy control of interactive console applications.
 
-* URL: https://pexpect.readthedocs.io/
-* Author(s): Noah Spurrier; Thomas Kluyver; Jeff Quast
+- URL: https://pexpect.readthedocs.io/
+- Author(s): Noah Spurrier; Thomas Kluyver; Jeff Quast
 
 ### License Text
 
@@ -11901,16 +11776,14 @@ ISC LICENSE
     WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
     ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
     OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-
 ```
 
 ## pillow (11.1.0) - CMU License (MIT-CMU)
 
 Python Imaging Library (Fork)
 
-* URL: https://python-pillow.github.io
-* Author(s): "Jeffrey A. Clark" <aclark@aclark.net>
+- URL: https://python-pillow.github.io
+- Author(s): "Jeffrey A. Clark" <aclark@aclark.net>
 
 ### License Text
 
@@ -13258,15 +13131,14 @@ Gailly and Mark Adler; it does not include third-party code.
 If you redistribute modified sources, we would appreciate that you include in
 the file ChangeLog history information documenting your changes.  Please read
 the FAQ for more information on the distribution of modified source versions.
-
 ```
 
 ## pip (25.0.1) - MIT License
 
 The PyPA recommended tool for installing Python packages.
 
-* URL: https://pip.pypa.io/
-* Author(s): The pip developers <distutils-sig@python.org>
+- URL: https://pip.pypa.io/
+- Author(s): The pip developers <distutils-sig@python.org>
 
 ### License Text
 
@@ -13291,15 +13163,14 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## pip-api (0.0.34) - Apache Software License
 
 An unofficial, importable pip API
 
-* URL: http://github.com/di/pip-api
-* Author(s): Dustin Ingram
+- URL: http://github.com/di/pip-api
+- Author(s): Dustin Ingram
 
 ### License Text
 
@@ -13478,15 +13349,14 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
    defend, and hold each Contributor harmless for any liability
    incurred by, or claims asserted against, such Contributor by reason
    of your accepting any such warranty or additional liability.
-
 ```
 
 ## pip-licenses (5.0.0) - MIT License
 
 Dump the software license list of Python packages installed with pip.
 
-* URL: https://github.com/raimon49/pip-licenses
-* Author(s): raimon <raimon49@hotmail.com>
+- URL: https://github.com/raimon49/pip-licenses
+- Author(s): raimon <raimon49@hotmail.com>
 
 ### License Text
 
@@ -13512,27 +13382,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pip-requirements-parser (32.0.1) - MIT
 
-pip requirements parser - a mostly correct pip requirements parsing library because it uses pip's own code.
+pip requirements parser - a mostly correct pip requirements parsing library
+because it uses pip's own code.
 
-* URL: https://github.com/nexB/pip-requirements-parser
-* Author(s): The pip authors, nexB. Inc. and others
+- URL: https://github.com/nexB/pip-requirements-parser
+- Author(s): The pip authors, nexB. Inc. and others
 
 ## pip_audit (2.8.0) - Apache Software License
 
 A tool for scanning Python environments for known vulnerabilities
 
-* URL: https://pypi.org/project/pip-audit/
-* Author(s): Alex Cameron <alex.cameron@trailofbits.com>, Dustin Ingram <di@python.org>, William Woodruff <william@trailofbits.com>
+- URL: https://pypi.org/project/pip-audit/
+- Author(s): Alex Cameron <alex.cameron@trailofbits.com>, Dustin Ingram
+  <di@python.org>, William Woodruff <william@trailofbits.com>
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -13709,15 +13579,17 @@ A tool for scanning Python environments for known vulnerabilities
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
-
 ```
 
 ## platformdirs (4.3.6) - MIT License
 
-A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`.
+A small Python package for determining appropriate platform-specific dirs, e.g.
+a `user data dir`.
 
-* URL: https://github.com/tox-dev/platformdirs
-* Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>, Julian Berman <Julian@GrayVines.com>, Ofek Lev <oss@ofek.dev>, Ronny Pfannschmidt <opensource@ronnypfannschmidt.de>
+- URL: https://github.com/tox-dev/platformdirs
+- Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>, Julian Berman
+  <Julian@GrayVines.com>, Ofek Lev <oss@ofek.dev>, Ronny Pfannschmidt
+  <opensource@ronnypfannschmidt.de>
 
 ### License Text
 
@@ -13743,15 +13615,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pluggy (1.5.0) - MIT License
 
 plugin and hook calling mechanisms for python
 
-* URL: https://github.com/pytest-dev/pluggy
-* Author(s): Holger Krekel
+- URL: https://github.com/pytest-dev/pluggy
+- Author(s): Holger Krekel
 
 ### License Text
 
@@ -13777,15 +13648,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pre_commit (4.2.0) - MIT License
 
 A framework for managing and maintaining multi-language pre-commit hooks.
 
-* URL: https://github.com/pre-commit/pre-commit
-* Author(s): Anthony Sottile
+- URL: https://github.com/pre-commit/pre-commit
+- Author(s): Anthony Sottile
 
 ### License Text
 
@@ -13809,16 +13679,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## prettytable (3.15.1) - UNKNOWN
 
-A simple Python library for easily displaying tabular data in a visually appealing ASCII table format
+A simple Python library for easily displaying tabular data in a visually
+appealing ASCII table format
 
-* URL: https://github.com/prettytable/prettytable
-* Author(s): Luke Maurits <luke@maurits.id.au>
-* Maintainer(s): Hugo van Kemenade
+- URL: https://github.com/prettytable/prettytable
+- Author(s): Luke Maurits <luke@maurits.id.au>
+- Maintainer(s): Hugo van Kemenade
 
 ### License Text
 
@@ -13853,15 +13723,14 @@ A simple Python library for easily displaying tabular data in a visually appeali
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## prometheus_client (0.21.1) - Apache Software License
 
 Python client for the Prometheus monitoring system.
 
-* URL: https://github.com/prometheus/client_python
-* Author(s): Brian Brazil
+- URL: https://github.com/prometheus/client_python
+- Author(s): Brian Brazil
 
 ### License Text
 
@@ -14067,7 +13936,6 @@ Python client for the Prometheus monitoring system.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ### Notice
@@ -14078,15 +13946,14 @@ Copyright 2015 The Prometheus Authors
 
 This product bundles decorator 4.0.10 which is available under a "2-clause BSD"
 license. For details, see prometheus_client/decorator.py.
-
 ```
 
 ## prompt_toolkit (3.0.50) - BSD License
 
 Library for building powerful interactive command lines in Python
 
-* URL: https://github.com/prompt-toolkit/python-prompt-toolkit
-* Author(s): Jonathan Slenders
+- URL: https://github.com/prompt-toolkit/python-prompt-toolkit
+- Author(s): Jonathan Slenders
 
 ### License Text
 
@@ -14118,15 +13985,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## protobuf (5.29.3) - 3-Clause BSD License
 
 UNKNOWN
 
-* URL: https://developers.google.com/protocol-buffers/
-* Author(s): protobuf@googlegroups.com
+- URL: https://developers.google.com/protocol-buffers/
+- Author(s): protobuf@googlegroups.com
 
 ### License Text
 
@@ -14163,15 +14029,15 @@ Code generated by the Protocol Buffer compiler is owned by the owner
 of the input file used when generating it.  This code is not
 standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
-
 ```
 
 ## psutil (7.0.0) - BSD License
 
-Cross-platform lib for process and system monitoring in Python.  NOTE: the syntax of this script MUST be kept compatible with Python 2.7.
+Cross-platform lib for process and system monitoring in Python. NOTE: the syntax
+of this script MUST be kept compatible with Python 2.7.
 
-* URL: https://github.com/giampaolo/psutil
-* Author(s): Giampaolo Rodola
+- URL: https://github.com/giampaolo/psutil
+- Author(s): Giampaolo Rodola
 
 ### License Text
 
@@ -14205,15 +14071,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## ptyprocess (0.7.0) - ISC License (ISCL)
 
 Run a subprocess in a pseudo terminal
 
-* URL: https://github.com/pexpect/ptyprocess
-* Author(s): Thomas Kluyver
+- URL: https://github.com/pexpect/ptyprocess
+- Author(s): Thomas Kluyver
 
 ### License Text
 
@@ -14233,16 +14098,14 @@ SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
 DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
 WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
 OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-
 ```
 
 ## pure_eval (0.2.3) - MIT License
 
 Safely evaluate AST nodes without side effects
 
-* URL: http://github.com/alexmojaki/pure_eval
-* Author(s): Alex Hall
+- URL: http://github.com/alexmojaki/pure_eval
+- Author(s): Alex Hall
 
 ### License Text
 
@@ -14268,16 +14131,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## py-serializable (1.1.2) - Apache Software License
 
-Library for serializing and deserializing Python Objects to and from JSON and XML.
+Library for serializing and deserializing Python Objects to and from JSON and
+XML.
 
-* URL: https://github.com/madpah/serializable#readme
-* Author(s): Paul Horton
-* Maintainer(s): Jan Kowalleck
+- URL: https://github.com/madpah/serializable#readme
+- Author(s): Paul Horton
+- Maintainer(s): Jan Kowalleck
 
 ### License Text
 
@@ -14483,20 +14346,18 @@ Library for serializing and deserializing Python Objects to and from JSON and XM
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## pyarrow (19.0.1) - Apache Software License
 
 Python library for Apache Arrow
 
-* URL: https://arrow.apache.org/
-* Maintainer(s): Apache Arrow Developers <dev@arrow.apache.org>
+- URL: https://arrow.apache.org/
+- Maintainer(s): Apache Arrow Developers <dev@arrow.apache.org>
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -16757,7 +16618,6 @@ java/vector/src/main/java/org/apache/arrow/vector/util/IntObjectMap.java
 
 These file are derived from code from Netty, which is made available under the
 Apache License 2.0.
-
 ```
 
 ### Notice
@@ -16847,16 +16707,15 @@ its NOTICE file:
 
   This product includes software developed by Hewlett-Packard:
   (c) Copyright [2014-2015] Hewlett-Packard Development Company, L.P
-
 ```
 
 ## pycparser (2.22) - BSD License
 
 C parser in Python
 
-* URL: https://github.com/eliben/pycparser
-* Author(s): Eli Bendersky
-* Maintainer(s): Eli Bendersky
+- URL: https://github.com/eliben/pycparser
+- Author(s): Eli Bendersky
+- Maintainer(s): Eli Bendersky
 
 ### License Text
 
@@ -16888,15 +16747,14 @@ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
 HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT 
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## pycrdt (0.11.1) - MIT License
 
 Python bindings for Yrs
 
-* URL: https://github.com/jupyter-server/pycrdt
-* Author(s): David Brochart <david.brochart@gmail.com>
+- URL: https://github.com/jupyter-server/pycrdt
+- Author(s): David Brochart <david.brochart@gmail.com>
 
 ### License Text
 
@@ -16922,15 +16780,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pydantic (2.11.1) - MIT License
 
 Data validation using Python type hints
 
-* URL: https://github.com/pydantic/pydantic
-* Author(s): Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey <terry@pydantic.dev>, David Montague <david@pydantic.dev>, Serge Matveenko <lig@countzero.co>, Marcelo Trylesinski <marcelotryle@gmail.com>, Sydney Runkle <sydneymarierunkle@gmail.com>, David Hewitt <mail@davidhewitt.io>, Alex Hall <alex.mojaki@gmail.com>, Victorien Plot <contact@vctrn.dev>
+- URL: https://github.com/pydantic/pydantic
+- Author(s): Samuel Colvin <s@muelcolvin.com>, Eric Jolibois
+  <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>, Adrian Garcia
+  Badaracco <1755071+adriangb@users.noreply.github.com>, Terrence Dorsey
+  <terry@pydantic.dev>, David Montague <david@pydantic.dev>, Serge Matveenko
+  <lig@countzero.co>, Marcelo Trylesinski <marcelotryle@gmail.com>, Sydney
+  Runkle <sydneymarierunkle@gmail.com>, David Hewitt <mail@davidhewitt.io>, Alex
+  Hall <alex.mojaki@gmail.com>, Victorien Plot <contact@vctrn.dev>
 
 ### License Text
 
@@ -16956,15 +16819,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pydantic-extra-types (2.10.2) - MIT License
 
 Extra Pydantic types.
 
-* URL: https://github.com/pydantic/pydantic-extra-types
-* Author(s): Samuel Colvin <s@muelcolvin.com>, Yasser Tahiri <hello@yezz.me>
+- URL: https://github.com/pydantic/pydantic-extra-types
+- Author(s): Samuel Colvin <s@muelcolvin.com>, Yasser Tahiri <hello@yezz.me>
 
 ### License Text
 
@@ -16990,15 +16852,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pydantic-settings (2.8.1) - MIT License
 
 Settings management using Pydantic
 
-* URL: https://github.com/pydantic/pydantic-settings
-* Author(s): Samuel Colvin <s@muelcolvin.com>, Eric Jolibois <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>
+- URL: https://github.com/pydantic/pydantic-settings
+- Author(s): Samuel Colvin <s@muelcolvin.com>, Eric Jolibois
+  <em.jolibois@gmail.com>, Hasan Ramezani <hasan.r67@gmail.com>
 
 ### License Text
 
@@ -17024,15 +16886,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pydantic_core (2.33.0) - MIT License
 
 Core functionality for Pydantic validation and serialization
 
-* URL: https://github.com/pydantic/pydantic-core
-* Author(s): Samuel Colvin <s@muelcolvin.com>, Adrian Garcia Badaracco <1755071+adriangb@users.noreply.github.com>, David Montague <david@pydantic.dev>, David Hewitt <mail@davidhewitt.dev>, Sydney Runkle <sydneymarierunkle@gmail.com>, Victorien Plot <contact@vctrn.dev>
+- URL: https://github.com/pydantic/pydantic-core
+- Author(s): Samuel Colvin <s@muelcolvin.com>, Adrian Garcia Badaracco
+  <1755071+adriangb@users.noreply.github.com>, David Montague
+  <david@pydantic.dev>, David Hewitt <mail@davidhewitt.dev>, Sydney Runkle
+  <sydneymarierunkle@gmail.com>, Victorien Plot <contact@vctrn.dev>
 
 ### License Text
 
@@ -17058,15 +16922,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pydeck (0.9.1) - Apache License 2.0
 
 Widget for deck.gl maps
 
-* URL: https://github.com/visgl/deck.gl/tree/master/bindings/pydeck
-* Author(s): Andrew Duberstein
+- URL: https://github.com/visgl/deck.gl/tree/master/bindings/pydeck
+- Author(s): Andrew Duberstein
 
 ### License Text
 
@@ -17084,15 +16947,14 @@ Widget for deck.gl maps
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## pymdown-extensions (10.14.3) - MIT License
 
 Extension pack for Python Markdown.
 
-* URL: https://github.com/facelessuser/pymdown-extensions
-* Author(s): Isaac Muse <Isaac.Muse@gmail.com>
+- URL: https://github.com/facelessuser/pymdown-extensions
+- Author(s): Isaac Muse <Isaac.Muse@gmail.com>
 
 ### License Text
 
@@ -17210,15 +17072,14 @@ Applies to the JavaScript, JSON, PHP, CSS, HTML files, and everything else not c
 License: MIT
 Complete Legal Terms: http://opensource.org/licenses/MIT
 ~~~
-
 ```
 
 ## pyparsing (3.2.1) - MIT License
 
 pyparsing module - Classes and methods to define and execute parsing grammars
 
-* URL: https://github.com/pyparsing/pyparsing/
-* Author(s): Paul McGuire <ptmcg.gm+pyparsing@gmail.com>
+- URL: https://github.com/pyparsing/pyparsing/
+- Author(s): Paul McGuire <ptmcg.gm+pyparsing@gmail.com>
 
 ### License Text
 
@@ -17241,16 +17102,15 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## pyright (1.1.398) - MIT
 
 Command line wrapper for pyright
 
-* URL: https://github.com/RobertCraigie/pyright-python
-* Author(s): Robert Craigie
-* Maintainer(s): Robert Craigie
+- URL: https://github.com/RobertCraigie/pyright-python
+- Author(s): Robert Craigie
+- Maintainer(s): Robert Craigie
 
 ### License Text
 
@@ -17276,15 +17136,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pytest (8.3.5) - MIT License
 
 pytest: simple powerful testing with Python
 
-* URL: https://docs.pytest.org/en/latest/
-* Author(s): Holger Krekel, Bruno Oliveira, Ronny Pfannschmidt, Floris Bruynooghe, Brianna Laugher, Florian Bruhin, Others (See AUTHORS)
+- URL: https://docs.pytest.org/en/latest/
+- Author(s): Holger Krekel, Bruno Oliveira, Ronny Pfannschmidt, Floris
+  Bruynooghe, Brianna Laugher, Florian Bruhin, Others (See AUTHORS)
 
 ### License Text
 
@@ -17310,15 +17170,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pytest-asyncio (0.26.0) - UNKNOWN
 
 Pytest support for asyncio
 
-* URL: https://github.com/pytest-dev/pytest-asyncio
-* Author(s): "Tin Tvrtković <tinchester@gmail.com>" <tinchester@gmail.com>
+- URL: https://github.com/pytest-dev/pytest-asyncio
+- Author(s): "Tin Tvrtković <tinchester@gmail.com>" <tinchester@gmail.com>
 
 ### License Text
 
@@ -17524,15 +17383,14 @@ Apache License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## pytest-cov (6.1.0) - MIT License
 
 Pytest plugin for measuring coverage.
 
-* URL: https://github.com/pytest-dev/pytest-cov
-* Author(s): Marc Schlaich
+- URL: https://github.com/pytest-dev/pytest-cov
+- Author(s): Marc Schlaich
 
 ### License Text
 
@@ -17558,15 +17416,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## pytest-datadir (1.6.1) - MIT License
 
 pytest plugin for test data directories and files
 
-* URL: http://github.com/gabrielcnr/pytest-datadir
-* Author(s): Gabriel Reis <gabrielcnr@gmail.com>
+- URL: http://github.com/gabrielcnr/pytest-datadir
+- Author(s): Gabriel Reis <gabrielcnr@gmail.com>
 
 ### License Text
 
@@ -17590,15 +17447,14 @@ PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
 FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## pytest-docker (3.2.0) - MIT License
 
 Simple pytest fixtures for Docker and Docker Compose based tests
 
-* URL: https://github.com/avast/pytest-docker
-* Author(s): Max K., Andre Caron
+- URL: https://github.com/avast/pytest-docker
+- Author(s): Max K., Andre Caron
 
 ### License Text
 
@@ -17622,15 +17478,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pytest-env (1.1.5) - MIT License
 
 pytest plugin that allows you to add environment variables.
 
-* URL: https://github.com/pytest-dev/pytest-env
-* Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
+- URL: https://github.com/pytest-dev/pytest-env
+- Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
 
 ### License Text
 
@@ -17656,21 +17511,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## pytest-regressions (2.7.0) - MIT License
 
 Easy to use fixtures to write regression tests.
 
-* URL: https://github.com/ESSS/pytest-regressions
-* Author(s): ESSS
-* Maintainer(s): Bruno Oliveira
+- URL: https://github.com/ESSS/pytest-regressions
+- Author(s): ESSS
+- Maintainer(s): Bruno Oliveira
 
 ### License Text
 
 ```
-
 The MIT License (MIT)
 
 Copyright (c) 2018 ESSS
@@ -17692,21 +17545,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## pytest-subprocess (1.5.3) - MIT License
 
 A plugin to fake subprocess for pytest
 
-* URL: https://github.com/aklajnert/pytest-subprocess
-* Author(s): Andrzej Klajnert
-* Maintainer(s): Andrzej Klajnert
+- URL: https://github.com/aklajnert/pytest-subprocess
+- Author(s): Andrzej Klajnert
+- Maintainer(s): Andrzej Klajnert
 
 ### License Text
 
 ```
-
 The MIT License (MIT)
 
 Copyright (c) 2019 Andrzej Klajnert
@@ -17728,15 +17579,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## pytest-timeout (2.3.1) - DFSG approved; MIT License
 
 pytest plugin to abort hanging tests
 
-* URL: https://github.com/pytest-dev/pytest-timeout
-* Author(s): Floris Bruynooghe
+- URL: https://github.com/pytest-dev/pytest-timeout
+- Author(s): Floris Bruynooghe
 
 ### License Text
 
@@ -17763,15 +17613,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## pytest-xdist (3.6.1) - MIT License
 
-pytest xdist plugin for distributed testing, most importantly across multiple CPUs
+pytest xdist plugin for distributed testing, most importantly across multiple
+CPUs
 
-* URL: https://github.com/pytest-dev/pytest-xdist
-* Author(s): holger krekel and contributors <pytest-dev@python.org>, holger@merlinux.eu
+- URL: https://github.com/pytest-dev/pytest-xdist
+- Author(s): holger krekel and contributors <pytest-dev@python.org>,
+  holger@merlinux.eu
 
 ### License Text
 
@@ -17797,16 +17648,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## python-dateutil (2.9.0.post0) - Apache Software License; BSD License
 
 Extensions to the standard Python datetime module
 
-* URL: https://github.com/dateutil/dateutil
-* Author(s): Gustavo Niemeyer
-* Maintainer(s): Paul Ganssle
+- URL: https://github.com/dateutil/dateutil
+- Author(s): Gustavo Niemeyer
+- Maintainer(s): Paul Ganssle
 
 ### License Text
 
@@ -17871,8 +17721,8 @@ The above BSD License Applies to all code, even that also covered by Apache 2.0.
 
 Read key-value pairs from a .env file and set them as environment variables
 
-* URL: https://github.com/theskumar/python-dotenv
-* Author(s): Saurabh Kumar
+- URL: https://github.com/theskumar/python-dotenv
+- Author(s): Saurabh Kumar
 
 ### License Text
 
@@ -17904,16 +17754,16 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## python-json-logger (3.3.0) - BSD License
 
 JSON Log Formatter for the Python Logging Package
 
-* URL: https://nhairs.github.io/python-json-logger
-* Author(s): Zakaria Zajac <zak@madzak.com>, Nicholas Hairs <info+python-json-logger@nicholashairs.com>
-* Maintainer(s): Nicholas Hairs <info+python-json-logger@nicholashairs.com>
+- URL: https://nhairs.github.io/python-json-logger
+- Author(s): Zakaria Zajac <zak@madzak.com>, Nicholas Hairs
+  <info+python-json-logger@nicholashairs.com>
+- Maintainer(s): Nicholas Hairs <info+python-json-logger@nicholashairs.com>
 
 ### License Text
 
@@ -17927,7 +17777,6 @@ Redistribution and use in source and binary forms, with or without modification,
 * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ### Notice
@@ -17938,15 +17787,15 @@ This software includes the following licenced software:
     Copyright (c) 2021, Timothée Mazzucotelli
     Licenced under ISC Licence
     Source: https://github.com/mkdocstrings/python
-
 ```
 
 ## python-multipart (0.0.20) - Apache Software License
 
 A streaming multipart parser for Python
 
-* URL: https://github.com/Kludex/python-multipart
-* Author(s): Andrew Dunham <andrew@du.nham.ca>, Marcelo Trylesinski <marcelotryle@gmail.com>
+- URL: https://github.com/Kludex/python-multipart
+- Author(s): Andrew Dunham <andrew@du.nham.ca>, Marcelo Trylesinski
+  <marcelotryle@gmail.com>
 
 ### License Text
 
@@ -17964,17 +17813,15 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-
 ```
 
 ## pytz (2025.1) - MIT License
 
 World timezone definitions, modern and historical
 
-* URL: http://pythonhosted.org/pytz
-* Author(s): Stuart Bishop
-* Maintainer(s): Stuart Bishop
+- URL: http://pythonhosted.org/pytz
+- Author(s): Stuart Bishop
+- Maintainer(s): Stuart Bishop
 
 ### License Text
 
@@ -17998,15 +17845,14 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## pyzmq (26.3.0) - BSD License
 
 Python bindings for 0MQ
 
-* URL: https://pyzmq.readthedocs.org
-* Author(s): Brian E. Granger, Min Ragan-Kelley
+- URL: https://pyzmq.readthedocs.org
+- Author(s): Brian E. Granger, Min Ragan-Kelley
 
 ### License Text
 
@@ -18041,16 +17887,15 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## questionary (2.1.0) - MIT License
 
 Python library to build pretty command line user prompts ⭐️
 
-* URL: https://github.com/tmbo/questionary
-* Author(s): Tom Bocklisch
-* Maintainer(s): Tom Bocklisch
+- URL: https://github.com/tmbo/questionary
+- Author(s): Tom Bocklisch
+- Maintainer(s): Tom Bocklisch
 
 ### License Text
 
@@ -18074,7 +17919,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ### Notice
@@ -18131,15 +17975,14 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-
 ```
 
 ## referencing (0.36.2) - UNKNOWN
 
 JSON Referencing + Python
 
-* URL: https://github.com/python-jsonschema/referencing
-* Author(s): Julian Berman <Julian+referencing@GrayVines.com>
+- URL: https://github.com/python-jsonschema/referencing
+- Author(s): Julian Berman <Julian+referencing@GrayVines.com>
 
 ### License Text
 
@@ -18163,20 +18006,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## requests (2.32.3) - Apache Software License
 
 Python HTTP for Humans.
 
-* URL: https://requests.readthedocs.io
-* Author(s): Kenneth Reitz
+- URL: https://requests.readthedocs.io
+- Author(s): Kenneth Reitz
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -18351,15 +18192,14 @@ Python HTTP for Humans.
       defend, and hold each Contributor harmless for any liability
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
-
 ```
 
 ## rfc3339-validator (0.1.4) - MIT License
 
 A pure python RFC3339 validator
 
-* URL: https://github.com/naimetti/rfc3339-validator
-* Author(s): Nicolas Aimetti
+- URL: https://github.com/naimetti/rfc3339-validator
+- Author(s): Nicolas Aimetti
 
 ### License Text
 
@@ -18385,16 +18225,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
 ```
 
 ## rfc3986-validator (0.1.1) - MIT License
 
 Pure python rfc3986 validator
 
-* URL: https://github.com/naimetti/rfc3986-validator
-* Author(s): Nicolas Aimetti
+- URL: https://github.com/naimetti/rfc3986-validator
+- Author(s): Nicolas Aimetti
 
 ### License Text
 
@@ -18420,16 +18258,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
 ```
 
 ## rich (13.9.4) - MIT License
 
-Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal
+Render rich text, tables, progress bars, syntax highlighting, markdown and more
+to the terminal
 
-* URL: https://github.com/Textualize/rich
-* Author(s): Will McGugan
+- URL: https://github.com/Textualize/rich
+- Author(s): Will McGugan
 
 ### License Text
 
@@ -18453,16 +18290,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## rich-click (1.8.6) - MIT License
 
 Format click help output nicely with rich
 
-* URL: https://github.com/ewels/rich-click
-* Author(s): Phil Ewels <phil@ewels.co.uk>
-* Maintainer(s): Phil Ewels <phil@ewels.co.uk>, Daniel Reeves <xdanielreeves@gmail.com>
+- URL: https://github.com/ewels/rich-click
+- Author(s): Phil Ewels <phil@ewels.co.uk>
+- Maintainer(s): Phil Ewels <phil@ewels.co.uk>, Daniel Reeves
+  <xdanielreeves@gmail.com>
 
 ### License Text
 
@@ -18488,14 +18325,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## rich-toolkit (0.13.2) - MIT License
 
 Rich toolkit for building command-line applications
 
-* URL: UNKNOWN
+- URL: UNKNOWN
 
 ### License Text
 
@@ -18521,15 +18357,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## roman-numerals-py (3.1.0) - CC0 1.0 Universal (CC0 1.0) Public Domain Dedication; Zero-Clause BSD (0BSD)
 
 Manipulate well-formed Roman numerals
 
-* URL: https://github.com/AA-Turner/roman-numerals/blob/master/CHANGES.rst
-* Author(s): Adam Turner
+- URL: https://github.com/AA-Turner/roman-numerals/blob/master/CHANGES.rst
+- Author(s): Adam Turner
 
 ### License Text
 
@@ -18680,15 +18515,14 @@ c. Affirmer disclaims responsibility for clearing rights of other persons
 d. Affirmer understands and acknowledges that Creative Commons is not a
    party to this document and has no duty or obligation with respect to
    this CC0 or use of the Work.
-
 ```
 
 ## rpds-py (0.23.1) - MIT
 
 Python bindings to Rust's persistent data structures (rpds)
 
-* URL: https://github.com/crate-py/rpds
-* Author(s): Julian Berman <Julian+rpds@GrayVines.com>
+- URL: https://github.com/crate-py/rpds
+- Author(s): Julian Berman <Julian+rpds@GrayVines.com>
 
 ### License Text
 
@@ -18712,15 +18546,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## ruamel.yaml (0.18.10) - MIT License
 
-ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
+ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of
+comments, seq/map flow style, and map key order
 
-* URL: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree/
-* Author(s): Anthon van der Neut
+- URL: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree/
+- Author(s): Anthon van der Neut
 
 ### License Text
 
@@ -18746,15 +18580,14 @@ ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of com
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-
 ```
 
 ## ruff (0.11.2) - MIT License
 
 An extremely fast Python linter and code formatter, written in Rust.
 
-* URL: https://docs.astral.sh/ruff
-* Author(s): Charlie Marsh <charlie.r.marsh@gmail.com>
+- URL: https://docs.astral.sh/ruff
+- Author(s): Charlie Marsh <charlie.r.marsh@gmail.com>
 
 ### License Text
 
@@ -20157,15 +19990,14 @@ are:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
   """
-
 ```
 
 ## setuptools (77.0.3) - MIT License
 
 Easily download, build, install, upgrade, and uninstall Python packages
 
-* URL: https://github.com/pypa/setuptools
-* Author(s): Python Packaging Authority <distutils-sig@python.org>
+- URL: https://github.com/pypa/setuptools
+- Author(s): Python Packaging Authority <distutils-sig@python.org>
 
 ### License Text
 
@@ -20187,7 +20019,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
 ```
 
 ### Notice
@@ -20203,15 +20034,14 @@ The following files include code from opensource projects
       This Source Code Form is subject to the terms of the Mozilla Public
       License, v. 2.0. If a copy of the MPL was not distributed with this file,
       You can obtain one at https://mozilla.org/MPL/2.0/.
-
 ```
 
 ## shellingham (1.5.4) - ISC License (ISCL)
 
 Tool to Detect Surrounding Shell
 
-* URL: https://github.com/sarugaku/shellingham
-* Author(s): Tzu-ping Chung
+- URL: https://github.com/sarugaku/shellingham
+- Author(s): Tzu-ping Chung
 
 ### License Text
 
@@ -20229,15 +20059,14 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## six (1.17.0) - MIT License
 
 Python 2 and 3 compatibility utilities
 
-* URL: https://github.com/benjaminp/six
-* Author(s): Benjamin Peterson
+- URL: https://github.com/benjaminp/six
+- Author(s): Benjamin Peterson
 
 ### License Text
 
@@ -20260,15 +20089,14 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## smmap (5.0.2) - BSD License
 
 A pure Python implementation of a sliding window memory map manager
 
-* URL: https://github.com/gitpython-developers/smmap
-* Author(s): Sebastian Thiel
+- URL: https://github.com/gitpython-developers/smmap
+- Author(s): Sebastian Thiel
 
 ### License Text
 
@@ -20302,16 +20130,14 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
 ```
 
 ## sniffio (1.3.1) - Apache Software License; MIT License
 
 Sniff out which async library your code is running under
 
-* URL: https://github.com/python-trio/sniffio
-* Author(s): "Nathaniel J. Smith" <njs@pobox.com>
+- URL: https://github.com/python-trio/sniffio
+- Author(s): "Nathaniel J. Smith" <njs@pobox.com>
 
 ### License Text
 
@@ -20319,15 +20145,15 @@ Sniff out which async library your code is running under
 This software is made available under the terms of *either* of the
 licenses found in LICENSE.APACHE2 or LICENSE.MIT. Contributions to are
 made under the terms of *both* these licenses.
-
 ```
 
 ## snowballstemmer (2.2.0) - BSD License
 
-This package provides 29 stemmers for 28 languages generated from Snowball algorithms.
+This package provides 29 stemmers for 28 languages generated from Snowball
+algorithms.
 
-* URL: https://github.com/snowballstem/snowball
-* Author(s): Snowball Developers
+- URL: https://github.com/snowballstem/snowball
+- Author(s): Snowball Developers
 
 ### License Text
 
@@ -20361,15 +20187,14 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## sortedcontainers (2.4.0) - Apache Software License
 
 Sorted Containers -- Sorted List, Sorted Dict, Sorted Set
 
-* URL: http://www.grantjenks.com/docs/sortedcontainers/
-* Author(s): Grant Jenks
+- URL: http://www.grantjenks.com/docs/sortedcontainers/
+- Author(s): Grant Jenks
 
 ### License Text
 
@@ -20387,15 +20212,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## soupsieve (2.6) - MIT License
 
 A modern CSS selector implementation for Beautiful Soup.
 
-* URL: https://github.com/facelessuser/soupsieve
-* Author(s): Isaac Muse <Isaac.Muse@gmail.com>
+- URL: https://github.com/facelessuser/soupsieve
+- Author(s): Isaac Muse <Isaac.Muse@gmail.com>
 
 ### License Text
 
@@ -20421,15 +20245,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## sphinx-autobuild (2024.10.3) - MIT License
 
 Rebuild Sphinx documentation on changes, with hot reloading in the browser.
 
-* URL: https://github.com/sphinx-doc/sphinx-autobuild
-* Author(s): Adam Turner
+- URL: https://github.com/sphinx-doc/sphinx-autobuild
+- Author(s): Adam Turner
 
 ### License Text
 
@@ -20457,16 +20280,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## sphinx-autodoc-typehints (3.1.0) - MIT License
 
 Type hints (PEP 484) support for the Sphinx autodoc extension
 
-* URL: https://github.com/tox-dev/sphinx-autodoc-typehints
-* Author(s): Bernát Gábor <gaborjbernat@gmail.com>
-* Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
+- URL: https://github.com/tox-dev/sphinx-autodoc-typehints
+- Author(s): Bernát Gábor <gaborjbernat@gmail.com>
+- Maintainer(s): Bernát Gábor <gaborjbernat@gmail.com>
 
 ### License Text
 
@@ -20492,15 +20314,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## sphinx-basic-ng (1.0.0b2) - MIT License
 
 A modern skeleton for Sphinx themes.
 
-* URL: https://github.com/pradyunsg/sphinx-basic-ng
-* Author(s): Pradyun Gedam
+- URL: https://github.com/pradyunsg/sphinx-basic-ng
+- Author(s): Pradyun Gedam
 
 ### License Text
 
@@ -20524,15 +20345,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
 ```
 
 ## sphinx-copybutton (0.5.2) - MIT License
 
 Add a copy button to each of your code cells.
 
-* URL: https://github.com/executablebooks/sphinx-copybutton
-* Author(s): Executable Book Project
+- URL: https://github.com/executablebooks/sphinx-copybutton
+- Author(s): Executable Book Project
 
 ### License Text
 
@@ -20558,15 +20378,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## sphinx-jinja2-compat (0.3.0) - MIT License
 
 Patches Jinja2 v3 to restore compatibility with earlier Sphinx versions.
 
-* URL: https://github.com/sphinx-toolbox/sphinx-jinja2-compat
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/sphinx-toolbox/sphinx-jinja2-compat
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -20590,15 +20409,14 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## sphinx-prompt (1.9.0) - BSD License
 
 Sphinx directive to add unselectable prompt
 
-* URL: https://github.com/sbrunner/sphinx-prompt
-* Author(s): Stéphane Brunner
+- URL: https://github.com/sbrunner/sphinx-prompt
+- Author(s): Stéphane Brunner
 
 ### License Text
 
@@ -20630,15 +20448,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## sphinx-rtd-theme (3.0.2) - MIT License
 
 Read the Docs theme for Sphinx
 
-* URL: https://github.com/readthedocs/sphinx_rtd_theme
-* Author(s): Dave Snider, Read the Docs, Inc. & contributors
+- URL: https://github.com/readthedocs/sphinx_rtd_theme
+- Author(s): Dave Snider, Read the Docs, Inc. & contributors
 
 ### License Text
 
@@ -20663,15 +20480,14 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## sphinx-tabs (3.4.5) - MIT License
 
 Tabbed views for Sphinx
 
-* URL: https://github.com/executablebooks/sphinx-tabs
-* Author(s): djungelorm
+- URL: https://github.com/executablebooks/sphinx-tabs
+- Author(s): djungelorm
 
 ### License Text
 
@@ -20697,15 +20513,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## sphinx-toolbox (3.9.0) - MIT License
 
 Box of handy tools for Sphinx 🧰 📔
 
-* URL: https://github.com/sphinx-toolbox/sphinx-toolbox
-* Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
+- URL: https://github.com/sphinx-toolbox/sphinx-toolbox
+- Author(s): Dominic Davis-Foster <dominic@davis-foster.co.uk>
 
 ### License Text
 
@@ -20729,15 +20544,14 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## sphinx_inline_tabs (2023.4.21) - UNKNOWN
 
 Add inline tabbed content to your Sphinx documentation.
 
-* URL: https://github.com/pradyunsg/sphinx-inline-tabs
-* Author(s): Pradyun Gedam
+- URL: https://github.com/pradyunsg/sphinx-inline-tabs
+- Author(s): Pradyun Gedam
 
 ### License Text
 
@@ -20761,16 +20575,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
 ```
 
 ## sphinx_mdinclude (0.6.2) - MIT License
 
 Markdown extension for Sphinx
 
-* URL: UNKNOWN
-* Author(s): Hiroyuki Takagi <miyako.dev@gmail.com>, CrossNox <ijmermet+m2r2@gmail.com>, Amethyst Reese <amy@noswap.com>
-* Maintainer(s): Amethyst Reese <amy@noswap.com>
+- URL: UNKNOWN
+- Author(s): Hiroyuki Takagi <miyako.dev@gmail.com>, CrossNox
+  <ijmermet+m2r2@gmail.com>, Amethyst Reese <amy@noswap.com>
+- Maintainer(s): Amethyst Reese <amy@noswap.com>
 
 ### License Text
 
@@ -20796,15 +20610,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## sphinx_selective_exclude (1.0.3) - MIT license
 
 Sphinx eager ".. only::" directive and other selective rendition extensions
 
-* URL: https://github.com/pfalcon/sphinx_selective_exclude
-* Author(s): Paul Sokolovsky
+- URL: https://github.com/pfalcon/sphinx_selective_exclude
+- Author(s): Paul Sokolovsky
 
 ### License Text
 
@@ -20834,43 +20647,42 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## sphinxcontrib-applehelp (2.0.0) - BSD License
 
 sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Georg Brandl <georg@python.org>
 
 ## sphinxcontrib-devhelp (2.0.0) - BSD License
 
 sphinxcontrib-devhelp is a sphinx extension which outputs Devhelp documents
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Georg Brandl <georg@python.org>
 
 ## sphinxcontrib-htmlhelp (2.1.0) - BSD License
 
 sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Georg Brandl <georg@python.org>
 
 ## sphinxcontrib-jquery (4.1) - BSD License
 
 Extension to include jQuery on newer Sphinx releases
 
-* URL: https://github.com/sphinx-contrib/jquery/
-* Author(s): Adam Turner
+- URL: https://github.com/sphinx-contrib/jquery/
+- Author(s): Adam Turner
 
 ## sphinxcontrib-jsmath (1.0.1) - BSD License
 
 A sphinx extension which renders display math in HTML via JavaScript
 
-* URL: http://sphinx-doc.org/
-* Author(s): Georg Brandl
+- URL: http://sphinx-doc.org/
+- Author(s): Georg Brandl
 
 ### License Text
 
@@ -20904,29 +20716,29 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## sphinxcontrib-qthelp (2.0.0) - BSD License
 
 sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp documents
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Georg Brandl <georg@python.org>
 
 ## sphinxcontrib-serializinghtml (2.0.0) - BSD License
 
-sphinxcontrib-serializinghtml is a sphinx extension which outputs "serialized" HTML files (json and pickle)
+sphinxcontrib-serializinghtml is a sphinx extension which outputs "serialized"
+HTML files (json and pickle)
 
-* URL: https://www.sphinx-doc.org/
-* Author(s): Georg Brandl <georg@python.org>
+- URL: https://www.sphinx-doc.org/
+- Author(s): Georg Brandl <georg@python.org>
 
 ## sphinxext-opengraph (0.9.1) - BSD License
 
 Sphinx Extension to enable OGP support
 
-* URL: https://github.com/wpilibsuite/sphinxext-opengraph
-* Author(s): Itay Ziv
+- URL: https://github.com/wpilibsuite/sphinxext-opengraph
+- Author(s): Itay Ziv
 
 ### License Text
 
@@ -20961,8 +20773,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Extract data from python stack frames and tracebacks for informative displays
 
-* URL: http://github.com/alexmojaki/stack_data
-* Author(s): Alex Hall
+- URL: http://github.com/alexmojaki/stack_data
+- Author(s): Alex Hall
 
 ### License Text
 
@@ -20988,15 +20800,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## standard-imghdr (3.10.14) - Python Software Foundation License
 
 Standard library imghdr redistribution. "dead battery".
 
-* URL: https://github.com/youknowone/python-deadlib
-* Author(s): Python Devleopers <python-deadlib@youknowone.org>
+- URL: https://github.com/youknowone/python-deadlib
+- Author(s): Python Devleopers <python-deadlib@youknowone.org>
 
 ### License Text
 
@@ -21049,15 +20860,14 @@ license:
 
 8. By copying, installing or otherwise using nntplib, Licensee agrees
    to be bound by the terms and conditions of this License Agreement.
-
 ```
 
 ## starlette (0.46.0) - BSD License
 
 The little ASGI library that shines.
 
-* URL: https://github.com/encode/starlette
-* Author(s): Tom Christie <tom@tomchristie.com>
+- URL: https://github.com/encode/starlette
+- Author(s): Tom Christie <tom@tomchristie.com>
 
 ### License Text
 
@@ -21089,22 +20899,21 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## streamlit (1.44.1) - Apache Software License
 
 A faster way to build and share data apps
 
-* URL: https://streamlit.io
-* Author(s): Snowflake Inc
+- URL: https://streamlit.io
+- Author(s): Snowflake Inc
 
 ## swagger-plugin-for-sphinx (5.1.0) - Apache Software License
 
 Sphinx plugin which renders a OpenAPI specification with Swagger
 
-* URL: https://github.com/SAP/swagger-plugin-for-sphinx/blob/main/CHANGELOG.md
-* Author(s): Kai Harder <kai.harder@sap.com>
+- URL: https://github.com/SAP/swagger-plugin-for-sphinx/blob/main/CHANGELOG.md
+- Author(s): Kai Harder <kai.harder@sap.com>
 
 ### License Text
 
@@ -21310,15 +21119,14 @@ Sphinx plugin which renders a OpenAPI specification with Swagger
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## tabulate (0.9.0) - MIT License
 
 Pretty-print tabular data
 
-* URL: https://github.com/astanin/python-tabulate
-* Author(s): Sergey Astanin <s.astanin@gmail.com>
+- URL: https://github.com/astanin/python-tabulate
+- Author(s): Sergey Astanin <s.astanin@gmail.com>
 
 ### License Text
 
@@ -21343,20 +21151,18 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## tenacity (9.0.0) - Apache Software License
 
 Retry code until it succeeds
 
-* URL: https://github.com/jd/tenacity
-* Author(s): Julien Danjou
+- URL: https://github.com/jd/tenacity
+- Author(s): Julien Danjou
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -21564,8 +21370,8 @@ Retry code until it succeeds
 
 Tornado websocket backend for the Xterm.js Javascript terminal emulator library.
 
-* URL: https://github.com/jupyter/terminado
-* Author(s): Jupyter Development Team <jupyter@googlegroups.com>
+- URL: https://github.com/jupyter/terminado
+- Author(s): Jupyter Development Team <jupyter@googlegroups.com>
 
 ### License Text
 
@@ -21597,16 +21403,15 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## tinycss2 (1.4.0) - BSD License
 
 A tiny CSS parser
 
-* URL: https://www.courtbouillon.org/tinycss2
-* Author(s): Simon Sapin <simon.sapin@exyr.org>
-* Maintainer(s): CourtBouillon <contact@courtbouillon.org>
+- URL: https://www.courtbouillon.org/tinycss2
+- Author(s): Simon Sapin <simon.sapin@exyr.org>
+- Maintainer(s): CourtBouillon <contact@courtbouillon.org>
 
 ### License Text
 
@@ -21640,15 +21445,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## toml (0.10.2) - MIT License
 
 Python Library for Tom's Obvious, Minimal Language
 
-* URL: https://github.com/uiri/toml
-* Author(s): William Pearson
+- URL: https://github.com/uiri/toml
+- Author(s): William Pearson
 
 ### License Text
 
@@ -21686,8 +21490,8 @@ THE SOFTWARE.
 
 A lil' TOML parser
 
-* URL: https://github.com/hukkin/tomli
-* Author(s): Taneli Hukkinen <hukkin@users.noreply.github.com>
+- URL: https://github.com/hukkin/tomli
+- Author(s): Taneli Hukkinen <hukkin@users.noreply.github.com>
 
 ### License Text
 
@@ -21713,15 +21517,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## tomlkit (0.13.2) - MIT License
 
 Style preserving TOML library
 
-* URL: https://github.com/sdispater/tomlkit
-* Author(s): Sébastien Eustace
+- URL: https://github.com/sdispater/tomlkit
+- Author(s): Sébastien Eustace
 
 ### License Text
 
@@ -21746,20 +21549,19 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## tornado (6.4.2) - Apache Software License
 
-Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.
+Tornado is a Python web framework and asynchronous networking library,
+originally developed at FriendFeed.
 
-* URL: http://www.tornadoweb.org/
-* Author(s): Facebook
+- URL: http://www.tornadoweb.org/
+- Author(s): Facebook
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -21961,15 +21763,14 @@ Tornado is a Python web framework and asynchronous networking library, originall
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## traitlets (5.14.3) - BSD License
 
 Traitlets Python configuration system
 
-* URL: https://github.com/ipython/traitlets
-* Author(s): IPython Development Team <ipython-dev@python.org>
+- URL: https://github.com/ipython/traitlets
+- Author(s): IPython Development Team <ipython-dev@python.org>
 
 ### License Text
 
@@ -22004,15 +21805,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## typer (0.15.2) - MIT License
 
 Typer, build great CLIs. Easy to code. Based on Python type hints.
 
-* URL: https://github.com/fastapi/typer
-* Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
+- URL: https://github.com/fastapi/typer
+- Author(s): =?utf-8?q?Sebasti=C3=A1n_Ram=C3=ADrez?= <tiangolo@gmail.com>
 
 ### License Text
 
@@ -22038,14 +21838,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
 ```
 
 ## types-PyYAML (6.0.12.20250402) - UNKNOWN
 
 Typing stubs for PyYAML
 
-* URL: https://github.com/python/typeshed
+- URL: https://github.com/python/typeshed
 
 ### License Text
 
@@ -22287,14 +22086,13 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 = = = = =
-
 ```
 
 ## types-python-dateutil (2.9.0.20241206) - Apache Software License
 
 Typing stubs for python-dateutil
 
-* URL: https://github.com/python/typeshed
+- URL: https://github.com/python/typeshed
 
 ### License Text
 
@@ -22536,14 +22334,13 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 = = = = =
-
 ```
 
 ## types-requests (2.32.0.20250328) - Apache Software License
 
 Typing stubs for requests
 
-* URL: https://github.com/python/typeshed
+- URL: https://github.com/python/typeshed
 
 ### License Text
 
@@ -22785,15 +22582,14 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 
 = = = = =
-
 ```
 
 ## typing-inspection (0.4.0) - MIT License
 
 Runtime typing introspection tools
 
-* URL: https://github.com/pydantic/typing-inspection
-* Author(s): Victorien Plot <contact@vctrn.dev>
+- URL: https://github.com/pydantic/typing-inspection
+- Author(s): Victorien Plot <contact@vctrn.dev>
 
 ### License Text
 
@@ -22819,15 +22615,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## typing_extensions (4.12.2) - Python Software Foundation License
 
 Backported and Experimental Type Hints for Python 3.8+
 
-* URL: https://github.com/python/typing_extensions
-* Author(s): "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" <levkivskyi@gmail.com>
+- URL: https://github.com/python/typing_extensions
+- Author(s): "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee"
+  <levkivskyi@gmail.com>
 
 ### License Text
 
@@ -23111,15 +22907,14 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-
 ```
 
 ## tzdata (2025.1) - Apache Software License
 
 Provider of IANA time zone data
 
-* URL: https://github.com/python/tzdata
-* Author(s): Python Software Foundation
+- URL: https://github.com/python/tzdata
+- Author(s): Python Software Foundation
 
 ### License Text
 
@@ -23139,15 +22934,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## ujson (5.10.0) - BSD License
 
 Ultra fast JSON encoder and decoder for Python
 
-* URL: https://github.com/ultrajson/ultrajson
-* Author(s): Jonas Tarnstrom
+- URL: https://github.com/ultrajson/ultrajson
+- Author(s): Jonas Tarnstrom
 
 ### License Text
 
@@ -23266,15 +23060,14 @@ https://opensource.apple.com/source/tcl/tcl-14/tcl/license.terms
   authors grant the U.S. Government and others acting in its behalf
   permission to use and distribute the software in accordance with the
   terms specified in this license.
-
 ```
 
 ## uri-template (1.3.0) - MIT License
 
 RFC 6570 URI Template Processor
 
-* URL: https://gitlab.linss.com/open-source/python/uri-template
-* Author(s): Peter Linss <pypi@linss.com>
+- URL: https://gitlab.linss.com/open-source/python/uri-template
+- Author(s): Peter Linss <pypi@linss.com>
 
 ### License Text
 
@@ -23300,16 +23093,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## urllib3 (2.3.0) - MIT License
 
 HTTP library with thread-safe connection pooling, file post, and more.
 
-* URL: https://github.com/urllib3/urllib3/blob/main/CHANGES.rst
-* Author(s): Andrey Petrov <andrey.petrov@shazow.net>
-* Maintainer(s): Seth Michael Larson <sethmichaellarson@gmail.com>, Quentin Pradet <quentin@pradet.me>, Illia Volochii <illia.volochii@gmail.com>
+- URL: https://github.com/urllib3/urllib3/blob/main/CHANGES.rst
+- Author(s): Andrey Petrov <andrey.petrov@shazow.net>
+- Maintainer(s): Seth Michael Larson <sethmichaellarson@gmail.com>, Quentin
+  Pradet <quentin@pradet.me>, Illia Volochii <illia.volochii@gmail.com>
 
 ### License Text
 
@@ -23335,15 +23128,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## uv (0.6.3) - Apache Software License; MIT License
 
 An extremely fast Python package and project manager, written in Rust.
 
-* URL: https://pypi.org/project/uv/
-* Author(s): uv
+- URL: https://pypi.org/project/uv/
+- Author(s): uv
 
 ### License Text
 
@@ -23549,15 +23341,15 @@ An extremely fast Python package and project manager, written in Rust.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## uvicorn (0.34.0) - BSD License
 
 The lightning-fast ASGI server.
 
-* URL: https://www.uvicorn.org/
-* Author(s): Tom Christie <tom@tomchristie.com>, Marcelo Trylesinski <marcelotryle@gmail.com>
+- URL: https://www.uvicorn.org/
+- Author(s): Tom Christie <tom@tomchristie.com>, Marcelo Trylesinski
+  <marcelotryle@gmail.com>
 
 ### License Text
 
@@ -23589,15 +23381,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## uvloop (0.21.0) - Apache Software License; MIT License
 
 Fast implementation of asyncio event loop on top of libuv
 
-* URL: UNKNOWN
-* Author(s): Yury Selivanov <yury@magic.io>
+- URL: UNKNOWN
+- Author(s): Yury Selivanov <yury@magic.io>
 
 ### License Text
 
@@ -23805,15 +23596,14 @@ Copyright (C) 2016-present the uvloop authors and contributors.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 ```
 
 ## virtualenv (20.29.2) - MIT License
 
 Virtual Python Environment builder
 
-* URL: https://github.com/pypa/virtualenv
-* Maintainer(s): Bernat Gabor <gaborjbernat@gmail.com>
+- URL: https://github.com/pypa/virtualenv
+- Maintainer(s): Bernat Gabor <gaborjbernat@gmail.com>
 
 ### License Text
 
@@ -23838,15 +23628,14 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 ```
 
 ## watchdog (6.0.0) - Apache Software License
 
 Filesystem events monitoring
 
-* URL: https://github.com/gorakhargosh/watchdog
-* Author(s): Mickaël Schoentgen
+- URL: https://github.com/gorakhargosh/watchdog
+- Author(s): Mickaël Schoentgen
 
 ### License Text
 
@@ -23867,15 +23656,14 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 ```
 
 ## watchfiles (1.0.4) - MIT License
 
 Simple, modern and high performance file watching and code reload in python.
 
-* URL: https://github.com/samuelcolvin/watchfiles
-* Author(s): Samuel Colvin <s@muelcolvin.com>
+- URL: https://github.com/samuelcolvin/watchfiles
+- Author(s): Samuel Colvin <s@muelcolvin.com>
 
 ### License Text
 
@@ -23901,15 +23689,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## wcmatch (10.0) - MIT License
 
 Wildcard/glob file name matcher.
 
-* URL: https://github.com/facelessuser/wcmatch
-* Author(s): Isaac Muse <Isaac.Muse@gmail.com>
+- URL: https://github.com/facelessuser/wcmatch
+- Author(s): Isaac Muse <Isaac.Muse@gmail.com>
 
 ### License Text
 
@@ -23935,15 +23722,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 ```
 
 ## wcwidth (0.2.13) - MIT License
 
 Measures the displayed width of unicode strings in a terminal
 
-* URL: https://github.com/jquast/wcwidth
-* Author(s): Jeff Quast
+- URL: https://github.com/jquast/wcwidth
+- Author(s): Jeff Quast
 
 ### License Text
 
@@ -23975,15 +23761,14 @@ Markus Kuhn -- 2007-05-26 (Unicode 5.0)
 Permission to use, copy, modify, and distribute this software
 for any purpose and without fee is hereby granted. The author
 disclaims all warranties with regard to this software.
-
 ```
 
 ## webcolors (24.11.1) - BSD License
 
 A library for working with the color formats defined by HTML and CSS.
 
-* URL: UNKNOWN
-* Author(s): James Bennett
+- URL: UNKNOWN
+- Author(s): James Bennett
 
 ### License Text
 
@@ -24016,28 +23801,26 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## webencodings (0.5.1) - BSD License
 
 Character encoding aliases for legacy web content
 
-* URL: https://github.com/SimonSapin/python-webencodings
-* Author(s): Geoffrey Sneddon
+- URL: https://github.com/SimonSapin/python-webencodings
+- Author(s): Geoffrey Sneddon
 
 ## websocket-client (1.8.0) - Apache Software License
 
 WebSocket client for Python with low level API options
 
-* URL: https://github.com/websocket-client/websocket-client.git
-* Author(s): liris
-* Maintainer(s): engn33r
+- URL: https://github.com/websocket-client/websocket-client.git
+- Author(s): liris
+- Maintainer(s): engn33r
 
 ### License Text
 
 ```
-
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -24239,16 +24022,14 @@ WebSocket client for Python with low level API options
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-
 ```
 
 ## websockets (15.0) - BSD License
 
 An implementation of the WebSocket Protocol (RFC 6455 & 7692)
 
-* URL: https://github.com/python-websockets/websockets
-* Author(s): Aymeric Augustin <aymeric.augustin@m4x.org>
+- URL: https://github.com/python-websockets/websockets
+- Author(s): Aymeric Augustin <aymeric.augustin@m4x.org>
 
 ### License Text
 
@@ -24277,15 +24058,14 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
 
 ## widgetsnbextension (4.0.13) - BSD License
 
 Jupyter interactive widgets for Jupyter Notebook
 
-* URL: http://jupyter.org
-* Author(s): Jupyter Development Team
+- URL: http://jupyter.org
+- Author(s): Jupyter Development Team
 
 ### License Text
 
@@ -24317,5 +24097,4 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 ```
