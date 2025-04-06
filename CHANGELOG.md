@@ -1,6 +1,17 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.30..0.8.31) - 2025-04-06
+## [0.8.32](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.31..0.8.32) - 2025-04-06
+
+### ⛰️  Features
+
+- *(lint)* Types for requests - ([3db9e2b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/3db9e2bbc817c08d29a88bc261f2c0a2a7484935))
+
+### 📚 Documentation
+
+- Fix typo - ([77ffde4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/77ffde41b4d796c10f3d40a2c03f163ab88730d4))
+
+
+## [0.8.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.30..v0.8.31) - 2025-04-06
 
 ### 🐛 Bug Fixes
 
