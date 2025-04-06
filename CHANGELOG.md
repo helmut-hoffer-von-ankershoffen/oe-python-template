@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.30](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.29..0.8.30) - 2025-04-06
+## [0.8.31](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.30..0.8.31) - 2025-04-06
+
+### 🐛 Bug Fixes
+
+- *(ga)* Reports folder - ([4138828](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/41388280f9d1cb66fc96102cc635c13dc912eaec))
+
+
+## [0.8.30](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.29..v0.8.30) - 2025-04-06
 
 ### 🐛 Bug Fixes
 
@@ -15,9 +22,6 @@
 - *(ga)* Polish - ([7ab0fce](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/7ab0fce923238670ea3c61ce05ef4f20b2529d71))
 - *(ga)* Path - ([4378ce0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4378ce0d8d177e30292d2c4cda3f08576fc5ec2e))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.8.29](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.28..v0.8.29) - 2025-04-05
 
