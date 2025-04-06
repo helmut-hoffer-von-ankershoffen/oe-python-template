@@ -83,16 +83,16 @@ jobs:
         with:
           name: test-results
           path: |
-            mypy_junit.xml
-            sbom.json
-            sbom.spdx
-            licenses.csv
-            licenses.json
-            licenses_grouped.json
-            vulnerabilities.json
-            junit.xml
-            coverage.xml
-            coverage_html
+            reports/mypy_junit.xml
+            reports/sbom.json
+            reports/sbom.spdx
+            reports/licenses.csv
+            reports/licenses.json
+            reports/licenses_grouped.json
+            reports/vulnerabilities.json
+            reports/junit.xml
+            reports/coverage.xml
+            reports/coverage_html
           retention-days: 30
 
       - name: Upload coverage reports to Codecov
