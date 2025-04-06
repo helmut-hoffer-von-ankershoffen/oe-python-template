@@ -5,23 +5,23 @@
 
 # Main target i.e. default sessions defined in noxfile.py
 all:
-	uv run nox
+	uv run --all-extras nox
 
 # Nox targets
 
 ## Call nox sessions passing parameters
 nox-cmd = @if [ "$@" = "test" ]; then \
 	if [ -n "$(filter 3.%,$(MAKECMDGOALS))" ]; then \
-		uv run nox -s test -p $(filter 3.%,$(MAKECMDGOALS)); \
+		uv run --all-extras nox -s test -p $(filter 3.%,$(MAKECMDGOALS)); \
 	elif [ -n "$(filter-out $@,$(MAKECMDGOALS))" ]; then \
-		uv run nox -s $@ -- $(filter-out $@,$(MAKECMDGOALS)); \
+		uv run --all-extras nox -s $@ -- $(filter-out $@,$(MAKECMDGOALS)); \
 	else \
-		uv run nox -s $@; \
+		uv run --all-extras nox -s $@; \
 	fi; \
 elif [ -n "$(filter-out $@,$(MAKECMDGOALS))" ]; then \
-	uv run nox -s $@ -- $(filter-out $@,$(MAKECMDGOALS)); \
+	uv run --all-extras nox -s $@ -- $(filter-out $@,$(MAKECMDGOALS)); \
 else \
-	uv run nox -s $@; \
+	uv run --all-extras nox -s $@; \
 fi
 
 ## Individual Nox sessions
@@ -32,7 +32,7 @@ act audit bump dist dist_vercel docs lint setup test update_from_template:
 
 ## Run tests marked as scheduled
 test_scheduled:
-	uv run nox -s test -p 3.11 -- -m scheduled
+	uv run --all-extras nox -s test -p 3.11 -- -m scheduled
 
 ## Clean build artifacts and caches
 clean:

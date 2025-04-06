@@ -45,10 +45,22 @@ def _is_act_environment() -> bool:
     return os.environ.get("GITHUB_WORKFLOW_RUNTIME") == "ACT"
 
 
+def _format_json_with_jq(session: nox.Session, path: str) -> None:
+    """Format JSON file using jq for better readability.
+
+    Args:
+        session: The nox session instance
+        path: Path to the JSON file to format
+    """
+    with Path(f"{path}.tmp").open("w", encoding="utf-8") as outfile:
+        session.run("jq", ".", path, stdout=outfile, external=True)
+        session.run("mv", f"{path}.tmp", path, stdout=outfile, external=True)
+
+
 @nox.session(python=["3.13"])
 def lint(session: nox.Session) -> None:
     """Run code formatting checks, linting, and static type checking."""
-    _setup_venv(session)
+    _setup_venv(session, True)
     session.run("ruff", "check", ".")
     session.run(
         "ruff",
@@ -66,7 +78,7 @@ def audit(session: nox.Session) -> None:
 
     # pip-audit to check for vulnerabilities
     session.run("pip-audit", "-f", "json", "-o", "reports/vulnerabilities.json")
-    session.run("jq", ".", "reports/vulnerabilities.json", external=True)
+    _format_json_with_jq(session, "reports/vulnerabilities.json")
 
     # pip-licenses to check for compliance
     pip_licenses_base_args = [
@@ -109,7 +121,7 @@ def audit(session: nox.Session) -> None:
     )
 
     # Group by license type
-    session.run("jq", ".", LICENSES_JSON_PATH, external=True)
+    _format_json_with_jq(session, LICENSES_JSON_PATH)
     licenses_data = json.loads(Path(LICENSES_JSON_PATH).read_text(encoding="utf-8"))
     licenses_grouped: dict[str, list[dict[str, str]]] = {}
     licenses_grouped = {}
@@ -123,11 +135,11 @@ def audit(session: nox.Session) -> None:
         json.dumps(licenses_grouped, indent=2),
         encoding="utf-8",
     )
-    session.run("jq", ".", "reports/licenses_grouped.json", external=True)
+    _format_json_with_jq(session, "reports/licenses_grouped.json")
 
     # SBOMs
     session.run("cyclonedx-py", "environment", "-o", SBOM_CYCLONEDX_PATH)
-    session.run("jq", ".", SBOM_CYCLONEDX_PATH, external=True)
+    _format_json_with_jq(session, SBOM_CYCLONEDX_PATH)
 
     # Generates an SPDX SBOM including vulnerability scanning
     session.run(
@@ -385,7 +397,7 @@ def docs(session: nox.Session) -> None:
         ValueError: If the installed latexmk version is outdated
         AttributeError: If parsing the latexmk version information fails
     """
-    _setup_venv(session)
+    _setup_venv(session, True)
 
     _generate_readme(session)
     _generate_cli_reference(session)
@@ -406,7 +418,7 @@ def docs(session: nox.Session) -> None:
 @nox.session(python=["3.13"], default=False)
 def docs_pdf(session: nox.Session) -> None:
     """Setup dev environment post project creation."""  # noqa: DOC501
-    _setup_venv(session)
+    _setup_venv(session, True)
     try:
         out = session.run("latexmk", "--version", external=True, silent=True)
 
@@ -437,7 +449,7 @@ def docs_pdf(session: nox.Session) -> None:
 @nox.session(python=["3.11", "3.12", "3.13"])
 def test(session: nox.Session) -> None:
     """Run tests with pytest."""
-    _setup_venv(session)
+    _setup_venv(session, True)
     pytest_args = ["pytest", "--disable-warnings", "--junitxml=reports/junit.xml", "-n", "auto", "--dist", "loadgroup"]
     if _is_act_environment():
         pytest_args.extend(["-k", NOT_SKIP_WITH_ACT])
