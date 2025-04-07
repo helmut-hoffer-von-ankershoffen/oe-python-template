@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.8.34](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.33..0.8.34) - 2025-04-06
+## [0.9.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.34..0.9.0) - 2025-04-07
+
+### 📚 Documentation
+
+- Polish - ([b76fd79](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/b76fd79b6d83a654fc8d3c3b2bf8a058bb2eabb8))
+
+
+## [0.8.34](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.33..v0.8.34) - 2025-04-06
 
 ### 🚜 Refactor
 
@@ -10,9 +17,6 @@
 
 - *(test)* Fix double run - ([123903b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/123903b53cf4289a833f567b41bae20196080207))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.8.33](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.32..v0.8.33) - 2025-04-06
 
