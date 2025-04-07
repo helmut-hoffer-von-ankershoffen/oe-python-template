@@ -182,6 +182,8 @@ console.print(f"[blue]{message}[/blue]")
 
 [Show script code](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/examples/script.py) - [Read the reference documentation](https://oe-python-template.readthedocs.io/en/latest/reference.html)
 
+See the [reference documentation of the library](https://oe-python-template.readthedocs.io/en/latest/lib_reference.html) for detailed documentation of public classes and functions you can use in your code.
+
 ### Streamlit App
 
 Serve the functionality provided by OE Python Template in the web by easily integrating the service into a Streamlit application.
@@ -259,6 +261,9 @@ uvx oe-python-template openapi
 uvx oe-python-template openapi --output-format=json
 uvx oe-python-template serve
 ```
+
+See the [reference documentation of the CLI](https://oe-python-template.readthedocs.io/en/latest/cli_reference.html) for detailed documentation of all CLI commands and options.
+
 
 ### Environment
 
