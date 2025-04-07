@@ -1,14 +1,15 @@
 # API v1 Reference
-## OE Python Template v1.0.0
+## API v1 Reference
+### OE Python Template v1.0.0
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
 [Terms of service](https://oe-python-template.readthedocs.io/en/latest/)
 Email: [Helmut Hoffer von Ankershoffen](mailto:helmuthva@gmail.com) Web: [Helmut Hoffer von Ankershoffen](https://github.com/helmut-hoffer-von-ankershoffen) 
 
-## Basics
+### Basics
 
-### echo_echo__text__get
+#### echo_echo__text__get
 
 
 
@@ -61,7 +62,7 @@ Returns:
 Raises:
     422 Unprocessable Entity: If text is not provided or empty.
 
-#### Parameters
+##### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -77,7 +78,7 @@ Raises:
 }
 ```
 
-#### Responses
+##### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -88,7 +89,7 @@ Raises:
 This operation does not require authentication
 
 
-### hello_world_hello_world_get
+#### hello_world_hello_world_get
 
 
 
@@ -145,7 +146,7 @@ Returns:
 }
 ```
 
-#### Responses
+##### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -155,9 +156,9 @@ Returns:
 This operation does not require authentication
 
 
-## Observability
+### Observability
 
-### health_health_get
+#### health_health_get
 
 
 
@@ -222,7 +223,7 @@ Returns:
 }
 ```
 
-#### Responses
+##### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -232,7 +233,7 @@ Returns:
 This operation does not require authentication
 
 
-### health_healthz_get
+#### health_healthz_get
 
 
 
@@ -297,7 +298,7 @@ Returns:
 }
 ```
 
-#### Responses
+##### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -307,9 +308,9 @@ Returns:
 This operation does not require authentication
 
 
-## Schemas
+### Schemas
 
-### Echo
+#### Echo
 
 
 
@@ -325,13 +326,13 @@ This operation does not require authentication
 
 Echo
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |text|string|true|none|The echo|
 
-### HTTPValidationError
+#### HTTPValidationError
 
 
 
@@ -355,13 +356,13 @@ Echo
 
 HTTPValidationError
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |detail|[[ValidationError](#schemavalidationerror)]|false|none|none|
 
-### Health
+#### Health
 
 
 
@@ -378,7 +379,7 @@ HTTPValidationError
 
 Health
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
@@ -402,7 +403,7 @@ continued
 |---|---|---|---|---|
 |status|[HealthStatus](#schemahealthstatus)|true|none|Health status enumeration.|
 
-### HealthStatus
+#### HealthStatus
 
 
 
@@ -416,20 +417,20 @@ continued
 
 HealthStatus
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |HealthStatus|string|false|none|Health status enumeration.|
 
-##### Enumerated Values
+###### Enumerated Values
 
 |Property|Value|
 |---|---|
 |HealthStatus|UP|
 |HealthStatus|DOWN|
 
-### ValidationError
+#### ValidationError
 
 
 
@@ -449,7 +450,7 @@ HealthStatus
 
 ValidationError
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
@@ -474,7 +475,7 @@ continued
 |msg|string|true|none|none|
 |type|string|true|none|none|
 
-### _HelloWorldResponse
+#### _HelloWorldResponse
 
 
 
@@ -490,7 +491,7 @@ continued
 
 _HelloWorldResponse
 
-#### Properties
+##### Properties
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|

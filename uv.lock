@@ -2184,7 +2184,7 @@ dev = [
     { name = "sphinx-rtd-theme", specifier = ">=3.0.2" },
     { name = "sphinx-selective-exclude", specifier = ">=1.0.3" },
     { name = "sphinx-toolbox", specifier = ">=3.9.0" },
-    { name = "sphinxext-opengraph", specifier = ">=0.9.2" },
+    { name = "sphinxext-opengraph", specifier = ">=0.9.1" },
     { name = "swagger-plugin-for-sphinx", specifier = ">=5.1.0" },
     { name = "tomli", specifier = ">=2.1.0" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250402" },

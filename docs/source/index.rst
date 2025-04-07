@@ -27,11 +27,11 @@
 .. sidebar-links::
    :caption: Links
    :github:
-   :pypi: {{ pypi_distribution_name }}
-   Docker <https://hub.docker.com/r/{{ docker_io_owner }}/{{ docker_io_image_name }}/tags>
-   ghcr.io <{{ github_repository_url_https }}/pkgs/container/{{ github_repository_name }}>
-   SonarQube <https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }}>
-   Codecov <https://app.codecov.io/gh/{{ github_repository_owner }}/{{ github_repository_name }}>
+   :pypi: oe-python-template
+   Docker <https://hub.docker.com/r/helmuthva/oe-python-template/tags>
+   ghcr.io <https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template>
+   SonarQube <https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template>
+   Codecov <https://app.codecov.io/gh/helmut-hoffer-von-ankershoffen/oe-python-template>
 
 .. only:: html
 

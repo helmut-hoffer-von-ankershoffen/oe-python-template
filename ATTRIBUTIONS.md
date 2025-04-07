@@ -9984,7 +9984,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.9.1) - MIT License
+## oe-python-template (0.9.2) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
@@ -20921,29 +20921,31 @@ sphinxcontrib-serializinghtml is a sphinx extension which outputs "serialized" H
 * URL: https://www.sphinx-doc.org/
 * Author(s): Georg Brandl <georg@python.org>
 
-## sphinxext-opengraph (0.9.1) - BSD License
+## sphinxext-opengraph (0.10.0) - UNKNOWN
 
 Sphinx Extension to enable OGP support
 
-* URL: https://github.com/wpilibsuite/sphinxext-opengraph
-* Author(s): Itay Ziv
+* URL: https://github.com/sphinx-doc/sphinxext-opengraph/
+* Author(s): Itay Ziv <itay220204@gmail.com>
 
 ### License Text
 
 ```
-Copyright (c) 2020 FIRST
+Copyright (c) 2020, FIRST
+Copyright (c) 2025, the Sphinx developers
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
-   * Redistributions of source code must retain the above copyright
-     notice, this list of conditions and the following disclaimer.
-   * Redistributions in binary form must reproduce the above copyright
-     notice, this list of conditions and the following disclaimer in the
-     documentation and/or other materials provided with the distribution.
-   * Neither the name of the FIRST nor the
-     names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+* Neither the name of the FIRST nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY FIRST AND CONTRIBUTORS "AS IS" AND ANY
 EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -20955,6 +20957,7 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 ```
 
 ## stack-data (0.6.3) - MIT License
