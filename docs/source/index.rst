@@ -28,6 +28,7 @@
    :caption: Links
    :github:
    :pypi: oe-python-template
+
    Docker <https://hub.docker.com/r/helmuthva/oe-python-template/tags>
    ghcr.io <https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/pkgs/container/oe-python-template>
    SonarQube <https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template>
