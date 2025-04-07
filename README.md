@@ -68,8 +68,8 @@ Projects generated with this template come with a comprehensive development tool
 13. Software Bill of Materials (SBOM) generated in [CycloneDX](https://cyclonedx.org/) and [SPDX](https://spdx.dev/) formats with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) resp. [trivy](https://trivy.dev/latest/), published as release artifacts
 14. Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
 15. Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
-16. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation and PDF export
-17. Documentation published to [Read The Docs](https://readthedocs.org/)
+16. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation for the library, CLI, and API
+17. Documentation published to [Read The Docs](https://readthedocs.org/) including generation of PDF and single page HTML versions
 18. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
 19. Python package published to [PyPI](https://pypi.org/)
 20. Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
@@ -385,7 +385,7 @@ Dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet i
 * Check out the [API Reference](https://oe-python-template.readthedocs.io/en/latest/api_reference_v1.html) with detailed documentation of all API operations and parameters.
 * Our [release notes](https://oe-python-template.readthedocs.io/en/latest/release-notes.html) provide a complete log of recent improvements and changes.
 * In case you want to help us improve 🧠 OE Python Template: The [contribution guidelines](https://oe-python-template.readthedocs.io/en/latest/contributing.html) explain how to setup your development environment and create pull requests.
-* We gratefully acknowledge the [open source projects](ATTRIBUTIONS.md) that this project builds upon. Thank you to all these wonderful contributors!
+* We gratefully acknowledge the [open source projects](https://oe-python-template.readthedocs.io/en/latest/attributions.html) that this project builds upon. Thank you to all these wonderful contributors!
 
 ## Star History
 
