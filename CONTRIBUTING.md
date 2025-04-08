@@ -38,7 +38,7 @@ src/oe_python_template/  # Source code
 ├── service.py           # Service exposed for use as shared library
 ├── cli.py               # CLI enabling to interact with service from terminal
 └── api.py               # API exposing service as web service
-tests/                   # Unit and E2E tests
+tests/oe_python_template/ # Tests
 ├── cli_tests.py         # Verifies the CLI functionality
 ├── api_tests.py         # Verifies the API functionality
 └── fixtures/            # Fixtures and mock data
