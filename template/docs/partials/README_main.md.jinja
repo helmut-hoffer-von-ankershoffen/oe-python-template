@@ -301,13 +301,13 @@ Or use docker compose
 The .env is passed through from the host to the Docker container.
 
 ```shell
-docker compose run {{ pypi_distribution_name}} --help
-docker compose run {{ pypi_distribution_name}} hello-world
-docker compose run {{ pypi_distribution_name}} echo --help
-docker compose run {{ pypi_distribution_name}} echo "Lorem"
-docker compose run {{ pypi_distribution_name}} echo "Lorem" --json
-docker compose run {{ pypi_distribution_name}} openapi
-docker compose run {{ pypi_distribution_name}} openapi --output-format=json
+docker compose run --remove-orphans {{ pypi_distribution_name}} --help
+docker compose run --remove-orphans {{ pypi_distribution_name}} hello-world
+docker compose run --remove-orphans {{ pypi_distribution_name}} echo --help
+docker compose run --remove-orphans {{ pypi_distribution_name}} echo "Lorem"
+docker compose run --remove-orphans {{ pypi_distribution_name}} echo "Lorem" --json
+docker compose run --remove-orphans {{ pypi_distribution_name}} openapi
+docker compose run --remove-orphans {{ pypi_distribution_name}} openapi --output-format=json
 echo "Running {{ project_name }}'s API container as a daemon ..."
 docker compose up -d
 echo "Waiting for the API server to start ..."
