@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.9.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.4..0.9.5) - 2025-04-08
+## [0.9.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.5..0.9.6) - 2025-04-08
+
+### ⚙️ Miscellaneous Tasks
+
+- No dist.. in sonarqube - ([42e4756](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/42e4756b7116a71f0e98b81a98a0850b49a35d67))
+
+
+## [0.9.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.4..v0.9.5) - 2025-04-08
 
 ### 🧪 Testing
 
