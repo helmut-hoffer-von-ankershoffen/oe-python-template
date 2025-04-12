@@ -1,4 +1,4 @@
-# Read the Docs configuration file for OE Python Template
+# Read the Docs configuration file for {{ project_name }}
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 # Required

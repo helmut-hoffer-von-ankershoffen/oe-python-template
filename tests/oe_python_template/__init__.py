@@ -1,1 +1,1 @@
-"""Test suite for package oe_python_template."""
+"""Test suite for package {{ import_package_name }}."""

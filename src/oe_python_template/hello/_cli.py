@@ -1,0 +1,41 @@
+"""CLI (Command Line Interface) of OE Python Template."""
+
+from typing import Annotated
+
+import typer
+
+from oe_python_template.utils import console, get_logger
+
+from ._models import Utterance
+from ._service import Service
+
+logger = get_logger(__name__)
+
+cli = typer.Typer(name="hello", help="Hello commands")
+_service = Service()
+
+
+@cli.command()
+def echo(
+    text: Annotated[
+        str, typer.Argument(help="The text to echo")
+    ] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    json: Annotated[
+        bool,
+        typer.Option(
+            help=("Print as JSON"),
+        ),
+    ] = False,
+) -> None:
+    """Echo the text."""
+    echo = Service.echo(Utterance(text=text))
+    if json:
+        console.print_json(data={"text": echo.text})
+    else:
+        console.print(echo.text)
+
+
+@cli.command()
+def world() -> None:
+    """Print hello world message and what's in the environment variable THE_VAR."""
+    console.print(_service.get_hello_world())

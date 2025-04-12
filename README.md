@@ -81,15 +81,17 @@ Projects generated with this template come with a comprehensive development tool
 
 Beyond development tooling, projects generated with this template include the code, documentation, and configuration of a fully functioning demo application and service. This reference implementation serves as a starting point for your own business logic with modern patterns and practices already in place:
 
-1. Service architecture suitable for use as shared library
-2. Validation with [pydantic](https://docs.pydantic.dev/)
+1. Modular architecture suitable for use as shared library
+2. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
 3. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
 4. Versioned Web API with [FastAPI](https://fastapi.tiangolo.com/)
 5. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
 6. Simple Web UI with [Streamlit](https://streamlit.io/)
 7. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
-8. Documentation including badges, setup instructions, contribution guide and security policy
-9. Preparation to deploy API as serverless function to Vercel
+8. Info command and health endpoint to inspect the runtime and check the system status 
+9. API deployable as serverless function to Vercel
+10. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
+11. Documentation including dynamic badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 
@@ -212,7 +214,7 @@ The following examples run from source - clone this repository using
 from dotenv import load_dotenv
 from rich.console import Console
 
-from oe_python_template import Service
+from oe_python_template.hello import Service
 
 console = Console()
 
@@ -294,13 +296,15 @@ uvx oe-python-template --help
 Execute commands:
 
 ```shell
-uvx oe-python-template hello-world
-uvx oe-python-template echo --help
-uvx oe-python-template echo "Lorem"
-uvx oe-python-template echo "Lorem" --json
-uvx oe-python-template openapi
-uvx oe-python-template openapi --output-format=json
-uvx oe-python-template serve
+uvx oe-python-template hello world
+uvx oe-python-template hello echo --help
+uvx oe-python-template hello echo "Lorem"
+uvx oe-python-template hello echo "Lorem" --json
+uvx oe-python-template system info
+uvx oe-python-template system health
+uvx oe-python-template system openapi
+uvx oe-python-template system openapi --output-format=json
+uvx oe-python-template system serve
 ```
 
 See the [reference documentation of the CLI](https://oe-python-template.readthedocs.io/en/latest/cli_reference.html) for detailed documentation of all CLI commands and options.
@@ -323,19 +327,21 @@ You can as well run the CLI within Docker.
 
 ```shell
 docker run helmuthva/oe-python-template --help
-docker run helmuthva/oe-python-template hello-world
-docker run helmuthva/oe-python-template echo --help
-docker run helmuthva/oe-python-template echo "Lorem"
-docker run helmuthva/oe-python-template echo "Lorem" --json
-docker run helmuthva/oe-python-template openapi
-docker run helmuthva/oe-python-template openapi --output-format=json
-docker run helmuthva/oe-python-template serve
+docker run helmuthva/oe-python-template hello world
+docker run helmuthva/oe-python-template hello echo --help
+docker run helmuthva/oe-python-template hello echo "Lorem"
+docker run helmuthva/oe-python-template hello echo "Lorem" --json
+docker run helmuthva/oe-python-template system info
+docker run helmuthva/oe-python-template system health
+docker run helmuthva/oe-python-template system openapi
+docker run helmuthva/oe-python-template system openapi --output-format=json
+docker run helmuthva/oe-python-template system serve
 ```
 
 Execute command:
 
 ```shell
-docker run --env THE_VAR=MY_VALUE helmuthva/oe-python-template echo "Lorem Ipsum"
+docker run --env THE_VAR=MY_VALUE helmuthva/oe-python-template hello echo "Lorem Ipsum"
 ```
 
 Or use docker compose
@@ -344,12 +350,14 @@ The .env is passed through from the host to the Docker container.
 
 ```shell
 docker compose run --remove-orphans oe-python-template --help
-docker compose run --remove-orphans oe-python-template hello-world
-docker compose run --remove-orphans oe-python-template echo --help
-docker compose run --remove-orphans oe-python-template echo "Lorem"
-docker compose run --remove-orphans oe-python-template echo "Lorem" --json
-docker compose run --remove-orphans oe-python-template openapi
-docker compose run --remove-orphans oe-python-template openapi --output-format=json
+docker compose run --remove-orphans oe-python-template hello world
+docker compose run --remove-orphans oe-python-template hello echo --help
+docker compose run --remove-orphans oe-python-template hello echo "Lorem"
+docker compose run --remove-orphans oe-python-template hello echo "Lorem" --json
+docker compose run --remove-orphans oe-python-template system info
+docker compose run --remove-orphans oe-python-template system health
+docker compose run --remove-orphans oe-python-template system openapi
+docker compose run --remove-orphans oe-python-template system openapi --output-format=json
 echo "Running OE Python Template's API container as a daemon ..."
 docker compose up -d
 echo "Waiting for the API server to start ..."
@@ -358,7 +366,7 @@ echo "Checking health of v1 API ..."
 curl http://127.0.0.1:8000/api/v1/healthz
 echo ""
 echo "Saying hello world with v1 API ..."
-curl http://127.0.0.1:8000/api/v1/hello-world
+curl http://127.0.0.1:8000/api/v1/hello/world
 echo ""
 echo "Swagger docs of v1 API ..."
 curl http://127.0.0.1:8000/api/v1/docs
@@ -367,7 +375,7 @@ echo "Checking health of v2 API ..."
 curl http://127.0.0.1:8000/api/v2/healthz
 echo ""
 echo "Saying hello world with v1 API ..."
-curl http://127.0.0.1:8000/api/v2/hello-world
+curl http://127.0.0.1:8000/api/v2/hello/world
 echo ""
 echo "Swagger docs of v2 API ..."
 curl http://127.0.0.1:8000/api/v2/docs

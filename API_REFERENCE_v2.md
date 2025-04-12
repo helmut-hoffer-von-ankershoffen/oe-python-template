@@ -4,11 +4,187 @@
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
 [Terms of service](https://oe-python-template.readthedocs.io/en/latest/)
-Email: [Helmut Hoffer von Ankershoffen](mailto:helmuthva@gmail.com) Web: [Helmut Hoffer von Ankershoffen](https://github.com/helmut-hoffer-von-ankershoffen) 
+Email: [Helmut Hoffer von Ankershoffen](mailto:helmuthva@gmail.com) Web: [Helmut Hoffer von Ankershoffen](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template) 
 
-## Basics
+## system
 
-### echo_v2_echo_post
+### health_endpoint_health_get
+
+
+
+> Code samples
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('/health', headers = headers)
+
+print(r.json())
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json'
+};
+
+fetch('/health',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`GET /health`
+
+*Health Endpoint*
+
+Check the health of the system.
+
+This operation returns the health of the system.
+The status can be either UP or DOWN.
+If the service is healthy, the status will be UP.
+If the service is unhealthy, the status will be DOWN and a reason will be provided.
+The response will have a 200 OK status code if the service is healthy,
+and a 500 Internal Server Error status code if the service is unhealthy.
+
+Returns:
+    Health: The health of the system.
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "components": {
+    "property1": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    },
+    "property2": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    }
+  },
+  "reason": "string",
+  "status": "UP"
+}
+```
+
+#### Responses
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Response|[Health](#schemahealth)|
+
+
+This operation does not require authentication
+
+
+### health_endpoint_healthz_get
+
+
+
+> Code samples
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('/healthz', headers = headers)
+
+print(r.json())
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json'
+};
+
+fetch('/healthz',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`GET /healthz`
+
+*Health Endpoint*
+
+Check the health of the system.
+
+This operation returns the health of the system.
+The status can be either UP or DOWN.
+If the service is healthy, the status will be UP.
+If the service is unhealthy, the status will be DOWN and a reason will be provided.
+The response will have a 200 OK status code if the service is healthy,
+and a 500 Internal Server Error status code if the service is unhealthy.
+
+Returns:
+    Health: The health of the system.
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "components": {
+    "property1": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    },
+    "property2": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    }
+  },
+  "reason": "string",
+  "status": "UP"
+}
+```
+
+#### Responses
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Response|[Health](#schemahealth)|
+
+
+This operation does not require authentication
+
+
+## hello
+
+### echo_v2_hello_echo_post
 
 
 
@@ -21,7 +197,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.post('/echo', headers = headers)
+r = requests.post('/hello/echo', headers = headers)
 
 print(r.json())
 
@@ -36,7 +212,7 @@ const headers = {
   'Accept':'application/json'
 };
 
-fetch('/echo',
+fetch('/hello/echo',
 {
   method: 'POST',
   body: inputBody,
@@ -50,7 +226,7 @@ fetch('/echo',
 
 ```
 
-`POST /echo`
+`POST /hello/echo`
 
 *Echo V2*
 
@@ -112,7 +288,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('/hello-world', headers = headers)
+r = requests.get('/hello/world', headers = headers)
 
 print(r.json())
 
@@ -124,7 +300,7 @@ const headers = {
   'Accept':'application/json'
 };
 
-fetch('/hello-world',
+fetch('/hello/world',
 {
   method: 'GET',
 
@@ -138,7 +314,7 @@ fetch('/hello-world',
 
 ```
 
-`GET /hello-world`
+`GET /hello/world`
 
 *Hello World*
 
@@ -162,158 +338,6 @@ Returns:
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Response|[_HelloWorldResponse](#schema_helloworldresponse)|
-
-
-This operation does not require authentication
-
-
-## Observability
-
-### health_health_get
-
-
-
-> Code samples
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('/health', headers = headers)
-
-print(r.json())
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json'
-};
-
-fetch('/health',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-`GET /health`
-
-*Health*
-
-Check the health of the service.
-
-This endpoint returns the health status of the service.
-The health status can be either UP or DOWN.
-If the service is healthy, the status will be UP.
-If the service is unhealthy, the status will be DOWN and a reason will be provided.
-The response will have a 200 OK status code if the service is healthy,
-and a 500 Internal Server Error status code if the service is unhealthy.
-
-Returns:
-    Health: The health status of the service.
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "reason": "string",
-  "status": "UP"
-}
-```
-
-#### Responses
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Response|[Health](#schemahealth)|
-
-
-This operation does not require authentication
-
-
-### health_healthz_get
-
-
-
-> Code samples
-
-```python
-import requests
-headers = {
-  'Accept': 'application/json'
-}
-
-r = requests.get('/healthz', headers = headers)
-
-print(r.json())
-
-```
-
-```javascript
-
-const headers = {
-  'Accept':'application/json'
-};
-
-fetch('/healthz',
-{
-  method: 'GET',
-
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-
-```
-
-`GET /healthz`
-
-*Health*
-
-Check the health of the service.
-
-This endpoint returns the health status of the service.
-The health status can be either UP or DOWN.
-If the service is healthy, the status will be UP.
-If the service is unhealthy, the status will be DOWN and a reason will be provided.
-The response will have a 200 OK status code if the service is healthy,
-and a 500 Internal Server Error status code if the service is unhealthy.
-
-Returns:
-    Health: The health status of the service.
-
-> Example responses
-
-> 200 Response
-
-```json
-{
-  "reason": "string",
-  "status": "UP"
-}
-```
-
-#### Responses
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful Response|[Health](#schemahealth)|
 
 
 This operation does not require authentication
@@ -382,6 +406,18 @@ HTTPValidationError
 
 ```json
 {
+  "components": {
+    "property1": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    },
+    "property2": {
+      "components": {},
+      "reason": "string",
+      "status": "UP"
+    }
+  },
   "reason": "string",
   "status": "UP"
 }
@@ -394,6 +430,8 @@ Health
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
+|components|object|false|none|none|
+|» **additionalProperties**|[Health](#schemahealth)|false|none|Represents the health status of a service with optional components and failure reasons.A health object can have child components, each with its own health status.The parent health is automatically computed from its components - it isconsidered UP only if all child components are UP. If any component is DOWN,the parent will also be DOWN with a reason listing the failed components.|
 |reason|any|false|none|none|
 
 anyOf
@@ -412,34 +450,7 @@ continued
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|status|[HealthStatus](#schemahealthstatus)|true|none|Health status enumeration.|
-
-### HealthStatus
-
-
-
-
-
-
-```json
-"UP"
-
-```
-
-HealthStatus
-
-#### Properties
-
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|HealthStatus|string|false|none|Health status enumeration.|
-
-##### Enumerated Values
-
-|Property|Value|
-|---|---|
-|HealthStatus|UP|
-|HealthStatus|DOWN|
+|status|[_HealthStatus](#schema_healthstatus)|true|none|none|
 
 ### Utterance
 
@@ -507,6 +518,33 @@ continued
 |---|---|---|---|---|
 |msg|string|true|none|none|
 |type|string|true|none|none|
+
+### _HealthStatus
+
+
+
+
+
+
+```json
+"UP"
+
+```
+
+_HealthStatus
+
+#### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|_HealthStatus|string|false|none|none|
+
+##### Enumerated Values
+
+|Property|Value|
+|---|---|
+|_HealthStatus|UP|
+|_HealthStatus|DOWN|
 
 ### _HelloWorldResponse
 

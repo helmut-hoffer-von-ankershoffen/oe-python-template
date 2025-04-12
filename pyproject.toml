@@ -62,8 +62,19 @@ requires-python = ">=3.11, <4.0"
 dependencies = [
     # From Template
     "fastapi[standard,all]>=0.115.12",
-    "pydantic>=2.11.1",
+    "logfire[system-metrics]>=3.13.1",
+    "opentelemetry-instrumentation-fastapi>=0.53b0",
+    "opentelemetry-instrumentation-httpx>=0.53b0",
+    "opentelemetry-instrumentation-jinja2>=0.53b0",
+    "opentelemetry-instrumentation-requests>=0.53b0",
+    "opentelemetry-instrumentation-sqlite3>=0.53b0",
+    "opentelemetry-instrumentation-tornado>=0.53b0",
+    "opentelemetry-instrumentation-urllib>=0.53b0",
+    "opentelemetry-instrumentation-urllib3>=0.53b0",
+    "psutil>=7.0.0",
+    "pydantic>=2.11.3",
     "pydantic-settings>=2.8.1",
+    "sentry-sdk>=2.25.1",
     "typer>=0.15.1",
     # Custom
     # Nothing yet
@@ -92,7 +103,7 @@ packages = ["src/oe_python_template"]
 [project.optional-dependencies]
 examples = [
     "streamlit>=1.44.1",
-    "marimo>=0.12.2",
+    "marimo>=0.12.8",
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
@@ -109,20 +120,20 @@ dev = [
     "matplotlib>=3.10.1",
     "mypy>=1.5.0",
     "nox[uv]>=2025.2.9",
-    "pip-audit>=2.8.0",
+    "pip-audit>=2.9.0",
     "pip-licenses @ git+https://github.com/neXenio/pip-licenses.git@master", # https://github.com/raimon49/pip-licenses/pull/224
     "pre-commit>=4.1.0",
-    "pyright>=1.1.398",
+    "pyright>=1.1.399",
     "pytest>=8.3.5",
     "pytest-asyncio>=0.26.0",
-    "pytest-cov>=6.1.0",
-    "pytest-docker>=3.2.0",
+    "pytest-cov>=6.1.1",
+    "pytest-docker>=3.2.1",
     "pytest-env>=1.1.5",
     "pytest-regressions>=2.7.0",
     "pytest-subprocess>=1.5.3",
     "pytest-timeout>=2.3.1",
     "pytest-xdist[psutil]>=3.6.1",
-    "ruff>=0.11.2",
+    "ruff>=0.11.5",
     "sphinx>=8.2.3",
     "sphinx-autobuild>=2024.10.3",
     "sphinx-copybutton>=0.5.2",
@@ -150,7 +161,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-extend-exclude = [".fixme", "notebook.py"]
+extend-exclude = [".fixme", "notebook.py", "template/*.py"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -176,7 +187,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**/*.py" = [
+"**/tests/**/*.py" = [
     # we are more relaxed in tests, while sill applying hundreds of rules
     "S101",     # asserts allowed in tests...
     "ARG",      # unused function args -> fixtures nevertheless are functionally relevant...

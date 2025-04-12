@@ -31,16 +31,16 @@ If you are one of the committers of https://github.com/helmut-hoffer-von-ankersh
 ├── .env                   # Environment variables, on .gitignore
 ├── .env.example           # Example environment variables
 src/oe_python_template/  # Source code
-├── __init__.py          # Package initialization
-├── constants.py         # Constants used throughout the app
-├── settings.py          # Settings loaded from environment and .env
-├── models.py            # Models and data structures
-├── service.py           # Service exposed for use as shared library
-├── cli.py               # CLI enabling to interact with service from terminal
-└── api.py               # API exposing service as web service
+├── __init__.py          # Package initialization and 
+├── utils/*.py           # Infrastructure for logging, sentry, logfire etc.
+├── system/*.py          # Module for system management, including service, CLI commands and API operations
+├── hello/*.py           # Module for "Hello" functionality, including service, CLI commands and API operations
+├── cli.py               # CLI entrypoint with auto-registration of CLI commands of modules
+├── api.py               # Webservice API entrypoint with auto-registration of API operations of modules
+└── constants.py         # Package specific constants such as major API versions and modules to instrument.
 tests/oe_python_template/ # Tests
-├── cli_tests.py         # Verifies the CLI functionality
-├── api_tests.py         # Verifies the API functionality
+├── **/cli_tests.py      # Verifies the core and module specific CLI commands
+├── **/api_tests.py      # Verifies the core and module specific API operations 
 └── fixtures/            # Fixtures and mock data
 docs/                    # Documentation
 ├── partials/*.md        # Partials to compile README.md,  _main partial included in HTML and PDF documentation
@@ -67,7 +67,6 @@ reports/                 # Compliance reports for auditing
 ├── vulnerabilities.json # .json file with vulnerabilities detected in dependencies by pip-audit
 └── sbom.json            # Software Bill of Materials in OWASP CycloneDX format
 ```
-
 
 ## Build, Run and Release
 
@@ -164,7 +163,7 @@ echo "Checking health of v1 API ..."
 curl http://127.0.0.1:8000/api/v1/healthz
 echo ""
 echo "Saying hello world with v1 API ..."
-curl http://127.0.0.1:8000/api/v1/hello-world
+curl http://127.0.0.1:8000/api/v1/hello/world
 echo ""
 echo "Swagger docs of v1 API ..."
 curl http://127.0.0.1:8000/api/v1/docs
@@ -173,7 +172,7 @@ echo "Checking health of v2 API ..."
 curl http://127.0.0.1:8000/api/v2/healthz
 echo ""
 echo "Saying hello world with v1 API ..."
-curl http://127.0.0.1:8000/api/v2/hello-world
+curl http://127.0.0.1:8000/api/v2/hello/world
 echo ""
 echo "Swagger docs of v2 API ..."
 curl http://127.0.0.1:8000/api/v2/docs

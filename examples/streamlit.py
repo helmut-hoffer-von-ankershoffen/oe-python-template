@@ -7,7 +7,7 @@ OE Python Template.
 
 import streamlit as st
 
-from oe_python_template import (
+from oe_python_template.hello import (
     Service,
     __version__,
 )

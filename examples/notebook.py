@@ -6,7 +6,7 @@ app = marimo.App()
 
 @app.cell
 def _():
-    from oe_python_template import Service
+    from oe_python_template.hello import Service
 
     service = Service()
     message = service.get_hello_world()
