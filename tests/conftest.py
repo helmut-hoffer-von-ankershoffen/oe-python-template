@@ -58,3 +58,17 @@ def docker_compose_project_name() -> str:
     # You can consider to override this with a project name to reuse the stack
     # across test executions.
     return f"pytest{os.getpid()}"
+
+
+def pytest_sessionfinish(session, exitstatus) -> None:
+    """Run after the test session ends.
+
+    Does change behavior if no test matching the marker is found:
+    - Sets the exit status to 0 instead of 5.
+
+    Args:
+        session: The pytest session object.
+        exitstatus: The exit status of the test session.
+    """
+    if exitstatus == 5:
+        session.exitstatus = 0
