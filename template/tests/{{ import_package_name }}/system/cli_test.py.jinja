@@ -26,7 +26,7 @@ def test_cli_info(runner: CliRunner) -> None:
     """Check health is true."""
     result = runner.invoke(cli, ["system", "info"])
     assert result.exit_code == 0
-    assert "{{ pypi_distribution_name }}.log" in result.output
+    assert "{{ import_package_name }}.log" in result.output
 
 
 @patch("uvicorn.run")

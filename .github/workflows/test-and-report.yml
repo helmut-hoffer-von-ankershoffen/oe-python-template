@@ -54,7 +54,11 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@ace6d4f5d7802b600276c23ca417e669f1a06f6f # v2.0.3
         with:
-          envkey_ENV_KEY: "ENV_VALUE"
+          envkey_ENV: "TEST"
+          envkey_OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN: "${{ secrets.OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN }}"
+          envkey_OE_PYTHON_TEMPLATE_SENTRY_DSN: "${{ secrets.OE_PYTHON_TEMPLATE_SENTRY_DSN }}"
+          envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_LEVEL: "DEBUG"
+          envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_FILE_ENABLED: 1
           fail_on_empty: true
 
       - name: Validate installation
@@ -93,6 +97,7 @@ jobs:
             reports/junit.xml
             reports/coverage.xml
             reports/coverage_html
+            oe_python_template.log
           retention-days: 30
 
       - name: Upload coverage reports to Codecov
