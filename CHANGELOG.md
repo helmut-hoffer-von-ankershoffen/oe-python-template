@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.6..0.10.7) - 2025-04-13
+## [0.10.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.7..0.10.8) - 2025-04-13
+
+### 🐛 Bug Fixes
+
+- *(system)* Allow settings with Path attributes - ([2eb0424](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/2eb042445364f93dbc2457529b3297e3155546e4))
+
+
+## [0.10.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.6..v0.10.7) - 2025-04-13
 
 ### ⛰️  Features
 
