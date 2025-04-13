@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.0..0.10.1) - 2025-04-13
+## [0.10.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.1..0.10.2) - 2025-04-13
+
+### ⛰️  Features
+
+- *(system)* OpaqueSettings and info endpoint with auth - ([e99acfe](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e99acfe79b1a5d825cfb41960dddf21bc35a793b))
+
+
+## [0.10.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.0..v0.10.1) - 2025-04-13
 
 ### 🐛 Bug Fixes
 
