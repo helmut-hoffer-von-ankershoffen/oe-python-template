@@ -9,16 +9,15 @@ highlight_theme: darkula
 ---
 
 
-                             'python3.11' (pid 8903)                                                                                                                                                            
-                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "GET /v1/info HTTP/1.1" 200 None                                                                   connectionpool.py:544
-components:
-  schemas:
-    Echo:
-      description: Response model for echo endpoint.
-      properties:
-        text:
-          description: The echo
-          examples:
+
+
+
+
+
+
+
+
+
           - HELLO, WORLD!
           minLength: 1
           title: Text
@@ -238,11 +237,29 @@ paths:
       summary: Info Endpoint
       tags:
       - system
-                    DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): logfire-eu.pydantic.dev:443                                                                        connectionpool.py:1049
+                    DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): logfire-eu.pydantic.dev:443                                                                                                                                            connectionpool.py:1049
 Starting new HTTPS connection (1): logfire-eu.pydantic.dev:443
-                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2                                                                  connectionpool.py:544
+                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2                                                                                                                                      connectionpool.py:544
 https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2
-                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0                                                                   connectionpool.py:544
+                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0                                                                                                                                       connectionpool.py:544
 https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0
 
-> 2025-04-13 16:08:57 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.2 (project root /Users/helmut/Code/oe-python-template, pid 9118), parent            boot.py:78
+> 2025-04-13 16:34:46 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.3 (project root /Users/helmut/Code/oe-python-template, pid 74850), parent 'python3.11' (pid 74354)                                                      boot.py:78
+
+>                     DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "GET /v1/info HTTP/1.1" 200 None                                                                                                                                       connectionpool.py:544
+
+> components:
+
+>   schemas:
+
+>     Echo:
+
+>       description: Response model for echo endpoint.
+
+>       properties:
+
+>         text:
+
+>           description: The echo
+
+>           examples:
