@@ -1,6 +1,17 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.5..0.10.6) - 2025-04-13
+## [0.10.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.6..0.10.7) - 2025-04-13
+
+### ⛰️  Features
+
+- *(metrics)* Demonstrate use of custom metrics in service of Hello module - ([ac6cf09](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/ac6cf0921a077c656c42c411a38f7c4e6a76aefb))
+
+### ⚙️ Miscellaneous Tasks
+
+- Intermediate - ([b064e0b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/b064e0b2a3b90301aae31dd47d17dc6f9a179b72))
+
+
+## [0.10.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.5..v0.10.6) - 2025-04-13
 
 ### 📚 Documentation
 
