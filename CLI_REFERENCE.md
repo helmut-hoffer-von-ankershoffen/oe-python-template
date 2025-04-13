@@ -14,7 +14,7 @@ $ oe-python-template [OPTIONS] COMMAND [ARGS]...
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
 
-🧠 OE Python Template v0.10.7 - built with love in Berlin 🐻
+🧠 OE Python Template v0.10.8 - built with love in Berlin 🐻
 
 **Commands**:
 
