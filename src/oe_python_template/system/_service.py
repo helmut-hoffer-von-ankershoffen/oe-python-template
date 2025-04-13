@@ -9,6 +9,7 @@ import time
 from typing import Any
 
 from pydantic_settings import BaseSettings
+from uptime import boottime, uptime
 
 from ..utils import (  # noqa: TID252
     UNHIDE_SENSITIVE_INFO,
@@ -93,6 +94,7 @@ class Service(BaseService):
         Returns:
             dict[str, Any]: Service configuration.
         """
+        bootdatetime = boottime()
         rtn = {
             "package": {
                 "version": __version__,
@@ -121,6 +123,8 @@ class Service(BaseService):
                     "hostname": platform.node(),
                     "ip_address": platform.uname().node,
                     "cpu_count": os.cpu_count(),
+                    "uptime": uptime(),
+                    "boottime": bootdatetime.isoformat() if bootdatetime else None,
                 },
             },
         }

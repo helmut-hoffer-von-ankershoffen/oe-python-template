@@ -2164,6 +2164,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "sentry-sdk" },
     { name = "typer" },
+    { name = "uptime" },
 ]
 
 [package.optional-dependencies]
@@ -2237,6 +2238,7 @@ requires-dist = [
     { name = "sentry-sdk", specifier = ">=2.25.1" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
     { name = "typer", specifier = ">=0.15.1" },
+    { name = "uptime", specifier = ">=3.0.1" },
 ]
 provides-extras = ["examples"]
 
@@ -4427,6 +4429,12 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/d7/0c/9837fece153051e19c7bade9f88f9b409e026b9525927824cdf16293b43b/ujson-5.10.0-cp313-cp313-win32.whl", hash = "sha256:4c4fc16f11ac1612f05b6f5781b384716719547e142cfd67b65d035bd85af165", size = 38766 },
     { url = "https://files.pythonhosted.org/packages/d7/72/6cb6728e2738c05bbe9bd522d6fc79f86b9a28402f38663e85a28fddd4a0/ujson-5.10.0-cp313-cp313-win_amd64.whl", hash = "sha256:4573fd1695932d4f619928fd09d5d03d917274381649ade4328091ceca175539", size = 42212 },
 ]
+
+[[package]]
+name = "uptime"
+version = "3.0.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ad/53/6c420ddf6949097d6f9406358951c9322505849bea9cb79efe3acc0bb55d/uptime-3.0.1.tar.gz", hash = "sha256:7c300254775b807ce46e3dcbcda30aa3b9a204b9c57a7ac1e79ee6dbe3942973", size = 6630 }
 
 [[package]]
 name = "uri-template"

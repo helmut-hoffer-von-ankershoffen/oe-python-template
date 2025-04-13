@@ -1,4 +1,4 @@
-2025-04-13 16:34:46 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.3 (project root /Users/helmut/Code/oe-python-template, pid 74850), parent 'python3.11' (pid 74354)                                                      boot.py:78
+2025-04-13 16:47:42 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.4 (project root /Users/helmut/Code/oe-python-template, pid 87703), parent 'python3.11' (pid 87336)                                                      boot.py:78
                     DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "GET /v1/info HTTP/1.1" 200 None                                                                                                                                       connectionpool.py:544
 components:
   schemas:
