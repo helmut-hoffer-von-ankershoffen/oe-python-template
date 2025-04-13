@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.7..0.10.0) - 2025-04-13
+## [0.10.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.0..0.10.1) - 2025-04-13
+
+### 🐛 Bug Fixes
+
+- Streamlit - ([361efd7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/361efd7e2348371113938e8866c2feb9f9901de0))
+
+
+## [0.10.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.7..v0.10.0) - 2025-04-13
 
 ### ⛰️  Features
 
