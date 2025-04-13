@@ -2,7 +2,10 @@
 
 import secrets
 import string
+from http import HTTPStatus
 from typing import Any
+
+import requests
 
 from oe_python_template.utils import BaseService, Health
 
@@ -30,13 +33,37 @@ class Service(BaseService):
 
         return {"noise": random_string}
 
-    def health(self) -> Health:  # noqa: PLR6301
+    @staticmethod
+    def _determine_connectivity() -> Health:
+        """Determine healthiness of connectivity with the Internet.
+
+        - Performs HTTP GET request to https://connectivitycheck.gstatic.com/generate_204
+        - If the call fails or does not return the expected response status, the health is DOWN.
+        - If the call succeeds, the health is UP.
+
+        Returns:
+            Health: The healthiness of connectivity.
+        """
+        try:
+            response = requests.get("https://connectivitycheck.gstatic.com/generate_204", timeout=5)
+            if response.status_code == HTTPStatus.NO_CONTENT:
+                return Health(status=Health.Code.UP)
+            return Health(status=Health.Code.DOWN, reason=f"Unexpected response status: {response.status_code}")
+        except requests.RequestException as e:
+            return Health(status=Health.Code.DOWN, reason=str(e))
+
+    def health(self) -> Health:
         """Determine health of hello service.
 
         Returns:
             Health: The health of the service.
         """
-        return Health(status=Health.Code.UP)
+        return Health(
+            status=Health.Code.UP,
+            components={
+                "connectivity": self._determine_connectivity(),
+            },
+        )
 
     def get_hello_world(self) -> str:
         """
