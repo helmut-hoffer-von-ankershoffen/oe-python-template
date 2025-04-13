@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.4..0.10.5) - 2025-04-13
+## [0.10.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.5..0.10.6) - 2025-04-13
+
+### 📚 Documentation
+
+- Better vercel badge target - ([c113809](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c113809a6b2cb8f6356042b4956b7d7571fa2526))
+
+
+## [0.10.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.4..v0.10.5) - 2025-04-13
 
 ### ⛰️  Features
 
