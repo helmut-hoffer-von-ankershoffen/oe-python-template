@@ -75,20 +75,39 @@
 4. Enable Dependabot security updates
 5. CodeQL analyis will be automatically set up via a GitHub action
 
-## Polishing GitHub repository
+## Deploying webservice to Vercel as serverless function (optional)
 
-1. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template
-2. Click on the cogs icon in the top right corner next to about
-4. Copy oe-python-template.readthedocs.io into the website field
-3. Copy the description from the pyproject.toml file into the description field
-5. Copy up to 20 tags from the pyproject.toml file into the topics field
-6. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings and upload a soclial media image (e.g. logo.png) into the "Social preview" field
-
-## Deploying to Vercel
-
-1. Goto https://vercel.com/ and sign-in - it's free for solo devs and open
+1. Ensure you enabled Vercel deployment when creating or updating the project.
+   If not, enable with `copier update`
+2. Goto https://vercel.com/ and sign-in - it's free for solo devs and open
    source projects
-2.
+3. Execute `pnpm i -g vercel@latest` to install or update the Vercel CLI, see
+   https://vercel.com/docs/cli.
+4. Execute `vercel login` to login to your Vercel account
+5. In Vercel create a new project
+6. Execute `vercel link` and link your repository to the newly created project
+7. Execute `cat .vercel/project.json` to show the orgId and projectId
+8. Goto
+   https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new
+   and create a new repository secret called `VERCEL_ORG_ID`, copy and pasting
+   from the output of step 6.
+9. Goto
+   https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new
+   and create a new repository secret called `VERCEL_PROJECT_ID`, copy and
+   pasting from the output of step 6
+10. Goto `https://vercel.com/account/tokens` and create a new token called
+   `oe-python-template`. Copy the value of the token into your clipboard.
+11. Goto
+    https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new
+    and create a new repository secret called `VERCEL_TOKEN`, pasting from your
+    clipboard.
+12. In your Vercel project go to Settings > Deployment Protection, enable
+    Protection Bypass for Automation, and copy the token it your clipboard.
+13. Goto
+    https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings/secrets/actions/new
+    and create a new repository secret called `VERCEL_AUTOMATION_BYPASS_SECRET`, pasting from your
+    clipboard. This is so the smoke test post deploy via GitHub Action can validate
+    the deployment was successful.
 
 ## Error monitoring and profiling with Sentry
 
@@ -129,3 +148,11 @@
    copy the badge for yaml
 5. Run copier update and paste the snippet when asked for it
 
+## Polishing GitHub repository
+
+1. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template
+2. Click on the cogs icon in the top right corner next to about
+4. Copy oe-python-template.readthedocs.io into the website field
+3. Copy the description from the pyproject.toml file into the description field
+5. Copy up to 20 tags from the pyproject.toml file into the topics field
+6. Goto https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/settings and upload a soclial media image (e.g. logo.png) into the "Social preview" field
