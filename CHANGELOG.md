@@ -1,6 +1,27 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.9.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.6..0.9.7) - 2025-04-08
+## [0.10.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.7..0.10.0) - 2025-04-13
+
+### ⛰️  Features
+
+- *(health)* Hierarchical health - ([ad5fc1f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/ad5fc1fa7ad7af0ade8b54bc2121d73c0351b408))
+- *(instrumentation,di)* Sentry, logfire, dependency injection - ([424075e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/424075ee3e86bf5d00afec1647d4d04266bed735))
+
+### 🐛 Bug Fixes
+
+- Some - ([366648f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/366648fc9390394214d6e1302efe4107bc6a800e))
+- Increase test coverage, some fixes - ([5c89ff7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5c89ff75e65cbef2e83449b70fec79ff4dadb67f))
+
+### 🚜 Refactor
+
+- Code smell - ([5951c38](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5951c38e7d2388bd677a2ff3cb115fe4f8f1bf1d))
+
+### 📚 Documentation
+
+- Some polish - ([5749259](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/57492599ed7af2d98160535195b4908d055d0438))
+
+
+## [0.9.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.9.6..v0.9.7) - 2025-04-08
 
 ### 📚 Documentation
 
