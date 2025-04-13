@@ -16,6 +16,8 @@ class Language(StrEnum):
     US_ENGLISH = "en_US"
 
 
+# Settings derived from BaseSettings and exported by modules via their __init__.py are automatically registered
+# by the system module e.g. for showing all settings via the system info command.
 class Settings(BaseSettings):
     """Settings."""
 

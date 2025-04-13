@@ -18,6 +18,8 @@ from ._service import Service
 
 HELLO_WORLD_EXAMPLE = "Hello, world!"
 
+# VersionedAPIRouters exported by modules via their __init__.py are automatically registered
+# and injected into the main API app, see ../api.py.
 api_v1 = VersionedAPIRouter("v1", prefix="/hello", tags=["hello"])
 api_v2 = VersionedAPIRouter("v2", prefix="/hello", tags=["hello"])
 

@@ -14,6 +14,8 @@ from ._models import Echo, Utterance
 from ._settings import Language, Settings
 
 
+# Services derived from BaseService and exported by modules via their __init__.py are automatically registered
+# with the system module, enabling for dynamic discovery of health, info and further functionality.
 class Service(BaseService):
     """Service of the hello module."""
 

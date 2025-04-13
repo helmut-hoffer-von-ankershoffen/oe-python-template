@@ -11,6 +11,7 @@ from ._service import Service
 
 logger = get_logger(__name__)
 
+# CLI apps exported by modules via their __init__.py are automatically registered and injected into the main CLI app
 cli = typer.Typer(name="hello", help="Hello commands")
 _service = Service()
 

@@ -1,4 +1,4 @@
-_commit: v0.9.7-6-g6545cbf
+_commit: v0.9.7-7-ge17180d
 _src_path: .
 attestations_enabled: true
 author_email: helmuthva@gmail.com
@@ -25,6 +25,6 @@ readthedocs_domain: readthedocs.org
 readthedocs_project_key: oe-python-template
 sonarqube_key: helmut-hoffer-von-ankershoffen_oe-python-template
 streamlit_project_key: oe-python-template
-uptime_badge_snippet: '[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v1/monitor/1vze5.svg)](https://uptime.betterstack.com/?utm_source=status_badge)'
-vercel_badge_snippet: '![Vercel Deploy](https://deploy-badge.vercel.app/vercel/oe-python-template?root=docs)'
+uptime_badge_snippet: '[![Better Stack Uptime](https://uptime.betterstack.com/status-badges/v1/monitor/1vze5.svg)](https://helmut-hoffer-von-ankershoffen.betteruptime.com/)'
+vercel_badge_snippet: '[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/oe-python-template?root=docs)](https://oe-python-template.vercel.app/docs)'
 vercel_function_enabled: true
