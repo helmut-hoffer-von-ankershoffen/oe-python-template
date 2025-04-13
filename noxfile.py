@@ -20,6 +20,7 @@ SBOM_SPDX_PATH = "reports/sbom.spdx"
 JUNIT_XML = "--junitxml=reports/junit.xml"
 CLI_MODULE = "cli"
 API_VERSIONS = ["v1", "v2"]
+DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"
 
 
 def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
@@ -516,11 +517,11 @@ def dist_vercel(session: nox.Session) -> None:
 
     # Generate requirements.txt including referencing the wheel
     session.run("uv", "sync", "--active", "--no-dev", external=True)
-    with Path("dist_vercel/requirements.txt").open("w", encoding="utf-8") as outfile:
+    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding="utf-8") as outfile:
         session.run("uv", "pip", "freeze", "--exclude-editable", "--no-progress", stdout=outfile, external=True)
-    with Path("dist_vercel/requirements.txt").open("r", encoding="utf-8") as infile:
+    with Path(DIST_VERCEL_REQUIREMENTS).open("r", encoding="utf-8") as infile:
         lines = infile.readlines()
-    with Path("dist_vercel/requirements.txt").open("w", encoding="utf-8") as outfile:
+    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding="utf-8") as outfile:
         # Remove first line if it starts with "Using "
         if lines and lines[0].startswith("Using "):
             outfile.writelines(lines[1:])

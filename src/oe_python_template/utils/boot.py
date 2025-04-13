@@ -38,50 +38,31 @@ from ._process import get_process_info  # noqa: E402
 def _parse_env_args() -> None:
     """Parse --env arguments from command line and add to environment if prefix matches.
 
-    - Furthermore removes those args so typer does not complain about them.
+    - Last but not least removes those args so typer does not complain about them.
     """
-    # Process arguments and collect positions to remove
-    i = 1  # Start at index 1 (after the script name)
+    i = 1  # Start after script name
     to_remove = []
+    prefix = f"{__project_name__.upper()}_"
 
     while i < len(sys.argv):
-        # Handle "--env KEY=VALUE" format (two separate arguments)
-        if (sys.argv[i] == "--env" or sys.argv[i] == "-e") and i + 1 < len(sys.argv):
-            try:
-                key, value = sys.argv[i + 1].split("=", 1)
-                if key.startswith(f"{__project_name__.upper()}_"):
-                    # Strip quotes if present
-                    value = value.strip("\"'")
-                    os.environ[key] = value
-                # Mark both the flag and its value for removal
-                to_remove.extend([i, i + 1])
-                i += 2  # Skip the value
-                continue
-            except ValueError:
-                pass  # Silently skip malformed env vars
-        # Handle "--env=KEY=VALUE" format (single argument)
-        elif sys.argv[i].startswith("--env=") or sys.argv[i].startswith("-e="):
-            try:
-                # Extract everything after the first = sign
-                arg_value = sys.argv[i].split("=", 1)[1]
-                # Then split on the next = sign to get key and value
-                key, value = arg_value.split("=", 1)
-                if key.startswith(f"{__project_name__.upper()}_"):
-                    # Strip quotes if present
-                    value = value.strip("\"'")
-                    os.environ[key] = value
-                # Mark the argument for removal
-                to_remove.append(i)
-            except ValueError:
-                pass  # Silently skip malformed env vars
-            i += 1
-        else:
-            i += 1
+        current_arg = sys.argv[i]
 
-    # Remove the environment arguments from sys.argv
-    # We need to remove from the end to keep indices valid
-    for i in sorted(to_remove, reverse=True):
-        del sys.argv[i]
+        # Handle "--env KEY=VALUE" or "-e KEY=VALUE" format (two separate arguments)
+        if (current_arg in {"--env", "-e"}) and i + 1 < len(sys.argv):
+            key_value = sys.argv[i + 1]
+            if "=" in key_value:
+                key, value = key_value.split("=", 1)
+                if key.startswith(prefix):
+                    os.environ[key] = value.strip("\"'")
+                to_remove.extend([i, i + 1])
+                i += 2
+                continue
+
+        i += 1
+
+    # Remove processed arguments from sys.argv in reverse order
+    for index in sorted(to_remove, reverse=True):
+        del sys.argv[index]
 
 
 def _amend_library_path() -> None:
