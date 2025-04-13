@@ -149,7 +149,9 @@ class Service(BaseService):
         for settings_class in locate_subclasses(BaseSettings):
             settings_instance = load_settings(settings_class)
             env_prefix = settings_instance.model_config.get("env_prefix", "")
-            settings_dict = settings_instance.model_dump(context={UNHIDE_SENSITIVE_INFO: not filter_secrets})
+            settings_dict = json.loads(
+                settings_instance.model_dump_json(context={UNHIDE_SENSITIVE_INFO: not filter_secrets})
+            )
             for key, value in settings_dict.items():
                 flat_key = f"{env_prefix}{key}".upper()
                 settings[flat_key] = value

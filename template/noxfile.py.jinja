@@ -20,7 +20,7 @@ SBOM_SPDX_PATH = "reports/sbom.spdx"
 JUNIT_XML = "--junitxml=reports/junit.xml"
 CLI_MODULE = "cli"
 API_VERSIONS = ["v1", "v2"]
-DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"
+{% if vercel_function_enabled %}DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"{% endif %}
 
 
 def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
