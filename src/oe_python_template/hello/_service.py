@@ -5,6 +5,7 @@ import string
 from http import HTTPStatus
 from typing import Any
 
+import logfire
 import requests
 
 from oe_python_template.utils import BaseService, Health
@@ -74,6 +75,9 @@ class Service(BaseService):
         Returns:
             str: Hello world message.
         """
+        messages_sent = logfire.metric_counter("hello_world_messages_sent")
+        messages_sent.add(1)
+
         match self._settings.language:
             case Language.GERMAN:
                 return HELLO_WORLD_DE_DE

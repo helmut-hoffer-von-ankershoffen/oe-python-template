@@ -20,6 +20,15 @@ logger = logging.getLogger(__name__)
 UNHIDE_SENSITIVE_INFO = "unhide_sensitive_info"
 
 
+def strip_to_none_before_validator(v: str | None) -> str | None:
+    if v is None:
+        return None
+    v = v.strip()
+    if not v:
+        return None
+    return v
+
+
 class OpaqueSettings(BaseSettings):
     @staticmethod
     def serialize_sensitive_info(input_value: SecretStr, info: FieldSerializationInfo) -> str | None:

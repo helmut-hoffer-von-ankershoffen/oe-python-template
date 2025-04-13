@@ -1,6 +1,7 @@
 # 🧠 OE Python Template
 
-[![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
+](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/oe-python-template.svg?logo=python&color=204361&labelColor=1E2933)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
 [![CI](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml/badge.svg)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml)
 [![Read the Docs](https://img.shields.io/readthedocs/oe-python-template)](https://oe-python-template.readthedocs.io/en/latest/)
@@ -33,9 +34,6 @@
 -->
 
 > [!TIP]
-> 📚
-> [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) -
-> 📖
-> [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
+> 📚 [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) - 📖 [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
 
 ---

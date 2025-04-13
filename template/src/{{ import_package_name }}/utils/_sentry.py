@@ -3,12 +3,12 @@
 from typing import Annotated
 
 import sentry_sdk
-from pydantic import Field, PlainSerializer, SecretStr
+from pydantic import BeforeValidator, Field, PlainSerializer, SecretStr
 from pydantic_settings import SettingsConfigDict
 from sentry_sdk.integrations.typer import TyperIntegration
 
 from ._constants import __env__, __env_file__, __project_name__, __version__
-from ._settings import OpaqueSettings, load_settings
+from ._settings import OpaqueSettings, load_settings, strip_to_none_before_validator
 
 
 class SentrySettings(OpaqueSettings):
@@ -23,6 +23,7 @@ class SentrySettings(OpaqueSettings):
 
     dsn: Annotated[
         SecretStr | None,
+        BeforeValidator(strip_to_none_before_validator),
         PlainSerializer(func=OpaqueSettings.serialize_sensitive_info, return_type=str, when_used="always"),
         Field(description="Sentry DSN", examples=["https://SECRET@SECRET.ingest.de.sentry.io/SECRET"], default=None),
     ]
@@ -44,12 +45,14 @@ class SentrySettings(OpaqueSettings):
         int,
         Field(
             description="Max breadcrumbs (https://docs.sentry.io/platforms/python/configuration/options/#max_breadcrumbs)",
-            default=5.0,
+            ge=0,
+            default=50,
         ),
     ]
     sample_rate: Annotated[
         float,
         Field(
+            ge=0.0,
             description="Sample Rate (https://docs.sentry.io/platforms/python/configuration/sampling/#sampling-error-events)",
             default=1.0,
         ),
@@ -57,6 +60,7 @@ class SentrySettings(OpaqueSettings):
     traces_sample_rate: Annotated[
         float,
         Field(
+            ge=0.0,
             description="Traces Sample Rate (https://docs.sentry.io/platforms/python/configuration/sampling/#configuring-the-transaction-sample-rate)",
             default=1.0,
         ),
@@ -64,6 +68,7 @@ class SentrySettings(OpaqueSettings):
     profiles_sample_rate: Annotated[
         float,
         Field(
+            ge=0.0,
             description="Traces Sample Rate (https://docs.sentry.io/platforms/python/tracing/#configure)",
             default=1.0,
         ),
@@ -84,7 +89,7 @@ def sentry_initialize() -> bool:
     sentry_sdk.init(
         release=f"{__project_name__}@{__version__}",  # https://docs.sentry.io/platforms/python/configuration/releases/,
         environment=__env__,
-        dsn=settings.dsn.get_secret_value(),
+        dsn=settings.dsn.get_secret_value().strip(),
         max_breadcrumbs=settings.max_breadcrumbs,
         debug=settings.debug,
         send_default_pii=settings.send_default_pii,

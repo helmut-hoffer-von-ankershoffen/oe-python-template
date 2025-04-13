@@ -59,7 +59,7 @@ jobs:
           envkey_OE_PYTHON_TEMPLATE_SENTRY_DSN: "${{ secrets.OE_PYTHON_TEMPLATE_SENTRY_DSN }}"
           envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_LEVEL: "DEBUG"
           envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_FILE_ENABLED: 1
-          fail_on_empty: true
+          fail_on_empty: false
 
       - name: Validate installation
         run: |

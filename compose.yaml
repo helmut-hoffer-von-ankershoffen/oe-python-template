@@ -3,7 +3,7 @@ services:
     build: .
     env_file:
       - path: .env
-        required: true
+        required: false
     develop:
       watch:
         - path: src
@@ -17,7 +17,7 @@ services:
     build: .
     env_file:
       - path: .env
-        required: true
+        required: false
     develop:
       watch:
         - path: src

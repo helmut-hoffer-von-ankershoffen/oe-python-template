@@ -3,11 +3,11 @@
 from typing import Annotated
 
 import logfire
-from pydantic import Field, PlainSerializer, SecretStr
+from pydantic import BeforeValidator, Field, PlainSerializer, SecretStr
 from pydantic_settings import SettingsConfigDict
 
 from ._constants import __env__, __env_file__, __project_name__, __repository_url__, __version__
-from ._settings import OpaqueSettings, load_settings
+from ._settings import OpaqueSettings, load_settings, strip_to_none_before_validator
 
 
 class LogfireSettings(OpaqueSettings):
@@ -22,6 +22,7 @@ class LogfireSettings(OpaqueSettings):
 
     token: Annotated[
         SecretStr | None,
+        BeforeValidator(strip_to_none_before_validator),
         PlainSerializer(func=OpaqueSettings.serialize_sensitive_info, return_type=str, when_used="always"),
         Field(description="Logfire token. Leave empty to disable logfire.", examples=["YOUR_TOKEN"], default=None),
     ]

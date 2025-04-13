@@ -43,7 +43,7 @@ Projects generated with this template come with a comprehensive development tool
 
 Beyond development tooling, projects generated with this template include the code, documentation, and configuration of a fully functioning application and service. This reference implementation serves as a starting point for your own business logic with modern patterns and enterprise practices already in place:
 
-1. Usable as library with "Hello" module exposing a simple service
+1. Usable as library with "Hello" module exposing a simple service that can say "Hello, world!" and echo utterances.
 2. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
 3. Versioned webservice API with [FastAPI](https://fastapi.tiangolo.com/)
 4. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
@@ -53,8 +53,9 @@ Beyond development tooling, projects generated with this template include the co
 8. Info command enabling to inspect the runtime, compiled settings, and further info provided dynamically by modules
 9. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
 10. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
-11. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
-12. Documentation including dynamic badges, setup instructions, contribution guide and security policy
+11. Hello service demonstrates use of custom real time metrics collected via Logfire
+12. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
+13. Documentation including dynamic badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 
