@@ -81,7 +81,7 @@
           "system"
         ],
         "summary": "Health Endpoint",
-        "description": "Check the health of the system.\n\nThis operation returns the health of the system.\nThe status can be either UP or DOWN.\nIf the service is healthy, the status will be UP.\nIf the service is unhealthy, the status will be DOWN and a reason will be provided.\nThe response will have a 200 OK status code if the service is healthy,\nand a 500 Internal Server Error status code if the service is unhealthy.\n\nReturns:\n    Health: The health of the system.",
+        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules that make\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
         "operationId": "health_endpoint_health_get",
         "responses": {
           "200": {
@@ -103,7 +103,7 @@
           "system"
         ],
         "summary": "Health Endpoint",
-        "description": "Check the health of the system.\n\nThis operation returns the health of the system.\nThe status can be either UP or DOWN.\nIf the service is healthy, the status will be UP.\nIf the service is unhealthy, the status will be DOWN and a reason will be provided.\nThe response will have a 200 OK status code if the service is healthy,\nand a 500 Internal Server Error status code if the service is unhealthy.\n\nReturns:\n    Health: The health of the system.",
+        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules that make\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
         "operationId": "health_endpoint_healthz_get",
         "responses": {
           "200": {
@@ -183,7 +183,7 @@
           "status"
         ],
         "title": "Health",
-        "description": "Represents the health status of a service with optional components and failure reasons.\n\nA health object can have child components, each with its own health status.\nThe parent health is automatically computed from its components - it is\nconsidered UP only if all child components are UP. If any component is DOWN,\nthe parent will also be DOWN with a reason listing the failed components."
+        "description": "Represents the health status of a service with optional components and failure reasons.\n\n- A health object can have child components, i.e. health forms a tree.\n- Any node in the tree can set itself to DOWN. In this case the node is required\n    to set the reason attribute. If reason is not set when DOWN,\n    automatic model validation of the tree will fail.\n- DOWN'ness is propagated to parent health objects. I.e. the health of a parent\n    node is automatically set to DOWN if any of its child components are DOWN. The\n    child components leading to this will be listed in the reason.\n- The root of the health tree is computed in the system module. The health of other\n    modules is automatically picked up by the system module."
       },
       "Utterance": {
         "properties": {

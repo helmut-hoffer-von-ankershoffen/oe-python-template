@@ -28,7 +28,7 @@ def get_project_url_by_label(prefix: str) -> str:
     See https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata-project-url
 
     Args:
-        prefix: The prefix to match at the beginning of URL entries.
+        prefix(str): The prefix to match at the beginning of URL entries.
 
     Returns:
         The extracted URL string if found, or an empty string if not found.

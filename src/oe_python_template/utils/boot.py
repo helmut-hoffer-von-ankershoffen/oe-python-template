@@ -1,4 +1,4 @@
-"""To call on boot."""
+"""Boot sequence."""
 
 import os
 import sys
@@ -30,7 +30,7 @@ from ._process import get_process_info  # noqa: E402
 
 
 def _parse_env_args() -> None:
-    """Parse --env arguments from command line and add to environment if STARBRIDGE_ prefixed."""
+    """Parse --env arguments from command line and add to environment if prefix matches."""
     args = sys.argv[1:]
     i = 0
     while i < len(args):
@@ -53,8 +53,8 @@ def _amend_library_path() -> None:
 
 
 def _log_boot_message() -> None:
+    """Log boot message with version and process information."""
     logger = get_logger(__name__)
-
     process_info = get_process_info()
     logger.info(
         "⭐ Booting %s v%s (project root %s, pid %s), parent '%s' (pid %s)",

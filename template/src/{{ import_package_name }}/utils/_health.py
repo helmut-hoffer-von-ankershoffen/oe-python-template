@@ -12,27 +12,30 @@ class _HealthStatus(StrEnum):
 
 
 class Health(BaseModel):
-    """
-    Represents the health status of a service with optional components and failure reasons.
+    """Represents the health status of a service with optional components and failure reasons.
 
-    A health object can have child components, each with its own health status.
-    The parent health is automatically computed from its components - it is
-    considered UP only if all child components are UP. If any component is DOWN,
-    the parent will also be DOWN with a reason listing the failed components.
+    - A health object can have child components, i.e. health forms a tree.
+    - Any node in the tree can set itself to DOWN. In this case the node is required
+        to set the reason attribute. If reason is not set when DOWN,
+        automatic model validation of the tree will fail.
+    - DOWN'ness is propagated to parent health objects. I.e. the health of a parent
+        node is automatically set to DOWN if any of its child components are DOWN. The
+        child components leading to this will be listed in the reason.
+    - The root of the health tree is computed in the system module. The health of other
+        modules is automatically picked up by the system module.
     """
 
-    Status: ClassVar[type[_HealthStatus]] = _HealthStatus
+    Code: ClassVar[type[_HealthStatus]] = _HealthStatus
     status: _HealthStatus
     reason: str | None = None
     components: dict[str, "Health"] = Field(default_factory=dict)
 
     def compute_health_from_components(self) -> Self:
-        """
-        Recursively compute health status from components.
+        """Recursively compute health status from components.
 
-        If health is already DOWN, it remains DOWN with its original reason.
-        If health is UP but any component is DOWN, health becomes DOWN with
-        a reason listing all failed components.
+        - If health is already DOWN, it remains DOWN with its original reason.
+        - If health is UP but any component is DOWN, health becomes DOWN with
+            a reason listing all failed components.
 
         Returns:
             Self: The updated health instance with computed status.
@@ -66,12 +69,11 @@ class Health(BaseModel):
 
     @model_validator(mode="after")
     def validate_health_state(self) -> Self:
-        """
-        Validate the health state and ensure consistency.
+        """Validate the health state and ensure consistency.
 
-        1. Compute overall health based on component health
-        2. Ensure UP status has no associated reason
-        3. Ensure DOWN status always has a reason
+        - Compute overall health based on component health
+        - Ensure UP status has no associated reason
+        - Ensure DOWN status always has a reason
 
         Returns:
             Self: The validated model instance with correct health status.
@@ -95,8 +97,7 @@ class Health(BaseModel):
         return self
 
     def __str__(self) -> str:
-        """
-        Return string representation of health status with optional reason for DOWN state.
+        """Return string representation of health status with optional reason for DOWN state.
 
         Returns:
             str: The health status value, with reason appended if status is DOWN.

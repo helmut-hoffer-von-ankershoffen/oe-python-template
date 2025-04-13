@@ -38,7 +38,6 @@ def logfire_initialize(modules: list["str"]) -> bool:
 
     Returns:
         bool: True if initialized successfully False otherwise
-
     """
     settings = load_settings(LogfireSettings)
 

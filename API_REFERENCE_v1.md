@@ -50,14 +50,21 @@ fetch('/health',
 
 *Health Endpoint*
 
-Check the health of the system.
+Determine aggregate health of the system.
 
-This operation returns the health of the system.
-The status can be either UP or DOWN.
-If the service is healthy, the status will be UP.
-If the service is unhealthy, the status will be DOWN and a reason will be provided.
-The response will have a 200 OK status code if the service is healthy,
-and a 500 Internal Server Error status code if the service is unhealthy.
+The health is aggregated from all modules that make
+    up this system including external dependencies.
+
+The response is to be interpreted as follows:
+- The status can be either UP or DOWN.
+- If the service is healthy, the status will be UP.
+- If the service is unhealthy, the status will be DOWN and a reason will be provided.
+- The response will have a 200 OK status code if the service is healthy,
+    and a 503 Service Unavailable status code if the service is unhealthy.
+
+Args:
+    service (Service): The service instance.
+    response (Response): The FastAPI response object.
 
 Returns:
     Health: The health of the system.
@@ -137,14 +144,21 @@ fetch('/healthz',
 
 *Health Endpoint*
 
-Check the health of the system.
+Determine aggregate health of the system.
 
-This operation returns the health of the system.
-The status can be either UP or DOWN.
-If the service is healthy, the status will be UP.
-If the service is unhealthy, the status will be DOWN and a reason will be provided.
-The response will have a 200 OK status code if the service is healthy,
-and a 500 Internal Server Error status code if the service is unhealthy.
+The health is aggregated from all modules that make
+    up this system including external dependencies.
+
+The response is to be interpreted as follows:
+- The status can be either UP or DOWN.
+- If the service is healthy, the status will be UP.
+- If the service is unhealthy, the status will be DOWN and a reason will be provided.
+- The response will have a 200 OK status code if the service is healthy,
+    and a 503 Service Unavailable status code if the service is unhealthy.
+
+Args:
+    service (Service): The service instance.
+    response (Response): The FastAPI response object.
 
 Returns:
     Health: The health of the system.
@@ -419,7 +433,7 @@ Health
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |components|object|false|none|none|
-|» **additionalProperties**|[Health](#schemahealth)|false|none|Represents the health status of a service with optional components and failure reasons.A health object can have child components, each with its own health status.The parent health is automatically computed from its components - it isconsidered UP only if all child components are UP. If any component is DOWN,the parent will also be DOWN with a reason listing the failed components.|
+|» **additionalProperties**|[Health](#schemahealth)|false|none|Represents the health status of a service with optional components and failure reasons.- A health object can have child components, i.e. health forms a tree.- Any node in the tree can set itself to DOWN. In this case the node is required    to set the reason attribute. If reason is not set when DOWN,    automatic model validation of the tree will fail.- DOWN'ness is propagated to parent health objects. I.e. the health of a parent    node is automatically set to DOWN if any of its child components are DOWN. The    child components leading to this will be listed in the reason.- The root of the health tree is computed in the system module. The health of other    modules is automatically picked up by the system module.|
 |reason|any|false|none|none|
 
 anyOf

@@ -37,21 +37,30 @@ class Service(BaseService):
     def health(self) -> Health:  # noqa: PLR6301
         """Determine aggregate health of the system.
 
+        - Health exposed by implementations of BaseService in other
+            modules is automatically included into the health tree.
+        - See utils/_health.py:Health for an explanation of the health tree.
+
         Returns:
             Health: The aggregate health of the system.
-
         """
         components: dict[str, Health] = {}
         for service_class in locate_subclasses(BaseService):
             if service_class is not Service:
                 components[f"{service_class.__module__}.{service_class.__name__}"] = service_class().health()
 
-        return Health(status=Health.Status.UP, components=components)
+        return Health(status=Health.Code.UP, components=components)
 
     @staticmethod
     def info(include_environ: bool = False, filter_secrets: bool = True) -> dict[str, Any]:
         """
         Get info about configuration of service.
+
+        - Runtime information is automatically compiled.
+        - Settings are automatically aggregated from all implementations of
+            Pydantic BaseSettings in this package.
+        - Info exposed by implementations of BaseService in other modules is
+            automatically included into the info dict.
 
         Returns:
             dict[str, Any]: Service configuration.
@@ -125,6 +134,9 @@ class Service(BaseService):
     def div_by_zero() -> float:
         """Divide by zero to trigger an error.
 
+        - This function is used to validate error handling and instrumentation
+            in the system.
+
         Returns:
             float: This function will raise a ZeroDivisionError before returning.
         """
@@ -133,6 +145,8 @@ class Service(BaseService):
     @staticmethod
     def sleep(seconds: int) -> None:
         """Sleep for a given number of seconds.
+
+        - This function is used to validate performance profiling in the system.
 
         Args:
             seconds (int): Number of seconds to sleep.

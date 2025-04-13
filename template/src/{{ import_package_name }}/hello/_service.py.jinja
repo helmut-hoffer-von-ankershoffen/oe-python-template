@@ -1,6 +1,6 @@
 """Service of the hello module."""
 
-import random
+import secrets
 import string
 from typing import Any
 
@@ -26,7 +26,7 @@ class Service(BaseService):
         Returns:
             dict[str,Any]: The info of this service.
         """
-        random_string = "".join(random.choices(string.ascii_letters + string.digits, k=5))  # noqa: S311
+        random_string = "".join(secrets.choice(string.ascii_letters + string.digits) for _ in range(5))
 
         return {"noise": random_string}
 
@@ -36,7 +36,7 @@ class Service(BaseService):
         Returns:
             Health: The health of the service.
         """
-        return Health(status=Health.Status.UP)
+        return Health(status=Health.Code.UP)
 
     def get_hello_world(self) -> str:
         """

@@ -73,7 +73,6 @@ def sentry_initialize() -> bool:
 
     Returns:
         bool: True if initialized successfully, False otherwise
-
     """
     settings = load_settings(SentrySettings)
 

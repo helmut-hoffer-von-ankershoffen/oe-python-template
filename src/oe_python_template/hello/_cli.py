@@ -27,7 +27,12 @@ def echo(
         ),
     ] = False,
 ) -> None:
-    """Echo the text."""
+    """Echo the text.
+
+    Args:
+        text (str): The text to echo.
+        json (bool): Print as JSON.
+    """
     echo = Service.echo(Utterance(text=text))
     if json:
         console.print_json(data={"text": echo.text})

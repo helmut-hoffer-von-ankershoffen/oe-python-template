@@ -21,35 +21,40 @@ Projects generated with this template come with a comprehensive development tool
 8. CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
 9. Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
 10. Dependency monitoring and vulnerability scanning with [pip-audit](https://pypi.org/project/pip-audit/), [trivy](https://trivy.dev/latest/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-11. Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/), matched with allow list, and published as release artifacts in CSV and JSON format for further compliance checks
-12. Generation of attributions from extracted licenses
-13. Software Bill of Materials (SBOM) generated in [CycloneDX](https://cyclonedx.org/) and [SPDX](https://spdx.dev/) formats with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) resp. [trivy](https://trivy.dev/latest/), published as release artifacts
-14. Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
-15. Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
-16. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation for the library, CLI, and API
-17. Documentation published to [Read The Docs](https://readthedocs.org/) including generation of PDF and single page HTML versions
-18. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
-19. Python package published to [PyPI](https://pypi.org/)
-20. Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
-21. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
-22. Settings for use with [VSCode](https://code.visualstudio.com/)
-23. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
+11. Error monitoring and profiling with [Sentry](https://sentry.io/)  (optional)
+12. Logging and metrics with [Logfire](https://logfire.dev/) (optional)
+13. Prepared for uptime monitoring with [betterstack](https://betterstack.com/) or alternatives
+13. Licenses of dependencies extracted with [pip-licenses](https://pypi.org/project/pip-licenses/), matched with allow list, and published as release artifacts in CSV and JSON format for further compliance checks
+14. Generation of attributions from extracted licenses
+15. Software Bill of Materials (SBOM) generated in [CycloneDX](https://cyclonedx.org/) and [SPDX](https://spdx.dev/) formats with [cyclonedx-python](https://github.com/CycloneDX/cyclonedx-python) resp. [trivy](https://trivy.dev/latest/), published as release artifacts
+16. Version and release management with [bump-my-version](https://callowayproject.github.io/bump-my-version/)
+17. Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
+18. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation for the library, CLI, and API
+19. Documentation published to [Read The Docs](https://readthedocs.org/) including generation of PDF and single page HTML versions
+20. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
+21. Python package published to [PyPI](https://pypi.org/)
+22. Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
+23. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
+24. Settings for use with [VSCode](https://code.visualstudio.com/)
+25. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
+26. API deployed as serverless function to [Vercel](https://vercel.com/) (optional)
 
 ### Application Features
 
-Beyond development tooling, projects generated with this template include the code, documentation, and configuration of a fully functioning demo application and service. This reference implementation serves as a starting point for your own business logic with modern patterns and practices already in place:
+Beyond development tooling, projects generated with this template include the code, documentation, and configuration of a fully functioning application and service. This reference implementation serves as a starting point for your own business logic with modern patterns and enterprise practices already in place:
 
-1. Modular architecture suitable for use as shared library
-2. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
-3. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
-4. Versioned Web API with [FastAPI](https://fastapi.tiangolo.com/)
-5. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
-6. Simple Web UI with [Streamlit](https://streamlit.io/)
-7. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
-8. Info command and health endpoint to inspect the runtime and check the system status 
-9. API deployable as serverless function to Vercel
+1. Usable as library with "Hello" module exposing a simple service
+2. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
+3. Versioned webservice API with [FastAPI](https://fastapi.tiangolo.com/)
+4. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
+5. Simple Web UI with [Streamlit](https://streamlit.io/)
+6. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
+7. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
+8. Info command enabling to inspect the runtime, compiled settings, and further info provided dynamically by modules
+9. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
 10. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
-11. Documentation including dynamic badges, setup instructions, contribution guide and security policy
+11. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
+12. Documentation including dynamic badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 

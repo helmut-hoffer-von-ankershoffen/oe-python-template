@@ -2,7 +2,14 @@ from fastapi import APIRouter
 
 
 class VersionedAPIRouter(APIRouter):
-    """APIRouter with version attribute."""
+    """APIRouter with version attribute.
+
+    - Use this class to create versioned routers for your FastAPI application
+        that are automatically registered into the FastAPI app.
+    - The version attribute is used to identify the version of the API
+        that the router corresponds to.
+    - See constants.por versions defined for this system.
+    """
 
     version: str
 

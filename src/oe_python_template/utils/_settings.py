@@ -30,7 +30,6 @@ def load_settings(settings_class: type[T]) -> T:
 
     Raises:
         SystemExit: If settings validation fails
-
     """
     try:
         return settings_class()

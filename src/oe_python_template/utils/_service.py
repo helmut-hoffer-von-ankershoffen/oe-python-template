@@ -22,7 +22,6 @@ class BaseService(ABC):
 
         Args:
             settings_class: Optional settings class to load configuration.
-
         """
         if settings_class is not None:
             self._settings = load_settings(settings_class)

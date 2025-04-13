@@ -43,21 +43,28 @@ def register_health_endpoint(router: APIRouter) -> Callable[..., Health]:
     @router.get("/healthz")
     @router.get("/health")
     def health_endpoint(service: Annotated[Service, Depends(get_service)], response: Response) -> Health:
-        """Check the health of the system.
+        """Determine aggregate health of the system.
 
-        This operation returns the health of the system.
-        The status can be either UP or DOWN.
-        If the service is healthy, the status will be UP.
-        If the service is unhealthy, the status will be DOWN and a reason will be provided.
-        The response will have a 200 OK status code if the service is healthy,
-        and a 500 Internal Server Error status code if the service is unhealthy.
+        The health is aggregated from all modules that make
+            up this system including external dependencies.
+
+        The response is to be interpreted as follows:
+        - The status can be either UP or DOWN.
+        - If the service is healthy, the status will be UP.
+        - If the service is unhealthy, the status will be DOWN and a reason will be provided.
+        - The response will have a 200 OK status code if the service is healthy,
+            and a 503 Service Unavailable status code if the service is unhealthy.
+
+        Args:
+            service (Service): The service instance.
+            response (Response): The FastAPI response object.
 
         Returns:
             Health: The health of the system.
         """
         health = service.health()
-        if health.status == Health.Status.DOWN:
-            response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        if health.status == Health.Code.DOWN:
+            response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
 
         return health
 

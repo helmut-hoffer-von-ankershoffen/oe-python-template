@@ -43,7 +43,11 @@ def health(
         OutputFormat, typer.Option(help="Output format", case_sensitive=False)
     ] = OutputFormat.JSON,
 ) -> None:
-    """Determine and print system health."""
+    """Determine and print system health.
+
+    Args:
+        output_format (OutputFormat): Output format (JSON or YAML).
+    """
     match output_format:
         case OutputFormat.JSON:
             console.print_json(data=_service.health().model_dump())
@@ -62,7 +66,13 @@ def info(
         OutputFormat, typer.Option(help="Output format", case_sensitive=False)
     ] = OutputFormat.JSON,
 ) -> None:
-    """Determine and print system info."""
+    """Determine and print system info.
+
+    Args:
+        include_environ (bool): Include environment variables.
+        filter_secrets (bool): Filter secrets from the output.
+        output_format (OutputFormat): Output format (JSON or YAML).
+    """
     info = _service.info(include_environ=include_environ, filter_secrets=filter_secrets)
     match output_format:
         case OutputFormat.JSON:
@@ -77,7 +87,13 @@ def serve(
     port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
     watch: Annotated[bool, typer.Option(help="Enable auto-reload")] = True,
 ) -> None:
-    """Start the webservice API server."""
+    """Start the webservice API server.
+
+    Args:
+        host (str): Host to bind the server to.
+        port (int): Port to bind the server to.
+        watch (bool): Enable auto-reload.
+    """
     console.print(f"Starting API server at http://{host}:{port}")
     # using environ to pass host/port to api.py to generate doc link
     os.environ["UVICORN_HOST"] = host
@@ -99,7 +115,11 @@ def openapi(
         OutputFormat, typer.Option(help="Output format", case_sensitive=False)
     ] = OutputFormat.JSON,
 ) -> None:
-    """Dump the OpenAPI specification to stdout.
+    """Dump the OpenAPI specification.
+
+    Args:
+        api_version (str): API version to dump.
+        output_format (OutputFormat): Output format (JSON or YAML).
 
     Raises:
         typer.Exit: If an invalid API version is provided.
@@ -126,7 +146,7 @@ def openapi(
 def fail() -> None:
     """Fail by dividing by zero.
 
-    Used to validate error handling and instrumentation.
+    - Used to validate error handling and instrumentation.
     """
     Service.div_by_zero()
 
@@ -137,6 +157,9 @@ def sleep(
 ) -> None:
     """Sleep given for given number of seconds.
 
-    Used to validate instrumentation.
+    Args:
+        seconds (int): Number of seconds to sleep.
+
+    - Used to validate performance profiling.
     """
     Service.sleep(seconds)

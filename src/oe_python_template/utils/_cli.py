@@ -15,7 +15,6 @@ def prepare_cli(cli: typer.Typer, epilog: str) -> None:
     Args:
         cli (typer.Typer): Typer instance
         epilog (str): Epilog to add
-
     """
     for _cli in locate_implementations(typer.Typer):
         if _cli != cli:
@@ -42,7 +41,6 @@ def _add_epilog_recursively(cli: typer.Typer, epilog: str) -> None:
     Args:
         cli (typer.Typer): Typer instance
         epilog (str): Epilog to add
-
     """
     cli.info.epilog = epilog
     for group in cli.registered_groups:
@@ -57,11 +55,10 @@ def _add_epilog_recursively(cli: typer.Typer, epilog: str) -> None:
 
 def _no_args_is_help_recursively(cli: typer.Typer) -> None:
     """
-    Add epilog to all typers in the tree.
+    Show help if no command is given by the user.
 
     Args:
         cli (typer.Typer): Typer instance
-
     """
     for group in cli.registered_groups:
         if isinstance(group, typer.models.TyperInfo):

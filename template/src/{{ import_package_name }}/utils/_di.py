@@ -20,7 +20,6 @@ def locate_implementations(_class: type[Any]) -> list[Any]:
 
     Returns:
         list[Any]: List of discovered implementations of the given class.
-
     """
     if _class in _implementation_cache:
         return _implementation_cache[_class]
@@ -49,7 +48,6 @@ def locate_subclasses(_class: type[Any]) -> list[Any]:
 
     Returns:
         list[type[Any]]: List of discovered subclasses of the given class.
-
     """
     if _class in _subclass_cache:
         return _subclass_cache[_class]

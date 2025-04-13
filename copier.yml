@@ -245,3 +245,13 @@ vercel_function_enabled:
   type: bool
   help: Do you want to deploy the API as a Vercel Function?
   default: yes
+
+vercel_badge_snippet:
+  type: str
+  help: Do you have a badge snippet indicating the status of the Vercel deployment? You can get one by going here and entering the domain of your production deployment.
+  default: ""
+
+uptime_badge_snippet:
+  type: str
+  help: Do you have a badge snippet indicating uptime? You can get one by going to Advanced Settings / Github badge for your monitor on Betterstack.
+  default: ""

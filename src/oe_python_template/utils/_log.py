@@ -21,11 +21,10 @@ def get_logger(name: str | None) -> python_logging.Logger:
     Get a logger instance with the given name or project name as default.
 
     Args:
-        name: The name for the logger. If None, uses project name.
+        name(str): The name for the logger. If None, uses project name.
 
     Returns:
         Logger: Configured logger instance.
-
     """
     if (name is None) or (name == __project_name__):
         return python_logging.getLogger(__project_name__)
@@ -73,7 +72,6 @@ class CustomFilter(python_logging.Filter):
 
         Returns:
             bool: True if record should be logged, False otherwise.
-
         """
         return True
 

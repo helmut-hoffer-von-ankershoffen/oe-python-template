@@ -44,6 +44,10 @@ $ oe-python-template hello [OPTIONS] COMMAND [ARGS]...
 
 Echo the text.
 
+Args:
+    text (str): The text to echo.
+    json (bool): Print as JSON.
+
 **Usage**:
 
 ```console
@@ -92,13 +96,16 @@ $ oe-python-template system [OPTIONS] COMMAND [ARGS]...
 * `health`: Determine and print system health.
 * `info`: Determine and print system info.
 * `serve`: Start the webservice API server.
-* `openapi`: Dump the OpenAPI specification to stdout.
+* `openapi`: Dump the OpenAPI specification.
 * `fail`: Fail by dividing by zero.
 * `sleep`: Sleep given for given number of seconds.
 
 ### `oe-python-template system health`
 
 Determine and print system health.
+
+Args:
+    output_format (OutputFormat): Output format (JSON or YAML).
 
 **Usage**:
 
@@ -114,6 +121,11 @@ $ oe-python-template system health [OPTIONS]
 ### `oe-python-template system info`
 
 Determine and print system info.
+
+Args:
+    include_environ (bool): Include environment variables.
+    filter_secrets (bool): Filter secrets from the output.
+    output_format (OutputFormat): Output format (JSON or YAML).
 
 **Usage**:
 
@@ -132,6 +144,11 @@ $ oe-python-template system info [OPTIONS]
 
 Start the webservice API server.
 
+Args:
+    host (str): Host to bind the server to.
+    port (int): Port to bind the server to.
+    watch (bool): Enable auto-reload.
+
 **Usage**:
 
 ```console
@@ -147,7 +164,11 @@ $ oe-python-template system serve [OPTIONS]
 
 ### `oe-python-template system openapi`
 
-Dump the OpenAPI specification to stdout.
+Dump the OpenAPI specification.
+
+Args:
+    api_version (str): API version to dump.
+    output_format (OutputFormat): Output format (JSON or YAML).
 
 Raises:
     typer.Exit: If an invalid API version is provided.
@@ -168,7 +189,7 @@ $ oe-python-template system openapi [OPTIONS]
 
 Fail by dividing by zero.
 
-Used to validate error handling and instrumentation.
+- Used to validate error handling and instrumentation.
 
 **Usage**:
 
@@ -184,7 +205,10 @@ $ oe-python-template system fail [OPTIONS]
 
 Sleep given for given number of seconds.
 
-Used to validate instrumentation.
+Args:
+    seconds (int): Number of seconds to sleep.
+
+- Used to validate performance profiling.
 
 **Usage**:
 
