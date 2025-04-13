@@ -35,25 +35,25 @@ class LogSettings(BaseSettings):
     """Settings for configuring logging behavior."""
 
     model_config = SettingsConfigDict(
-        env_prefix=f"{__project_name__.upper()}_LOGGING_",
+        env_prefix=f"{__project_name__.upper()}_LOG_",
         extra="ignore",
         env_file=__env_file__,
         env_file_encoding="utf-8",
     )
 
-    log_level: Annotated[
+    level: Annotated[
         Literal["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"],
         Field(description="Logging level", default="INFO"),
     ]
-    log_file_enabled: Annotated[
+    file_enabled: Annotated[
         bool,
         Field(description="Enable logging to file", default=False),
     ]
-    log_file_name: Annotated[
+    file_name: Annotated[
         str,
         Field(description="Name of the log file", default=f"{__project_name__}.log"),
     ]
-    log_console_enabled: Annotated[
+    console_enabled: Annotated[
         bool,
         Field(description="Enable logging to console", default=False),
     ]
@@ -84,8 +84,8 @@ def logging_initialize(log_to_logfire: bool = False) -> None:
 
     settings = load_settings(LogSettings)
 
-    if settings.log_file_enabled:
-        file_handler = python_logging.FileHandler(settings.log_file_name)
+    if settings.file_enabled:
+        file_handler = python_logging.FileHandler(settings.file_name)
         file_formatter = python_logging.Formatter(
             fmt="%(asctime)s %(process)d %(levelname)s %(name)s %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
@@ -94,7 +94,7 @@ def logging_initialize(log_to_logfire: bool = False) -> None:
         file_handler.addFilter(log_filter)
         handlers.append(file_handler)
 
-    if settings.log_console_enabled:
+    if settings.console_enabled:
         rich_handler = RichHandler(
             console=Console(stderr=True),
             markup=True,
@@ -115,7 +115,7 @@ def logging_initialize(log_to_logfire: bool = False) -> None:
         handlers.append(t.cast("FileHandler", logfire_handler))
 
     python_logging.basicConfig(
-        level=settings.log_level,
+        level=settings.level,
         format="%(name)s %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         handlers=handlers,

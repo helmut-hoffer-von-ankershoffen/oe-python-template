@@ -24,6 +24,7 @@ from ._process import ProcessInfo, get_process_info
 from ._sentry import SentrySettings
 from ._service import BaseService
 from ._settings import load_settings
+from .boot import boot
 
 __all__ = [
     "BaseService",
@@ -45,6 +46,7 @@ __all__ = [
     "__project_path__",
     "__repository_url__",
     "__version__",
+    "boot",
     "console",
     "get_logger",
     "get_process_info",

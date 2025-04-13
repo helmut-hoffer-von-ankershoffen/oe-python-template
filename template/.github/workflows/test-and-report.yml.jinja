@@ -55,10 +55,10 @@ jobs:
         uses: SpicyPizza/create-envfile@ace6d4f5d7802b600276c23ca417e669f1a06f6f # v2.0.3
         with:
           envkey_ENV: "TEST"
-          envkey_OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN: "{% raw %}${{ secrets.OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN }}{% endraw %}"
-          envkey_OE_PYTHON_TEMPLATE_SENTRY_DSN: "{% raw %}${{ secrets.OE_PYTHON_TEMPLATE_SENTRY_DSN }}{% endraw %}"
-          envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_LEVEL: "DEBUG"
-          envkey_OE_PYTHON_TEMPLATE_LOGGING_LOG_FILE_ENABLED: 1
+          envkey_{{ import_package_name_case_upper }}_LOGFIRE_TOKEN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_LOGFIRE_TOKEN }}{% endraw %}"
+          envkey_{{ import_package_name_case_upper }}_SENTRY_DSN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_SENTRY_DSN }}{% endraw %}"
+          envkey_{{ import_package_name_case_upper }}_LOGGING_LOG_LEVEL: "DEBUG"
+          envkey_{{ import_package_name_case_upper }}_LOGGING_LOG_FILE_ENABLED: 1
           fail_on_empty: true
 
       - name: Validate installation

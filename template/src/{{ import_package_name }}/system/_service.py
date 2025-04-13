@@ -27,14 +27,20 @@ from ..utils import (  # noqa: TID252
 class Service(BaseService):
     """System service."""
 
-    is_healthy: bool
-
     def __init__(self) -> None:
         """Initialize service."""
         super().__init__()
-        self.is_healthy = True
 
-    def health(self) -> Health:  # noqa: PLR6301
+    @staticmethod
+    def _is_healthy() -> bool:
+        """Check if the service itself is healthy.
+
+        Returns:
+            bool: True if the service is healthy, False otherwise.
+        """
+        return True
+
+    def health(self) -> Health:
         """Determine aggregate health of the system.
 
         - Health exposed by implementations of BaseService in other
@@ -49,7 +55,10 @@ class Service(BaseService):
             if service_class is not Service:
                 components[f"{service_class.__module__}.{service_class.__name__}"] = service_class().health()
 
-        return Health(status=Health.Code.UP, components=components)
+        # Set the system health status based on is_healthy attribute
+        status = Health.Code.UP if self._is_healthy() else Health.Code.DOWN
+        reason = None if self._is_healthy() else "System marked as unhealthy"
+        return Health(status=status, components=components, reason=reason)
 
     @staticmethod
     def info(include_environ: bool = False, filter_secrets: bool = True) -> dict[str, Any]:

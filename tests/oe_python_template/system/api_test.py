@@ -1,17 +1,24 @@
 """Tests to verify the API functionality of the system module."""
 
+from unittest.mock import patch
+
 import pytest
 from fastapi.testclient import TestClient
 
 from oe_python_template.api import app
+from oe_python_template.system._service import Service
 
-HELLO_WORLD_PATH_V1 = "/api/v1/hello/world"
-HELLO_WORLD_PATH_V2 = "/api/v2/hello/world"
+HEALTH_PATH_V1 = "/api/v1/health"
+HEALTH_PATH_V2 = "/api/v2/health"
 
-ECHO_PATH_V1 = "/api/v1/hello/echo"
-ECHO_PATH_V2 = "/api/v2/hello/echo"
+HEALTHZ_PATH_V1 = "/api/v1/healthz"
+HEALTHZ_PATH_V2 = "/api/v2/healthz"
 
-HELLO_WORLD = "Hello, world!"
+SERVICE_UP = "UP"
+SERVICE_DOWN = "DOWN"
+REASON = "reason"
+STATUS = "status"
+SERVICE_IS_UNHEALTHY = "System marked as unhealthy"
 
 
 @pytest.fixture
@@ -20,40 +27,51 @@ def client() -> TestClient:
     return TestClient(app)
 
 
-def test_hello_world_endpoint(client: TestClient) -> None:
-    """Test that the hello-world endpoint returns the expected message."""
-    response = client.get(HELLO_WORLD_PATH_V1)
+def test_health_endpoint(client: TestClient) -> None:
+    """Test that the health endpoint returns UP status."""
+    response = client.get(HEALTH_PATH_V1)
     assert response.status_code == 200
-    assert response.json()["message"].startswith(HELLO_WORLD)
+    assert response.json()[STATUS] == SERVICE_UP
+    assert response.json()[REASON] is None
 
-    response = client.get(HELLO_WORLD_PATH_V2)
+    response = client.get(HEALTH_PATH_V2)
     assert response.status_code == 200
-    assert response.json()["message"].startswith(HELLO_WORLD)
+    assert response.json()[STATUS] == SERVICE_UP
+    assert response.json()[REASON] is None
 
-
-def test_echo_endpoint_valid_input(client: TestClient) -> None:
-    """Test that the echo endpoint returns the input text."""
-    test_text = "Test message"
-
-    response = client.get(f"{ECHO_PATH_V1}/{test_text}")
+    response = client.get(HEALTHZ_PATH_V1)
     assert response.status_code == 200
-    assert response.json() == {"text": test_text.upper()}
+    assert response.json()[STATUS] == SERVICE_UP
+    assert response.json()[REASON] is None
 
-    response = client.post(ECHO_PATH_V2, json={"text": test_text})
+    response = client.get(HEALTHZ_PATH_V2)
     assert response.status_code == 200
-    assert response.json() == {"text": test_text.upper()}
+    assert response.json()[STATUS] == SERVICE_UP
+    assert response.json()[REASON] is None
 
 
-def test_echo_endpoint_empty_text(client: TestClient) -> None:
-    """Test that the echo endpoint validates empty text."""
-    response = client.post(ECHO_PATH_V2, json={"text": ""})
-    assert response.status_code == 422  # Validation error
+def test_health_endpoint_down(client: TestClient) -> None:
+    """Test that the health endpoint returns 503 status when service is unhealthy.
 
+    We patch the _is_healthy method to return False, simulating an unhealthy service.
+    """
+    # Patch the _is_healthy method to always return False
+    with patch.object(Service, "_is_healthy", return_value=False):
+        # Test v1 health endpoints
 
-def test_echo_endpoint_missing_text(client: TestClient) -> None:
-    """Test that the echo endpoint validates missing text field."""
-    response = client.get(ECHO_PATH_V1)
-    assert response.status_code == 404  # Not found
+        # Test v1 health endpoints
+        response = client.get(HEALTHZ_PATH_V1)
+        assert response.status_code == 503
+        assert response.json()[STATUS] == SERVICE_DOWN
+        assert SERVICE_IS_UNHEALTHY in response.json()[REASON]
 
-    response = client.post(ECHO_PATH_V2, json={})
-    assert response.status_code == 422  # Validation error
+        # Test v2 health endpoints
+        response = client.get(HEALTH_PATH_V2)
+        assert response.status_code == 503
+        assert response.json()[STATUS] == SERVICE_DOWN
+        assert SERVICE_IS_UNHEALTHY in response.json()[REASON]
+
+        response = client.get(HEALTHZ_PATH_V2)
+        assert response.status_code == 503
+        assert response.json()[STATUS] == SERVICE_DOWN
+        assert SERVICE_IS_UNHEALTHY in response.json()[REASON]

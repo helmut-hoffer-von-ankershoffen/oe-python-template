@@ -5,6 +5,7 @@ from typing import Annotated
 import sentry_sdk
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sentry_sdk.integrations.typer import TyperIntegration
 
 from ._constants import __env__, __env_file__, __project_name__, __version__
 from ._settings import load_settings
@@ -89,6 +90,7 @@ def sentry_initialize() -> bool:
         sample_rate=settings.sample_rate,
         traces_sample_rate=settings.traces_sample_rate,
         profiles_sample_rate=settings.profiles_sample_rate,
+        integrations=[TyperIntegration()],
     )
 
     return True

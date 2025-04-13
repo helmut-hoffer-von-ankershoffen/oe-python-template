@@ -1,4 +1,4 @@
-"""Webservice API of OE Python Template.
+"""Webservice API of {{ project_name }}.
 
 - Provides a versioned API
 - Automatically registers APIs of modules and mounts them to the main API.
@@ -18,7 +18,7 @@ from .utils import (
     locate_implementations,
 )
 
-TITLE = "OE Python Template"
+TITLE = "{{ project_name }}"
 UVICORN_HOST = os.environ.get("UVICORN_HOST", "127.0.0.1")
 UVICORN_PORT = os.environ.get("UVICORN_PORT", "8000")
 CONTACT_NAME = __author_name__
