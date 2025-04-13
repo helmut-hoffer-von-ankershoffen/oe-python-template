@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.10.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.1..0.10.2) - 2025-04-13
+## [0.10.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.2..0.10.3) - 2025-04-13
+
+### 📚 Documentation
+
+- Where to get badge - ([857bf2d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/857bf2dee15a3d1bf645e831eb984294fad2db64))
+
+
+## [0.10.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.1..v0.10.2) - 2025-04-13
 
 ### ⛰️  Features
 
