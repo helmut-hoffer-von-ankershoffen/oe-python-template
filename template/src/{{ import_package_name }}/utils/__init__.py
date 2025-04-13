@@ -6,6 +6,7 @@ from ._console import console
 from ._constants import (
     __author_email__,
     __author_name__,
+    __base__url__,
     __documentation__url__,
     __env__,
     __env_file__,
@@ -39,6 +40,7 @@ __all__ = [
     "VersionedAPIRouter",
     "__author_email__",
     "__author_name__",
+    "__base__url__",
     "__documentation__url__",
     "__env__",
     "__env_file__",

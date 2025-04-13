@@ -13,6 +13,7 @@ from .utils import (
     VersionedAPIRouter,
     __author_email__,
     __author_name__,
+    __base__url__,
     __documentation__url__,
     __repository_url__,
     locate_implementations,
@@ -26,6 +27,9 @@ CONTACT_EMAIL = __author_email__
 CONTACT_URL = __repository_url__
 TERMS_OF_SERVICE_URL = __documentation__url__
 
+API_BASE_URL = __base__url__
+if not API_BASE_URL:
+    API_BASE_URL = f"http://{UVICORN_HOST}:{UVICORN_PORT}"
 
 app = FastAPI(
     root_path="/api",
@@ -42,7 +46,7 @@ app = FastAPI(
             "description": f"API version {version.lstrip('v')}, check link on the right",
             "externalDocs": {
                 "description": "sub-docs",
-                "url": f"http://{UVICORN_HOST}:{UVICORN_PORT}/api/{version}/docs",
+                "url": f"{API_BASE_URL}/api/{version}/docs",
             },
         }
         for version, _ in API_VERSIONS.items()

@@ -5,6 +5,10 @@ import sys
 from importlib import metadata
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 __project_name__ = __name__.split(".")[0]
 __project_path__ = str(Path(__file__).parent.parent.parent)
 __version__ = metadata.version(__project_name__)
@@ -20,6 +24,13 @@ __env_file__ = [
 env_file_path = os.getenv(f"{__project_name__.upper()}_ENV_FILE")
 if env_file_path:
     __env_file__.insert(2, Path(env_file_path))
+
+vercel_base_url = os.getenv("VERCEL_URL", None)
+if vercel_base_url:
+    vercel_base_url = "https://" + vercel_base_url
+__base__url__ = os.getenv(__project_name__.upper() + "_BASE_URL", None)
+if not __base__url__ and vercel_base_url:
+    __base__url__ = vercel_base_url
 
 
 def get_project_url_by_label(prefix: str) -> str:
