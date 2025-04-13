@@ -63,6 +63,10 @@ def test_cli_openapi_yaml(runner: CliRunner) -> None:
     # Check for specific v2 elements
     assert "Utterance:" in result.output
 
+    result = runner.invoke(cli, ["system", "openapi", "--api-version", "v3", "--output-format", "yaml"])
+    assert result.exit_code == 1
+    assert "Error: Invalid API version 'v3'. Available versions: v1, v2" in result.output
+
 
 def test_cli_openapi_json(runner: CliRunner) -> None:
     """Check openapi command outputs JSON schema."""
@@ -72,3 +76,18 @@ def test_cli_openapi_json(runner: CliRunner) -> None:
     assert '"openapi":' in result.output
     assert '"info":' in result.output
     assert '"paths":' in result.output
+
+
+@pytest.mark.scheduled
+def test_fail(runner: CliRunner) -> None:
+    """Check fails."""
+    result = runner.invoke(cli, ["system", "fail"])
+    assert result.exit_code == 1
+
+
+@pytest.mark.scheduled
+@pytest.mark.long_running
+def test_sleep(runner: CliRunner) -> None:
+    """Check sleep."""
+    result = runner.invoke(cli, ["system", "sleep"])
+    assert result.exit_code == 0
