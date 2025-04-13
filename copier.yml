@@ -248,7 +248,7 @@ vercel_function_enabled:
 
 vercel_badge_snippet:
   type: str
-  help: Do you have a badge snippet indicating the status of the Vercel deployment? You can get one by going here and entering the domain of your production deployment.
+  help: Do you have a badge snippet indicating the status of the Vercel deployment? You can get one by going to https://deploy-badge.vercel.app/vercel and entering the domain of your production deployment.
   default: ""
 
 uptime_badge_snippet:

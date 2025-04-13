@@ -9,7 +9,7 @@ highlight_theme: darkula
 ---
 
 
-                             'python3.11' (pid 4345)                                                                                                                                                            
+                             'python3.11' (pid 8903)                                                                                                                                                            
                     DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "GET /v1/info HTTP/1.1" 200 None                                                                   connectionpool.py:544
 components:
   schemas:
@@ -245,4 +245,4 @@ https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2
                     DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0                                                                   connectionpool.py:544
 https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0
 
-> 2025-04-13 16:04:24 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.1 (project root /Users/helmut/Code/oe-python-template, pid 4629), parent            boot.py:78
+> 2025-04-13 16:08:57 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.2 (project root /Users/helmut/Code/oe-python-template, pid 9118), parent            boot.py:78
