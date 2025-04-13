@@ -3,8 +3,7 @@
 
 # 🧠 OE Python Template
 
-[![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
-](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/oe-python-template.svg?logo=python&color=204361&labelColor=1E2933)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
 [![CI](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml/badge.svg)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml)
 [![Read the Docs](https://img.shields.io/readthedocs/oe-python-template)](https://oe-python-template.readthedocs.io/en/latest/)
@@ -28,7 +27,7 @@
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3IDE2VjdsLTYgNU0yIDlWOGwxLTFoMWw0IDMgOC04aDFsNCAyIDEgMXYxNGwtMSAxLTQgMmgtMWwtOC04LTQgM0gzbC0xLTF2LTFsMy0zIi8+PC9zdmc+)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template)
 [![Open in GitHub Codespaces](https://img.shields.io/static/v1?label=GitHub%20Codespaces&message=Open&color=blue&logo=github)](https://github.com/codespaces/new/helmut-hoffer-von-ankershoffen/oe-python-template)
-[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/oe-python-template?root=docs)](https://oe-python-template.vercel.app/docs)
+[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/oe-python-template?root=docs)](https://oe-python-template.vercel.app/api/v1/hello/world)
 [![Better Stack Uptime](https://uptime.betterstack.com/status-badges/v1/monitor/1vze5.svg)](https://helmut-hoffer-von-ankershoffen.betteruptime.com/)
 
 <!---
@@ -37,7 +36,10 @@
 -->
 
 > [!TIP]
-> 📚 [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) - 📖 [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
+> 📚
+> [Online documentation](https://oe-python-template.readthedocs.io/en/latest/) -
+> 📖
+> [PDF Manual](https://oe-python-template.readthedocs.io/_/downloads/en/latest/pdf/)
 
 ---
 
