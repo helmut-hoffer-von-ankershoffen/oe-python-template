@@ -11,6 +11,7 @@ from typing import Any
 from pydantic_settings import BaseSettings
 
 from ..utils import (  # noqa: TID252
+    UNHIDE_SENSITIVE_INFO,
     BaseService,
     Health,
     __env__,
@@ -18,18 +19,24 @@ from ..utils import (  # noqa: TID252
     __project_path__,
     __repository_url__,
     __version__,
+    get_logger,
     get_process_info,
     load_settings,
     locate_subclasses,
 )
+from ._settings import Settings
+
+logger = get_logger(__name__)
 
 
 class Service(BaseService):
     """System service."""
 
+    _settings: Settings
+
     def __init__(self) -> None:
         """Initialize service."""
-        super().__init__()
+        super().__init__(Settings)
 
     @staticmethod
     def _is_healthy() -> bool:
@@ -59,6 +66,18 @@ class Service(BaseService):
         status = Health.Code.UP if self._is_healthy() else Health.Code.DOWN
         reason = None if self._is_healthy() else "System marked as unhealthy"
         return Health(status=status, components=components, reason=reason)
+
+    def is_token_valid(self, token: str) -> bool:
+        """Check if the presented token is valid.
+
+        Returns:
+            bool: True if the token is valid, False otherwise.
+        """
+        logger.info(token)
+        if not self._settings.token:
+            logger.warning("Token is not set in settings.")
+            return False
+        return token == self._settings.token.get_secret_value()
 
     @staticmethod
     def info(include_environ: bool = False, filter_secrets: bool = True) -> dict[str, Any]:
@@ -126,7 +145,7 @@ class Service(BaseService):
         for settings_class in locate_subclasses(BaseSettings):
             settings_instance = load_settings(settings_class)
             env_prefix = settings_instance.model_config.get("env_prefix", "")
-            settings_dict = json.loads(settings_instance.model_dump_json())
+            settings_dict = settings_instance.model_dump(context={UNHIDE_SENSITIVE_INFO: not filter_secrets})
             for key, value in settings_dict.items():
                 flat_key = f"{env_prefix}{key}".upper()
                 settings[flat_key] = value

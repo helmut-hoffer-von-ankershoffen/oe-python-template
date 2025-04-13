@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 from typing import TypeVar
 
-from pydantic import ValidationError
+from pydantic import FieldSerializationInfo, SecretStr, ValidationError
 from pydantic_settings import BaseSettings
 from rich.panel import Panel
 from rich.text import Text
@@ -16,6 +16,18 @@ from ._console import console
 T = TypeVar("T", bound=BaseSettings)
 
 logger = logging.getLogger(__name__)
+
+UNHIDE_SENSITIVE_INFO = "unhide_sensitive_info"
+
+
+class OpaqueSettings(BaseSettings):
+    @staticmethod
+    def serialize_sensitive_info(input_value: SecretStr, info: FieldSerializationInfo) -> str | None:
+        if not input_value:
+            return None
+        if info.context.get(UNHIDE_SENSITIVE_INFO, False):  # type: ignore
+            return input_value.get_secret_value()
+        return str(input_value)
 
 
 def load_settings(settings_class: type[T]) -> T:

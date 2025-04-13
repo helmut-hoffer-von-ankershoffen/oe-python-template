@@ -3,15 +3,15 @@
 from typing import Annotated
 
 import sentry_sdk
-from pydantic import Field, SecretStr
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import Field, PlainSerializer, SecretStr
+from pydantic_settings import SettingsConfigDict
 from sentry_sdk.integrations.typer import TyperIntegration
 
 from ._constants import __env__, __env_file__, __project_name__, __version__
-from ._settings import load_settings
+from ._settings import OpaqueSettings, load_settings
 
 
-class SentrySettings(BaseSettings):
+class SentrySettings(OpaqueSettings):
     """Configuration settings for Sentry integration."""
 
     model_config = SettingsConfigDict(
@@ -23,6 +23,7 @@ class SentrySettings(BaseSettings):
 
     dsn: Annotated[
         SecretStr | None,
+        PlainSerializer(func=OpaqueSettings.serialize_sensitive_info, return_type=str, when_used="always"),
         Field(description="Sentry DSN", examples=["https://SECRET@SECRET.ingest.de.sentry.io/SECRET"], default=None),
     ]
 

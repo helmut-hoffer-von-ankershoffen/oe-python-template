@@ -7,7 +7,7 @@ The endpoints use Pydantic models for request and response validation.
 """
 
 from collections.abc import Callable, Generator
-from typing import Annotated
+from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, Response, status
 
@@ -41,11 +41,11 @@ def register_health_endpoint(router: APIRouter) -> Callable[..., Health]:
     """
 
     @router.get("/healthz")
-    @router.get("/health")
+    @router.get("/system/health")
     def health_endpoint(service: Annotated[Service, Depends(get_service)], response: Response) -> Health:
         """Determine aggregate health of the system.
 
-        The health is aggregated from all modules that make
+        The health is aggregated from all modules making
             up this system including external dependencies.
 
         The response is to be interpreted as follows:
@@ -71,8 +71,46 @@ def register_health_endpoint(router: APIRouter) -> Callable[..., Health]:
     return health_endpoint
 
 
+def register_info_endpoint(router: APIRouter) -> Callable[..., dict[str, Any]]:
+    """Register info endpoint to the given router.
+
+    Args:
+        router: The router to register the info endpoint to.
+
+    Returns:
+        Callable[..., Health]: The health endpoint function.
+    """
+
+    @router.get("/system/info")
+    def info_endpoint(
+        service: Annotated[Service, Depends(get_service)], response: Response, token: str
+    ) -> dict[str, Any]:
+        """Determine aggregate info of the system.
+
+        The info is aggregated from all modules making up this system.
+
+        If the token does not match the setting, a 403 Forbidden status code is returned.
+
+        Args:
+            service (Service): The service instance.
+            response (Response): The FastAPI response object.
+            token (str): Token to present.
+
+        Returns:
+            dict[str, Any]: The aggregate info of the system.
+        """
+        if service.is_token_valid(token):
+            return service.info(include_environ=True, filter_secrets=False)
+
+        response.status_code = status.HTTP_403_FORBIDDEN
+        return {"error": "Forbidden"}
+
+    return info_endpoint
+
+
 api_routers = {}
 for version in API_VERSIONS:
     router = VersionedAPIRouter(version, tags=["system"])
     api_routers[version] = router
     health = register_health_endpoint(api_routers[version])
+    info = register_info_endpoint(api_routers[version])

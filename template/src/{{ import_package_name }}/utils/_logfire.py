@@ -3,14 +3,14 @@
 from typing import Annotated
 
 import logfire
-from pydantic import Field, SecretStr
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import Field, PlainSerializer, SecretStr
+from pydantic_settings import SettingsConfigDict
 
 from ._constants import __env__, __env_file__, __project_name__, __repository_url__, __version__
-from ._settings import load_settings
+from ._settings import OpaqueSettings, load_settings
 
 
-class LogfireSettings(BaseSettings):
+class LogfireSettings(OpaqueSettings):
     """Configuration settings for Logfire integration."""
 
     model_config = SettingsConfigDict(
@@ -22,6 +22,7 @@ class LogfireSettings(BaseSettings):
 
     token: Annotated[
         SecretStr | None,
+        PlainSerializer(func=OpaqueSettings.serialize_sensitive_info, return_type=str, when_used="always"),
         Field(description="Logfire token. Leave empty to disable logfire.", examples=["YOUR_TOKEN"], default=None),
     ]
     instrument_system_metrics: Annotated[

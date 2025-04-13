@@ -10,7 +10,7 @@ __project_path__ = str(Path(__file__).parent.parent.parent)
 __version__ = metadata.version(__project_name__)
 __is_development_mode__ = "uvx" not in sys.argv[0].lower()
 __is_running_in_container__ = os.getenv(f"{__project_name__.upper()}_RUNNING_IN_CONTAINER")
-__env__ = os.getenv("ENV", "local")
+__env__ = os.getenv("ENV", os.getenv("VERCEL_ENV", "local"))
 __env_file__ = [
     Path.home() / f".{__project_name__}" / ".env",
     Path.home() / f".{__project_name__}" / f".env.{__env__}",

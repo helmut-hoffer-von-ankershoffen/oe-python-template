@@ -1,3 +1,6 @@
+2025-04-13 16:04:27 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.10.1 (project root /Users/helmut/Code/oe-python-template, pid 4653), parent            boot.py:78
+                             'python3.11' (pid 4345)                                                                                                                                                            
+                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "GET /v1/info HTTP/1.1" 200 None                                                                   connectionpool.py:544
 {
   "openapi": "3.1.0",
   "info": {
@@ -75,14 +78,14 @@
         }
       }
     },
-    "/health": {
+    "/system/health": {
       "get": {
         "tags": [
           "system"
         ],
         "summary": "Health Endpoint",
-        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules that make\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
-        "operationId": "health_endpoint_health_get",
+        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules making\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
+        "operationId": "health_endpoint_system_health_get",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -103,7 +106,7 @@
           "system"
         ],
         "summary": "Health Endpoint",
-        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules that make\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
+        "description": "Determine aggregate health of the system.\n\nThe health is aggregated from all modules making\n    up this system including external dependencies.\n\nThe response is to be interpreted as follows:\n- The status can be either UP or DOWN.\n- If the service is healthy, the status will be UP.\n- If the service is unhealthy, the status will be DOWN and a reason will be provided.\n- The response will have a 200 OK status code if the service is healthy,\n    and a 503 Service Unavailable status code if the service is unhealthy.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n\nReturns:\n    Health: The health of the system.",
         "operationId": "health_endpoint_healthz_get",
         "responses": {
           "200": {
@@ -112,6 +115,51 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/system/info": {
+      "get": {
+        "tags": [
+          "system"
+        ],
+        "summary": "Info Endpoint",
+        "description": "Determine aggregate info of the system.\n\nThe info is aggregated from all modules making up this system.\n\nIf the token does not match the setting, a 403 Forbidden status code is returned.\n\nArgs:\n    service (Service): The service instance.\n    response (Response): The FastAPI response object.\n    token (str): Token to present.\n\nReturns:\n    dict[str, Any]: The aggregate info of the system.",
+        "operationId": "info_endpoint_system_info_get",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Token"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Info Endpoint System Info Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -266,3 +314,11 @@
     }
   }
 }
+2025-04-13 16:04:28 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): logfire-eu.pydantic.dev:443                                                                        connectionpool.py:1049
+Starting new HTTPS connection (1): logfire-eu.pydantic.dev:443
+                    DEBUG    urllib3.connectionpool Starting new HTTPS connection (2): logfire-eu.pydantic.dev:443                                                                        connectionpool.py:1049
+Starting new HTTPS connection (2): logfire-eu.pydantic.dev:443
+                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2                                                                  connectionpool.py:544
+https://logfire-eu.pydantic.dev:443 "POST /v1/metrics HTTP/1.1" 200 2
+                    DEBUG    urllib3.connectionpool https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0                                                                   connectionpool.py:544
+https://logfire-eu.pydantic.dev:443 "POST /v1/traces HTTP/1.1" 200 0

@@ -23,15 +23,17 @@ from ._logfire import LogfireSettings
 from ._process import ProcessInfo, get_process_info
 from ._sentry import SentrySettings
 from ._service import BaseService
-from ._settings import load_settings
+from ._settings import UNHIDE_SENSITIVE_INFO, OpaqueSettings, load_settings
 from .boot import boot
 
 __all__ = [
+    "UNHIDE_SENSITIVE_INFO",
     "BaseService",
     "Health",
     "LogSettings",
     "LogSettings",
     "LogfireSettings",
+    "OpaqueSettings",
     "ProcessInfo",
     "SentrySettings",
     "VersionedAPIRouter",

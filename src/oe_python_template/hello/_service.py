@@ -23,7 +23,7 @@ class Service(BaseService):
 
     def __init__(self) -> None:
         """Initialize service."""
-        super().__init__(Settings)
+        super().__init__(Settings)  # automatically loads and validates the settings
 
     def info(self) -> dict[str, Any]:  # noqa: PLR6301
         """Determine info of this service.

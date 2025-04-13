@@ -8,8 +8,8 @@ from requests.models import Response
 
 from oe_python_template.api import app
 
-HEALTH_PATH_V1 = "/api/v1/health"
-HEALTH_PATH_V2 = "/api/v2/health"
+HEALTH_PATH_V1 = "/api/v1/system/health"
+HEALTH_PATH_V2 = "/api/v2/system/health"
 
 HEALTHZ_PATH_V1 = "/api/v1/healthz"
 HEALTHZ_PATH_V2 = "/api/v2/healthz"

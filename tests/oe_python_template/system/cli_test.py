@@ -1,11 +1,14 @@
 """Tests to verify the CLI functionality of the system module."""
 
+import os
 from unittest.mock import patch
 
 import pytest
 from typer.testing import CliRunner
 
 from oe_python_template.cli import cli
+
+THE_VALUE = "THE_VALUE"
 
 
 @pytest.fixture
@@ -27,6 +30,24 @@ def test_cli_info(runner: CliRunner) -> None:
     result = runner.invoke(cli, ["system", "info"])
     assert result.exit_code == 0
     assert "oe_python_template.log" in result.output
+
+
+def test_cli_info_secrets(runner: CliRunner) -> None:
+    """Check secrets only shown if requested."""
+    with runner.isolated_filesystem():
+        # Set environment variable for the test
+        env = os.environ.copy()
+        env["OE_PYTHON_TEMPLATE_SYSTEM_TOKEN"] = THE_VALUE
+
+        # Run the CLI with the runner
+        result = runner.invoke(cli, ["system", "info"], env=env)
+        assert result.exit_code == 0
+        assert THE_VALUE not in result.output
+
+        # Run the CLI with the runner
+        result = runner.invoke(cli, ["system", "info", "--no-filter-secrets"], env=env)
+        assert result.exit_code == 0
+        assert THE_VALUE in result.output
 
 
 @patch("uvicorn.run")
