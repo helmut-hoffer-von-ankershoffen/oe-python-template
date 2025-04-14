@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.11.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.10..0.11.0) - 2025-04-13
+## [0.11.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.0..0.11.1) - 2025-04-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(make)* Install - ([7c5cea8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/7c5cea8c61d4ca202e8057bdcf50da1af7b512cd))
+
+
+## [0.11.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.10.10..v0.11.0) - 2025-04-13
 
 ### 📚 Documentation
 
