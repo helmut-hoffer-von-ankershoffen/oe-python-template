@@ -2,20 +2,16 @@
 
 Thank you for considering contributing to {{ project_name}}!
 
-
 ## Setup
-
-Install or update tools required for development:
-
-```shell
-# Install Homebrew, uv package manager, copier and further dev tools
-curl -LsSf https://raw.githubusercontent.com/{{ github_repository_owner }}/{{ github_repository_name }}/HEAD/install.sh | sh
-```
 
 [Create a fork]({{ github_repository_url_https}}/fork) and clone your fork using ```git clone URL_OF_YOUR_CLONE```. Then change into the directory of your local {{ project_name }} repository with ```cd {{ github_repository_name }}```.
 
 If you are one of the committers of {{ github_repository_url_https}} you can directly clone via ```git clone {{ github_repository_url_ssh }}``` and ```cd {{ github_repository_name }}```.
 
+Install or update development dependencies using 
+```shell
+make install
+```
 
 ## Directory Layout
 

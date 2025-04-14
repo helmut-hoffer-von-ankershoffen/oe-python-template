@@ -2,20 +2,16 @@
 
 Thank you for considering contributing to OE Python Template!
 
-
 ## Setup
-
-Install or update tools required for development:
-
-```shell
-# Install Homebrew, uv package manager, copier and further dev tools
-curl -LsSf https://raw.githubusercontent.com/helmut-hoffer-von-ankershoffen/oe-python-template/HEAD/install.sh | sh
-```
 
 [Create a fork](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/fork) and clone your fork using ```git clone URL_OF_YOUR_CLONE```. Then change into the directory of your local OE Python Template repository with ```cd oe-python-template```.
 
 If you are one of the committers of https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template you can directly clone via ```git clone git@github.com:helmut-hoffer-von-ankershoffen/oe-python-template.git``` and ```cd oe-python-template```.
 
+Install or update development dependencies using 
+```shell
+make install
+```
 
 ## Directory Layout
 

@@ -1,7 +1,7 @@
 # Makefile for running common development tasks
 
 # Define all PHONY targets
-.PHONY: all act audit bump clean dist dist_vercel docs docker_build lint setup setup test test_scheduled test_long_running update_from_template
+.PHONY: all act audit bump clean dist dist_vercel docs docker_build install lint setup setup test test_scheduled test_long_running update_from_template
 
 # Main target i.e. default sessions defined in noxfile.py
 all:
@@ -29,6 +29,11 @@ act audit bump dist dist_vercel docs lint setup test update_from_template:
 	$(nox-cmd)
 
 # Standalone targets
+
+## Install development dependencies and pre-commit hooks
+install:
+	sh install.sh
+	pre-commit install
 
 ## Run tests marked as scheduled
 test_scheduled:
@@ -73,6 +78,7 @@ help:
 	@echo "  dist_vercel           - Package as Vercel Function into dist_vercel/"
 	@echo "  docs [pdf]            - Build documentation (add pdf for PDF format)"
 	@echo "  docker_build          - Build Docker image oe-python-template"
+	@echo "  install               - Install development dependencies and pre-commit hooks"
 	@echo "  lint                  - Run linting and formatting checks"
 	@echo "  setup                 - Setup development environment"
 	@echo "  test [3.11|3.12|3.13] - Run tests (for specific Python version)"
