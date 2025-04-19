@@ -50,6 +50,7 @@ def test_cli_info_secrets(runner: CliRunner) -> None:
         assert THE_VALUE in result.output
 
 
+@pytest.mark.timeout(10)
 @patch("uvicorn.run")
 def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
     """Check serve command starts the server."""

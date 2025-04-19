@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 from requests.models import Response
 
-from oe_python_template.api import app
+from oe_python_template.api import api
 
 HEALTH_PATH_V1 = "/api/v1/system/health"
 HEALTH_PATH_V2 = "/api/v2/system/health"
@@ -33,7 +33,7 @@ REASON = "reason"
 @pytest.fixture
 def client() -> TestClient:
     """Provide a FastAPI test client fixture."""
-    return TestClient(app)
+    return TestClient(api)
 
 
 def test_hello_world_endpoint(client: TestClient) -> None:
