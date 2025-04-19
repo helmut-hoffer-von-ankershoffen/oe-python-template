@@ -30,6 +30,7 @@ COPY *.md /app
 
 COPY .env.example /app/.env.example
 COPY tests /app/tests
+COPY examples /app/examples
 
 # Install project specifics
 # Nothing yet

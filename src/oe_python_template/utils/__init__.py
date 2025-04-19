@@ -60,3 +60,12 @@ __all__ = [
     "prepare_cli",
     "strip_to_none_before_validator",
 ]
+
+from importlib.util import find_spec
+
+if find_spec("nicegui"):
+    from ._gui import gui_run
+
+    __all__ += [
+        "gui_run",
+    ]

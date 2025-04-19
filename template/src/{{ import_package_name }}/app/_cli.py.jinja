@@ -1,0 +1,13 @@
+"""CLI (Command Line Interface) of app module."""
+
+from {{ import_package_name }}.utils import get_logger, gui_run
+
+from ..cli import cli  # noqa: TID252
+
+logger = get_logger(__name__)
+
+
+@cli.command()
+def app() -> None:
+    """Start app in native window."""
+    gui_run(title="{{ project_name }}", icon="{{ project_icon }}")

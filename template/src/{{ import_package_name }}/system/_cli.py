@@ -3,6 +3,7 @@
 import json
 import os
 from enum import StrEnum
+from importlib.util import find_spec
 from typing import Annotated
 
 import typer
@@ -81,29 +82,69 @@ def info(
             console.print(yaml.dump(info, width=80, default_flow_style=False), end="")
 
 
-@cli.command()
-def serve(
-    host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
-    port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
-    watch: Annotated[bool, typer.Option(help="Enable auto-reload")] = True,
-) -> None:
-    """Start the webservice API server.
+if find_spec("nicegui"):
+    from ..utils import gui_run  # noqa: TID252
 
-    Args:
-        host (str): Host to bind the server to.
-        port (int): Port to bind the server to.
-        watch (bool): Enable auto-reload.
-    """
-    console.print(f"Starting API server at http://{host}:{port}")
-    # using environ to pass host/port to api.py to generate doc link
-    os.environ["UVICORN_HOST"] = host
-    os.environ["UVICORN_PORT"] = str(port)
-    uvicorn.run(
-        f"{__project_name__}.api:app",
-        host=host,
-        port=port,
-        reload=watch,
-    )
+    @cli.command()
+    def serve(  # noqa: PLR0913, PLR0917 # type: ignore
+        app: Annotated[bool, typer.Option(help="Enable web application")] = True,
+        api: Annotated[bool, typer.Option(help="Enable webservice API")] = True,
+        host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
+        port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
+        watch: Annotated[bool, typer.Option(help="Enable auto-reload on changes of source code")] = True,
+        open_browser: Annotated[bool, typer.Option(help="Open app in browser after starting the server")] = False,
+    ) -> None:
+        """Start the web server, hosting the graphical web application and/or webservice API.
+
+        Args:
+            app (bool): Enable web application.
+            api (bool): Enable webservice API.
+            host (str): Host to bind the server to.
+            port (int): Port to bind the server to.
+            watch (bool): Enable auto-reload on changes of source code.
+            open_browser (bool): Open app in browser after starting the server.
+        """
+        if api and not app:
+            console.print(f"Starting webservice API server at http://{host}:{port}")
+            # using environ to pass host/port to api.py to generate doc link
+            os.environ["UVICORN_HOST"] = host
+            os.environ["UVICORN_PORT"] = str(port)
+            uvicorn.run(
+                f"{__project_name__}.api:api",
+                host=host,
+                port=port,
+                reload=watch,
+            )
+        elif app:
+            console.print(f"Starting web application server at http://{host}:{port}")
+            gui_run(native=False, host=host, port=port, with_api=api, show=open_browser)
+
+else:
+
+    @cli.command()
+    def serve(  # type: ignore
+        host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
+        port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8000,
+        watch: Annotated[bool, typer.Option(help="Enable auto-reload on changes of source code")] = True,
+    ) -> None:
+        """Start the web server, hosting the API.
+
+        Args:
+            api (bool): Enable webservice API.
+            host (str): Host to bind the server to.
+            port (int): Port to bind the server to.
+            watch (bool): Enable auto-reload on changes of source code.
+        """
+        console.print(f"Starting webservice API server at http://{host}:{port}")
+        # using environ to pass host/port to api.py to generate doc link
+        os.environ["UVICORN_HOST"] = host
+        os.environ["UVICORN_PORT"] = str(port)
+        uvicorn.run(
+            f"{__project_name__}.api:api",
+            host=host,
+            port=port,
+            reload=watch,
+        )
 
 
 @cli.command()

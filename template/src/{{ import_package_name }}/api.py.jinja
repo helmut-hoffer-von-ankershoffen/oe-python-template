@@ -31,7 +31,7 @@ API_BASE_URL = __base__url__
 if not API_BASE_URL:
     API_BASE_URL = f"http://{UVICORN_HOST}:{UVICORN_PORT}"
 
-app = FastAPI(
+api = FastAPI(
     root_path="/api",
     title=TITLE,
     contact={
@@ -76,4 +76,4 @@ for router in locate_implementations(VersionedAPIRouter):
 
 # Mount all API versions to the main app
 for version in API_VERSIONS:
-    app.mount(f"/{version}", api_instances[version])
+    api.mount(f"/{version}", api_instances[version])

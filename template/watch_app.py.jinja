@@ -1,0 +1,9 @@
+"""Graphical User Interface (GUI) of Aignostics Python SDK."""
+
+from {{ import_package_name }}.app import index
+from {{ import_package_name }}.utils import gui_run
+
+root = index
+
+# For development run via `uv run watch_gui.py``
+gui_run(native=False, show=True, watch=True)

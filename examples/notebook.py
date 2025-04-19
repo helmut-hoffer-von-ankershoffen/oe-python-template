@@ -1,17 +1,30 @@
-import marimo
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "marimo",
+#     "oe-python-template==0.11.3",
+# ]
+# ///
 
-__generated_with = "0.11.13"
-app = marimo.App()
+
+import marimo
+from oe_python_template.utils import __version__
+
+__generated_with = "0.13.0"
+app = marimo.App(app_title=f"🧠 OE Python Template v{__version__}")
 
 
 @app.cell
 def _():
+    import marimo as mo
     from oe_python_template.hello import Service
 
     service = Service()
     message = service.get_hello_world()
-    print(message)
-    return Service, message, service
+
+    with mo.redirect_stdout():
+        print(message)
+    return
 
 
 if __name__ == "__main__":
