@@ -5,7 +5,7 @@ from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 
-from oe_python_template.api import app
+from oe_python_template.api import api
 from oe_python_template.system._service import Service
 
 HEALTH_PATH_V1 = "/api/v1/system/health"
@@ -30,7 +30,7 @@ ENVIRONMENT = "environment"
 @pytest.fixture
 def client() -> TestClient:
     """Provide a FastAPI test client fixture."""
-    return TestClient(app)
+    return TestClient(api)
 
 
 def test_health_endpoint(client: TestClient) -> None:
