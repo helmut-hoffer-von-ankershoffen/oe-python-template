@@ -3,13 +3,13 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from {{ import_package_name }}.api import app
+from {{ import_package_name }}.api import api
 
 
 @pytest.fixture
 def client() -> TestClient:
     """Provide a FastAPI test client fixture."""
-    return TestClient(app)
+    return TestClient(api)
 
 
 def test_root_endpoint_returns_404(client: TestClient) -> None:

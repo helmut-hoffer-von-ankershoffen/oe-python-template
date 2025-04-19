@@ -2,4 +2,4 @@
 
 import oe_python_template.api
 
-app = oe_python_template.api.app
+app = oe_python_template.api.api

@@ -1,0 +1,10 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile.railway"
+
+[deploy]
+startCommand = "/bin/sh -c \"exec uv run --all-extras --no-dev oe-python-template system serve --host=0.0.0.0 --port=8000 --no-watch --env OE_PYTHON_TEMPLATE_SYSTEM_TOKEN=$OE_PYTHON_TEMPLATE_SYSTEM_TOKEN\""
+healthcheckPath = "/api/v1/health"
+healthcheckTimeout = 30
+restartPolicyType = "ALWAYS"
+restartPolicyMaxRetries = 3
