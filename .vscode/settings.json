@@ -73,5 +73,6 @@
     "sonarlint.connectedMode.project": {
         "connectionId": "helmut-hoffer-von-ankershoffen",
         "projectKey": "helmut-hoffer-von-ankershoffen_oe-python-template"
-    }
+    },
+    "makefile.configureOnOpen": false
 }
