@@ -2484,7 +2484,7 @@ wheels = [
 
 [[package]]
 name = "oe-python-template"
-version = "0.12.8"
+version = "0.12.9"
 source = { editable = "." }
 dependencies = [
     { name = "bottle" },
