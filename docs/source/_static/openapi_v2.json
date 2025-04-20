@@ -1,5 +1,4 @@
-2025-04-20 21:37:02 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.12.3 (project root /Users/helmut/Code/oe-python-template, pid 76142), parent 'Python'  boot.py:78
-                             (pid 75805)                                                                                                                                                                        
+2025-04-20 22:25:27 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.12.4 (project root /Users/helmut/Code/oe-python-template, pid 16725), parent 'Python' (pid 16464)                             boot.py:78
 {
   "openapi": "3.1.0",
   "info": {

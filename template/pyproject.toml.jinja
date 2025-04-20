@@ -63,6 +63,7 @@ dependencies = [
     # From Template
     "fastapi[standard,all]>=0.115.12",
     "logfire[system-metrics]>=3.13.1",
+    "nicegui[native,matplotlib]>=2.15.0",
     "opentelemetry-instrumentation-fastapi>=0.53b0",
     "opentelemetry-instrumentation-httpx>=0.53b0",
     "opentelemetry-instrumentation-jinja2>=0.53b0",
@@ -72,7 +73,6 @@ dependencies = [
     "opentelemetry-instrumentation-urllib>=0.53b0",
     "opentelemetry-instrumentation-urllib3>=0.53b0",
     "psutil>=7.0.0",
-    "pydantic>=2.11.3",
     "pydantic-settings>=2.9.1",
     "sentry-sdk>=2.26.1",
     "typer>=0.15.1",
@@ -88,7 +88,6 @@ examples = [
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
-app = ["nicegui>=2.15.0", "pywebview>=5.4"]
 
 [dependency-groups]
 dev = [

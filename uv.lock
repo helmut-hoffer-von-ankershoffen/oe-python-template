@@ -2367,6 +2367,14 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/5e/48/a302bfeddd0948cccb028716204baa1dc1cfd38d6d6016e42168ddd66295/nicegui-2.15.0-py3-none-any.whl", hash = "sha256:0e401108447ae0e6b0a77c1de2611b67c4508f095a6f34d98a4640a2e17e2a08", size = 16485380 },
 ]
 
+[package.optional-dependencies]
+matplotlib = [
+    { name = "matplotlib" },
+]
+native = [
+    { name = "pywebview" },
+]
+
 [[package]]
 name = "nodeenv"
 version = "1.9.1"
@@ -2481,6 +2489,7 @@ source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["all", "standard"] },
     { name = "logfire", extra = ["system-metrics"] },
+    { name = "nicegui", extra = ["matplotlib", "native"] },
     { name = "opentelemetry-instrumentation-fastapi" },
     { name = "opentelemetry-instrumentation-httpx" },
     { name = "opentelemetry-instrumentation-jinja2" },
@@ -2498,10 +2507,6 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
-app = [
-    { name = "nicegui" },
-    { name = "pywebview" },
-]
 examples = [
     { name = "jinja2" },
     { name = "jupyter" },
@@ -2560,7 +2565,7 @@ requires-dist = [
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
     { name = "logfire", extras = ["system-metrics"], specifier = ">=3.13.1" },
     { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.0" },
-    { name = "nicegui", marker = "extra == 'app'", specifier = ">=2.15.0" },
+    { name = "nicegui", extras = ["native", "matplotlib"], specifier = ">=2.15.0" },
     { name = "opentelemetry-instrumentation-fastapi", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-httpx", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-jinja2", specifier = ">=0.53b0" },
@@ -2572,13 +2577,12 @@ requires-dist = [
     { name = "psutil", specifier = ">=7.0.0" },
     { name = "pydantic", specifier = ">=2.11.3" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
-    { name = "pywebview", marker = "extra == 'app'", specifier = ">=5.4" },
     { name = "sentry-sdk", specifier = ">=2.26.1" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
     { name = "typer", specifier = ">=0.15.1" },
     { name = "uptime", specifier = ">=3.0.1" },
 ]
-provides-extras = ["examples", "app"]
+provides-extras = ["examples"]
 
 [package.metadata.requires-dev]
 dev = [
