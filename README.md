@@ -77,11 +77,12 @@ Projects generated with this template come with a comprehensive development tool
 19. Documentation published to [Read The Docs](https://readthedocs.org/) including generation of PDF and single page HTML versions
 20. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
 21. Python package published to [PyPI](https://pypi.org/)
-22. Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
-23. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
-24. Settings for use with [VSCode](https://code.visualstudio.com/)
-25. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
-26. API deployed as serverless function to [Vercel](https://vercel.com/) (optional)
+22. Multi-stage build of fat and slim (no-extras) Docker images, app running nonroot
+23. Mult-arch Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
+24. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
+25. Settings for use with [VSCode](https://code.visualstudio.com/)
+26. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
+27. API deployed as serverless function to [Vercel](https://vercel.com/) (optional)
 
 ### Application Features
 
@@ -391,6 +392,15 @@ echo ""
 echo "Shutting down the API container ..."
 docker compose down
 ```
+
+#### Slim
+
+The default Docker image includes all extras. Additionally a slim image is provided, with no extras. Run as follows
+
+```shell
+docker compose run --remove-orphans oe-python-template-slim --help
+```
+
 
 * See the [reference documentation of the API](https://oe-python-template.readthedocs.io/en/latest/api_reference_v1.html) for detailed documentation of all API operations and parameters.
 

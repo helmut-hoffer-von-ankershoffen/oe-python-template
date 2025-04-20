@@ -3,9 +3,7 @@ name = "oe-python-template"
 version = "0.11.3"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [
-    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
-]
+authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -84,7 +82,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-recommended = [
+examples = [
     "streamlit>=1.44.1",
     "marimo>=0.13.0",
     "jupyter>=1.1.1",

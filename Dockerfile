@@ -1,6 +1,7 @@
 # We share the base in the builder and targets
 FROM python:3.13-slim-bookworm AS base
 
+# The base of our builder
 FROM base AS builder
 
 # Copy in UV
@@ -14,12 +15,6 @@ ENV UV_COMPILE_BYTECODE=1
 
 # Copy from the cache instead of linking since it's a mounted volume
 ENV UV_LINK_MODE=copy
-
-# Install the project into `/app`
-WORKDIR /app
-
-# Place executables in the environment at the front of the path
-ENV PATH="/app/.venv/bin:$PATH"
 
 
 # The slim builder does not take in the extras
@@ -51,7 +46,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev --no-editable
 
 
-# The all builder takes them all
+# The all builder takes in all extras
 FROM builder AS builder-all
 
 # Install the project's dependencies using the lockfile and settings
@@ -80,6 +75,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --all-extras --no-dev --no-editable
 
 
+# Base of our build targets
 FROM base AS target
 
 ENV OE_PYTHON_TEMPLATE_RUNNING_IN_CONTAINER=1
@@ -89,9 +85,6 @@ RUN <<EOT
 groupadd -r app
 useradd -r -d /app -g app -N app
 EOT
-
-USER app
-WORKDIR /app
 
 # We place executables in the environment at the front of the path
 # Remember: we don't have UV, as we only copied the app from the builder
@@ -110,13 +103,21 @@ ENTRYPOINT ["oe-python-template"]
 # Target slim
 FROM target AS slim
 
-# Copy slim app
-COPY --from=builder-slim --chown=app:app /app /app
+# Copy slim app, make it immutable
+COPY --from=builder-slim --chown=root:root --chmod=755  /app /app
+
+# Run as nonroot
+USER app
+WORKDIR /app
 
 
 # And with all extras
 FROM target AS all
 
-# Copy fat app with all extras
-COPY --from=builder-all --chown=app:app /app /app
+# Copy fat app, i.e. with all extras, make it immutable
+COPY --from=builder-all --chown=root:root --chmod=755  /app /app
+
+# Run as nonroot
+USER app
+WORKDIR /app
 

@@ -1,6 +1,8 @@
 services:
   {{ pypi_distribution_name }}:
-    build: .
+    build:
+      context: .
+      target: all
     env_file:
       - path: .env
         required: false
@@ -14,7 +16,9 @@ services:
     tty: true
     stdin_open: true
   {{ pypi_distribution_name }}-api:
-    build: .
+    build:
+      context: .
+      target: slim
     env_file:
       - path: .env
         required: false
@@ -34,7 +38,9 @@ services:
       start_period: 5s
       start_interval: 1s
   {{ pypi_distribution_name }}-notebook:
-    build: .
+    build:
+      context: .
+      target: all
     env_file:
       - path: .env
         required: false

@@ -57,8 +57,8 @@ clean:
 
 ## Build Docker image
 docker_build:
-	docker build -t oe-python-template . --target all
-	docker build -t oe-python-template-slim . --target slim
+	docker build -t oe-python-template --target all .
+	docker build -t oe-python-template --target slim .
 
 # Special rule to catch any arguments (like patch, minor, major, pdf, Python versions, or x.y.z)
 # This prevents "No rule to make target" errors when passing arguments to make commands

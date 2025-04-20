@@ -57,7 +57,8 @@ clean:
 
 ## Build Docker image
 docker_build:
-	docker build -t {{ pypi_distribution_name }} .
+	docker build -t {{ pypi_distribution_name }} --target all .
+	docker build -t {{ pypi_distribution_name }} --target slim .
 
 # Special rule to catch any arguments (like patch, minor, major, pdf, Python versions, or x.y.z)
 # This prevents "No rule to make target" errors when passing arguments to make commands

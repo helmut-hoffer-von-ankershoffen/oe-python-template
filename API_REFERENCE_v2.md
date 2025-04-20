@@ -9,14 +9,15 @@ highlight_theme: darkula
 ---
 
 
-
-
-
-
-
-
-
-
+                             (pid 55263)                                                                                                                                                                        
+components:
+  schemas:
+    Echo:
+      description: Response model for echo endpoint.
+      properties:
+        text:
+          description: The echo
+          examples:
           - HELLO, WORLD!
           minLength: 1
           title: Text
@@ -250,20 +251,4 @@ paths:
       tags:
       - system
 
-> 2025-04-19 21:39:01 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.11.3 (project root /Users/helmut/Code/oe-python-template, pid 53258), parent 'Python' (pid 52983)                             boot.py:78
-
-> components:
-
->   schemas:
-
->     Echo:
-
->       description: Response model for echo endpoint.
-
->       properties:
-
->         text:
-
->           description: The echo
-
->           examples:
+> 2025-04-20 11:09:26 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.11.3 (project root /Users/helmut/Code/oe-python-template, pid 55555), parent 'Python'  boot.py:78

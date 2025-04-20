@@ -57,7 +57,7 @@ def docker_compose_project_name() -> str:
     """
     # You can consider to override this with a project name to reuse the stack
     # across test executions.
-    return f"pytest{os.getpid()}"
+    return f"oe-python-template-pytest-{os.getpid()}"
 
 
 def pytest_sessionfinish(session, exitstatus) -> None:

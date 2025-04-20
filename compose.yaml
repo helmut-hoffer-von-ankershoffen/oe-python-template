@@ -1,6 +1,8 @@
 services:
   oe-python-template:
-    build: .
+    build:
+      context: .
+      target: all
     env_file:
       - path: .env
         required: false
@@ -14,7 +16,9 @@ services:
     tty: true
     stdin_open: true
   oe-python-template-api:
-    build: .
+    build:
+      context: .
+      target: slim
     env_file:
       - path: .env
         required: false
@@ -34,7 +38,9 @@ services:
       start_period: 5s
       start_interval: 1s
   oe-python-template-notebook:
-    build: .
+    build:
+      context: .
+      target: all
     env_file:
       - path: .env
         required: false
