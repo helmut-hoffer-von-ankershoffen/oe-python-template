@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.11..0.12.12) - 2025-04-20
+## [0.12.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.12..0.12.13) - 2025-04-20
+
+### ⚙️ Miscellaneous Tasks
+
+- *(bottle)* Sys.path to the rescue? - ([5d87734](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5d87734149927c09ba8a93e0827e9003a21367be))
+
+
+## [0.12.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.11..v0.12.12) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
