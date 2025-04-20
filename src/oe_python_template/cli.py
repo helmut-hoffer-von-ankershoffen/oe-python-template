@@ -5,6 +5,8 @@ from importlib.util import find_spec
 
 import typer
 
+import bottle
+
 from .constants import MODULES_TO_INSTRUMENT
 from .utils import __version__, boot, console, get_logger, prepare_cli
 
@@ -14,6 +16,7 @@ logger = get_logger(__name__)
 cli = typer.Typer(help="Command Line Interface of OE Python Template")
 prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
+the_class = bottle.Bottle
 
 if find_spec("nicegui") and find_spec("webview"):
 
