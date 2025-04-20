@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.4..0.12.5) - 2025-04-20
+## [0.12.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.5..0.12.6) - 2025-04-20
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Wheel - ([afa977e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/afa977e89e788a4e61ff0f1d87eedc7311d44de4))
+
+
+## [0.12.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.4..v0.12.5) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
