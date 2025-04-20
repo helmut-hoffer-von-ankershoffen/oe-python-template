@@ -3182,12 +3182,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
-## bottle (0.13.2) - MIT License
+## bottle (0.14.dev0) - MIT License
 
 Fast and simple WSGI-framework for small web-applications.
 
-* URL: http://bottlepy.org/
-* Author(s): Marcel Hellkamp
+* URL: https://bottlepy.org
+* Author(s): Marcel Hellkamp <marc@gsites.de>
 
 ### License Text
 
@@ -12116,7 +12116,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.12.12) - MIT License
+## oe-python-template (0.12.13) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
