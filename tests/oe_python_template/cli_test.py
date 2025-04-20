@@ -3,6 +3,7 @@
 import os
 import subprocess
 import sys
+from importlib.util import find_spec
 
 import pytest
 from typer.testing import CliRunner
@@ -78,3 +79,51 @@ def test_cli_fails_on_invalid_setting_with_environ(runner) -> None:
         assert result.exit_code == 78
         # Check that the error message is in the output
         assert "Input should be 'CRITICAL'" in result.output
+
+
+if find_spec("nicegui"):
+
+    def test_cli_gui_help(runner: CliRunner) -> None:
+        """Check gui help works."""
+        result = runner.invoke(cli, ["gui", "--help"])
+        assert result.exit_code == 0
+
+    def test_cli_gui_run(runner: CliRunner, monkeypatch: pytest.MonkeyPatch) -> None:
+        """Check gui_run called with expected parameters on gui start."""
+        # Create a mock for gui_run
+        mock_called = False
+        mock_args = {}
+
+        def mock_gui_run(  # noqa: PLR0913, PLR0917
+            native=False, show=False, host=None, port=None, title="", icon="", watch=False, with_api=False
+        ):
+            nonlocal mock_called, mock_args
+            mock_called = True
+            mock_args = {
+                "native": native,
+                "show": show,
+                "host": host,
+                "port": port,
+                "title": title,
+                "icon": icon,
+                "watch": watch,
+                "with_api": with_api,
+            }
+
+        # Apply the mock to the gui_run function
+        monkeypatch.setattr("OE_PYTHON_TEMPLATE.utils.gui_run", mock_gui_run)
+
+        # Run the CLI command
+        result = runner.invoke(cli, ["gui"])
+
+        # Check that the command executed successfully
+        assert result.exit_code == 0
+
+        # Check that gui_run was called
+        assert mock_called, "gui_run was not called"
+
+        # Check that gui_run was called with the expected arguments
+        assert mock_args["native"] is True, "native parameter should be True"
+        assert mock_args["with_api"] is False, "with_api parameter should be False"
+        assert mock_args["title"] == "OE Python Template", "title parameter is incorrect"
+        assert mock_args["icon"] == "🧠", "icon parameter is incorrect"

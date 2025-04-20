@@ -1,9 +1,9 @@
-"""Tests to verify the GUI functionality of the app module."""
+"""Tests to verify the GUI functionality."""
 
 from nicegui import ui
 from nicegui.testing import User
 
-from {{ import_package_name }}.app import register_pages
+from {{ import_package_name }}.gui import register_pages
 
 
 async def test_index(user: User) -> None:

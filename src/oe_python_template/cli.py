@@ -1,6 +1,7 @@
 """CLI (Command Line Interface) of OE Python Template."""
 
 import sys
+from importlib.util import find_spec
 
 import typer
 
@@ -12,6 +13,19 @@ logger = get_logger(__name__)
 
 cli = typer.Typer(help="Command Line Interface of OE Python Template")
 prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
+
+
+if find_spec("nicegui"):
+
+    @cli.command()
+    def gui() -> None:
+        """Start graphical user interface (GUI) in native window."""
+        from .gui import register_pages  # noqa: PLC0415
+        from .utils import gui_run  # noqa: PLC0415
+
+        register_pages()
+        gui_run(native=True, with_api=False, title="OE Python Template", icon="🧠")
+
 
 if __name__ == "__main__":  # pragma: no cover
     try:

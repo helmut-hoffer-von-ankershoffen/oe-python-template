@@ -16,7 +16,7 @@ def gui_run(  # noqa: PLR0913, PLR0917
     native: bool = True,
     show: bool = False,
     host: str | None = None,
-    port: int | None = 8000,
+    port: int | None = None,
     title: str = __project_name__,
     icon: str = "",
     watch: bool = False,

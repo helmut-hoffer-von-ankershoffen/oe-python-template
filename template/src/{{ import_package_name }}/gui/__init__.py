@@ -1,4 +1,4 @@
-"""Module providing graphical user interface (GUI) served as native or web application."""
+"""Module providing graphical user interface (GUI) presented in native window or as web application."""
 
 from importlib.util import find_spec
 

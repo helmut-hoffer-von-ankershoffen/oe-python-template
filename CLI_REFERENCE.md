@@ -18,10 +18,24 @@ $ oe-python-template [OPTIONS] COMMAND [ARGS]...
 
 **Commands**:
 
+* `gui`: Start graphical user interface (GUI) in...
 * `notebook`: Start notebook in web browser.
-* `app`: Start app in native window.
 * `hello`: Hello commands
 * `system`: System commands
+
+## `oe-python-template gui`
+
+Start graphical user interface (GUI) in native window.
+
+**Usage**:
+
+```console
+$ oe-python-template gui [OPTIONS]
+```
+
+**Options**:
+
+* `--help`: Show this message and exit.
 
 ## `oe-python-template notebook`
 
@@ -37,20 +51,6 @@ $ oe-python-template notebook [OPTIONS]
 
 * `--host TEXT`: Host to bind the server to  [default: 127.0.0.1]
 * `--port INTEGER`: Port to bind the server to  [default: 8001]
-* `--help`: Show this message and exit.
-
-## `oe-python-template app`
-
-Start app in native window.
-
-**Usage**:
-
-```console
-$ oe-python-template app [OPTIONS]
-```
-
-**Options**:
-
 * `--help`: Show this message and exit.
 
 ## `oe-python-template hello`

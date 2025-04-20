@@ -1,8 +1,8 @@
-"""Tests to verify the GUI functionality of the app module."""
+"""Tests to verify the GUI functionality."""
 
 from nicegui.testing import User
 
-from oe_python_template.app import register_pages
+from oe_python_template.gui import register_pages
 
 
 async def test_index(user: User) -> None:

@@ -1,4 +1,4 @@
-"""CLI (Command Line Interface) of app module."""
+"""CLI (Command Line Interface) of gui module."""
 
 from oe_python_template.utils import get_logger, gui_run
 
@@ -8,6 +8,6 @@ logger = get_logger(__name__)
 
 
 @cli.command()
-def app() -> None:
-    """Start app in native window."""
+def gui() -> None:
+    """Start graphical user interface (GUI) in native window."""
     gui_run(native=True, with_api=False, title="OE Python Template", icon="🧠")

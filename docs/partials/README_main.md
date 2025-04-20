@@ -46,17 +46,21 @@ Beyond development tooling, projects generated with this template include the co
 
 1. Usable as library with "Hello" module exposing a simple service that can say "Hello, world!" and echo utterances.
 2. Command-line interface (CLI) with [Typer](https://typer.tiangolo.com/)
-3. Versioned webservice API with [FastAPI](https://fastapi.tiangolo.com/)
-4. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
-5. Simple Web UI with [Streamlit](https://streamlit.io/)
-6. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
-7. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
-8. Info command enabling to inspect the runtime, compiled settings, and further info provided dynamically by modules
-9. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
-10. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
-11. Hello service demonstrates use of custom real time metrics collected via Logfire
-12. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
-13. Documentation including dynamic badges, setup instructions, contribution guide and security policy
+2. Versioned webservice API with [FastAPI](https://fastapi.tiangolo.com/)
+3. Comfortable command-line interface (CLI) with
+   [Typer](https://typer.tiangolo.com/)
+4. Cross-platform Graphical User Interface (GUI) with
+   [NiceGUI](https://nicegui.io/) running in native window
+5. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
+6. Simple Web UI with [Streamlit](https://streamlit.io/)
+7. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
+8. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
+9. Info command enabling to inspect the runtime, compiled settings, and further info provided dynamically by modules
+10. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
+11. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
+12. Hello service demonstrates use of custom real time metrics collected via Logfire
+13. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
+14. Documentation including dynamic badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 
@@ -123,9 +127,12 @@ pip install oe-python-template        # add dependency to your project
 Executing the command line interface (CLI) in an isolated Python environment is just as easy:
 
 ```shell
-uvx oe-python-template hello-world       # prints "Hello, world! [..]"
-uvx oe-python-template serve             # serves web API
-uvx oe-python-template serve --port=4711 # serves web API on port 4711
+uvx oe-python-template hello world               # prints "Hello, world! [..]"
+uvx oe-python-template hello echo "Lorem Ipsum"  # echos "Lorem Ipsum"
+uvx oe-python-template gui                       # opens the graphical user interface (GUI)
+uvx oe-python-template system serve              # serves web API
+uvx oe-python-template system serve --port=4711  # serves web API on port 4711
+uvx oe-python-template system openapi            # serves web API on port 4711
 ```
 
 Notes:
@@ -138,10 +145,11 @@ The CLI provides extensive help:
 
 ```shell
 uvx oe-python-template --help                # all CLI commands
-uvx oe-python-template hello-world --help    # help for specific command
-uvx oe-python-template echo --help
-uvx oe-python-template openapi --help
-uvx oe-python-template serve --help
+uvx oe-python-template hello world --help    # help for specific command
+uvx oe-python-template hello echo --help
+uvx oe-python-template gui --help
+uvx oe-python-template system serve --help
+uvx oe-python-template system openapi --help
 ```
 
 

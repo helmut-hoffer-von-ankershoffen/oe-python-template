@@ -1,7 +1,7 @@
 """Graphical User Interface (GUI) of Aignostics Python SDK."""
 
-from {{ import_package_name }}.app import register_pages
-from {{ import_package_name }}.utils import gui_run
+from oe_python_template.gui import register_pages
+from oe_python_template.utils import gui_run
 
 register_pages()
 
