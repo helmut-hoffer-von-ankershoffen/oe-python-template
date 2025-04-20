@@ -2570,7 +2570,7 @@ requires-dist = [
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
     { name = "logfire", extras = ["system-metrics"], specifier = ">=3.13.1" },
     { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.0" },
-    { name = "nicegui", extras = ["native", "matplotlib"], marker = "extra == 'gui'", specifier = "==2.15.0" },
+    { name = "nicegui", extras = ["native", "matplotlib"], marker = "extra == 'gui'", specifier = ">=2.15.0" },
     { name = "opentelemetry-instrumentation-fastapi", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-httpx", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-jinja2", specifier = ">=0.53b0" },
