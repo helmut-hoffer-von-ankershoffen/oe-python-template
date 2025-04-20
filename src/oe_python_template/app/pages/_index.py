@@ -1,4 +1,4 @@
-"""Homepage of GUI."""
+"""Homepage (index) of GUI."""
 
 from pathlib import Path
 
@@ -15,16 +15,21 @@ async def pick_file() -> None:
     ui.notify(f"You chose {result}")
 
 
-@ui.page("/")
-def index() -> None:
-    ui.button("Choose file", on_click=pick_file, icon="folder")
+def register_index() -> None:
+    """Register the index page."""
 
-    with ui.card().tight():
-        with ui.matplotlib(figsize=(4, 3)).figure as fig:
-            x = np.linspace(0.0, 5.0)
-            y = np.cos(2 * np.pi * x) * np.exp(-x)
-            ax = fig.gca()
-            ax.plot(x, y, "-")
-        with ui.card_section():
-            service = Service()
-            ui.label(service.get_hello_world())
+    @ui.page("/")
+    def index() -> None:
+        """Homepage of GUI."""
+        service = Service()
+
+        ui.button("Choose file", on_click=pick_file, icon="folder")
+
+        ui.button("Click me", on_click=lambda: ui.notify(service.get_hello_world()), icon="check")
+
+        with ui.card().tight():  # noqa: SIM117
+            with ui.matplotlib(figsize=(4, 3)).figure as fig:
+                x = np.linspace(0.0, 5.0)
+                y = np.cos(2 * np.pi * x) * np.exp(-x)
+                ax = fig.gca()
+                ax.plot(x, y, "-")

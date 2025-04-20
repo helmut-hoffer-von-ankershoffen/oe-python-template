@@ -10,4 +10,4 @@ logger = get_logger(__name__)
 @cli.command()
 def app() -> None:
     """Start app in native window."""
-    gui_run(title="OE Python Template", icon="🧠")
+    gui_run(native=True, with_api=False, title="OE Python Template", icon="🧠")

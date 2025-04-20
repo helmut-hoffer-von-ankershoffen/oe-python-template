@@ -1,6 +1,6 @@
 # CLI Reference
 
-Command Line Interface of
+Command Line Interface of OE Python Template
 
 **Usage**:
 

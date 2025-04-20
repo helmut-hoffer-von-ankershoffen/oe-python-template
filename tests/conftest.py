@@ -1,9 +1,14 @@
 """Common test fixtures and configuration."""
 
 import os
+from importlib.util import find_spec
 from pathlib import Path
 
 import pytest
+
+# See https://nicegui.io/documentation/section_testing#project_structure
+if find_spec("nicegui"):
+    pytest_plugins = ("nicegui.testing.plugin",)
 
 
 def pytest_collection_modifyitems(config, items) -> None:

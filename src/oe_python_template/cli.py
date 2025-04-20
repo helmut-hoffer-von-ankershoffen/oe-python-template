@@ -10,7 +10,7 @@ from .utils import __version__, boot, console, get_logger, prepare_cli
 boot(MODULES_TO_INSTRUMENT)
 logger = get_logger(__name__)
 
-cli = typer.Typer(help="Command Line Interface of ")
+cli = typer.Typer(help="Command Line Interface of OE Python Template")
 prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
 if __name__ == "__main__":  # pragma: no cover
