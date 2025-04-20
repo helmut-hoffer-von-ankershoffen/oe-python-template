@@ -1,9 +1,6 @@
-"""Graphical User Interface (GUI) of Aignostics Python SDK."""
+"""Graphical User Interface (GUI) of OE Python Template."""
 
-from oe_python_template.gui import register_pages
 from oe_python_template.utils import gui_run
 
-register_pages()
-
-# For development run via `uv run watch_gui.py``
+# For development run via `uv run watch_gui.py`
 gui_run(native=False, show=True, watch=True)

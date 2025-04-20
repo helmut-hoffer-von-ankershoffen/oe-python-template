@@ -1,1 +1,0 @@
-"""Pages of GUI."""

@@ -15,3 +15,14 @@ __all__ = [
     "api_v2",
     "cli",
 ]
+
+
+from importlib.util import find_spec
+
+# advertise pages to enable auto-discovery
+if find_spec("nicegui"):
+    from ._gui import index
+
+    __all__ += [
+        "index",
+    ]

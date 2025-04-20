@@ -19,6 +19,7 @@ ENV UV_LINK_MODE=copy
 # Create and set workdir 
 WORKDIR /app
 
+
 # The slim builder does not take in the extras
 FROM builder AS builder-slim
 
