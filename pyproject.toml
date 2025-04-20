@@ -3,9 +3,7 @@ name = "oe-python-template"
 version = "0.12.9"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [
-    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
-]
+authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -63,10 +61,8 @@ requires-python = ">=3.11, <4.0"
 
 dependencies = [
     # From Template
-    "bottle==0.12.25",
     "fastapi[standard,all]>=0.115.12",
     "logfire[system-metrics]>=3.13.1",
-    "nicegui[native,matplotlib]>=2.15.0",
     "opentelemetry-instrumentation-fastapi>=0.53b0",
     "opentelemetry-instrumentation-httpx>=0.53b0",
     "opentelemetry-instrumentation-jinja2>=0.53b0",
@@ -90,6 +86,9 @@ examples = [
     "marimo>=0.13.0",
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
+]
+gui = [
+    "nicegui[native,matplotlib]>=2.15.0",
 ]
 
 [dependency-groups]

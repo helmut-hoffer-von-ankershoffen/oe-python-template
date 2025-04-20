@@ -3181,7 +3181,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
-## bottle (0.13.1) - MIT License
+## bottle (0.12.25) - MIT License
 
 Fast and simple WSGI-framework for small web-applications.
 
@@ -3191,7 +3191,7 @@ Fast and simple WSGI-framework for small web-applications.
 ### License Text
 
 ```
-Copyright (c) 2009-2024, Marcel Hellkamp.
+Copyright (c) 2012, Marcel Hellkamp.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -12113,7 +12113,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.12.8) - MIT License
+## oe-python-template (0.12.9) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 

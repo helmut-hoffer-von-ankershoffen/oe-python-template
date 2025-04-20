@@ -2487,10 +2487,8 @@ name = "oe-python-template"
 version = "0.12.9"
 source = { editable = "." }
 dependencies = [
-    { name = "bottle" },
     { name = "fastapi", extra = ["all", "standard"] },
     { name = "logfire", extra = ["system-metrics"] },
-    { name = "nicegui", extra = ["matplotlib", "native"] },
     { name = "opentelemetry-instrumentation-fastapi" },
     { name = "opentelemetry-instrumentation-httpx" },
     { name = "opentelemetry-instrumentation-jinja2" },
@@ -2512,6 +2510,9 @@ examples = [
     { name = "jupyter" },
     { name = "marimo" },
     { name = "streamlit" },
+]
+gui = [
+    { name = "nicegui", extra = ["matplotlib", "native"] },
 ]
 
 [package.dev-dependencies]
@@ -2560,13 +2561,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bottle", specifier = "==0.12.25" },
     { name = "fastapi", extras = ["standard", "all"], specifier = ">=0.115.12" },
     { name = "jinja2", marker = "extra == 'examples'", specifier = ">=3.1.6" },
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
     { name = "logfire", extras = ["system-metrics"], specifier = ">=3.13.1" },
     { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.0" },
-    { name = "nicegui", extras = ["native", "matplotlib"], specifier = ">=2.15.0" },
+    { name = "nicegui", extras = ["native", "matplotlib"], marker = "extra == 'gui'", specifier = ">=2.15.0" },
     { name = "opentelemetry-instrumentation-fastapi", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-httpx", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-jinja2", specifier = ">=0.53b0" },
@@ -2582,7 +2582,7 @@ requires-dist = [
     { name = "typer", specifier = ">=0.15.1" },
     { name = "uptime", specifier = ">=3.0.1" },
 ]
-provides-extras = ["examples"]
+provides-extras = ["examples", "gui"]
 
 [package.metadata.requires-dev]
 dev = [
