@@ -15,7 +15,7 @@ cli = typer.Typer(help="Command Line Interface of OE Python Template")
 prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
 
-if find_spec("nicegui"):
+if find_spec("nicegui") and find_spec("webview"):
 
     @cli.command()
     def gui() -> None:

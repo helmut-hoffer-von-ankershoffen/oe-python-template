@@ -3,7 +3,9 @@ name = "oe-python-template"
 version = "0.12.10"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
+authors = [
+    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
+]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -87,9 +89,7 @@ examples = [
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
-gui = [
-    "nicegui[native,matplotlib]>=2.15.0",
-]
+gui = ["nicegui[native,matplotlib]==2.15.0", "pywebview==5.4.0"]
 
 [dependency-groups]
 dev = [
@@ -166,7 +166,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-extend-exclude = [".fixme", "notebook.py", "template/*.py"]
+extend-exclude = [".fixme", "notebook.py", "template/*.py", "bottle.py"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -229,6 +229,7 @@ docstring-code-format = true
 convention = "google"
 
 [tool.mypy] # https://mypy.readthedocs.io/en/latest/config_file.html
+exclude = ["bottle.py"]
 junit_xml = "reports/mypy_junit.xml"
 plugins = "pydantic.mypy"
 strict = true

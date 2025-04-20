@@ -15,7 +15,7 @@ cli = typer.Typer(help="Command Line Interface of {{ project_name }}")
 prepare_cli(cli, f"{{ project_icon }} {{ project_name }} v{__version__} - built with love in Berlin 🐻")
 
 
-if find_spec("nicegui"):
+if find_spec("nicegui") and find_spec("webview"):
 
     @cli.command()
     def gui() -> None:
