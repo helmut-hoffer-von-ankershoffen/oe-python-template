@@ -9,7 +9,7 @@ highlight_theme: darkula
 ---
 
 
-                             (pid 6399)                                                                                                                                                                         
+                             (pid 60791)                                                                                                                                                                        
 components:
   schemas:
     Echo:
@@ -238,4 +238,4 @@ paths:
       tags:
       - system
 
-> 2025-04-20 20:52:12 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.11.3 (project root /Users/helmut/Code/oe-python-template, pid 6664), parent 'Python'   boot.py:78
+> 2025-04-20 21:19:47 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.12.0 (project root /Users/helmut/Code/oe-python-template, pid 61111), parent 'Python'  boot.py:78
