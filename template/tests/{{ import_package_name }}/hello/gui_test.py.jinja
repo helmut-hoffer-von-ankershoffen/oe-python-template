@@ -17,3 +17,8 @@ async def test_gui_index(user: User) -> None:
     await user.should_see("Cancel")
     user.find(marker="BUTTON_CANCEL").click()
     await user.should_see("You chose None")
+    await user.should_see("Choose file")
+    user.find(marker="BUTTON_CHOOSE_FILE").click()
+    await user.should_see("Ok")
+    user.find(marker="BUTTON_OK").click()
+    await user.should_see("You chose")
