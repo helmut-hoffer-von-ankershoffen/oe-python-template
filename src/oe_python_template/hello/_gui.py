@@ -5,9 +5,9 @@ from pathlib import Path
 import numpy as np
 from nicegui import ui
 
-from oe_python_template.hello import Service
+from oe_python_template.utils import GUILocalFilePicker
 
-from ..utils import GUILocalFilePicker  # noqa: TID252
+from ._service import Service
 
 
 async def pick_file() -> None:
@@ -17,17 +17,19 @@ async def pick_file() -> None:
 
 
 @ui.page("/")
-def index() -> None:
+def page_index() -> None:
     """Homepage of GUI."""
     service = Service()
 
-    ui.button("Choose file", on_click=pick_file, icon="folder")
+    ui.button("Choose file", on_click=pick_file, icon="folder").mark("BUTTON_CHOOSE_FILE")
 
-    ui.button("Click me", on_click=lambda: ui.notify(service.get_hello_world()), icon="check")
+    ui.button("Click me", on_click=lambda: ui.notify(service.get_hello_world()), icon="check").mark("BUTTON_CLICK_ME")
 
-    with ui.card().tight():  # noqa: SIM117
+    with ui.card().tight().mark("CARD_PLOT"):  # noqa: SIM117
         with ui.matplotlib(figsize=(4, 3)).figure as fig:
             x = np.linspace(0.0, 5.0)
             y = np.cos(2 * np.pi * x) * np.exp(-x)
             ax = fig.gca()
             ax.plot(x, y, "-")
+
+    ui.link("Info", "/info").mark("LINK_INFO")

@@ -6,15 +6,15 @@ from nicegui.testing import User
 from {{ import_package_name }}.utils import discover_pages
 
 
-async def test_index(user: User) -> None:
+async def test_gui_index(user: User) -> None:
     """Test that the user sees the index page, and sees the output of the Hello service on click."""
     discover_pages()
     await user.open("/")
     await user.should_see("Click me")
-    user.find("Click me").click()
+    user.find(marker="BUTTON_CLICK_ME").click()
     await user.should_see("Hello, world!")
     await user.should_see("Choose file")
-    user.find("Choose file").click()
+    user.find(marker="BUTTON_CHOOSE_FILE").click()
     await user.should_see("Cancel")
-    user.find("Cancel").click()
+    user.find(marker="BUTTON_CANCEL").click()
     await user.should_see("You chose None")

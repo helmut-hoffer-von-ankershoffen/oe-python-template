@@ -103,7 +103,7 @@ Beyond development tooling, projects generated with this template include the co
 10. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
 11. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
 12. Hello service demonstrates use of custom real time metrics collected via Logfire
-13. Modular architecture including auto-registration of services, CLI commands and API routes exposed by modules
+13. Modular architecture including auto-registration of services, CLI commands, API routes and GUI pages exposed by domain modules
 14. Documentation including dynamic badges, setup instructions, contribution guide and security policy
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
@@ -317,6 +317,7 @@ uvx oe-python-template hello world
 uvx oe-python-template hello echo --help
 uvx oe-python-template hello echo "Lorem"
 uvx oe-python-template hello echo "Lorem" --json
+uvx oe-python-template gui
 uvx oe-python-template system info
 uvx oe-python-template system health
 uvx oe-python-template system openapi

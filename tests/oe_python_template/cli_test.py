@@ -111,7 +111,7 @@ if find_spec("nicegui"):
             }
 
         # Apply the mock to the gui_run function
-        monkeypatch.setattr("OE_PYTHON_TEMPLATE.utils.gui_run", mock_gui_run)
+        monkeypatch.setattr("oe_python_template.utils.gui_run", mock_gui_run)
 
         # Run the CLI command
         result = runner.invoke(cli, ["gui"])

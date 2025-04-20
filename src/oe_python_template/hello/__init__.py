@@ -21,8 +21,8 @@ from importlib.util import find_spec
 
 # advertise pages to enable auto-discovery
 if find_spec("nicegui"):
-    from ._gui import index
+    from ._gui import page_index
 
     __all__ += [
-        "index",
+        "page_index",
     ]

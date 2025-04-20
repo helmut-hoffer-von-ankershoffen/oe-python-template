@@ -111,7 +111,7 @@ if find_spec("nicegui"):
             }
 
         # Apply the mock to the gui_run function
-        monkeypatch.setattr("{{ import_package_name_case_upper }}.utils.gui_run", mock_gui_run)
+        monkeypatch.setattr("{{ import_package_name }}.utils.gui_run", mock_gui_run)
 
         # Run the CLI command
         result = runner.invoke(cli, ["gui"])
@@ -125,8 +125,8 @@ if find_spec("nicegui"):
         # Check that gui_run was called with the expected arguments
         assert mock_args["native"] is True, "native parameter should be True"
         assert mock_args["with_api"] is False, "with_api parameter should be False"
-        assert mock_args["title"] == "OE Python Template", "title parameter is incorrect"
-        assert mock_args["icon"] == "🧠", "icon parameter is incorrect"
+        assert mock_args["title"] == "{{ project_name }}", "title parameter is incorrect"
+        assert mock_args["icon"] == "{{ project_icon }}", "icon parameter is incorrect"
 
 
 if find_spec("marimo"):

@@ -125,6 +125,14 @@ Notes:
 
 ## Advanced usage
 
+### Developing the GUI
+
+To run the GUI in the browser with hot reloading, use the following command:
+
+```shell
+make watch_gui
+```
+
 ### Running GitHub CI Workflow locally
 
 ```shell

@@ -20,10 +20,8 @@ if find_spec("nicegui"):
     @cli.command()
     def gui() -> None:
         """Start graphical user interface (GUI) in native window."""
-        from .gui import register_pages  # noqa: PLC0415
         from .utils import gui_run  # noqa: PLC0415
 
-        register_pages()
         gui_run(native=True, with_api=False, title="OE Python Template", icon="🧠")
 
 

@@ -1,4 +1,4 @@
-"""Hello module."""
+"""System module."""
 
 from ._api import api_routers
 from ._cli import cli
@@ -11,6 +11,17 @@ __all__ = [
     "api_routers",
     "cli",
 ]
+
+
+from importlib.util import find_spec
+
+# advertise pages to enable auto-discovery
+if find_spec("nicegui"):
+    from ._gui import page_info
+
+    __all__ += [
+        "page_info",
+    ]
 
 # Export all individual API routers so they are picked up by depdency injection (DI)
 for version, router in api_routers.items():

@@ -1,7 +1,7 @@
 # Makefile for running common development tasks
 
 # Define all PHONY targets
-.PHONY: all act audit bump clean dist dist_vercel docs docker_build install lint setup setup test test_scheduled test_long_running update_from_template
+.PHONY: all act audit bump clean dist dist_vercel docs docker_build install lint setup setup test test_scheduled test_long_running update_from_template watch_gui
 
 # Main target i.e. default sessions defined in noxfile.py
 all:
@@ -60,6 +60,9 @@ docker_build:
 	docker build -t oe-python-template --target all .
 	docker build -t oe-python-template --target slim .
 
+watch_gui:
+	uv run watch_gui.py
+
 # Special rule to catch any arguments (like patch, minor, major, pdf, Python versions, or x.y.z)
 # This prevents "No rule to make target" errors when passing arguments to make commands
 .PHONY: %
@@ -86,5 +89,6 @@ help:
 	@echo "  test_scheduled        - Run tests marked as scheduled with Python 3.11"
 	@echo "  test_long_running     - Run tests marked as long running with Python 3.11"
 	@echo "  update_from_template  - Update from template using copier"
+	@echo "  watch_gui             - Open GUI in browser and watch for changes"
 	@echo ""
 	@echo "Built with love in Berlin 🐻"

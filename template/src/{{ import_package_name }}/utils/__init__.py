@@ -64,12 +64,12 @@ __all__ = [
 from importlib.util import find_spec
 
 if find_spec("nicegui"):
-    from ._gui import GUILocalFilePicker, gui_run, discover_pages
+    from ._gui import GUILocalFilePicker, discover_pages, gui_run
 
     __all__ += [
         "GUILocalFilePicker",
-        "gui_run",
         "discover_pages",
+        "gui_run",
     ]
 
 if find_spec("marimo"):
