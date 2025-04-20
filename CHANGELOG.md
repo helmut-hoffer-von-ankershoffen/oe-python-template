@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.9..0.12.10) - 2025-04-20
+## [0.12.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.10..0.12.11) - 2025-04-20
+
+### ⚙️ Miscellaneous Tasks
+
+- *(bottle)* Override - ([54a9a2c](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/54a9a2cb7f81ad85fc9e1fc15582aed507339a37))
+
+
+## [0.12.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.9..v0.12.10) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
