@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.3..0.12.0) - 2025-04-20
+## [0.12.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.0..0.12.1) - 2025-04-20
+
+### 🚜 Refactor
+
+- *(gui)* By default - ([2291bff](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/2291bfffa98d3f503573a5baf4fc170dd1276ba5))
+
+
+## [0.12.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.3..v0.12.0) - 2025-04-20
 
 ### ⛰️  Features
 
