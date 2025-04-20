@@ -15,12 +15,12 @@ __all__ = [
 
 from importlib.util import find_spec
 
-# advertise pages to enable auto-discovery
+# advertise PageBuuilder to enable auto-discovery
 if find_spec("nicegui"):
-    from ._gui import page_info
+    from ._gui import PageBuilder
 
     __all__ += [
-        "page_info",
+        "PageBuilder",
     ]
 
 # Export all individual API routers so they are picked up by depdency injection (DI)

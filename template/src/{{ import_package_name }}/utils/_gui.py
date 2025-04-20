@@ -1,4 +1,5 @@
 import platform
+from abc import ABC, abstractmethod
 from pathlib import Path
 from types import EllipsisType
 
@@ -6,20 +7,29 @@ from nicegui import app, events, ui
 from nicegui import native as native_app
 
 from ._constants import __project_name__
-from ._di import locate_implementations
+from ._di import locate_subclasses
 from ._log import get_logger
 
 logger = get_logger(__name__)
 
 
-def handle_shutdown() -> None:
-    """Handle shutdown of the GUI."""
-    logger.info("Shutdown initiated")
+class BasePageBuilder(ABC):
+    """Base class for all page builders."""
+
+    @staticmethod
+    @abstractmethod
+    def register_pages() -> None:
+        """Register pages."""
 
 
-def discover_pages() -> None:
-    """Register all pages in the GUI."""
-    locate_implementations(int)  # TODO(Helmut): more explicit
+def gui_register_pages() -> None:
+    """Register pages.
+
+    This function is called by the GUI to register all pages.
+    """
+    page_builders = locate_subclasses(BasePageBuilder)
+    for page_builder in page_builders:
+        page_builder.register_pages()
 
 
 def gui_run(  # noqa: PLR0913, PLR0917
@@ -47,13 +57,12 @@ def gui_run(  # noqa: PLR0913, PLR0917
     Raises:
         ValueError: If with_notebook is True but notebook_path is None.
     """
-    app.on_shutdown(handle_shutdown)
     if with_api:
         from ..api import api  # noqa: PLC0415, TID252
 
         app.mount("/api", api)
 
-    discover_pages()
+    gui_register_pages()
     ui.run(
         title=title,
         favicon=icon,

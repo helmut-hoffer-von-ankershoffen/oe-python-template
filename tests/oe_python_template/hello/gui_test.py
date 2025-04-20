@@ -2,12 +2,12 @@
 
 from nicegui.testing import User
 
-from oe_python_template.utils import discover_pages
+from oe_python_template.utils import gui_register_pages
 
 
 async def test_gui_index(user: User) -> None:
     """Test that the user sees the index page, and sees the output of the Hello service on click."""
-    discover_pages()
+    gui_register_pages()
     await user.open("/")
     await user.should_see("Click me")
     user.find(marker="BUTTON_CLICK_ME").click()

@@ -1,14 +1,13 @@
 """Tests to verify the GUI functionality of the hello module."""
 
-from nicegui import ui
 from nicegui.testing import User
 
-from {{ import_package_name }}.utils import discover_pages
+from {{ import_package_name }}.utils import gui_register_pages
 
 
 async def test_gui_index(user: User) -> None:
     """Test that the user sees the index page, and sees the output of the Hello service on click."""
-    discover_pages()
+    gui_register_pages()
     await user.open("/")
     await user.should_see("Click me")
     user.find(marker="BUTTON_CLICK_ME").click()
