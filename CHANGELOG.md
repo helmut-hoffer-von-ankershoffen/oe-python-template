@@ -1,6 +1,37 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.11.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.2..0.11.3) - 2025-04-14
+## [0.12.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.3..0.12.0) - 2025-04-20
+
+### ⛰️  Features
+
+- *(notebook,app)* Graphical app and notebook serving - ([e894840](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e894840c1775d42db40d3777338a8e59f935f439))
+
+### 🐛 Bug Fixes
+
+- *(Docker)* Workdir - ([ce5e92f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/ce5e92f60261adfb5386832ae2ee1c3527ad5330))
+- *(nicegui)* Various - ([44376f2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/44376f21c188d9cc1d394259b71188a913a4e821))
+- *(test)* Another one - ([9f8d250](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/9f8d2504d824c6a8103c9466926707df09895fb4))
+- *(test)* Adapt test - ([26e923a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/26e923a05b6400a75c094caae797b16d235c8ce8))
+- *(test)* Some - ([8c48c9e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8c48c9ee77cab0c4117898e82e20ac177eefeca4))
+
+### 🚜 Refactor
+
+- *(gui)* Polish - ([8dae0d4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8dae0d4282ccaee601be181fbc434a5f5fdb63b9))
+- *(gui)* Auto-discovery of pages and tests - ([a95b5b6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a95b5b66b69002ea2cd2d90ba4b35118bf519822))
+- *(gui)* Enable auto-discovery of gui - ([9ac0e38](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/9ac0e38ef933c0700e302864a325aaee4e65969e))
+- *(nicegui)* Page discovery - ([4b683ed](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4b683ed0a6fc4b363889ab4eeb67718f697e32e7))
+
+### 🧪 Testing
+
+- Some - ([0b75ada](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0b75ada163b8405718ebaa0268ef33b4ab9b5caf))
+
+### ⚙️ Miscellaneous Tasks
+
+- *(Docker)* Polish - ([a59b7bd](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a59b7bd6403d2f48f7addbefb2735b58ac49674b))
+- *(Docker)* Multistage, nonroot run, slim target - ([c8aba9d](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c8aba9d432bb4f7d06196edf5cab0a6b1da3f416))
+
+
+## [0.11.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.11.2..v0.11.3) - 2025-04-14
 
 ### 📚 Documentation
 
