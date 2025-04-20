@@ -57,8 +57,6 @@ jobs:
           envkey_ENV: "TEST"
           envkey_{{ import_package_name_case_upper }}_LOGFIRE_TOKEN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_LOGFIRE_TOKEN }}{% endraw %}"
           envkey_{{ import_package_name_case_upper }}_SENTRY_DSN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_SENTRY_DSN }}{% endraw %}"
-          envkey_{{ import_package_name_case_upper }}_LOG_LEVEL: "DEBUG"
-          envkey_{{ import_package_name_case_upper }}_LOG_FILE_ENABLED: 1
           fail_on_empty: false
 
       - name: Validate installation

@@ -57,8 +57,6 @@ jobs:
           envkey_ENV: "TEST"
           envkey_OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN: "${{ secrets.OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN }}"
           envkey_OE_PYTHON_TEMPLATE_SENTRY_DSN: "${{ secrets.OE_PYTHON_TEMPLATE_SENTRY_DSN }}"
-          envkey_OE_PYTHON_TEMPLATE_LOG_LEVEL: "DEBUG"
-          envkey_OE_PYTHON_TEMPLATE_LOG_FILE_ENABLED: 1
           fail_on_empty: false
 
       - name: Validate installation

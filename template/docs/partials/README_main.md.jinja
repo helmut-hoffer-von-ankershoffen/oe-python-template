@@ -31,14 +31,15 @@ Projects generated with this template come with a comprehensive development tool
 17. Changelog and release notes generated with [git-cliff](https://git-cliff.org/)
 18. Documentation generated with [Sphinx](https://www.sphinx-doc.org/en/master/) including reference documentation for the library, CLI, and API
 19. Documentation published to [Read The Docs](https://readthedocs.org/) including generation of PDF and single page HTML versions
-20. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
-21. Python package published to [PyPI](https://pypi.org/)
-22. Multi-stage build of fat and slim (no-extras) Docker images, app running nonroot
-23. Mult-arch Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
-24. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
-25. Settings for use with [VSCode](https://code.visualstudio.com/)
-26. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
-27. API deployed as serverless function to [Vercel](https://vercel.com/) (optional)
+20. Documentation including dynamic badges, setup instructions, contribution guide and security policy
+21. Interactive OpenAPI specification with [Swagger](https://swagger.io/)
+22. Python package published to [PyPI](https://pypi.org/)
+23. Multi-stage build of fat and slim (no-extras) Docker images, app running nonroot
+24. Mult-arch Docker images published to [Docker.io](https://hub.docker.com/) and [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with [artifact attestations](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds)
+25. One-click development environments with [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) and [GitHub Codespaces](https://github.com/features/codespaces)
+26. Settings for use with [VSCode](https://code.visualstudio.com/)
+27. Settings and custom instructions for use with [GitHub Copilot](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
+28. API deployed as serverless function to [Vercel](https://vercel.com/) (optional)
 
 ### Application Features
 
@@ -53,14 +54,13 @@ Beyond development tooling, projects generated with this template include the co
    [NiceGUI](https://nicegui.io/) running in native window
 5. [Interactive Jupyter notebook](https://jupyter.org/) and [reactive Marimo notebook](https://marimo.io/)
 6. Simple Web UI with [Streamlit](https://streamlit.io/)
-7. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
-8. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
-9. Info command enabling to inspect the runtime, compiled settings, and further info provided dynamically by modules
-10. Health endpoint exposing system health dynamically aggregated from all modules and dependencies
-11. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
+7. Validation and settings management with [pydantic](https://docs.pydantic.dev/)
+8. Flexible logging and instrumentation, including support for [Sentry](https://sentry.io/) and [Logfire](https://logfire.dev/) 
+9. Modular architecture including auto-registration of services, CLI commands, API routes and GUI pages exposed by domain modules
+10. System module providing aggregate health and info to the runtime, compiled settings, and further info provided by domain modules
+11. Health and Info available via command, webservice API (info passsword protected) and GUI
 12. Hello service demonstrates use of custom real time metrics collected via Logfire
-13. Modular architecture including auto-registration of services, CLI commands, API routes and GUI pages exposed by domain modules
-14. Documentation including dynamic badges, setup instructions, contribution guide and security policy
+13. Configuration to run the CLI and API in a Docker container including setup for [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
 
 Explore [here](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template-example) for what's generated out of the box.
 
