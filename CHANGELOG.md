@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.5..0.12.6) - 2025-04-20
+## [0.12.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.6..0.12.7) - 2025-04-20
+
+### Debug
+
+- *(bottle)* Uvx and bottle.py incompatibility - ([8b11608](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8b1160824c1b53ecb32d0e4ede54ad9c034d125c))
+
+
+## [0.12.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.5..v0.12.6) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
