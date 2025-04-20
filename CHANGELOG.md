@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.8..0.12.9) - 2025-04-20
+## [0.12.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.9..0.12.10) - 2025-04-20
+
+### ⚙️ Miscellaneous Tasks
+
+- *(extras)* Reintroduce gui - ([e69b0ae](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e69b0ae659b5d47705b5618fbb4162c2fd7b4c06))
+
+
+## [0.12.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.8..v0.12.9) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
