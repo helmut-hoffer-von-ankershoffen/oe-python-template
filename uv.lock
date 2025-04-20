@@ -2481,7 +2481,6 @@ source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["all", "standard"] },
     { name = "logfire", extra = ["system-metrics"] },
-    { name = "nicegui" },
     { name = "opentelemetry-instrumentation-fastapi" },
     { name = "opentelemetry-instrumentation-httpx" },
     { name = "opentelemetry-instrumentation-jinja2" },
@@ -2493,7 +2492,6 @@ dependencies = [
     { name = "psutil" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
-    { name = "pywebview" },
     { name = "sentry-sdk" },
     { name = "typer" },
     { name = "uptime" },
@@ -2505,6 +2503,10 @@ examples = [
     { name = "jupyter" },
     { name = "marimo" },
     { name = "streamlit" },
+]
+gui = [
+    { name = "nicegui" },
+    { name = "pywebview" },
 ]
 
 [package.dev-dependencies]
@@ -2558,7 +2560,7 @@ requires-dist = [
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
     { name = "logfire", extras = ["system-metrics"], specifier = ">=3.13.1" },
     { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.0" },
-    { name = "nicegui", specifier = ">=2.15.0" },
+    { name = "nicegui", marker = "extra == 'gui'", specifier = ">=2.15.0" },
     { name = "opentelemetry-instrumentation-fastapi", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-httpx", specifier = ">=0.53b0" },
     { name = "opentelemetry-instrumentation-jinja2", specifier = ">=0.53b0" },
@@ -2570,13 +2572,13 @@ requires-dist = [
     { name = "psutil", specifier = ">=7.0.0" },
     { name = "pydantic", specifier = ">=2.11.3" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
-    { name = "pywebview", specifier = ">=5.4" },
+    { name = "pywebview", marker = "extra == 'gui'", specifier = ">=5.4" },
     { name = "sentry-sdk", specifier = ">=2.26.1" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
     { name = "typer", specifier = ">=0.15.1" },
     { name = "uptime", specifier = ">=3.0.1" },
 ]
-provides-extras = ["examples"]
+provides-extras = ["examples", "gui"]
 
 [package.metadata.requires-dev]
 dev = [

@@ -71,11 +71,9 @@ dependencies = [
     "opentelemetry-instrumentation-tornado>=0.53b0",
     "opentelemetry-instrumentation-urllib>=0.53b0",
     "opentelemetry-instrumentation-urllib3>=0.53b0",
-    "nicegui>=2.15.0",
     "psutil>=7.0.0",
     "pydantic>=2.11.3",
     "pydantic-settings>=2.9.1",
-    "pywebview>=5.4",
     "sentry-sdk>=2.26.1",
     "typer>=0.15.1",
     "uptime>=3.0.1",
@@ -90,6 +88,7 @@ examples = [
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
+gui = ["nicegui>=2.15.0", "pywebview>=5.4"]
 
 [dependency-groups]
 dev = [
