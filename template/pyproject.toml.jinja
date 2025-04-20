@@ -166,7 +166,7 @@ target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-extend-exclude = [".fixme", "notebook.py", "template/*.py"]
+extend-exclude = [".fixme", "notebook.py", "template/*.py", "bottle.py"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -229,6 +229,7 @@ docstring-code-format = true
 convention = "google"
 
 [tool.mypy] # https://mypy.readthedocs.io/en/latest/config_file.html
+exclude = ["bottle.py"]
 junit_xml = "reports/mypy_junit.xml"
 plugins = "pydantic.mypy"
 strict = true

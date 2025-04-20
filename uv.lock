@@ -2517,7 +2517,6 @@ examples = [
 ]
 gui = [
     { name = "nicegui", extra = ["matplotlib", "native"] },
-    { name = "pywebview" },
 ]
 
 [package.dev-dependencies]
@@ -2582,7 +2581,6 @@ requires-dist = [
     { name = "opentelemetry-instrumentation-urllib3", specifier = ">=0.53b0" },
     { name = "psutil", specifier = ">=7.0.0" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
-    { name = "pywebview", marker = "extra == 'gui'", specifier = "==5.4.0" },
     { name = "sentry-sdk", specifier = ">=2.26.1" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
     { name = "typer", specifier = ">=0.15.1" },

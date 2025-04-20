@@ -3,9 +3,7 @@ name = "oe-python-template"
 version = "0.12.12"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [
-    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
-]
+authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -89,7 +87,9 @@ examples = [
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
-gui = ["nicegui[native,matplotlib]==2.15.0", "pywebview==5.4.0"]
+gui = [
+    "nicegui[native,matplotlib]>=2.15.0",
+]
 
 [dependency-groups]
 dev = [

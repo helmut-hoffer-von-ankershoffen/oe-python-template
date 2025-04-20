@@ -22,6 +22,7 @@ def boot(modules_to_instrument: list[str]) -> None:
     if _boot_called:
         return
     _boot_called = True
+    _prioritize_src()
     sentry_initialize()
     log_to_logfire = logfire_initialize(modules_to_instrument)
     logging_initialize(log_to_logfire)
@@ -69,6 +70,12 @@ def _amend_library_path() -> None:
     """Patch environment variables before any other imports."""
     if "DYLD_FALLBACK_LIBRARY_PATH" not in os.environ:
         os.environ["DYLD_FALLBACK_LIBRARY_PATH"] = f"{os.getenv('HOMEBREW_PREFIX', '/opt/homebrew')}/lib/"
+
+
+def _prioritize_src() -> None:
+    if len(sys.path) > 0:
+        src_path = sys.path.pop(-1)
+        sys.path.insert(0, src_path)
 
 
 def _log_boot_message() -> None:
