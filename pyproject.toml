@@ -1,6 +1,6 @@
 [project]
 name = "oe-python-template"
-version = "0.12.2"
+version = "0.12.3"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
 authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
@@ -88,7 +88,7 @@ examples = [
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
 ]
-gui = ["nicegui>=2.15.0", "pywebview>=5.4"]
+app = ["nicegui>=2.15.0", "pywebview>=5.4"]
 
 [dependency-groups]
 dev = [
@@ -279,7 +279,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.12.2"
+current_version = "0.12.3"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
