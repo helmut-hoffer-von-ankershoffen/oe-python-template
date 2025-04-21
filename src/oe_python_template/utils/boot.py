@@ -19,6 +19,10 @@ if not vendored_dir.is_dir():
 if vendored_dir not in sys.path:
     sys.path.insert(0, str(vendored_dir))
 
+import bottle  # noqa: E402
+
+the_class = bottle.BottleServer
+
 
 def boot(modules_to_instrument: list[str]) -> None:
     """Boot the application.
