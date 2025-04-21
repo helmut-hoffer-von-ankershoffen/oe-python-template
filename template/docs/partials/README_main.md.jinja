@@ -130,6 +130,7 @@ Executing the command line interface (CLI) in an isolated Python environment is 
 uvx {{ pypi_distribution_name}} hello world               # prints "Hello, world! [..]"
 uvx {{ pypi_distribution_name}} hello echo "Lorem Ipsum"  # echos "Lorem Ipsum"
 uvx {{ pypi_distribution_name}} gui                       # opens the graphical user interface (GUI)
+uvx --with "{{ pypi_distribution_name}}[examples]" {{ pypi_distribution_name}} gui  # opens the graphical user interface (GUI) with support for scientific computing
 uvx {{ pypi_distribution_name}} system serve              # serves web API
 uvx {{ pypi_distribution_name}} system serve --port=4711  # serves web API on port 4711
 uvx {{ pypi_distribution_name}} system openapi            # serves web API on port 4711
@@ -274,6 +275,7 @@ uvx {{ pypi_distribution_name}} hello echo --help
 uvx {{ pypi_distribution_name}} hello echo "Lorem"
 uvx {{ pypi_distribution_name}} hello echo "Lorem" --json
 uvx {{ pypi_distribution_name}} gui
+uvx --with "{{ pypi_distribution_name}}[examples]" {{ pypi_distribution_name}} gui  # opens the graphical user interface (GUI) with support for scientific computing
 uvx {{ pypi_distribution_name}} system info
 uvx {{ pypi_distribution_name}} system health
 uvx {{ pypi_distribution_name}} system openapi

@@ -130,6 +130,7 @@ Executing the command line interface (CLI) in an isolated Python environment is 
 uvx oe-python-template hello world               # prints "Hello, world! [..]"
 uvx oe-python-template hello echo "Lorem Ipsum"  # echos "Lorem Ipsum"
 uvx oe-python-template gui                       # opens the graphical user interface (GUI)
+uvx --with "oe-python-template[examples]" oe-python-template gui  # opens the graphical user interface (GUI) with support for scientific computing
 uvx oe-python-template system serve              # serves web API
 uvx oe-python-template system serve --port=4711  # serves web API on port 4711
 uvx oe-python-template system openapi            # serves web API on port 4711
@@ -274,6 +275,7 @@ uvx oe-python-template hello echo --help
 uvx oe-python-template hello echo "Lorem"
 uvx oe-python-template hello echo "Lorem" --json
 uvx oe-python-template gui
+uvx --with "oe-python-template[examples]" oe-python-template gui  # opens the graphical user interface (GUI) with support for scientific computing
 uvx oe-python-template system info
 uvx oe-python-template system health
 uvx oe-python-template system openapi

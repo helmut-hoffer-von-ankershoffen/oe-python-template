@@ -20,7 +20,9 @@ SBOM_SPDX_PATH = "reports/sbom.spdx"
 JUNIT_XML = "--junitxml=reports/junit.xml"
 CLI_MODULE = "cli"
 API_VERSIONS = ["v1", "v2"]
+UTF8 = "utf-8"
 DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"
+DIST_VERCEL_FILTERED_REQUIREMENTS = ["nicegui==", "pywebview=="]
 
 
 def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
@@ -508,8 +510,12 @@ def test(session: nox.Session) -> None:
 
 @nox.session(default=False)
 def dist_vercel(session: nox.Session) -> None:
-    """Create distribution to run API as Vercel Function."""
-    # Geneerate wheel and remember it's name
+    """Create distribution to run API as Vercel Function.
+
+    Args:
+        session: The nox session instance
+    """
+    # Generate wheel and remember its name
     wheel_output = session.run("uv", "build", "--wheel", "--out-dir", "dist_vercel/wheels", external=True, silent=True)
     wheel_pattern = r"Successfully built dist_vercel/wheels/([^/\s]+\.whl)"
     match = re.search(wheel_pattern, str(wheel_output))
@@ -517,20 +523,32 @@ def dist_vercel(session: nox.Session) -> None:
 
     # Generate requirements.txt including referencing the wheel
     session.run("uv", "sync", "--active", "--no-dev", external=True)
-    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding="utf-8") as outfile:
+    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
         session.run("uv", "pip", "freeze", "--exclude-editable", "--no-progress", stdout=outfile, external=True)
-    with Path(DIST_VERCEL_REQUIREMENTS).open("r", encoding="utf-8") as infile:
+
+    # Read the requirements file, filter out excluded packages, and add the wheel
+    with Path(DIST_VERCEL_REQUIREMENTS).open("r", encoding=UTF8) as infile:
         lines = infile.readlines()
-    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding="utf-8") as outfile:
-        # Remove first line if it starts with "Using "
-        if lines and lines[0].startswith("Using "):
-            outfile.writelines(lines[1:])
-        else:
-            outfile.writelines(lines)
+
+    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
+        # Skip Using... line if present
+        start_index = 1 if lines and lines[0].startswith("Using ") else 0
+
+        # Filter out packages defined in DIST_VERCEL_FILTERED_REQUIREMENTS
+        filtered_lines = [
+            line
+            for line in lines[start_index:]
+            if not any(line.lower().startswith(pkg.lower()) for pkg in DIST_VERCEL_FILTERED_REQUIREMENTS)
+        ]
+
+        outfile.writelines(filtered_lines)
+
         # Add wheel generated above
         if wheel_filename:
             outfile.write(f"./wheels/{wheel_filename}\n")
             session.log(f"Added local wheel to requirements.txt: {wheel_filename}")
+
+    session.log("Removed nicegui and pywebview from Vercel requirements.txt")
 
 
 @nox.session(python=["3.13"], default=False)
