@@ -6,7 +6,7 @@ from importlib.util import find_spec
 import typer
 
 from .constants import MODULES_TO_INSTRUMENT
-from .utils import __version__, boot, console, get_logger, prepare_cli
+from .utils import __is_running_in_container__, __version__, boot, console, get_logger, prepare_cli
 
 boot(MODULES_TO_INSTRUMENT)
 logger = get_logger(__name__)
@@ -15,7 +15,7 @@ cli = typer.Typer(help="Command Line Interface of OE Python Template")
 prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
 
-if find_spec("nicegui") and find_spec("webview"):
+if find_spec("nicegui") and find_spec("webview") and not __is_running_in_container__:
 
     @cli.command()
     def gui() -> None:

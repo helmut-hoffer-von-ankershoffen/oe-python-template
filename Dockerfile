@@ -96,6 +96,9 @@ ENV PATH="/app/.venv/bin:$PATH"
 # API will run on port 8000 by default
 EXPOSE 8000/tcp
 
+# Marimo server will run on port 8001 by default
+EXPOSE 8001/tcp
+
 # No healthcheck by default
 HEALTHCHECK NONE
 

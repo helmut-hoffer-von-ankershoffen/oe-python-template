@@ -6,7 +6,7 @@ from types import EllipsisType
 from nicegui import app, events, ui
 from nicegui import native as native_app
 
-from ._constants import __project_name__
+from ._constants import __is_running_in_container__, __project_name__
 from ._di import locate_subclasses
 from ._log import get_logger
 
@@ -55,8 +55,12 @@ def gui_run(  # noqa: PLR0913, PLR0917
         with_api: Whether to mount the API.
 
     Raises:
-        ValueError: If with_notebook is True but notebook_path is None.
+        ValueError: If with_notebook is True but notebook_path is None,
+            or trying to run native within container.
     """
+    if __is_running_in_container__ and native:
+        message = "Native GUI cannot be run in a container. Please run with uvx or in browser."
+        raise ValueError(message)
     if with_api:
         from ..api import api  # noqa: PLC0415, TID252
 
