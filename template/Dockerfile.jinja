@@ -123,4 +123,3 @@ COPY --from=builder-all --chown=root:root --chmod=755  /app /app
 # Run as nonroot
 USER app
 WORKDIR /app
-
