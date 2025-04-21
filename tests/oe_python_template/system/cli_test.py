@@ -67,9 +67,7 @@ def test_cli_serve_no_app(mock_uvicorn_run, runner: CliRunner) -> None:
 @patch("oe_python_template.utils._gui.app.mount")
 @patch("oe_python_template.utils._gui.ui.run")
 @patch("oe_python_template.utils._gui.gui_register_pages")
-def test_cli_serve_api_and_app(
-    mock_register_pages, mock_ui_run, mock_app_mount, runner: CliRunner
-) -> None:
+def test_cli_serve_api_and_app(mock_register_pages, mock_ui_run, mock_app_mount, runner: CliRunner) -> None:
     """Check serve command starts the server with API and GUI app."""
     # Create a MagicMock for native_app.find_open_port
     with patch("oe_python_template.utils._gui.native_app.find_open_port", return_value=8123):
