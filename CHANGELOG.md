@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.2..0.13.3) - 2025-04-21
+## [0.13.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.3..0.13.4) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(docker)* Fix - ([08e4696](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/08e46961233b1553849e3c80b4b4359f948d0d42))
+
+
+## [0.13.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.2..v0.13.3) - 2025-04-21
 
 ### 📚 Documentation
 
