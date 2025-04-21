@@ -312,6 +312,7 @@ def _generate_api_reference(session: nox.Session) -> None:
     Raises:
         FileNotFoundError: If the OpenAPI schema file for a version is not found
     """
+
     for version in API_VERSIONS:
         openapi_path = Path(f"docs/source/_static/openapi_{version}.yaml")
 
@@ -354,7 +355,6 @@ def _generate_api_reference(session: nox.Session) -> None:
         content = content.rstrip() + "\n"
         Path(output_file).write_text(f"# API {version} Reference\n{content}", encoding="utf-8")
         session.log(f"Shifted headers in {output_file}")
-
 
 def _generate_pdf_docs(session: nox.Session) -> None:
     """Generate PDF documentation using latexmk.

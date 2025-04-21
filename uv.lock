@@ -375,7 +375,7 @@ wheels = [
 [[package]]
 name = "bottle"
 version = "0.14.dev0"
-source = { git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle#2fa7afd35feb8f4c67699b670cc45556e93f62c2" }
+source = { git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle?tag=0.14-dev#2fa7afd35feb8f4c67699b670cc45556e93f62c2" }
 
 [[package]]
 name = "bracex"
@@ -2562,7 +2562,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bottle", git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle" },
+    { name = "bottle", git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle?tag=0.14-dev" },
     { name = "fastapi", extras = ["standard", "all"], specifier = ">=0.115.12" },
     { name = "jinja2", marker = "extra == 'examples'", specifier = ">=3.1.6" },
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
