@@ -2,7 +2,7 @@
 # requires-python = ">=3.13"
 # dependencies = [
 #     "marimo",
-#     "oe-python-template==0.13.0",
+#     "oe-python-template==0.13.1",
 # ]
 # ///
 
@@ -10,7 +10,7 @@
 import marimo
 from oe_python_template.utils import __version__
 
-__generated_with = "0.13.0"
+__generated_with = "0.13.1"
 app = marimo.App(app_title=f"🧠 OE Python Template v{__version__}")
 
 
