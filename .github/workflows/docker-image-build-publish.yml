@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
 
-      - name: (all target): Extract metadata (tags, labels) for Docker
+      - name: "(all target): Extract metadata (tags, labels) for Docker"
         id: meta-all
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
         with:
@@ -74,7 +74,7 @@ jobs:
             type=semver,pattern={{major}}
 
 
-      - name: (slim target): Extract metadata (tags, labels) for Docker
+      - name: "(slim target): Extract metadata (tags, labels) for Docker"
         id: meta-slim
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
         with:
@@ -96,7 +96,7 @@ jobs:
 
 
 
-      - name: (all target):Build and push Docker image
+      - name: "(all target): Build and push Docker image"
         id: build-and-push-all
         uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
         with:
@@ -110,7 +110,7 @@ jobs:
 
 
 
-      - name: (slim target):Build and push Docker image
+      - name: "(slim target): Build and push Docker image"
         id: build-and-push-slim
         uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
         with:
@@ -126,7 +126,7 @@ jobs:
 
 
 
-      - name: (all target): Generate artifact attestation
+      - name: "(all target): Generate artifact attestation"
         uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         with:
           subject-name: ${{ env.DOCKER_IO_REGISTRY }}/${{ env.DOCKER_IO_IMAGE_NAME_ALL }}
@@ -136,7 +136,7 @@ jobs:
 
 
 
-      - name: (slim target): Generate artifact attestation
+      - name: "(slim target): Generate artifact attestation"
         uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         with:
           subject-name: ${{ env.DOCKER_IO_REGISTRY }}/${{ env.DOCKER_IO_IMAGE_NAME_SLIM }}
