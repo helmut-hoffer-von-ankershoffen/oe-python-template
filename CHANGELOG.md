@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.18](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.17..0.12.18) - 2025-04-21
+## [0.12.19](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.18..0.12.19) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(bottle)* Nightmare - ([8dcd9a8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8dcd9a8557b85d8be8606ab43e421e5d820a482f))
+
+
+## [0.12.18](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.17..v0.12.18) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
