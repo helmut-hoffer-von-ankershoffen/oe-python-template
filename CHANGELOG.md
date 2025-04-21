@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.16](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.15..0.12.16) - 2025-04-21
+## [0.12.17](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.16..0.12.17) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(bottle)* Import from vendored earlier - ([2415a3f](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/2415a3ff3ebdff015a0980d594dd184c73e028f9))
+
+
+## [0.12.16](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.15..v0.12.16) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
