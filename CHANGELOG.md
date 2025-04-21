@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.25](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.24..0.12.25) - 2025-04-21
+## [0.12.26](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.25..0.12.26) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Allow to suppress reqs in wheel for vercel - ([8fe52a6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8fe52a6073b6d69f1fb12546caafdf4120e9b252))
+
+
+## [0.12.25](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.24..v0.12.25) - 2025-04-21
 
 ### 🚜 Refactor
 
