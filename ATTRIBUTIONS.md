@@ -920,7 +920,7 @@ PERFORMANCE OF THIS SOFTWARE.
 
 ```
 
-## aiohttp (3.11.17) - Apache Software License
+## aiohttp (3.11.16) - Apache Software License
 
 Async http client/server framework (asyncio)
 
@@ -12116,7 +12116,7 @@ License: LGPL-2.1-or-later
 
 ```
 
-## oe-python-template (0.12.19) - MIT License
+## oe-python-template (0.12.20) - MIT License
 
 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
 
@@ -28539,7 +28539,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ```
 
-## trio (0.29.0) - Apache Software License; MIT License
+## trio (0.30.0) - UNKNOWN
 
 A friendly Python library for async concurrency and I/O
 
