@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.23](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.22..0.12.23) - 2025-04-21
+## [0.12.24](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.23..0.12.24) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(vercel)* Filter out gui - ([0693187](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0693187e5284fc643def15ba4ab5ba42c1787ab2))
+
+
+## [0.12.23](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.22..v0.12.23) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
