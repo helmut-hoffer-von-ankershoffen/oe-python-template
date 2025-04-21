@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.5..0.13.6) - 2025-04-21
+## [0.13.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.6..0.13.7) - 2025-04-21
+
+### 📚 Documentation
+
+- *(example)* Simplify example script, we have settings, no explicit load_dotenv needed by user - ([ee6de36](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/ee6de361aa5eef6c04e94b0f0d44f8c0fea4d916))
+
+
+## [0.13.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.5..v0.13.6) - 2025-04-21
 
 ### Enh
 

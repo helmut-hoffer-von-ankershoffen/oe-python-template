@@ -2,7 +2,7 @@
 # requires-python = ">=3.13"
 # dependencies = [
 #     "marimo",
-#     "oe-python-template==0.13.6",
+#     "oe-python-template==0.13.7",
 # ]
 # ///
 
