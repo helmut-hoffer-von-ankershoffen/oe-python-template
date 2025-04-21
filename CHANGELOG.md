@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.10..0.13.11) - 2025-04-21
+## [0.13.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.11..0.13.12) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- Pre-commit util - ([9f9f1ce](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/9f9f1cefd1826d75f25104bd063800c82066df1a))
+
+
+## [0.13.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.10..v0.13.11) - 2025-04-21
 
 ### 🎨 Styling
 
@@ -1487,3 +1494,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
