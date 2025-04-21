@@ -1,7 +1,7 @@
 # Makefile for running common development tasks
 
 # Define all PHONY targets
-.PHONY: all act audit bump clean dist dist_vercel docs docker_build install lint setup setup test test_scheduled test_long_running update_from_template watch_gui
+.PHONY: all act audit bump clean dist dist_vercel docs docker_build install lint pre_commit_run_all setup setup test test_scheduled test_long_running update_from_template watch_gui
 
 # Main target i.e. default sessions defined in noxfile.py
 all:
@@ -33,7 +33,7 @@ act audit bump dist dist_vercel docs lint setup test update_from_template:
 ## Install development dependencies and pre-commit hooks
 install:
 	sh install.sh
-	pre-commit install
+	uv run pre-commit install
 
 ## Run tests marked as scheduled
 test_scheduled:
@@ -60,6 +60,9 @@ docker_build:
 	docker build -t oe-python-template --target all .
 	docker build -t oe-python-template --target slim .
 
+pre_commit_run_all:
+	uv run pre-commit run --all-files
+
 watch_gui:
 	uv run watch_gui.py
 
@@ -82,8 +85,9 @@ help:
 	@echo "  dist_vercel           - Package as Vercel Function into dist_vercel/"
 	@echo "  docs [pdf]            - Build documentation (add pdf for PDF format)"
 	@echo "  docker_build          - Build Docker image oe-python-template"
-	@echo "  install               - Install development dependencies and pre-commit hooks"
+	@echo "  install               - Install or update development dependencies inc. pre-commit hooks"
 	@echo "  lint                  - Run linting and formatting checks"
+	@echo "  pre_commit_run_all    - Run pre-commit hooks on all files"
 	@echo "  setup                 - Setup development environment"
 	@echo "  test [3.11|3.12|3.13] - Run tests (for specific Python version)"
 	@echo "  test_scheduled        - Run tests marked as scheduled with Python 3.11"
