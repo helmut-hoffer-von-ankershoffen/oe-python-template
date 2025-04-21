@@ -50,9 +50,8 @@ def test_cli_info_secrets(runner: CliRunner) -> None:
         assert THE_VALUE in result.output
 
 
-@pytest.mark.timeout(10)
 @patch("uvicorn.run")
-def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
+def test_cli_serve_no_app(mock_uvicorn_run, runner: CliRunner) -> None:
     """Check serve command starts the server."""
     result = runner.invoke(cli, ["system", "serve", "--host", "127.0.0.1", "--port", "8000", "--no-watch", "--no-app"])
     assert result.exit_code == 0
@@ -63,6 +62,41 @@ def test_cli_serve(mock_uvicorn_run, runner: CliRunner) -> None:
         port=8000,
         reload=False,
     )
+
+
+@patch("oe_python_template.utils._gui.app.mount")
+@patch("oe_python_template.utils._gui.ui.run")
+@patch("oe_python_template.utils._gui.gui_register_pages")
+def test_cli_serve_api_and_app(
+    mock_register_pages, mock_ui_run, mock_app_mount, runner: CliRunner
+) -> None:
+    """Check serve command starts the server with API and GUI app."""
+    # Create a MagicMock for native_app.find_open_port
+    with patch("oe_python_template.utils._gui.native_app.find_open_port", return_value=8123):
+        result = runner.invoke(cli, ["system", "serve", "--host", "127.0.0.1", "--port", "8000", "--no-watch"])
+
+        assert result.exit_code == 0
+        assert "Starting web application server at http://127.0.0.1:8000" in result.output
+
+        # Check that app.mount was called to mount the API
+        mock_app_mount.assert_called_once_with("/api", mock_app_mount.call_args[0][1])
+
+        # Check that gui_register_pages was called
+        mock_register_pages.assert_called_once()
+
+        # Check that ui.run was called with the correct parameters
+        mock_ui_run.assert_called_once_with(
+            title="oe_python_template",
+            favicon="",
+            native=False,
+            reload=False,
+            dark=False,
+            host="127.0.0.1",
+            port=8000,
+            frameless=False,
+            show_welcome_message=True,
+            show=False,
+        )
 
 
 def test_cli_openapi_yaml(runner: CliRunner) -> None:
