@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.4..0.13.5) - 2025-04-21
+## [0.13.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.5..0.13.6) - 2025-04-21
+
+### Enh
+
+- *(docker)* Don't run native in docker - ([78f77c8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/78f77c8a35a381ee178d8f349b6045e653b7a333))
+
+
+## [0.13.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.4..v0.13.5) - 2025-04-21
 
 ### 📚 Documentation
 
