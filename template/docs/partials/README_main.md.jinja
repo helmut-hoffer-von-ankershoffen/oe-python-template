@@ -320,13 +320,22 @@ docker run {{ docker_io_owner}}/{{ docker_io_image_name}} system openapi --outpu
 docker run {{ docker_io_owner}}/{{ docker_io_image_name}} system serve
 ```
 
-Execute command:
+The default Docker image includes all extras. Additionally a slim image is provided, with no extras. Run as follows
 
 ```shell
-docker run --env THE_VAR=MY_VALUE {{ docker_io_owner}}/{{ docker_io_image_name}} hello echo "Lorem Ipsum"
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}}-slim --help
+docker run {{ docker_io_owner}}/{{ docker_io_image_name}}-slim hello world
 ```
 
-Or use docker compose
+You can pass environment variables as parameters:
+
+```shell
+docker run --env {{ project_name_snake_case_upper }}_HELLO_LANGUAGE=de_DE {{ docker_io_owner}}/{{ docker_io_image_name}} hello world
+docker run --env {{ project_name_snake_case_upper }}_HELLO_LANGUAGE=en_US {{ docker_io_owner}}/{{ docker_io_image_name}} hello world
+```
+
+A docker compose stack is provided. Clone this repository using
+`git clone {{ github_repository_url_ssh }}` and enter the repository folder.
 
 The .env is passed through from the host to the Docker container.
 
@@ -365,15 +374,6 @@ echo ""
 echo "Shutting down the API container ..."
 docker compose down
 ```
-
-#### Slim
-
-The default Docker image includes all extras. Additionally a slim image is provided, with no extras. Run as follows
-
-```shell
-docker compose run --remove-orphans {{ pypi_distribution_name}}-slim --help
-```
-
 
 * See the [reference documentation of the API](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/api_reference_v1.html) for detailed documentation of all API operations and parameters.
 
