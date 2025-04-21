@@ -185,14 +185,11 @@ The following examples run from source - clone this repository using
 ```python
 """Example script demonstrating the usage of the service provided by {{ project_name }}."""
 
-from dotenv import load_dotenv
 from rich.console import Console
 
 from {{ import_package_name }}.hello import Service
 
 console = Console()
-
-load_dotenv()
 
 message = Service.get_hello_world()
 console.print(f"[blue]{message}[/blue]")
