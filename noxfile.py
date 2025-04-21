@@ -520,35 +520,9 @@ def dist_vercel(session: nox.Session) -> None:
     wheel_pattern = r"Successfully built dist_vercel/wheels/([^/\s]+\.whl)"
     match = re.search(wheel_pattern, str(wheel_output))
     wheel_filename = match.group(1) if match else None
-
-    # Generate requirements.txt including referencing the wheel
-    session.run("uv", "sync", "--active", "--no-dev", external=True)
-    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
-        session.run("uv", "pip", "freeze", "--exclude-editable", "--no-progress", stdout=outfile, external=True)
-
-    # Read the requirements file, filter out excluded packages, and add the wheel
-    with Path(DIST_VERCEL_REQUIREMENTS).open("r", encoding=UTF8) as infile:
-        lines = infile.readlines()
-
-    with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
-        # Skip Using... line if present
-        start_index = 1 if lines and lines[0].startswith("Using ") else 0
-
-        # Filter out packages defined in DIST_VERCEL_FILTERED_REQUIREMENTS
-        filtered_lines = [
-            line
-            for line in lines[start_index:]
-            if not any(line.lower().startswith(pkg.lower()) for pkg in DIST_VERCEL_FILTERED_REQUIREMENTS)
-        ]
-
-        outfile.writelines(filtered_lines)
-
-        # Add wheel generated above
-        if wheel_filename:
+    if wheel_filename:
+        with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
             outfile.write(f"./wheels/{wheel_filename}\n")
-            session.log(f"Added local wheel to requirements.txt: {wheel_filename}")
-
-    session.log("Removed nicegui and pywebview from Vercel requirements.txt")
 
 
 @nox.session(python=["3.13"], default=False)
