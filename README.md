@@ -301,6 +301,12 @@ Install the [Marimo extension for VSCode](https://marketplace.visualstudio.com/i
 
 Click on `examples/notebook.py` in VSCode and click on the caret next to the Run icon above the code (looks like a pencil) > "Start in marimo editor" (edit).
 
+... or without prior cloning of the repository
+
+```shell
+uvx marimo run https://raw.githubusercontent.com/helmut-hoffer-von-ankershoffen/oe-python-template/refs/heads/main/examples/notebook.py
+```
+
 ## Command Line Interface (CLI)
 
 ### Run with [uvx](https://docs.astral.sh/uv/guides/tools/)
