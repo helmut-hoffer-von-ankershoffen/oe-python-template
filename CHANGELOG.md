@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.13..0.12.14) - 2025-04-20
+## [0.12.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.14..0.12.15) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(bottle)* Fork tag - ([659af8a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/659af8af33593acb45216a7b23a3bbd2409b5558))
+
+
+## [0.12.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.13..v0.12.14) - 2025-04-20
 
 ### ⚙️ Miscellaneous Tasks
 
