@@ -3,6 +3,7 @@
 import json
 import os
 import re
+import zipfile
 from pathlib import Path
 
 import nox
@@ -509,6 +510,106 @@ def test(session: nox.Session) -> None:
 
 
 @nox.session(default=False)
+def _build_temp_wheel(session: nox.Session, temp_wheel_dir: Path) -> tuple[str, Path]:
+    """Build a wheel in a temporary directory.
+
+    Args:
+        session: The nox session
+        temp_wheel_dir: Directory to store the temporary wheel
+
+    Returns:
+        A tuple containing the wheel filename and path to the wheel
+
+    Raises:
+        SystemExit: If wheel building fails or the wheel cannot be identified
+    """
+    wheel_output = session.run("uv", "build", "--wheel", "--out-dir", str(temp_wheel_dir), external=True, silent=True)
+
+    # Extract wheel filename
+    wheel_pattern = r"Successfully built .+/([^/\s]+\.whl)"
+    match = re.search(wheel_pattern, str(wheel_output))
+    if not match:
+        session.error("Failed to build or identify wheel file")
+
+    wheel_filename = match.group(1)
+    temp_wheel_path = temp_wheel_dir / wheel_filename
+
+    return wheel_filename, temp_wheel_path
+
+
+def _extract_wheel(wheel_path: Path, extract_dir: Path) -> None:
+    """Extract a wheel to a directory.
+
+    Args:
+        wheel_path: Path to the wheel file
+        extract_dir: Directory to extract the wheel to
+    """
+    with zipfile.ZipFile(wheel_path, "r") as wheel_zip:
+        wheel_zip.extractall(extract_dir)
+
+
+def _modify_metadata(session: nox.Session, unpacked_dir: Path) -> None:
+    """Modify the METADATA file in the extracted wheel.
+
+    Args:
+        session: The nox session
+        unpacked_dir: Directory containing the extracted wheel
+
+    Raises:
+        SystemExit: If the METADATA file cannot be found
+    """
+    # Find dist-info directory
+    dist_info_dirs = list(unpacked_dir.glob("*.dist-info"))
+    if not dist_info_dirs:
+        session.error("Could not find .dist-info directory in wheel")
+
+    metadata_path = dist_info_dirs[0] / "METADATA"
+    if not metadata_path.exists():
+        session.error(f"METADATA file not found in {dist_info_dirs[0]}")
+
+    # Read metadata and filter out suppressed requirements
+    metadata_lines = metadata_path.read_text(encoding=UTF8).splitlines()
+
+    # Process each line, excluding suppressed requirements
+    filtered_lines = []
+    for line in metadata_lines:
+        if line.startswith("Requires-Dist:"):
+            should_suppress = any(pkg in line for pkg in DIST_VERCEL_REQUIRES_DIST_SUPPRESS)
+            if should_suppress:
+                session.log(f"Suppressing requirement: {line.strip()}")
+                continue
+        filtered_lines.append(line)
+
+    # Write modified metadata back
+    metadata_path.write_text("\n".join(filtered_lines), encoding=UTF8)
+
+
+def _repackage_wheel(src_dir: Path, output_path: Path) -> None:
+    """Repackage the modified wheel.
+
+    Args:
+        src_dir: Directory containing the modified wheel contents
+        output_path: Path to write the new wheel
+    """
+    # Remember current directory
+    original_dir = Path.cwd()
+
+    try:
+        # Change to source directory to preserve relative paths
+        os.chdir(src_dir)
+
+        # Create the new wheel
+        with zipfile.ZipFile(output_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
+            for path in Path().rglob("*"):
+                if path.is_file():
+                    zip_file.write(path)
+
+    finally:
+        # Return to original directory
+        os.chdir(original_dir)
+
+
+@nox.session(default=False)
 def dist_vercel(session: nox.Session) -> None:
     """Create distribution to run API as Vercel Function.
 
@@ -516,7 +617,6 @@ def dist_vercel(session: nox.Session) -> None:
         session: The nox session instance
     """
     import tempfile  # noqa: PLC0415
-    import zipfile  # noqa: PLC0415
 
     # Create temporary directories
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -525,78 +625,20 @@ def dist_vercel(session: nox.Session) -> None:
         temp_unpacked_dir = temp_path / "unpacked"
         temp_unpacked_dir.mkdir()
 
-        # Generate wheel in temporary directory
-        wheel_output = session.run(
-            "uv", "build", "--wheel", "--out-dir", str(temp_wheel_dir), external=True, silent=True
-        )
+        # Build the wheel
+        wheel_filename, temp_wheel_path = _build_temp_wheel(session, temp_wheel_dir)
 
-        # Extract wheel filename
-        wheel_pattern = r"Successfully built .+/([^/\s]+\.whl)"
-        match = re.search(wheel_pattern, str(wheel_output))
-        if not match:
-            session.error("Failed to build or identify wheel file")
+        # Extract the wheel
+        _extract_wheel(temp_wheel_path, temp_unpacked_dir)
 
-        wheel_filename = match.group(1)
-        temp_wheel_path = temp_wheel_dir / wheel_filename
-
-        # Unpack the wheel
-        with zipfile.ZipFile(temp_wheel_path, "r") as wheel_zip:
-            wheel_zip.extractall(temp_unpacked_dir)
-
-        # Find and modify METADATA file
-        dist_info_dirs = list(temp_unpacked_dir.glob("*.dist-info"))
-        if not dist_info_dirs:
-            session.error("Could not find .dist-info directory in wheel")
-
-        metadata_path = dist_info_dirs[0] / "METADATA"
-        if not metadata_path.exists():
-            session.error(f"METADATA file not found in {dist_info_dirs[0]}")
-
-        # Read metadata and filter out suppressed requirements
-        metadata_content = metadata_path.read_text(encoding=UTF8)
-        metadata_lines = metadata_content.splitlines()
-        filtered_lines = []
-
-        i = 0
-        while i < len(metadata_lines):
-            line = metadata_lines[i]
-
-            # Check if this line is a requirement that should be suppressed
-            should_suppress = False
-            if line.startswith("Requires-Dist:"):
-                for pkg in DIST_VERCEL_REQUIRES_DIST_SUPPRESS:
-                    if pkg in line:
-                        should_suppress = True
-                        session.log(f"Suppressing requirement: {line.strip()}")
-                        break
-
-            if should_suppress:
-                # Skip only this specific line
-                i += 1
-            else:
-                # Keep the line
-                filtered_lines.append(line)
-                i += 1
-
-        # Write modified metadata back
-        metadata_path.write_text("\n".join(filtered_lines), encoding=UTF8)
+        # Modify the metadata to remove unwanted dependencies
+        _modify_metadata(session, temp_unpacked_dir)
 
         # Create a new wheel with the modified files
         modified_wheel_path = temp_path / wheel_filename
+        _repackage_wheel(temp_unpacked_dir, modified_wheel_path)
 
-        # Return to original directory before zipping to avoid path issues
-        original_dir = Path.cwd()
-        os.chdir(temp_unpacked_dir)
-
-        try:
-            with zipfile.ZipFile(modified_wheel_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
-                for path in Path().rglob("*"):
-                    if path.is_file():
-                        zip_file.write(path)
-        finally:
-            os.chdir(original_dir)
-
-        # Ensure output directory exists
+        # Ensure output directory exists and copy wheel
         output_dir = Path("dist_vercel/wheels")
         output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -604,14 +646,13 @@ def dist_vercel(session: nox.Session) -> None:
         dest_wheel_path = output_dir / wheel_filename
         modified_wheel_path.replace(dest_wheel_path)
 
-        session.log(f"Created modified wheel: {dest_wheel_path}")
-
         # Create requirements.txt file
         Path("dist_vercel").mkdir(exist_ok=True)
         with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
             outfile.write(f"./wheels/{wheel_filename}\n")
 
-        session.log(f"Created {DIST_VERCEL_REQUIREMENTS} with modified wheel")
+        session.log(f"Created modified wheel at {dest_wheel_path}")
+        session.log(f"Created {DIST_VERCEL_REQUIREMENTS} pointing to the modified wheel")
 
 
 @nox.session(python=["3.13"], default=False)

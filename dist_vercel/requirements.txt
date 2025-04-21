@@ -1,1 +1,1 @@
-./wheels/oe_python_template-0.12.26-py3-none-any.whl
+./wheels/oe_python_template-0.12.27-py3-none-any.whl
