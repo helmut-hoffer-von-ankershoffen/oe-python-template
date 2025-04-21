@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.0..0.13.2) - 2025-04-21
+## [0.13.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.2..0.13.3) - 2025-04-21
+
+### 📚 Documentation
+
+- *(notebook)* Show how to run notebook with inline dependency directly using uvx marimo - ([a456904](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a456904b4d45de650289c54896faad62be451790))
+
+
+## [0.13.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.0..v0.13.2) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
