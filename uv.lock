@@ -2485,7 +2485,7 @@ wheels = [
 
 [[package]]
 name = "oe-python-template"
-version = "0.12.28"
+version = "0.13.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["all", "standard"] },
