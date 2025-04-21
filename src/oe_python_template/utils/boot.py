@@ -2,6 +2,7 @@
 
 import os
 import sys
+from pathlib import Path
 
 from ._log import logging_initialize
 from ._logfire import logfire_initialize
@@ -22,6 +23,7 @@ def boot(modules_to_instrument: list[str]) -> None:
     if _boot_called:
         return
     _boot_called = True
+    _import_from_vendored()
     sentry_initialize()
     log_to_logfire = logfire_initialize(modules_to_instrument)
     logging_initialize(log_to_logfire)
@@ -63,6 +65,22 @@ def _parse_env_args() -> None:
     # Remove processed arguments from sys.argv in reverse order
     for index in sorted(to_remove, reverse=True):
         del sys.argv[index]
+
+
+def _import_from_vendored() -> None:
+    """Add vendored/ to sys.path enabling to override broken (transitive) dependencies.
+
+    Raises:
+        FileNotFoundError: If the vendored/ directory cannot be found.
+    """
+    # Get the directory of this file
+    current_dir = Path(__file__).parent.parent.absolute()
+    vendored_dir = current_dir / "vendored"
+    if not vendored_dir.is_dir():
+        message = f"vendored/ directory not found at {vendored_dir!s}"
+        raise FileNotFoundError(message)
+    if vendored_dir not in sys.path:
+        sys.path.insert(0, str(vendored_dir))
 
 
 def _amend_library_path() -> None:
