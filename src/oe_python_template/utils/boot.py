@@ -2,26 +2,12 @@
 
 import os
 import sys
-from pathlib import Path
 
 from ._log import logging_initialize
 from ._logfire import logfire_initialize
 from ._sentry import sentry_initialize
 
 _boot_called = False
-
-# Import vendored dependencies
-current_dir = Path(__file__).parent.absolute()
-vendored_dir = current_dir / ".vendored"
-if not vendored_dir.is_dir():
-    message = f".vendored/ directory not found at {vendored_dir!s}"
-    raise FileNotFoundError(message)
-if vendored_dir not in sys.path:
-    sys.path.insert(0, str(vendored_dir))
-
-import bottle  # noqa: E402
-
-the_class = bottle.PasteServer
 
 
 def boot(modules_to_instrument: list[str]) -> None:

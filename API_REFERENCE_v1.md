@@ -237,7 +237,7 @@ paths:
       tags:
       - system
 
-> 2025-04-21 01:49:33 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.12.14 (project root /Users/helmut/Code/oe-python-template, pid 2672), parent 'python3.13' (pid 2468)                          boot.py:78
+> 2025-04-21 08:20:20 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.12.19 (project root /Users/helmut/Code/oe-python-template, pid 78766), parent 'python3.13' (pid 78446)                                                                                                                                                                                      boot.py:78
 
 > components:
 

@@ -65,6 +65,7 @@ dependencies = [
     # From Template
     "fastapi[standard,all]>=0.115.12",
     "logfire[system-metrics]>=3.13.1",
+    "nicegui[native]>=2.15.0",
     "opentelemetry-instrumentation-fastapi>=0.53b0",
     "opentelemetry-instrumentation-httpx>=0.53b0",
     "opentelemetry-instrumentation-jinja2>=0.53b0",
@@ -88,8 +89,8 @@ examples = [
     "marimo>=0.13.0",
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
+    "matplotlib>=3.10.1",
 ]
-gui = ["nicegui[native,matplotlib]>=2.15.0"]
 
 [dependency-groups]
 dev = [
@@ -159,6 +160,9 @@ packages = ["src/oe_python_template"]
 override-dependencies = [ # https://github.com/astral-sh/uv/issues/4422
     "rfc3987; sys_platform == 'never'", # GPLv3
 ]
+
+[tool.uv.sources]
+bottle = { git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle", tag = "0.14-dev" }
 
 [tool.ruff]
 target-version = "py311"

@@ -30,11 +30,14 @@ class PageBuilder(BasePageBuilder):
                 "BUTTON_CLICK_ME"
             )
 
-            with ui.card().tight().mark("CARD_PLOT"):  # noqa: SIM117
-                with ui.matplotlib(figsize=(4, 3)).figure as fig:
-                    x = np.linspace(0.0, 5.0)
-                    y = np.cos(2 * np.pi * x) * np.exp(-x)
-                    ax = fig.gca()
-                    ax.plot(x, y, "-")
+            from importlib.util import find_spec  # noqa: PLC0415
+
+            if find_spec("matplotlib"):
+                with ui.card().tight().mark("CARD_PLOT"):  # noqa: SIM117
+                    with ui.matplotlib(figsize=(4, 3)).figure as fig:
+                        x = np.linspace(0.0, 5.0)
+                        y = np.cos(2 * np.pi * x) * np.exp(-x)
+                        ax = fig.gca()
+                        ax.plot(x, y, "-")
 
             ui.link("Info", "/info").mark("LINK_INFO")

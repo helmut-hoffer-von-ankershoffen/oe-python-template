@@ -61,9 +61,9 @@ requires-python = ">=3.11, <4.0"
 
 dependencies = [
     # From Template
-    "bottle",
     "fastapi[standard,all]>=0.115.12",
     "logfire[system-metrics]>=3.13.1",
+    "nicegui[native]>=2.15.0",
     "opentelemetry-instrumentation-fastapi>=0.53b0",
     "opentelemetry-instrumentation-httpx>=0.53b0",
     "opentelemetry-instrumentation-jinja2>=0.53b0",
@@ -87,9 +87,7 @@ examples = [
     "marimo>=0.13.0",
     "jupyter>=1.1.1",
     "jinja2>=3.1.6",
-]
-gui = [
-    "nicegui[native,matplotlib]>=2.15.0",
+    "matplotlib>=3.10.1",
 ]
 
 [dependency-groups]
@@ -161,15 +159,12 @@ override-dependencies = [ # https://github.com/astral-sh/uv/issues/4422
     "rfc3987; sys_platform == 'never'", # GPLv3
 ]
 
-[tool.uv.sources]
-bottle = { git = "https://github.com/helmut-hoffer-von-ankershoffen/bottle", tag = "0.14-dev" }
-
 [tool.ruff]
 target-version = "py311"
 preview = true
 fix = true
 line-length = 120
-extend-exclude = [".fixme", "notebook.py", "template/*.py"]
+extend-exclude = [".fixme", "notebook.py", "template/*.py", "bottle.py"]
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -232,6 +227,7 @@ docstring-code-format = true
 convention = "google"
 
 [tool.mypy] # https://mypy.readthedocs.io/en/latest/config_file.html
+exclude = ["bottle.py"]
 junit_xml = "reports/mypy_junit.xml"
 plugins = "pydantic.mypy"
 strict = true
