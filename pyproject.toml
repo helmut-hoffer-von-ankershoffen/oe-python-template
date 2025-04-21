@@ -1,9 +1,11 @@
 [project]
 name = "oe-python-template"
-version = "0.12.20"
+version = "0.12.21"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
+authors = [
+    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
+]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -279,7 +281,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.12.20"
+current_version = "0.12.21"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
