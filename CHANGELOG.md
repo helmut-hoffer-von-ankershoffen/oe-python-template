@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.12.24](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.23..0.12.24) - 2025-04-21
+## [0.12.25](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.24..0.12.25) - 2025-04-21
+
+### 🚜 Refactor
+
+- *(vercel)* Simplify requirements.txt - ([81bc019](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/81bc019dd9c55829b307209a72e5c2b495227ec3))
+
+
+## [0.12.24](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.23..v0.12.24) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
