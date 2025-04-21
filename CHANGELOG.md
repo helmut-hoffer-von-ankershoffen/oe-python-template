@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.9..0.13.10) - 2025-04-21
+## [0.13.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.10..0.13.11) - 2025-04-21
+
+### 🎨 Styling
+
+- *(test/health)* Dry and use str - ([36b8212](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/36b82120558fa2d2ee1559e2dcee4e9a58dc9142))
+
+
+## [0.13.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.9..v0.13.10) - 2025-04-21
 
 ### 🎨 Styling
 
