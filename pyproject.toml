@@ -3,9 +3,7 @@ name = "oe-python-template"
 version = "0.12.22"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [
-    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
-]
+authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
 license = { file = "LICENSE" }
 
 keywords = [
