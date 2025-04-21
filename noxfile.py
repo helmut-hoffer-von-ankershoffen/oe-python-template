@@ -22,7 +22,7 @@ CLI_MODULE = "cli"
 API_VERSIONS = ["v1", "v2"]
 UTF8 = "utf-8"
 DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"
-DIST_VERCEL_FILTERED_REQUIREMENTS = ["nicegui==", "pywebview=="]
+DIST_VERCEL_REQUIRES_DIST_SUPPRESS = ["nicegui[native]"]
 
 
 def _setup_venv(session: nox.Session, all_extras: bool = True) -> None:
@@ -515,14 +515,106 @@ def dist_vercel(session: nox.Session) -> None:
     Args:
         session: The nox session instance
     """
-    # Generate wheel and remember its name
-    wheel_output = session.run("uv", "build", "--wheel", "--out-dir", "dist_vercel/wheels", external=True, silent=True)
-    wheel_pattern = r"Successfully built dist_vercel/wheels/([^/\s]+\.whl)"
-    match = re.search(wheel_pattern, str(wheel_output))
-    wheel_filename = match.group(1) if match else None
-    if wheel_filename:
+    import tempfile  # noqa: PLC0415
+    import zipfile  # noqa: PLC0415
+
+    # Create temporary directories
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_path = Path(temp_dir)
+        temp_wheel_dir = temp_path / "wheel"
+        temp_unpacked_dir = temp_path / "unpacked"
+        temp_unpacked_dir.mkdir()
+
+        # Generate wheel in temporary directory
+        wheel_output = session.run(
+            "uv", "build", "--wheel", "--out-dir", str(temp_wheel_dir), external=True, silent=True
+        )
+
+        # Extract wheel filename
+        wheel_pattern = r"Successfully built .+/([^/\s]+\.whl)"
+        match = re.search(wheel_pattern, str(wheel_output))
+        if not match:
+            session.error("Failed to build or identify wheel file")
+
+        wheel_filename = match.group(1)
+        temp_wheel_path = temp_wheel_dir / wheel_filename
+
+        # Unpack the wheel
+        with zipfile.ZipFile(temp_wheel_path, "r") as wheel_zip:
+            wheel_zip.extractall(temp_unpacked_dir)
+
+        # Find and modify METADATA file
+        dist_info_dirs = list(temp_unpacked_dir.glob("*.dist-info"))
+        if not dist_info_dirs:
+            session.error("Could not find .dist-info directory in wheel")
+
+        metadata_path = dist_info_dirs[0] / "METADATA"
+        if not metadata_path.exists():
+            session.error(f"METADATA file not found in {dist_info_dirs[0]}")
+
+        # Read metadata and filter out suppressed requirements
+        metadata_content = metadata_path.read_text(encoding=UTF8)
+        filtered_lines = []
+        skip_line = False
+
+        for line in metadata_content.splitlines():
+            if line.startswith("Requires-Dist:"):
+                # Check if this requirement should be suppressed
+                should_suppress = False
+                for pkg in DIST_VERCEL_REQUIRES_DIST_SUPPRESS:
+                    if pkg in line:
+                        should_suppress = True
+                        session.log(f"Suppressing requirement: {line.strip()}")
+                        break
+
+                if should_suppress:
+                    skip_line = True
+                    continue
+
+            # If we encounter a new header after skipping lines, stop skipping
+            elif skip_line and (not line or not line.startswith(" ")):
+                skip_line = False
+
+            # Skip continuation lines of a suppressed requirement
+            if skip_line:
+                continue
+
+            filtered_lines.append(line)
+
+        # Write modified metadata back
+        metadata_path.write_text("\n".join(filtered_lines), encoding=UTF8)
+
+        # Create a new wheel with the modified files
+        modified_wheel_path = temp_path / wheel_filename
+
+        # Return to original directory before zipping to avoid path issues
+        original_dir = Path.cwd()
+        os.chdir(temp_unpacked_dir)
+
+        try:
+            with zipfile.ZipFile(modified_wheel_path, "w", zipfile.ZIP_DEFLATED) as zip_file:
+                for path in Path().rglob("*"):
+                    if path.is_file():
+                        zip_file.write(path)
+        finally:
+            os.chdir(original_dir)
+
+        # Ensure output directory exists
+        output_dir = Path("dist_vercel/wheels")
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Move the wheel to the destination
+        dest_wheel_path = output_dir / wheel_filename
+        modified_wheel_path.replace(dest_wheel_path)
+
+        session.log(f"Created modified wheel: {dest_wheel_path}")
+
+        # Create requirements.txt file
+        Path("dist_vercel").mkdir(exist_ok=True)
         with Path(DIST_VERCEL_REQUIREMENTS).open("w", encoding=UTF8) as outfile:
             outfile.write(f"./wheels/{wheel_filename}\n")
+
+        session.log(f"Created {DIST_VERCEL_REQUIREMENTS} with modified wheel")
 
 
 @nox.session(python=["3.13"], default=False)
