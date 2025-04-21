@@ -1,5 +1,12 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
+## [0.13.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.0..0.13.2) - 2025-04-21
+
+### ⚙️ Miscellaneous Tasks
+
+- *(pre-commit)* Get in order - ([c3fcfd2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c3fcfd2360681992fea735884ced19b45b5549b3))
+
+
 ## [0.12.28](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.12.27..v0.12.28) - 2025-04-21
 
 ### 🚜 Refactor
@@ -1417,3 +1424,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
