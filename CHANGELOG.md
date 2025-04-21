@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.6..0.13.7) - 2025-04-21
+## [0.13.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.7..0.13.8) - 2025-04-21
+
+### 📚 Documentation
+
+- Polish, closing for eastern - ([a7f4817](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a7f48174948e1d8cd330083fb4c1e772cdc94e09))
+
+
+## [0.13.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.6..v0.13.7) - 2025-04-21
 
 ### 📚 Documentation
 
