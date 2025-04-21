@@ -554,32 +554,29 @@ def dist_vercel(session: nox.Session) -> None:
 
         # Read metadata and filter out suppressed requirements
         metadata_content = metadata_path.read_text(encoding=UTF8)
+        metadata_lines = metadata_content.splitlines()
         filtered_lines = []
-        skip_line = False
 
-        for line in metadata_content.splitlines():
+        i = 0
+        while i < len(metadata_lines):
+            line = metadata_lines[i]
+
+            # Check if this line is a requirement that should be suppressed
+            should_suppress = False
             if line.startswith("Requires-Dist:"):
-                # Check if this requirement should be suppressed
-                should_suppress = False
                 for pkg in DIST_VERCEL_REQUIRES_DIST_SUPPRESS:
                     if pkg in line:
                         should_suppress = True
                         session.log(f"Suppressing requirement: {line.strip()}")
                         break
 
-                if should_suppress:
-                    skip_line = True
-                    continue
-
-            # If we encounter a new header after skipping lines, stop skipping
-            elif skip_line and (not line or not line.startswith(" ")):
-                skip_line = False
-
-            # Skip continuation lines of a suppressed requirement
-            if skip_line:
-                continue
-
-            filtered_lines.append(line)
+            if should_suppress:
+                # Skip only this specific line
+                i += 1
+            else:
+                # Keep the line
+                filtered_lines.append(line)
+                i += 1
 
         # Write modified metadata back
         metadata_path.write_text("\n".join(filtered_lines), encoding=UTF8)
