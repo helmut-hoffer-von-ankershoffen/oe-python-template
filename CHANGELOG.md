@@ -1,6 +1,20 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.11..0.13.12) - 2025-04-21
+## [0.13.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.12..0.13.13) - 2025-04-22
+
+### 🎨 Styling
+
+- Test/health - ([e8fd68a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e8fd68a946724ecd7513908a84bab95e598f70a6))
+
+### ⚙️ Miscellaneous Tasks
+
+- Pre-commit - ([436b39b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/436b39bca207e7a18922e711c4c4b4050a26e55d))
+
+## New Contributors ❤️
+
+* @helmut-hoffer-von-ankershoffen made their first contribution
+
+## [0.13.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.11..v0.13.12) - 2025-04-21
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1494,3 +1508,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
