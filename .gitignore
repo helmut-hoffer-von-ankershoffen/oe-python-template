@@ -2,12 +2,11 @@
 
 # Environment
 .env
-.env.backup
-.env.bak
-.env.orig
+.env.*
+!.env.example
+.envrc
 ENV/
 env/
-.envrc
 
 ## secrets
 .secret
