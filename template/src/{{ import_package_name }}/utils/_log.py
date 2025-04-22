@@ -1,13 +1,15 @@
 """Logging configuration and utilities."""
 
 import logging as python_logging
+import os
 import typing as t
 from logging import FileHandler
+from pathlib import Path
 from typing import Annotated, Literal
 
 import click
 import logfire
-from pydantic import Field
+from pydantic import AfterValidator, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from rich.console import Console
 from rich.logging import RichHandler
@@ -31,6 +33,44 @@ def get_logger(name: str | None) -> python_logging.Logger:
     return python_logging.getLogger(f"{__project_name__}.{name}")
 
 
+def _validate_file_name(file_name: str | None) -> str | None:
+    """Validate the file_name is valid and the file writeable.
+
+    - Checks file_name does not yet exist or is a file
+    - If not yet existing, checks it can be created
+    - If existing file, checks file is writeable
+
+    Args:
+        file_name: The file name of the log file
+
+    Returns:
+        str | None: The validated file name
+
+    Raises:
+        ValueError: If file name is not valid or the file not writeable
+    """
+    if file_name is None:
+        return file_name
+
+    file_path = Path(file_name)
+    if file_path.exists():
+        if not file_path.is_file():
+            message = f"File name {file_path.absolute()} is not a file"
+            raise ValueError(message)
+        if not os.access(file_path, os.W_OK):
+            message = f"File {file_path.absolute()} is not writable"
+            raise ValueError(message)
+    else:
+        try:
+            file_path.touch(exist_ok=False)
+            file_path.unlink()
+        except OSError as e:
+            message = f"File {file_path.absolute()} cannot be created: {e}"
+            raise ValueError(message) from e
+
+    return file_name
+
+
 class LogSettings(BaseSettings):
     """Settings for configuring logging behavior."""
 
@@ -51,6 +91,7 @@ class LogSettings(BaseSettings):
     ]
     file_name: Annotated[
         str,
+        AfterValidator(_validate_file_name),
         Field(description="Name of the log file", default=f"{__project_name__}.log"),
     ]
     console_enabled: Annotated[

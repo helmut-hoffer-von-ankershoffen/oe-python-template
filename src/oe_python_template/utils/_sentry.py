@@ -77,7 +77,7 @@ def _validate_sentry_domain(netloc_with_auth: str) -> None:
         raise ValueError(_ERR_MSG_INVALID_DOMAIN)
 
 
-def validate_https_dsn(value: SecretStr | None) -> SecretStr | None:
+def _validate_https_dsn(value: SecretStr | None) -> SecretStr | None:
     """Validate that the Sentry DSN is a valid HTTPS URL.
 
     Args:
@@ -124,7 +124,7 @@ class SentrySettings(OpaqueSettings):
     dsn: Annotated[
         SecretStr | None,
         BeforeValidator(strip_to_none_before_validator),
-        AfterValidator(validate_https_dsn),
+        AfterValidator(_validate_https_dsn),
         PlainSerializer(func=OpaqueSettings.serialize_sensitive_info, return_type=str, when_used="always"),
         Field(description="Sentry DSN", examples=["https://SECRET@SECRET.ingest.de.sentry.io/SECRET"], default=None),
     ]

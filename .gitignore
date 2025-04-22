@@ -4,6 +4,7 @@
 .env
 .env.backup
 .env.bak
+.env.orig
 ENV/
 env/
 .envrc

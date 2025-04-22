@@ -14,12 +14,12 @@ from oe_python_template.utils._sentry import (
     _ERR_MSG_MISSING_NETLOC,
     _ERR_MSG_MISSING_SCHEME,
     _ERR_MSG_NON_HTTPS,
+    _validate_https_dsn,
     _validate_https_scheme,
     _validate_sentry_domain,
     _validate_url_netloc,
     _validate_url_scheme,
     sentry_initialize,
-    validate_https_dsn,
 )
 
 log = get_logger(__name__)
@@ -101,13 +101,13 @@ def test_validate_sentry_domain() -> None:
 def test_validate_https_dsn_with_valid_dsn() -> None:
     """Test DSN validation with valid DSN."""
     valid_dsn = SecretStr(VALID_DSN)
-    result = validate_https_dsn(valid_dsn)
+    result = _validate_https_dsn(valid_dsn)
     assert result is valid_dsn  # Should return the same object
 
 
 def test_validate_https_dsn_with_none() -> None:
     """Test DSN validation with None value."""
-    result = validate_https_dsn(None)
+    result = _validate_https_dsn(None)
     assert result is None  # Should return None unchanged
 
 
@@ -115,19 +115,19 @@ def test_validate_https_dsn_invalid_cases() -> None:
     """Test DSN validation with various invalid cases."""
     # Missing scheme
     with pytest.raises(ValueError, match=re.escape(_ERR_MSG_MISSING_SCHEME)):
-        validate_https_dsn(SecretStr("//invalid.com"))
+        _validate_https_dsn(SecretStr("//invalid.com"))
 
     # Missing netloc
     with pytest.raises(ValueError, match=re.escape(_ERR_MSG_MISSING_NETLOC)):
-        validate_https_dsn(SecretStr("https://"))
+        _validate_https_dsn(SecretStr("https://"))
 
     # HTTP scheme instead of HTTPS
     with pytest.raises(ValueError, match=re.escape(_ERR_MSG_NON_HTTPS)):
-        validate_https_dsn(SecretStr("http://abcdef1234567890@o12345.ingest.us.sentry.io/1234567890"))
+        _validate_https_dsn(SecretStr("http://abcdef1234567890@o12345.ingest.us.sentry.io/1234567890"))
 
     # Invalid Sentry domain
     with pytest.raises(ValueError, match=re.escape(_ERR_MSG_INVALID_DOMAIN)):
-        validate_https_dsn(SecretStr("https://user@example.com"))
+        _validate_https_dsn(SecretStr("https://user@example.com"))
 
 
 def test_sentry_initialize_with_no_dsn(mock_environment: None) -> None:
