@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.13..0.13.14) - 2025-04-22
+## [0.13.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.14..0.13.15) - 2025-04-22
+
+### ⛰️  Features
+
+- *(utils)* Validate log file name setting - ([4a2da77](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/4a2da77fa9993288b79b993c4925b6089be1f398))
+
+
+## [0.13.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.13..v0.13.14) - 2025-04-22
 
 ### ⛰️  Features
 
@@ -1512,3 +1519,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
