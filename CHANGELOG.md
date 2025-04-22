@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.13.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.12..0.13.13) - 2025-04-22
+## [0.13.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.13..0.13.14) - 2025-04-22
+
+### ⛰️  Features
+
+- *(utils)* Validate sentry setting - ([e17fe74](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e17fe742f51ac35d0721ab27ad8759ea5fcb106e))
+
+
+## [0.13.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.12..v0.13.13) - 2025-04-22
 
 ### 🎨 Styling
 
@@ -10,9 +17,6 @@
 
 - Pre-commit - ([436b39b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/436b39bca207e7a18922e711c4c4b4050a26e55d))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.13.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.11..v0.13.12) - 2025-04-21
 
