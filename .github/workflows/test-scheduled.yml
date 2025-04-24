@@ -36,7 +36,7 @@ jobs:
 
       - name: Run scheduled tests
         env:
-          BETTERSTACK_HEARTBEAT_URL: "${{ secrets.OE_PYTHON_TEMPLATE_BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL }}"
+          BETTERSTACK_HEARTBEAT_URL: "${{ secrets.BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL }}"
         run: |
           make test_scheduled
           EXIT_CODE=$?

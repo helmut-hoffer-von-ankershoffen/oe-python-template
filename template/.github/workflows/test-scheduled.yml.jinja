@@ -36,7 +36,7 @@ jobs:
 
       - name: Run scheduled tests
         env:
-          BETTERSTACK_HEARTBEAT_URL: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL }}{% endraw %}"
+          BETTERSTACK_HEARTBEAT_URL: "{% raw %}${{ secrets.{% endraw %}BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL {% raw %}}}{% endraw %}"
         run: |
           make test_scheduled
           EXIT_CODE=$?

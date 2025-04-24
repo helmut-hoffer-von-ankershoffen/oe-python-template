@@ -80,6 +80,9 @@ node_modules/
 # Copier
 *.rej
 
+# Scalene
+.profile
+
 
 # Vercel
 .vercel
