@@ -90,25 +90,25 @@ def test_validate_file_name_invalid_path() -> None:
 def test_get_logger_with_name() -> None:
     """Test get_logger with a specific name."""
     logger = get_logger("test_module")
-    assert logger.name == "oe_python_template.test_module"
+    assert logger.name == "{{ import_package_name }}.test_module"
 
 
 def test_get_logger_none() -> None:
     """Test get_logger with None name."""
     logger = get_logger(None)
-    assert logger.name == "oe_python_template"
+    assert logger.name == "{{ import_package_name }}"
 
 
 def test_get_logger_project_name() -> None:
     """Test get_logger with the project name."""
-    logger = get_logger("oe_python_template")
-    assert logger.name == "oe_python_template"
+    logger = get_logger("{{ import_package_name }}")
+    assert logger.name == "{{ import_package_name }}"
 
 
 def test_logging_initialize_with_defaults() -> None:
     """Test logging_initialize with default settings."""
     with (
-        mock.patch("oe_python_template.utils._log.load_settings") as mock_load_settings,
+        mock.patch("{{ import_package_name }}.utils._log.load_settings") as mock_load_settings,
         mock.patch("logging.basicConfig") as mock_basic_config,
     ):
         # Mock settings with defaults
