@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.4..0.15.5) - 2025-04-24
+## [0.15.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.5..0.15.6) - 2025-04-24
+
+### 🧪 Testing
+
+- *(settings)* Unit tests - ([a373205](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a3732051b8990d3f3d386ebf4c2a453b302a8794))
+
+
+## [0.15.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.4..v0.15.5) - 2025-04-24
 
 ### 🐛 Bug Fixes
 
