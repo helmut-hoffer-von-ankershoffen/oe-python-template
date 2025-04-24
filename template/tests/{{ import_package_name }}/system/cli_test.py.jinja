@@ -1,7 +1,7 @@
 """Tests to verify the CLI functionality of the system module."""
 
 import os
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 from typer.testing import CliRunner
@@ -64,20 +64,23 @@ def test_cli_serve_no_app(mock_uvicorn_run, runner: CliRunner) -> None:
     )
 
 
-@patch("{{ import_package_name }}.utils._gui.app.mount")
-@patch("{{ import_package_name }}.utils._gui.ui.run")
 @patch("{{ import_package_name }}.utils._gui.gui_register_pages")
-def test_cli_serve_api_and_app(mock_register_pages, mock_ui_run, mock_app_mount, runner: CliRunner) -> None:
+@patch("nicegui.ui.run")
+def test_cli_serve_api_and_app(mock_ui_run, mock_register_pages, runner: CliRunner) -> None:
     """Check serve command starts the server with API and GUI app."""
-    # Create a MagicMock for native_app.find_open_port
-    with patch("{{ import_package_name }}.utils._gui.native_app.find_open_port", return_value=8123):
+    # Create mocks for components needed in gui_run
+    mock_app = MagicMock()
+
+    # Patch nicegui imports inside gui_run function
+    with patch("nicegui.native.find_open_port", return_value=8123), patch("nicegui.app", mock_app):
         result = runner.invoke(cli, ["system", "serve", "--host", "127.0.0.1", "--port", "8000", "--no-watch"])
 
         assert result.exit_code == 0
         assert "Starting web application server at http://127.0.0.1:8000" in result.output
 
         # Check that app.mount was called to mount the API
-        mock_app_mount.assert_called_once_with("/api", mock_app_mount.call_args[0][1])
+        mock_app.mount.assert_called_once()
+        assert mock_app.mount.call_args[0][0] == "/api"
 
         # Check that gui_register_pages was called
         mock_register_pages.assert_called_once()
