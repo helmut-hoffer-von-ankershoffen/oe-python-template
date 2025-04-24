@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.14.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.1..0.14.2) - 2025-04-24
+## [0.14.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.2..0.14.3) - 2025-04-24
+
+### 🚜 Refactor
+
+- Shorter betterstack heartbeat env name - ([4124546](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/41245460157d12f071e2caca37ae8fe85dd310a4))
+
+
+## [0.14.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.1..v0.14.2) - 2025-04-24
 
 ### 🎨 Styling
 
