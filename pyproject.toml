@@ -118,6 +118,7 @@ dev = [
     "pytest-watcher>=0.4.3",
     "pytest-xdist[psutil]>=3.6.1",
     "ruff>=0.11.6",
+    "scalene>=1.5.51",
     "sphinx>=8.2.3",
     "sphinx-autobuild>=2024.10.3",
     "sphinx-copybutton>=0.5.2",

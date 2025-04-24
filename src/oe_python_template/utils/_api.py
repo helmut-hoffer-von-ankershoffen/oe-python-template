@@ -1,3 +1,5 @@
+"""API router utilities for versioned FastAPI routers."""
+
 from fastapi import APIRouter
 
 

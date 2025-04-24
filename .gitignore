@@ -81,7 +81,8 @@ node_modules/
 *.rej
 
 # Scalene
-.profile
+profile.json
+profile.html
 
 
 # Vercel
