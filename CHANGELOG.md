@@ -1,6 +1,17 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.3..0.15.4) - 2025-04-24
+## [0.15.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.4..0.15.5) - 2025-04-24
+
+### 🐛 Bug Fixes
+
+- Smaller fixes - ([a16bdbe](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a16bdbe2c7e6b8b460d650ef24e2584a681bd27e))
+
+### ⚙️ Miscellaneous Tasks
+
+- Env adapt - ([489eb13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/489eb1300857fc93614ca137b5ca7608ca87780d))
+
+
+## [0.15.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.3..v0.15.4) - 2025-04-24
 
 ### 🐛 Bug Fixes
 
