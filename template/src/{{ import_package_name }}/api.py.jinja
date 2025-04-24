@@ -16,7 +16,7 @@ from .utils import (
     __base__url__,
     __documentation__url__,
     __repository_url__,
-    locate_implementations,
+    load_modules,
 )
 
 TITLE = "{{ project_name }}"
@@ -67,12 +67,13 @@ for version, semver in API_VERSIONS.items():
         terms_of_service=TERMS_OF_SERVICE_URL,
     )
 
-# Register routers with appropriate API versions
-for router in locate_implementations(VersionedAPIRouter):
-    router_instance: VersionedAPIRouter = router
-    version = router_instance.version
+load_modules()
+
+# Register routers with appropriate API versions using the tracked instances
+for router in VersionedAPIRouter.get_instances():
+    version = router.version  # type: ignore
     if version in API_VERSIONS:
-        api_instances[version].include_router(router_instance)
+        api_instances[version].include_router(router)  # type: ignore
 
 # Mount all API versions to the main app
 for version in API_VERSIONS:

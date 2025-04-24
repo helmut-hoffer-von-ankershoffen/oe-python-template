@@ -110,7 +110,7 @@ def register_info_endpoint(router: APIRouter) -> Callable[..., dict[str, Any]]:
 
 api_routers = {}
 for version in API_VERSIONS:
-    router = VersionedAPIRouter(version, tags=["system"])
+    router: APIRouter = VersionedAPIRouter(version, tags=["system"])  # type: ignore
     api_routers[version] = router
     health = register_health_endpoint(api_routers[version])
     info = register_info_endpoint(api_routers[version])

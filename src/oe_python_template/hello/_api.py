@@ -8,7 +8,7 @@ This module provides a webservice API with several operations:
 from collections.abc import Generator
 from typing import Annotated
 
-from fastapi import Depends
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel, Field
 
 from oe_python_template.utils import VersionedAPIRouter
@@ -20,8 +20,8 @@ HELLO_WORLD_EXAMPLE = "Hello, world!"
 
 # VersionedAPIRouters exported by modules via their __init__.py are automatically registered
 # and injected into the main API app, see ../api.py.
-api_v1 = VersionedAPIRouter("v1", prefix="/hello", tags=["hello"])
-api_v2 = VersionedAPIRouter("v2", prefix="/hello", tags=["hello"])
+api_v1: APIRouter = VersionedAPIRouter("v1", prefix="/hello", tags=["hello"])  # type: ignore
+api_v2: APIRouter = VersionedAPIRouter("v2", prefix="/hello", tags=["hello"])  # type: ignore
 
 
 def get_service() -> Generator[Service, None, None]:
