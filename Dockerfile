@@ -112,6 +112,9 @@ FROM target AS slim
 # Copy slim app, make it immutable
 COPY --from=builder-slim --chown=root:root --chmod=755  /app /app
 
+# Redirect log to stdout
+RUN ln -sf /dev/stdout /app/oe_python_template.log
+
 # Run as nonroot
 USER app
 WORKDIR /app
