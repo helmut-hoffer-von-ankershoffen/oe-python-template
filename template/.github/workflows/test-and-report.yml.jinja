@@ -68,7 +68,7 @@ jobs:
             fi
 
       - name: Smoke tests
-        run: uv run --no-dev {{ pypi_distribution_name }} hello world
+        run: uv run --no-dev {{ pypi_distribution_name }} --hello
 
       - name: Lint
         run: make lint
