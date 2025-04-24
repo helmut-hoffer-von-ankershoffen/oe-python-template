@@ -1,6 +1,18 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.14.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.2..0.14.3) - 2025-04-24
+## [0.14.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.3..0.14.4) - 2025-04-24
+
+### 🚜 Refactor
+
+- *(performance)* Fastapi lazy loaded - ([76565fb](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/76565fbb3a21a5a96dff531a775da98f632ef605))
+- *(performance)* Introduced profiler, lazy loading nicegui and marimo - ([0916218](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/09162185185df3daad90dc54e843b56526db000e))
+
+### 🧪 Testing
+
+- Adapt - ([0e7e6f8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0e7e6f85f9f9f7c95512ffe35420fa73e9083793))
+
+
+## [0.14.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.2..v0.14.3) - 2025-04-24
 
 ### 🚜 Refactor
 
