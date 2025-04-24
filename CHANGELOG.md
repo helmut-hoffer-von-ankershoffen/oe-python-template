@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.11..0.15.12) - 2025-04-24
+## [0.15.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.12..0.15.13) - 2025-04-24
+
+### Security
+
+- *(h11)* In template - ([3ec718a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/3ec718afa3d5f0b27b4e185f2b6473d3812c6914))
+
+
+## [0.15.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.11..v0.15.12) - 2025-04-24
 
 ### Security
 
