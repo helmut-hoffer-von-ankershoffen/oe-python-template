@@ -54,8 +54,8 @@ def _validate_file_name(file_name: str | None) -> str | None:
 
     file_path = Path(file_name)
     if file_path.exists():
-        if not file_path.is_file():
-            message = f"File name {file_path.absolute()} is not a file"
+        if not file_path.is_file() and not file_path.is_symlink():
+            message = f"File name {file_path.absolute()} is not a file or symlink"
             raise ValueError(message)
         if not os.access(file_path, os.W_OK):
             message = f"File {file_path.absolute()} is not writable"

@@ -194,7 +194,7 @@ def fail() -> None:
 
 @cli.command()
 def sleep(
-    seconds: Annotated[int, typer.Option(help="Duration in seconds")] = 10,
+    seconds: Annotated[int, typer.Option(help="Duration in seconds")] = 2,
 ) -> None:
     """Sleep given for given number of seconds.
 
