@@ -1,10 +1,10 @@
+"""Tests for the settings."""
+
 import os
+from typing import Any, ClassVar
 from unittest.mock import patch
 
 from pydantic import SecretStr
-
-"""Tests for the _settings module."""
-
 
 from oe_python_template.utils._settings import (
     UNHIDE_SENSITIVE_INFO,
@@ -98,7 +98,7 @@ def test_load_settings_validation_error(mock_console_print, mock_exit) -> None:
 class TestSettingsWithEnvPrefix(OpaqueSettings):
     """Test settings class with an environment prefix."""
 
-    model_config = {"env_prefix": "TEST_"}
+    model_config: ClassVar[dict[str, Any]] = {"env_prefix": "TEST_"}
 
     value: str
 
@@ -113,6 +113,6 @@ def test_settings_with_env_prefix() -> None:
 class TestSettingsWithEnvFile(OpaqueSettings):
     """Test settings class with a custom env file."""
 
-    model_config = {"env_file": "custom.env"}
+    model_config: ClassVar[dict[str, Any]] = {"env_file": "custom.env"}
 
     value: str = "default"
