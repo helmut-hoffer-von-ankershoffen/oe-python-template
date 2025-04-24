@@ -1,6 +1,17 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.14.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.0..0.14.1) - 2025-04-24
+## [0.14.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.1..0.14.2) - 2025-04-24
+
+### 🎨 Styling
+
+- Formatting in template - ([8d1e663](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/8d1e663bb5b6b1035f7127c8a01d0b972f42f7be))
+
+### ⚙️ Miscellaneous Tasks
+
+- Auto-detect read only env - ([f9187cf](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/f9187cf420238f27960d8027ccbc969e16d51961))
+
+
+## [0.14.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.0..v0.14.1) - 2025-04-24
 
 ### 🐛 Bug Fixes
 
