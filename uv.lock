@@ -1839,7 +1839,7 @@ wheels = [
 
 [[package]]
 name = "logfire"
-version = "3.14.0"
+version = "3.14.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "executing" },
@@ -1850,9 +1850,9 @@ dependencies = [
     { name = "rich" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/5b/ca57ad7a9e78fc9f7779bb2da8a3776233b832d211eaf49cea2582fe3f77/logfire-3.14.0.tar.gz", hash = "sha256:afdd23386a8a57da7ab97938cc5eec17928ce9195907b85860d906f04c5d33e3", size = 473733 }
+sdist = { url = "https://files.pythonhosted.org/packages/51/38/74e40b472957d565a355bbc19c07a008108ceebaea292cb12458d7b7e73a/logfire-3.14.1.tar.gz", hash = "sha256:c3d53807cfcb6490c18c5a5471033e27c780197162dc0d6564feb62f28ac4454", size = 473536 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7f/13/e06647ca3d7fb9167dd82260cc0e978ffcae88aa396025cea3d86a04875d/logfire-3.14.0-py3-none-any.whl", hash = "sha256:4f95cf98a7c29cd7cd00e093ba75ce1e4e19e5069acda8b1577a4b7790e0237a", size = 193168 },
+    { url = "https://files.pythonhosted.org/packages/de/34/a3e214ea81c8e2c5a1defdd863b6564d39c5f2f29336c37a9b4e2377c4ec/logfire-3.14.1-py3-none-any.whl", hash = "sha256:a1290f6dbcfbf593d84d2b9d824c706c7f7bbdacfaceee417e7bf9fe9db6be02", size = 193122 },
 ]
 
 [package.optional-dependencies]
@@ -1921,7 +1921,7 @@ wheels = [
 
 [[package]]
 name = "marimo"
-version = "0.13.0"
+version = "0.13.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1942,9 +1942,9 @@ dependencies = [
     { name = "uvicorn" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6a/0f/6d6bf8dbedd528b7beefa4385014f7722e7cfd8fc658b0644eeab3ed4a78/marimo-0.13.0.tar.gz", hash = "sha256:46629fbbd0731c7b819fcd0431dd8ed7982259d6936bd90494376ee17de36e2b", size = 10746792 }
+sdist = { url = "https://files.pythonhosted.org/packages/c9/6d/819687af3db0070ebf6aceadf5f6c90639b3de728f94577967fdf578aacb/marimo-0.13.1.tar.gz", hash = "sha256:fbe1b255ae96699c37d1aa63aac05e65c09d69832250369fd5d6fa7f1cc77e22", size = 10774109 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/51/d5/2b023ba1d0f2fb269cb7f02464bf43865f802c24bd80bdad1379f76c7d05/marimo-0.13.0-py3-none-any.whl", hash = "sha256:f03e479b6eb1ad05404737a1f1ed6d526475adde0faea75c6b23fdb393e6b98a", size = 11110407 },
+    { url = "https://files.pythonhosted.org/packages/ad/47/d00fb16828cda77e90fc592c25f857546722b1cd23bb0154198747b88ab6/marimo-0.13.1-py3-none-any.whl", hash = "sha256:2bced9a3a61b9da8fa13d20b1d7cc3cf26aaf478cc2aa81acd321065b553b7bb", size = 11138844 },
 ]
 
 [[package]]
@@ -2583,8 +2583,8 @@ requires-dist = [
     { name = "fastapi", extras = ["standard", "all"], specifier = ">=0.115.12" },
     { name = "jinja2", marker = "extra == 'examples'", specifier = ">=3.1.6" },
     { name = "jupyter", marker = "extra == 'examples'", specifier = ">=1.1.1" },
-    { name = "logfire", extras = ["system-metrics"], specifier = ">=3.13.1" },
-    { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.0" },
+    { name = "logfire", extras = ["system-metrics"], specifier = ">=3.14.1" },
+    { name = "marimo", marker = "extra == 'examples'", specifier = ">=0.13.1" },
     { name = "matplotlib", marker = "extra == 'examples'", specifier = ">=3.10.1" },
     { name = "nicegui", extras = ["native"], specifier = ">=2.15.0" },
     { name = "opentelemetry-instrumentation-fastapi", specifier = ">=0.53b0" },
@@ -2597,7 +2597,7 @@ requires-dist = [
     { name = "opentelemetry-instrumentation-urllib3", specifier = ">=0.53b0" },
     { name = "psutil", specifier = ">=7.0.0" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
-    { name = "sentry-sdk", specifier = ">=2.26.1" },
+    { name = "sentry-sdk", specifier = ">=2.27.0" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
     { name = "typer", specifier = ">=0.15.1" },
     { name = "uptime", specifier = ">=3.0.1" },
@@ -4524,15 +4524,15 @@ wheels = [
 
 [[package]]
 name = "sentry-sdk"
-version = "2.26.1"
+version = "2.27.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "certifi" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/85/26/099631caa51abffb1fd9e08c2138bc6681d3f288a5936c2fc4e054729611/sentry_sdk-2.26.1.tar.gz", hash = "sha256:759e019c41551a21519a95e6cef6d91fb4af1054761923dadaee2e6eca9c02c7", size = 323099 }
+sdist = { url = "https://files.pythonhosted.org/packages/cf/b6/a92ae6fa6d7e6e536bc586776b1669b84fb724dfe21b8ff08297f2d7c969/sentry_sdk-2.27.0.tar.gz", hash = "sha256:90f4f883f9eff294aff59af3d58c2d1b64e3927b28d5ada2b9b41f5aeda47daf", size = 323556 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/23/32/0a30b4fafdb3d26d133f99bb566aaa6000004ee7f2c4b72aafea9237ab7e/sentry_sdk-2.26.1-py2.py3-none-any.whl", hash = "sha256:e99390e3f217d13ddcbaeaed08789f1ca614d663b345b9da42e35ad6b60d696a", size = 340558 },
+    { url = "https://files.pythonhosted.org/packages/dd/8b/fb496a45854e37930b57564a20fb8e90dd0f8b6add0491527c00f2163b00/sentry_sdk-2.27.0-py2.py3-none-any.whl", hash = "sha256:c58935bfff8af6a0856d37e8adebdbc7b3281c2b632ec823ef03cd108d216ff0", size = 340786 },
 ]
 
 [[package]]
