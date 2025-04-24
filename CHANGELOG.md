@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.5..0.15.6) - 2025-04-24
+## [0.15.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.6..0.15.7) - 2025-04-24
+
+### 🎨 Styling
+
+- Lint - ([1d2ba19](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/1d2ba1949f68a1db441de13354b2d49652d49bc1))
+
+
+## [0.15.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.5..v0.15.6) - 2025-04-24
 
 ### 🧪 Testing
 
