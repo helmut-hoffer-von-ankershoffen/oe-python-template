@@ -6,7 +6,7 @@ from types import EllipsisType
 from nicegui import app, events, ui
 from nicegui import native as native_app
 
-from ._constants import __project_name__, __is_running_in_container__
+from ._constants import __is_running_in_container__, __project_name__
 from ._di import locate_subclasses
 from ._log import get_logger
 

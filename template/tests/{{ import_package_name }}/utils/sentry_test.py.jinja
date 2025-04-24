@@ -14,12 +14,12 @@ from {{ import_package_name }}.utils._sentry import (
     _ERR_MSG_MISSING_NETLOC,
     _ERR_MSG_MISSING_SCHEME,
     _ERR_MSG_NON_HTTPS,
+    _validate_https_dsn,
     _validate_https_scheme,
     _validate_sentry_domain,
     _validate_url_netloc,
     _validate_url_scheme,
     sentry_initialize,
-    _validate_https_dsn,
 )
 
 log = get_logger(__name__)

@@ -62,7 +62,7 @@ def _validate_file_name(file_name: str | None) -> str | None:
             raise ValueError(message)
     else:
         try:
-            file_path.touch(exist_ok=False)
+            file_path.touch(exist_ok=True)
             file_path.unlink()
         except OSError as e:
             message = f"File {file_path.absolute()} cannot be created: {e}"
