@@ -75,7 +75,7 @@ dependencies = [
     "psutil>=7.0.0",
     "pydantic-settings>=2.9.1",
     "sentry-sdk>=2.26.1",
-    "typer>=0.15.2",
+    "typer>=0.15.1",
     "uptime>=3.0.1",
     # Custom
     # Nothing yet
