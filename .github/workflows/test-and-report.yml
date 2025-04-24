@@ -68,7 +68,7 @@ jobs:
             fi
 
       - name: Smoke tests
-        run: uv run --no-dev oe-python-template --hello
+        run: uv run --no-dev oe-python-template --help
 
       - name: Lint
         run: make lint
