@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.2..0.15.3) - 2025-04-24
+## [0.15.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.3..0.15.4) - 2025-04-24
+
+### 🐛 Bug Fixes
+
+- Env prefix in Dockerfile - ([2230c41](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/2230c414a31bfda9610cca868fbcd69c4a0461e4))
+
+
+## [0.15.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.2..v0.15.3) - 2025-04-24
 
 ### ⚙️ Miscellaneous Tasks
 
