@@ -108,15 +108,11 @@ ENTRYPOINT ["oe-python-template"]
 # See https://matplotlib.org/stable/install/environment_variables_faq.html
 ENV MPLCONFIGDIR=/tmp/matplotlib
 
-
 # Target slim
 FROM target AS slim
 
 # Copy slim app, make it immutable
 COPY --from=builder-slim --chown=root:root --chmod=755  /app /app
-
-# Redirect log to stdout
-RUN ln -sf /dev/stdout /app/oe_python_template.log
 
 # Run as nonroot
 USER app
@@ -128,9 +124,6 @@ FROM target AS all
 
 # Copy fat app, i.e. with all extras, make it immutable
 COPY --from=builder-all --chown=root:root --chmod=755  /app /app
-
-# Redirect log to stdout
-RUN ln -sf /dev/stdout /app/oe_python_template.log
 
 # Run as nonroot
 USER app

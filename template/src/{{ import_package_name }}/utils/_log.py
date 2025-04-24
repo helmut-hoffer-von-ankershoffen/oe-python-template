@@ -14,7 +14,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from rich.console import Console
 from rich.logging import RichHandler
 
-from ._constants import __env_file__, __project_name__
+from ._constants import __env_file__, __is_running_in_read_only_environment__, __project_name__
 from ._settings import load_settings
 
 
@@ -92,7 +92,10 @@ class LogSettings(BaseSettings):
     file_name: Annotated[
         str,
         AfterValidator(_validate_file_name),
-        Field(description="Name of the log file", default=f"{__project_name__}.log"),
+        Field(
+            description="Name of the log file",
+            default="/dev/stdout" if __is_running_in_read_only_environment__ else f"{__project_name__}.log",
+        ),
     ]
     console_enabled: Annotated[
         bool,
