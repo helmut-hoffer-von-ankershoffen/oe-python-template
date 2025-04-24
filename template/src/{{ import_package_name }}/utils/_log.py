@@ -1,5 +1,6 @@
 """Logging configuration and utilities."""
 
+import contextlib
 import logging as python_logging
 import os
 import typing as t
@@ -63,10 +64,12 @@ def _validate_file_name(file_name: str | None) -> str | None:
     else:
         try:
             file_path.touch(exist_ok=True)
-            file_path.unlink()
         except OSError as e:
             message = f"File {file_path.absolute()} cannot be created: {e}"
             raise ValueError(message) from e
+
+        with contextlib.suppress(OSError):  # Parallel execution e.g. in tests can create race
+            file_path.unlink()
 
     return file_name
 
