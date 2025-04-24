@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.0..0.15.1) - 2025-04-24
+## [0.15.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.1..0.15.2) - 2025-04-24
+
+### 🐛 Bug Fixes
+
+- Template for test - ([55e00dd](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/55e00dd1fb9bc69f00c3e814e40eaccee948c522))
+
+
+## [0.15.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.0..v0.15.1) - 2025-04-24
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1584,3 +1591,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+

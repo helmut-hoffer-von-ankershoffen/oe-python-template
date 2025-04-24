@@ -2503,7 +2503,7 @@ wheels = [
 
 [[package]]
 name = "oe-python-template"
-version = "0.15.1"
+version = "0.15.2"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["all", "standard"] },
@@ -2599,7 +2599,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.9.1" },
     { name = "sentry-sdk", specifier = ">=2.26.1" },
     { name = "streamlit", marker = "extra == 'examples'", specifier = ">=1.44.1" },
-    { name = "typer", specifier = ">=0.15.1" },
+    { name = "typer", specifier = ">=0.15.2" },
     { name = "uptime", specifier = ">=3.0.1" },
 ]
 provides-extras = ["examples"]
