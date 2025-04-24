@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.14.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.16..0.14.0) - 2025-04-24
+## [0.14.1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.14.0..0.14.1) - 2025-04-24
+
+### 🐛 Bug Fixes
+
+- *(docker)* Log file not redirected to stdout, mpi cache warning - ([cf7599c](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/cf7599c61070e8a0704ac385dc2b272326256c29))
+
+
+## [0.14.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.13.16..v0.14.0) - 2025-04-24
 
 ### ⚙️ Miscellaneous Tasks
 
