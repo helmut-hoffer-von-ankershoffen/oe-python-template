@@ -81,7 +81,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Base of our build targets
 FROM base AS target
 
-ENV {{ project_name_snake_case_upper }}_RUNNING_IN_CONTAINER=1
+ENV {{ import_package_name_case_upper }}_RUNNING_IN_CONTAINER=1
 
 # We don't want to run the app as root
 RUN <<EOT
