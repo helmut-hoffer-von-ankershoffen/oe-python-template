@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.10..0.15.11) - 2025-04-24
+## [0.15.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.11..0.15.12) - 2025-04-24
+
+### Security
+
+- *(h11)* Override - ([55ab58c](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/55ab58c2dd14a6c56c93fb02ad18981bab75024d))
+
+
+## [0.15.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.10..v0.15.11) - 2025-04-24
 
 ### 🎨 Styling
 
