@@ -12,7 +12,6 @@ boot(MODULES_TO_INSTRUMENT)
 logger = get_logger(__name__)
 
 cli = typer.Typer(help="Command Line Interface of OE Python Template")
-prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
 
 if find_spec("nicegui") and find_spec("webview") and not __is_running_in_container__:
@@ -45,6 +44,8 @@ if find_spec("marimo"):
             port=port,
         )
 
+
+prepare_cli(cli, f"🧠 OE Python Template v{__version__} - built with love in Berlin 🐻")
 
 if __name__ == "__main__":  # pragma: no cover
     try:

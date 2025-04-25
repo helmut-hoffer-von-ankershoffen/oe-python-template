@@ -1,13 +1,14 @@
-"""Constants for the {{ project_name }}."""
+"""Static configuration of {{ project_name }}."""
 
 from pathlib import Path
 
-MODULES_TO_INSTRUMENT = ["{{ import_package_name }}.hello"]
-
-API_VERSIONS = {
+# Configuration required by oe-python-template
+API_VERSIONS: dict[str,str] = {
     "v1": "1.0.0",
     "v2": "2.0.0",
 }
-
+MODULES_TO_INSTRUMENT: list[str] = ["{{ import_package_name }}.hello"]
 NOTEBOOK_FOLDER = Path(__file__).parent.parent.parent / "examples"
 NOTEBOOK_APP = Path(__file__).parent.parent.parent / "examples" / "notebook.py"
+
+# Project specific configuration
