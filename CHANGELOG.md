@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.12..0.15.13) - 2025-04-24
+## [0.15.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.13..0.15.14) - 2025-04-25
+
+### 📚 Documentation
+
+- *(betterstack)* Explain how to set heartbeat for scheduled test monitoring - ([58f508e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/58f508e33ad0ddcdb37356645384475f00b1b297))
+
+
+## [0.15.13](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.12..v0.15.13) - 2025-04-24
 
 ### Security
 
