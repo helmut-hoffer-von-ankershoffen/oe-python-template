@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.13..0.15.14) - 2025-04-25
+## [0.15.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.14..0.15.15) - 2025-04-25
+
+### ⚙️ Miscellaneous Tasks
+
+- *(tests)* Segment into regular and long running tests - ([9c537c1](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/9c537c1ab1e795e5a193db760b494b3aaad7282e))
+
+
+## [0.15.14](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.13..v0.15.14) - 2025-04-25
 
 ### 📚 Documentation
 
