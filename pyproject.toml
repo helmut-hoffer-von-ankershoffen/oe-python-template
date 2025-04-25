@@ -157,8 +157,8 @@ packages = ["src/oe_python_template"]
 
 [tool.uv]
 override-dependencies = [ # https://github.com/astral-sh/uv/issues/4422
-    "rfc3987; sys_platform == 'never'", # GPLv3
     "h11>=0.16.0", # vulnerability
+    "rfc3987; sys_platform == 'never'", # GPLv3
 ]
 
 [tool.ruff]

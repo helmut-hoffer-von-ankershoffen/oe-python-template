@@ -16,7 +16,7 @@ from ._service import Service
 
 logger = get_logger(__name__)
 
-cli = typer.Typer(name="system", help="System commands")
+cli = typer.Typer(name="system", help="Determine health, info and further utillities.")
 
 _service = Service()
 

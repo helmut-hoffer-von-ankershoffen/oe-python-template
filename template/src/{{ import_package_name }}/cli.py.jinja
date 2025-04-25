@@ -18,7 +18,7 @@ if find_spec("nicegui") and find_spec("webview") and not __is_running_in_contain
 
     @cli.command()
     def gui() -> None:
-        """Start graphical user interface (GUI) in native window."""
+        """Open graphical user interface (GUI)."""
         from .utils import gui_run  # noqa: PLC0415
 
         gui_run(native=True, with_api=False, title="{{ project_name }}", icon="{{ project_icon }}")
@@ -36,7 +36,7 @@ if find_spec("marimo"):
         host: Annotated[str, typer.Option(help="Host to bind the server to")] = "127.0.0.1",
         port: Annotated[int, typer.Option(help="Port to bind the server to")] = 8001,
     ) -> None:
-        """Start notebook in web browser."""
+        """Run notebook server."""
         console.print(f"Starting marimo notebook server at http://{host}:{port}")
         uvicorn.run(
             create_marimo_app(),
