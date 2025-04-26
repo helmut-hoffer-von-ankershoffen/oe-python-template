@@ -655,7 +655,7 @@ def test(session: nox.Session) -> None:
 
     # Extract custom markers from posargs if present
     custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
- 
+
     # Determine report type from python version and custom marker
     report_type = _get_report_type(session, custom_marker)
 

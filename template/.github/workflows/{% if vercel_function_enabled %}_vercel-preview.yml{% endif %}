@@ -6,6 +6,7 @@ on:
 
 jobs:
   deploy-preview:
+    environment: Preview
     runs-on: ubuntu-latest
     permissions:
       contents: read
