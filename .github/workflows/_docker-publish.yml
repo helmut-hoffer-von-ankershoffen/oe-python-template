@@ -54,7 +54,7 @@ jobs:
 
       - name: Extract metadata for Docker
         id: meta
-        uses: docker/metadata-action@38b8a86137171c128513e9be0b97bc476fbffcb5 # v5.6.0
+        uses: docker/metadata-action@359e915ab3220d88514ed693793a5cc795192aa6 # v5.6.0
         with:
           images: |
             ghcr.io/helmut-hoffer-von-ankershoffen/oe-python-template
