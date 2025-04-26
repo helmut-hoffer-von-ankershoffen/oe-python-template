@@ -13,25 +13,22 @@ on:
     types: [created]
 
 jobs:
-  # Lint job - runs in parallel with test and audit
   lint:
-    uses: ./.github/workflows/_lint.yml.jinja
+    uses: ./.github/workflows/_lint.yml
     permissions:
       contents: read
       id-token: write
       packages: read
     secrets: inherit
 
-  # Audit job - runs in parallel with test and lint
   audit:
-    uses: ./.github/workflows/_audit.yml.jinja
+    uses: ./.github/workflows/_audit.yml
     permissions:
       contents: read
       id-token: write
       packages: read
     secrets: inherit
     
-  # Test job - runs on all branches, tags, and PRs in parallel with lint and audit
   test:
     permissions:
       attestations: write
