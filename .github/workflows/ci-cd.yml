@@ -102,4 +102,3 @@ jobs:
       deployments: write
       id-token: write  
     secrets: inherit
-
