@@ -1,9 +1,11 @@
 [project]
 name = "oe-python-template"
-version = "0.16.0"
+version = "0.16.1"
 description = "🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling."
 readme = "README.md"
-authors = [{ name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" }]
+authors = [
+    { name = "Helmut Hoffer von Ankershoffen", email = "helmuthva@gmail.com" },
+]
 license = { file = "LICENSE" }
 
 keywords = [
@@ -158,7 +160,7 @@ packages = ["src/oe_python_template"]
 
 [tool.uv]
 override-dependencies = [ # https://github.com/astral-sh/uv/issues/4422
-    "h11>=0.16.0", # vulnerability
+    "h11>=0.16.0",                      # vulnerability
     "rfc3987; sys_platform == 'never'", # GPLv3
 ]
 
@@ -288,7 +290,7 @@ source = ["src/"]
 
 
 [tool.bumpversion]
-current_version = "0.16.0"
+current_version = "0.16.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
