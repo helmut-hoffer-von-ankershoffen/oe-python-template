@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.23](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.22..0.15.23) - 2025-04-26
+## [0.15.24](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.23..0.15.24) - 2025-04-26
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github)* Triggering - ([1ffe26a](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/1ffe26a4782cd21c3d1402d5b7d363fecff34a91))
+
+
+## [0.15.23](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.22..v0.15.23) - 2025-04-26
 
 ### 🚜 Refactor
 
