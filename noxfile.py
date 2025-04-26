@@ -595,6 +595,7 @@ def _run_pytest(
         if arg != "--keep-coverage":
             pytest_args.extend([arg])
 
+
     # Report output as markdown for GitHub step summaries
     report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
     pytest_args.extend(["--md-report-output", report_file_name])
@@ -654,7 +655,7 @@ def test(session: nox.Session) -> None:
 
     # Extract custom markers from posargs if present
     custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
-
+ 
     # Determine report type from python version and custom marker
     report_type = _get_report_type(session, custom_marker)
 

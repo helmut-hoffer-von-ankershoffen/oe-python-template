@@ -10,7 +10,7 @@ from ._service import Service
 async def pick_file() -> None:
     """Open a file picker dialog and show notifier when closed again."""
     from nicegui import ui  # noqa: PLC0415
-    
+
     result = await GUILocalFilePicker(str(Path.cwd() / "examples"), multiple=True)  # type: ignore
     ui.notify(f"You chose {result}")
 
