@@ -15,6 +15,11 @@ on:
 jobs:
   # Test job - runs on all branches, tags, and PRs
   test:
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+      packages: write
     uses: ./.github/workflows/_test.yml
 
 
@@ -22,14 +27,22 @@ jobs:
   codeql:
     # Only run CodeQL on main branch, PRs to main, and tags
     if: (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'pull_request' && github.base_ref == 'main'))
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
     uses: ./.github/workflows/_codeql.yml
 
 
   # Package publish job - only runs on tags and depends on both test and CodeQL success
   package_publish:
 
-    needs: [test]
+    needs: [test, codeql]
 
+    permissions:
+      contents: write
+      packages: read
     if: (startsWith(github.ref, 'refs/tags/v'))
     uses: ./.github/workflows/_package-publish.yml
     secrets: inherit
@@ -37,8 +50,13 @@ jobs:
   # Docker publish job - only runs on tags and depends on both test and CodeQL success  
   docker_publish:
 
-    needs: [test]
+    needs: [test, codeql]
 
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+      packages: write
     if: (startsWith(github.ref, 'refs/tags/v'))
     uses: ./.github/workflows/_docker-publish.yml
     secrets: inherit
@@ -47,8 +65,12 @@ jobs:
   # Vercel preview deployment - runs on all branches and PRs
   vercel_preview:
 
-    needs: [test]
+    needs: [test, codeql]
 
+    permissions:
+      contents: read
+      deployments: write
+      id-token: write  
     if: (!contains(github.event.head_commit.message, '[skip ci]'))
     uses: ./.github/workflows/_vercel-preview.yml
     secrets: inherit
@@ -57,8 +79,12 @@ jobs:
   vercel_production:
 
     # For production deployments from tags or releases, always depend on both test and CodeQL
-    needs: [test]
+    needs: [test, codeql]
 
+    permissions:
+      contents: read
+      deployments: write
+      id-token: write  
     # The original workflow included both tags and release events
     if: (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release') && !contains(github.event.head_commit.message, '[skip ci]')
     uses: ./.github/workflows/_vercel-production.yml

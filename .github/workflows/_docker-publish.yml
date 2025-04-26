@@ -13,10 +13,10 @@ jobs:
   docker_publish:
     runs-on: ubuntu-latest
     permissions:
-      packages: write
-      contents: read
       attestations: write
+      contents: read
       id-token: write
+      packages: write
 
     env:
       DOCKER_IO_REGISTRY: docker.io

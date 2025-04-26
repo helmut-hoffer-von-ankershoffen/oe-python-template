@@ -12,15 +12,13 @@ jobs:
     #   - https://gh.io/using-larger-runners (GitHub.com only)
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
-      # required for all workflows
-      security-events: write
-
-      # required to fetch internal or private CodeQL packs
-      packages: read
-
       # only required for workflows in private repositories
       actions: read
       contents: read
+      # required to fetch internal or private CodeQL packs
+      packages: read
+      # required for all workflows
+      security-events: write
 
     strategy:
       fail-fast: false

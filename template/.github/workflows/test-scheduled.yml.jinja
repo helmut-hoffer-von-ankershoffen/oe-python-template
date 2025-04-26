@@ -6,5 +6,8 @@ on:
 
 jobs:
   test-scheduled:
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/_scheduled-test.yml
 
