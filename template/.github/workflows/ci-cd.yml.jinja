@@ -30,7 +30,7 @@ jobs:
 {% if codeql_enabled %}
     needs: [test]
 {% else %}
-    needs: [test]
+    needs: [test] 
 {% endif %}
     if: (startsWith(github.ref, 'refs/tags/v'))
     uses: ./.github/workflows/_package-publish.yml
