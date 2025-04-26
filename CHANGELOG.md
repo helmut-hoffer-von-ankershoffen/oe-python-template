@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.25](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.24..0.15.25) - 2025-04-26
+## [0.15.26](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.25..0.15.26) - 2025-04-26
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github)* Finalize - ([fc360f5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fc360f5da0b2dfc8dfd67678e64be2a93d47b32f))
+
+
+## [0.15.25](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.24..v0.15.25) - 2025-04-26
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -1762,3 +1769,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
