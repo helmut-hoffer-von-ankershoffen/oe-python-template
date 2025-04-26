@@ -1,15 +1,19 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.17](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.16..0.15.17) - 2025-04-26
+## [0.15.18](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.17..0.15.18) - 2025-04-26
+
+### ⚙️ Miscellaneous Tasks
+
+- *(github action)* Polish test summary - ([e8341c2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e8341c2ccb182821092ba83dbbc4d80b7ab320b5))
+
+
+## [0.15.17](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.16..v0.15.17) - 2025-04-26
 
 ### ⚙️ Miscellaneous Tasks
 
 - *(github)* Test summary polish - ([b620915](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/b6209153ca606c3966731a8fb374d242fe9fa75c))
 - *(github actions)* Introduce step summaries - ([cfcd0f3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/cfcd0f3c419280dab4b3d09b41a73a0ed49a4463))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.15.16](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.15..v0.15.16) - 2025-04-26
 
