@@ -1,12 +1,14 @@
-name: "Build package, publish to PyPI, create GitHub release"
+name: Reusable Package Publish Workflow
 
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  workflow_call:
+    # If you need to pass secrets to the reusable workflow
+    secrets:
+      UV_PUBLISH_TOKEN:
+        required: false
 
 jobs:
-  package_build_publish_release:
+  package_publish:
     environment: release
     runs-on: ubuntu-latest
     permissions:
@@ -27,7 +29,7 @@ jobs:
 
       - name: Install dev tools
         shell: bash
-        run: .github/workflows/install_dev_tools.bash
+        run: .github/workflows/_install_dev_tools.bash
 
       - name: Docs
         run: make docs
@@ -40,32 +42,32 @@ jobs:
           args: --verbose --latest --strip header
         env:
           OUTPUT: RELEASE_NOTES.md
-          GITHUB_REPO: {% raw %}${{ github.repository }}{% endraw %}
+          GITHUB_REPO: ${{ github.repository }}
 
       - name: Print the release notes
-        run: cat "{% raw %}${{ steps.git-cliff.outputs.changelog }}{% endraw %}"
+        run: cat "${{ steps.git-cliff.outputs.changelog }}"
 
       - name: Build distribution into dist/
         run: make dist
 
-{% if pypi_enabled %}
+
       - name: Publish distribution to Python Package Index at pypi.org
-        run: uv publish -t {% raw %}${{ secrets.UV_PUBLISH_TOKEN }}{% endraw %}
-{% endif %}
+        run: uv publish -t ${{ secrets.UV_PUBLISH_TOKEN }}
+
 
       - name: Have audit checks publish to reports/ for auditing
         run: make audit
 
       - name: Create GitHub release
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create {% raw %}${{ github.ref_name }} ./dist/* ./reports/* \
-            --notes-file ${{ steps.git-cliff.outputs.changelog }}{% endraw %}
-
+          gh release create ${{ github.ref_name }} ./dist/* ./reports/* \
+            --notes-file ${{ steps.git-cliff.outputs.changelog }}
+            
       - name: Allow other workflows to trigger on release
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/{{ github_repository_owner }}/{{ github_repository_name }}/dispatches \
+          gh api repos/helmut-hoffer-von-ankershoffen/oe-python-template/dispatches \
             -f event_type=release_created_programatically

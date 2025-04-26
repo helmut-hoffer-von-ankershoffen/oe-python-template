@@ -3,7 +3,7 @@
 from pathlib import Path
 
 # Configuration required by oe-python-template
-API_VERSIONS: dict[str, str] = {
+API_VERSIONS: dict[str,str] = {
     "v1": "1.0.0",
     "v2": "2.0.0",
 }

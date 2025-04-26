@@ -1,14 +1,22 @@
-name: Vercel Deploy on Push or Pull Request
+name: Reusable Vercel Preview Workflow
 
 on:
-  push:
-    branches:
-      - "**"
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_call:
+    secrets:
+      GH_PAT:
+        required: true
+      VERCEL_TOKEN:
+        required: true
+      VERCEL_ORG_ID:
+        required: true
+      VERCEL_PROJECT_ID:
+        required: true
+      VERCEL_AUTOMATION_BYPASS_SECRET:
+        required: true
 
 jobs:
   deploy-preview:
+    # Preserve the original condition
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     permissions:

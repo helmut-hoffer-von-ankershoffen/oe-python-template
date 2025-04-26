@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/helmut-hoffer-von-ankershoffen/oe-python-template?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
 ](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/LICENSE)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/oe-python-template.svg?logo=python&color=204361&labelColor=1E2933)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/blob/main/noxfile.py)
-[![CI](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml/badge.svg)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/test-and-report.yml)
+[![CI](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/actions/workflows/ci-cd.yml)
 [![Read the Docs](https://img.shields.io/readthedocs/oe-python-template)](https://oe-python-template.readthedocs.io/en/latest/)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)
 [![Security](https://sonarcloud.io/api/project_badges/measure?project=helmut-hoffer-von-ankershoffen_oe-python-template&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=helmut-hoffer-von-ankershoffen_oe-python-template)

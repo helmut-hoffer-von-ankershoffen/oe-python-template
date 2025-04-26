@@ -1,11 +1,8 @@
-name: "CI"
+name: Reusable Test Workflow
 
 on:
-  push:
-    branches:
-      - "**"
-  pull_request:
-    branches: [main]
+  workflow_call:
+    # No inputs needed at this time
 
 jobs:
   test:
@@ -30,7 +27,7 @@ jobs:
 
       - name: Install dev tools
         shell: bash
-        run: .github/workflows/install_dev_tools.bash
+        run: .github/workflows/_install_dev_tools.bash
 
       - name: Install Python, venv and dependencies
         run: uv sync --all-extras --frozen --link-mode=copy
@@ -46,7 +43,7 @@ jobs:
           fi
 
       - name: Print development version info
-        if: {% raw %}${{ !startsWith(github.ref, 'refs/tags/v') }}{% endraw %}
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         run: |
           TOML_VERSION=$(uv run python -c "import tomli; print(tomli.load(open('pyproject.toml', 'rb'))['project']['version'])")
           echo "Development build - Current version in pyproject.toml: $TOML_VERSION"
@@ -55,13 +52,13 @@ jobs:
         uses: SpicyPizza/create-envfile@ace6d4f5d7802b600276c23ca417e669f1a06f6f # v2.0.3
         with:
           envkey_ENV: "TEST"
-          envkey_{{ import_package_name_case_upper }}_LOGFIRE_TOKEN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_LOGFIRE_TOKEN }}{% endraw %}"
-          envkey_{{ import_package_name_case_upper }}_SENTRY_DSN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_SENTRY_DSN }}{% endraw %}"
+          envkey_OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN: "${{ secrets.OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN }}"
+          envkey_OE_PYTHON_TEMPLATE_SENTRY_DSN: "${{ secrets.OE_PYTHON_TEMPLATE_SENTRY_DSN }}"
           fail_on_empty: false
 
       - name: Validate installation
         run: |
-            OUTPUT=$(uv run --no-dev {{ pypi_distribution_name }} --help)
+            OUTPUT=$(uv run --no-dev oe-python-template --help)
             if [[ "$OUTPUT" != *"built with love in Berlin"* ]]; then
             echo "Output does not contain 'built with love in Berlin'"
             exit 1
@@ -69,7 +66,7 @@ jobs:
 
       - name: Smoke tests
         run: |
-          uv run --no-dev {{ pypi_distribution_name }} --help
+          uv run --no-dev oe-python-template --help
 
       - name: Lint
         run: make lint
@@ -126,7 +123,7 @@ jobs:
       
       - name: Upload test results
         uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
-        if: {% raw %}${{ always() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: ${{ always() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         with:
           name: test-results
           path: |
@@ -140,25 +137,25 @@ jobs:
             reports/junit.xml
             reports/coverage.xml
             reports/coverage_html
-            {{ import_package_name }}.log
+            oe_python_template.log
           retention-days: 30
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
-        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         with:
-          token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
-          slug: {{ github_repository_owner }}/{{ github_repository_name }}
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: helmut-hoffer-von-ankershoffen/oe-python-template
 
       - name: Upload test results to Codecov
-        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         uses: codecov/test-results-action@f2dba722c67b86c6caa034178c6e4d35335f6706 # v1.1.0
         with:
-          token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: SonarQube Scan
-        if: {% raw %}${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}{% endraw %}
+        if: ${{ !cancelled() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}
         uses: SonarSource/sonarqube-scan-action@0303d6b62e310685c0e34d0b9cde218036885c4d # v5.0.0
         env:
-          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
-          SONAR_TOKEN: {% raw %}${{ secrets.SONAR_TOKEN }}{% endraw %}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,0 +1,9 @@
+name: "CodeQL Scheduled"
+
+on:
+  schedule:
+    - cron: "22 3 * * 2"  # Every Tuesday at 3:22 AM
+
+jobs:
+  codeql:
+    uses: ./.github/workflows/_codeql.yml

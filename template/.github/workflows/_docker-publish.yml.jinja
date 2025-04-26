@@ -1,0 +1,103 @@
+name: Reusable Docker Publish Workflow
+
+on:
+  workflow_call:
+    # If you need to pass secrets to the reusable workflow
+    secrets:
+      DOCKER_IO_USERNAME:
+        required: false
+      DOCKER_IO_PASSWORD:
+        required: false
+
+jobs:
+  docker_publish:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+{% if docker_io_enabled %}
+    env:
+      DOCKER_IO_REGISTRY: docker.io
+      DOCKER_IO_IMAGE_NAME_ALL: {{ docker_io_owner }}/{{ docker_io_image_name }}
+      DOCKER_IO_IMAGE_NAME_SLIM: {{ docker_io_owner }}/{{ docker_io_image_name }}-slim
+{% endif %}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install dev tools
+        shell: bash
+        run: .github/workflows/_install_dev_tools.bash
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392 # v3.6.0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@b5ca514318bd6ebac0fb2aedd5d36ec1b5c232a2 # v3.10.0
+
+{% if docker_io_enabled %}
+      - name: Log in to Docker Hub
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+        with:
+          username: {% raw %}${{ secrets.DOCKER_IO_USERNAME }}{% endraw %}
+          password: {% raw %}${{ secrets.DOCKER_IO_PASSWORD }}{% endraw %}
+{% endif %}
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
+        with:
+          registry: ghcr.io
+          username: {% raw %}${{ github.repository_owner }}{% endraw %}
+          password: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@38b8a86137171c128513e9be0b97bc476fbffcb5 # v5.6.0
+        with:
+          images: |
+            ghcr.io/{{ github_repository_owner }}/{{ github_repository_name }}
+{% if docker_io_enabled %}
+            {% raw %}${{ env.DOCKER_IO_IMAGE_NAME_ALL }}{% endraw%}
+{% endif %}
+          flavor: |
+            latest=auto
+            prefix=
+            suffix=
+          tags: |
+            type=semver,pattern={{raw}}v{{version}}{{endraw}}
+            type=semver,pattern={{raw}}v{{major}}.{{minor}}{{endraw}}
+            type=semver,pattern={{raw}}v{{major}}{{endraw}}
+
+      - name: Build and push Docker image (all)
+        uses: docker/build-push-action@e6ef1f314e8a75f35e85dbd71ebe08d4b3005fc8 # v6.2.0
+        with:
+          context: .
+          push: true
+          tags: {% raw %}${{ steps.meta.outputs.tags }}{% endraw %}
+          labels: {% raw %}${{ steps.meta.outputs.labels }}{% endraw %}
+          platforms: linux/amd64,linux/arm64
+          target: all
+          provenance: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push Docker image (slim)
+        uses: docker/build-push-action@e6ef1f314e8a75f35e85dbd71ebe08d4b3005fc8 # v6.2.0
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/{{ github_repository_owner }}/{{ github_repository_name }}-slim:latest
+            ghcr.io/{{ github_repository_owner }}/{{ github_repository_name }}-slim:{% raw %}${{ github.ref_name }}{% endraw %}
+{% if docker_io_enabled %}
+            {% raw %}${{ env.DOCKER_IO_IMAGE_NAME_SLIM }}{% endraw %}:latest
+            {% raw %}${{ env.DOCKER_IO_IMAGE_NAME_SLIM }}{% endraw %}:{% raw %}${{ github.ref_name }}{% endraw %}
+{% endif %}
+          labels: {% raw %}${{ steps.meta.outputs.labels }}{% endraw %}
+          platforms: linux/amd64,linux/arm64
+          target: slim
+          provenance: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

@@ -1,0 +1,74 @@
+name: "CI/CD"
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+  release:
+    types: [created]
+
+jobs:
+  # Test job - runs on all branches, tags, and PRs
+  test:
+    uses: ./.github/workflows/_test.yml
+
+{% if codeql_enabled %}
+  # CodeQL analysis - runs in parallel with tests
+  codeql:
+    # Only run CodeQL on main branch, PRs to main, and tags
+    if: (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'pull_request' && github.base_ref == 'main'))
+    uses: ./.github/workflows/_codeql.yml
+{% endif %}
+
+  # Package publish job - only runs on tags and depends on both test and CodeQL success
+  package_publish:
+{% if codeql_enabled %}
+    needs: [test, codeql]
+{% else %}
+    needs: test
+{% endif %}
+    if: (startsWith(github.ref, 'refs/tags/v'))
+    uses: ./.github/workflows/_package-publish.yml
+    secrets: inherit
+
+  # Docker publish job - only runs on tags and depends on both test and CodeQL success  
+  docker_publish:
+{% if codeql_enabled %}
+    needs: [test, codeql]
+{% else %}
+    needs: test
+{% endif %}
+    if: (startsWith(github.ref, 'refs/tags/v'))
+    uses: ./.github/workflows/_docker-publish.yml
+    secrets: inherit
+
+{% if vercel_function_enabled %}
+  # Vercel preview deployment - runs on all branches and PRs
+  vercel_preview:
+{% if codeql_enabled %}
+    needs: [test, codeql]
+{% else %}
+    needs: test
+{% endif %}
+    if: (!contains(github.event.head_commit.message, '[skip ci]'))
+    uses: ./.github/workflows/{% if vercel_function_enabled %}_vercel-preview.yml{% endif %}
+    secrets: inherit
+
+  # Vercel production deployment - runs on tags and releases
+  vercel_production:
+{% if codeql_enabled %}
+    # For production deployments from tags or releases, always depend on both test and CodeQL
+    needs: [test, codeql]
+{% else %}
+    needs: test
+{% endif %}
+    # The original workflow included both tags and release events
+    if: (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release') && !contains(github.event.head_commit.message, '[skip ci]')
+    uses: ./.github/workflows/_vercel-production.yml
+    secrets: inherit
+{% endif %}

@@ -15,6 +15,6 @@ echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main |
 sudo apt-get update
 sudo apt-get install --no-install-recommends -y curl gnupg2 imagemagick jq trivy xsltproc
 
-.github/workflows/install_dev_tools_project.bash
+.github/workflows/_install_dev_tools_project.bash
 
 log "Completed installation of development tools."

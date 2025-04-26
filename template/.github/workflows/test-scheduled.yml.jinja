@@ -1,4 +1,4 @@
-name: "CI Scheduled"
+name: "Test Scheduled"
 
 on:
   schedule:
@@ -6,54 +6,5 @@ on:
 
 jobs:
   test-scheduled:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          fetch-depth: 0
+    uses: ./.github/workflows/_scheduled-test.yml
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@f94ec6bedd8674c4426838e6b50417d36b6ab231 # v5.3.1
-        with:
-          version: "0.6.3"
-          enable-cache: true
-          cache-dependency-glob: uv.lock
-
-      - name: Install Python, venv and dependencies
-        run: uv sync --all-extras --frozen --link-mode=copy
-
-      - name: Create .env file
-        uses: SpicyPizza/create-envfile@ace6d4f5d7802b600276c23ca417e669f1a06f6f # v2.0.3
-        with:
-          envkey_ENV: "TEST"
-          envkey_{{ import_package_name_case_upper }}_LOGFIRE_TOKEN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_LOGFIRE_TOKEN }}{% endraw %}"
-          envkey_{{ import_package_name_case_upper }}_SENTRY_DSN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_SENTRY_DSN }}{% endraw %}"
-          fail_on_empty: false
-
-      - name: Run scheduled tests
-        env:
-          BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL: "{% raw %}${{ secrets.{% endraw %}BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL {% raw %}}}{% endraw %}"
-        run: |
-          set +e
-          make test_scheduled
-          EXIT_CODE=$?
-          # Show failing tests in GitHub Job summary
-          for file in reports/pytest_*.md; do
-            if [ -f "$file" ]; then
-              cat "$file" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
-          # Provide heartbeat to betterstack for monitoring/alerting if heartbeat url is configured as secret
-          if [ -n "$BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL" ]; then
-            if [ $EXIT_CODE -eq 0 ]; then
-              curl -s $BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL
-            else
-              curl -s $BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL/$EXIT_CODE
-            fi
-          fi
-          exit $EXIT_CODE

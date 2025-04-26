@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/github/license/{{ github_repository_owner }}/{{ github_repository_name }}?logo=opensourceinitiative&logoColor=3DA639&labelColor=414042&color=A41831)
 ]({{ github_repository_url_https }}/blob/main/LICENSE)
 {% if pypi_enabled %}[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ pypi_distribution_name }}.svg?logo=python&color=204361&labelColor=1E2933)]({{ github_repository_url_https }}/blob/main/noxfile.py){% endif %}
-[![CI]({{ github_repository_url_https }}/actions/workflows/test-and-report.yml/badge.svg)]({{ github_repository_url_https }}/actions/workflows/test-and-report.yml)
+[![CI]({{ github_repository_url_https }}/actions/workflows/ci-cd.yml/badge.svg)]({{ github_repository_url_https }}/actions/workflows/ci-cd.yml)
 [![Read the Docs](https://img.shields.io/readthedocs/{{ readthedocs_project_key }})](https://{{ readthedocs_project_key }}.readthedocs.io/en/latest/)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=alert_status)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
 [![Security](https://sonarcloud.io/api/project_badges/measure?project={{ sonarqube_key }}&metric=security_rating)](https://sonarcloud.io/summary/new_code?id={{ sonarqube_key }})
