@@ -1,4 +1,4 @@
-name: Reusable Vercel Preview Workflow
+name: "Vercel Preview Deployment"
 
 on:
   workflow_call:

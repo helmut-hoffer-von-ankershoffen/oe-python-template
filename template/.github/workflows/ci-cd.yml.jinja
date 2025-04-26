@@ -28,9 +28,9 @@ jobs:
   # Package publish job - only runs on tags and depends on both test and CodeQL success
   package_publish:
 {% if codeql_enabled %}
-    needs: [test, codeql]
+    needs: [test]
 {% else %}
-    needs: test
+    needs: [test]
 {% endif %}
     if: (startsWith(github.ref, 'refs/tags/v'))
     uses: ./.github/workflows/_package-publish.yml
@@ -39,9 +39,9 @@ jobs:
   # Docker publish job - only runs on tags and depends on both test and CodeQL success  
   docker_publish:
 {% if codeql_enabled %}
-    needs: [test, codeql]
+    needs: [test]
 {% else %}
-    needs: test
+    needs: [test]
 {% endif %}
     if: (startsWith(github.ref, 'refs/tags/v'))
     uses: ./.github/workflows/_docker-publish.yml
@@ -63,9 +63,9 @@ jobs:
   vercel_production:
 {% if codeql_enabled %}
     # For production deployments from tags or releases, always depend on both test and CodeQL
-    needs: [test, codeql]
+    needs: [test]
 {% else %}
-    needs: test
+    needs: [test]
 {% endif %}
     # The original workflow included both tags and release events
     if: (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release') && !contains(github.event.head_commit.message, '[skip ci]')

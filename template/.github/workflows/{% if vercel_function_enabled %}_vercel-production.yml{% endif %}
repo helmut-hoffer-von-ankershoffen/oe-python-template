@@ -1,4 +1,4 @@
-name: Reusable Vercel Production Workflow
+name: "Vercel Production Deployment"
 
 on:
   workflow_call:

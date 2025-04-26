@@ -1,4 +1,4 @@
-name: Reusable Test Workflow
+name: "Lint, Test and Audit"
 
 on:
   workflow_call:

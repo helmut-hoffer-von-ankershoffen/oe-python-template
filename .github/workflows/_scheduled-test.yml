@@ -1,4 +1,4 @@
-name: Reusable Scheduled Test Workflow
+name: "Scheduled Test"
 
 on:
   workflow_call:
