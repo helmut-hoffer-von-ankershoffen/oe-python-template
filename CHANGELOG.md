@@ -1,6 +1,16 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.26..0.16.0) - 2025-04-26
+## [0.16.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.0..0.16.2) - 2025-04-26
+
+### ⚙️ Miscellaneous Tasks
+
+- Cov - ([5d1f765](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5d1f765425321a6f40e1361d3b6aefef1b24eb3a))
+
+## New Contributors ❤️
+
+* @helmut-hoffer-von-ankershoffen made their first contribution
+
+## [0.16.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.26..v0.16.0) - 2025-04-26
 
 ### 🎨 Styling
 
@@ -1776,3 +1786,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
