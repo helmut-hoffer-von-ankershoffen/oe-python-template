@@ -54,6 +54,21 @@ jobs:
     secrets: inherit
 {% endif %}
 
+{% if vercel_function_enabled %}
+  vercel_preview:
+{% if codeql_enabled %}
+    needs: [lint, audit, test, codeql]
+{% else %}
+    needs: [lint, audit, test]
+{% endif %}
+    if: (!(startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'release')) && !contains(github.event.head_commit.message, '[skip ci]'))  
+    uses: ./.github/workflows/{% if vercel_function_enabled %}_vercel-preview.yml{% endif %}
+    permissions:
+      contents: read
+      deployments: write
+      id-token: write  
+    secrets: inherit
+
   package_publish:
 {% if codeql_enabled %}
     needs: [lint, audit, test, codeql]
@@ -80,21 +95,6 @@ jobs:
       contents: read
       id-token: write
       packages: write
-    secrets: inherit
-
-{% if vercel_function_enabled %}
-  vercel_preview:
-{% if codeql_enabled %}
-    needs: [lint, audit, test, codeql]
-{% else %}
-    needs: [lint, audit, test]
-{% endif %}
-    if: (!(startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'release')) && !contains(github.event.head_commit.message, '[skip ci]'))  
-    uses: ./.github/workflows/{% if vercel_function_enabled %}_vercel-preview.yml{% endif %}
-    permissions:
-      contents: read
-      deployments: write
-      id-token: write  
     secrets: inherit
 
   vercel_production:
