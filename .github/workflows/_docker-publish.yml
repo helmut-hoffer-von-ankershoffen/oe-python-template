@@ -71,7 +71,7 @@ jobs:
             type=semver,pattern=v
 
       - name: Build and push Docker image (all)
-        uses: docker/build-push-action@e6ef1f314e8a75f35e85dbd71ebe08d4b3005fc8 # v6.2.0
+        uses: docker/build-push-action@15560696de535e4014efeff63c48f16952e52dd1 # v6.2.0
         with:
           context: .
           push: true
@@ -84,7 +84,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Build and push Docker image (slim)
-        uses: docker/build-push-action@e6ef1f314e8a75f35e85dbd71ebe08d4b3005fc8 # v6.2.0
+        uses: docker/build-push-action@15560696de535e4014efeff63c48f16952e52dd1 # v6.2.0
         with:
           context: .
           push: true
