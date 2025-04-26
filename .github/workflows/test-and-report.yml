@@ -68,7 +68,16 @@ jobs:
             fi
 
       - name: Smoke tests
-        run: uv run --no-dev oe-python-template --help
+        run: |
+            # Run the command and capture the output
+            OUTPUT=$(uv run --no-dev oe-python-template --help)
+            echo "$OUTPUT"
+            
+            # Add output to GitHub step summary in a shell output block
+            echo "## Smoke Test Output" >> $GITHUB_STEP_SUMMARY
+            echo '```shell' >> $GITHUB_STEP_SUMMARY
+            echo "$OUTPUT" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: Lint
         run: make lint
@@ -77,10 +86,29 @@ jobs:
         run: make audit
       
       - name: Test
-        run: make test
+        run: |
+          # Run regular tests
+          make test
+
+          # Add pytest markdown reports to GitHub step summary
+          for file in reports/pytest_*.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
 
       - name: Test Long Running
-        run: make test_long_running
+        run: |
+          make test_long_running
+
+          # Add pytest markdown reports to GitHub step summary
+          for file in reports/pytest_*.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
 
       - name: Upload test results
         uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1

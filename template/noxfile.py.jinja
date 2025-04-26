@@ -464,46 +464,96 @@ def docs_pdf(session: nox.Session) -> None:
     except (ValueError, AttributeError) as e:
         session.error(f"Failed to parse latexmk version information: {e}")
 
-@nox.session(python=["3.11", "3.12", "3.13"])
-def test(session: nox.Session) -> None:
-    """Run tests with pytest."""
-    _setup_venv(session)
-    session.run("rm", "-rf", ".coverage", external=True)
 
-    # Build pytest arguments with skip_with_act filter if needed
-    pytest_args = ["pytest", "--disable-warnings", JUNIT_XML, "-n", "auto", "--dist", "loadgroup"]
-    if _is_act_environment():
-        pytest_args.extend(["-k", NOT_SKIP_WITH_ACT])
+def _extract_custom_marker(posargs: list[str]) -> tuple[str | None, list[str]]:
+    """Extract custom marker from pytest arguments.
 
-    # Extract custom markers from posargs if present
+    Args:
+        posargs: Command line arguments
+
+    Returns:
+        Tuple of (custom_marker, filtered_posargs)
+    """
     custom_marker = None
     new_posargs = []
     skip_next = False
 
-    for i, arg in enumerate(session.posargs):
+    for i, arg in enumerate(posargs):
         if skip_next:
             skip_next = False
             continue
 
-        if arg == "-m" and i + 1 < len(session.posargs):
-            custom_marker = session.posargs[i + 1]
+        if arg == "-m" and i + 1 < len(posargs):
+            custom_marker = posargs[i + 1]
             skip_next = True
-        elif arg != "-m" or i == 0 or session.posargs[i - 1] != "-m":
+        elif arg != "-m" or i == 0 or posargs[i - 1] != "-m":
             new_posargs.append(arg)
 
-    # Apply the appropriate marker for non-sequential tests
+    return custom_marker, new_posargs
+
+
+def _get_report_type(session: nox.Session, custom_marker: str | None) -> str:
+    """Generate report type string based on marker and Python version.
+
+    Args:
+        session: The nox session
+        custom_marker: Optional pytest marker
+
+    Returns:
+        Report type string
+    """
+    # Create a report type based on marker
+    report_type = "regular"
     if custom_marker:
-        pytest_args.extend(["-m", f"not sequential and ({custom_marker})"])
+        # Replace spaces and special chars with underscores
+        report_type = re.sub(r"[\s\(\)]", "_", custom_marker).strip("_")
+
+    # Add Python version to the report type
+    if isinstance(session.python, str):
+        python_version = f"py{session.python.replace('.', '')}"
     else:
-        pytest_args.extend(["-m", "not sequential"])
+        # Handle case where session.python is a list, bool, or None
+        python_version = f"py{session.python!s}"
 
-    pytest_args.extend(new_posargs)
-    session.run(*pytest_args)
+    return f"{python_version}_{report_type}"
 
-    # Sequential tests
-    sequential_args = [
+
+def _inject_header(report_file_name: str, report_type: str) -> None:
+    """Prepend report file with header indicating the report type.
+
+    - Checks if report file actually exists
+    - If so, injects header indicating the report type
+    - If not, does nothing
+
+    Args:
+        report_file_name: Name of the report file
+        report_type: Type of the report
+    """
+    report_file = Path(report_file_name)
+    if report_file.is_file():
+        header = f"# pytest: {report_type}\n\n"
+        content = report_file.read_text(encoding=UTF8)
+        content = header + content
+        report_file.write_text(content, encoding=UTF8)
+
+
+def _run_pytest(
+    session: nox.Session, test_type: str, custom_marker: str | None, posargs: list[str], report_type: str
+) -> None:
+    """Run pytest with specified arguments.
+
+    Args:
+        session: The nox session
+        test_type: Type of test ('sequential' or 'not sequential')
+        custom_marker: Optional pytest marker
+        posargs: Additional pytest arguments
+        report_type: Report type string for output files
+    """
+    is_sequential = test_type == "sequential"
+
+    # Build base pytest arguments
+    pytest_args = [
         "pytest",
-        "--cov-append",
         "--disable-warnings",
         JUNIT_XML,
         "-n",
@@ -511,18 +561,52 @@ def test(session: nox.Session) -> None:
         "--dist",
         "loadgroup",
     ]
+
+    # Add coverage append for sequential tests
+    if is_sequential:
+        pytest_args.append("--cov-append")
+
+    # Add act environment filter if needed
     if _is_act_environment():
-        sequential_args.extend(["-k", NOT_SKIP_WITH_ACT])
+        pytest_args.extend(["-k", NOT_SKIP_WITH_ACT])
 
-    # Apply the appropriate marker for sequential tests
+    # Apply the appropriate marker
+    marker_value = f"{test_type}"
     if custom_marker:
-        sequential_args.extend(["-m", f"sequential and ({custom_marker})"])
-    else:
-        sequential_args.extend(["-m", "sequential"])
+        marker_value += f" and ({custom_marker})"
+    pytest_args.extend(["-m", marker_value])
 
-    sequential_args.extend(new_posargs)
-    session.run(*sequential_args)
+    # Add additional arguments and report output
+    pytest_args.extend(posargs)
 
+    # Report output as markdown for GitHub step summaries
+    report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
+    pytest_args.extend(["--md-report-output", report_file_name])
+
+    # Run pytest with the constructed arguments
+    session.run(*pytest_args)
+
+    # Inject header into the report file indicating the report type
+    _inject_header(report_file_name, report_type)
+
+
+@nox.session(python=["3.11", "3.12", "3.13"])
+def test(session: nox.Session) -> None:
+    """Run tests with pytest."""
+    _setup_venv(session)
+    session.run("rm", "-rf", ".coverage", external=True)
+
+    # Extract custom markers from posargs if present
+    custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
+    report_type = _get_report_type(session, custom_marker)
+
+    # Run parallel tests
+    _run_pytest(session, "not sequential", custom_marker, filtered_posargs, report_type)
+
+    # Run sequential tests
+    _run_pytest(session, "sequential", custom_marker, filtered_posargs, report_type)
+
+    # Clean up Docker containers
     session.run(
         "bash",
         "-c",
