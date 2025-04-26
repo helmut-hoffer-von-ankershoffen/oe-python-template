@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.15.21](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.20..0.15.21) - 2025-04-26
+## [0.15.22](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.21..0.15.22) - 2025-04-26
+
+### 🚜 Refactor
+
+- *(github)* Deploy and publish on successful tests only - ([c8cb184](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c8cb184f1b58e59a1efee0c5f11ab9539c8a375e))
+
+
+## [0.15.21](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.20..v0.15.21) - 2025-04-26
 
 ### ⚙️ Miscellaneous Tasks
 
