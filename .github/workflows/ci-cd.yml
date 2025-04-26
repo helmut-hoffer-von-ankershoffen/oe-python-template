@@ -47,7 +47,7 @@ jobs:
   # Vercel preview deployment - runs on all branches and PRs
   vercel_preview:
 
-    needs: [test, codeql]
+    needs: [test]
 
     if: (!contains(github.event.head_commit.message, '[skip ci]'))
     uses: ./.github/workflows/_vercel-preview.yml
