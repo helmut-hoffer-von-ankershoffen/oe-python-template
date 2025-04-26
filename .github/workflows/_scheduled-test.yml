@@ -2,11 +2,7 @@ name: "Scheduled Test"
 
 on:
   workflow_call:
-    secrets:
-      OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN:
-        required: false
-      OE_PYTHON_TEMPLATE_SENTRY_DSN:
-        required: false
+    # No inputs needed at this time
 
 jobs:
   test-scheduled:

@@ -2,17 +2,7 @@ name: "Test"
 
 on:
   workflow_call:
-    secrets:
-      CODECOV_TOKEN:
-        required: true
-      SONAR_TOKEN:
-        required: true
-      GITHUB_TOKEN:
-        required: true
-      {{ import_package_name_case_upper }}_LOGFIRE_TOKEN:
-        required: false
-      {{ import_package_name_case_upper }}_SENTRY_DSN:
-        required: false
+    # No inputs needed at this time
 
 jobs:
   test:

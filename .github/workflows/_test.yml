@@ -2,17 +2,7 @@ name: "Test"
 
 on:
   workflow_call:
-    secrets:
-      CODECOV_TOKEN:
-        required: true
-      SONAR_TOKEN:
-        required: true
-      GITHUB_TOKEN:
-        required: true
-      OE_PYTHON_TEMPLATE_LOGFIRE_TOKEN:
-        required: false
-      OE_PYTHON_TEMPLATE_SENTRY_DSN:
-        required: false
+    # No inputs needed at this time
 
 jobs:
   test:

@@ -2,17 +2,7 @@ name: "Vercel Production Deployment"
 
 on:
   workflow_call:
-    secrets:
-      GH_PAT:
-        required: true
-      VERCEL_TOKEN:
-        required: true
-      VERCEL_ORG_ID:
-        required: true
-      VERCEL_PROJECT_ID:
-        required: true
-      VERCEL_AUTOMATION_BYPASS_SECRET:
-        required: true
+    # No inputs needed at this time
 
 jobs:
   deploy-production:
