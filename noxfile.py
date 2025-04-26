@@ -473,9 +473,9 @@ def _prepare_coverage(session: nox.Session) -> None:
     Args:
         session: The nox session
     """
-    if not "--keep-coverage" in session.posargs:
+    if "--keep-coverage" not in session.posargs:
         session.run("rm", "-rf", ".coverage", external=True)
-    
+
 
 def _extract_custom_marker(posargs: list[str]) -> tuple[str | None, list[str]]:
     """Extract custom marker from pytest arguments.
@@ -577,7 +577,7 @@ def _run_pytest(
 
     # Add coverage append for sequential tests
     if is_sequential:
-        pytest_args.append("--cov-append")
+        pytest_args.extend(["--cov-append"])
 
     # Add act environment filter if needed
     if _is_act_environment():
@@ -593,8 +593,7 @@ def _run_pytest(
     # Add any additional posargs except for --keep-coverage
     for arg in posargs:
         if arg != "--keep-coverage":
-            pytest_args.append(arg)
-
+            pytest_args.extend([arg])
 
     # Report output as markdown for GitHub step summaries
     report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
@@ -628,7 +627,7 @@ def _generate_coverage_report(session: nox.Session, report_type: str) -> None:
 
 def _cleanup_test_execution(session: nox.Session) -> None:
     """Clean up post test execution.
-    
+
     - Docker containers created by pytest-docker removed
 
     Args:
@@ -649,13 +648,13 @@ def _cleanup_test_execution(session: nox.Session) -> None:
 def test(session: nox.Session) -> None:
     """Run tests with pytest."""
     _setup_venv(session)
-    
+
     # Conditionally clean coverage data
     _prepare_coverage(session)
 
     # Extract custom markers from posargs if present
     custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
- 
+
     # Determine report type from python version and custom marker
     report_type = _get_report_type(session, custom_marker)
 
