@@ -68,16 +68,7 @@ jobs:
             fi
 
       - name: Smoke tests
-        run: |
-            # Run the command and capture the output
-            OUTPUT=$(uv run --no-dev oe-python-template --help)
-            echo "$OUTPUT"
-            
-            # Add output to GitHub step summary in a shell output block
-            echo "## Smoke Test Output" >> $GITHUB_STEP_SUMMARY
-            echo '```shell' >> $GITHUB_STEP_SUMMARY
-            echo "$OUTPUT" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
+        run: uv run --no-dev oe-python-template --help
 
       - name: Lint
         run: make lint
@@ -85,31 +76,41 @@ jobs:
       - name: Audit
         run: make audit
       
-      - name: Test
+      - name: Test / regular
         run: |
-          # Run regular tests
+          set +e
           make test
-
-          # Add pytest markdown reports to GitHub step summary
+          # Show failing tests in GitHub Job summary
           for file in reports/pytest_*.md; do
             if [ -f "$file" ]; then
               cat "$file" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
           done
+          EXIT_CODE=$?
+          exit $EXIT_CODE
 
-      - name: Test Long Running
+      - name: Test / long running
         run: |
+          set +e
           make test_long_running
-
-          # Add pytest markdown reports to GitHub step summary
+          # Show failing tests in GitHub Job summary
           for file in reports/pytest_*.md; do
             if [ -f "$file" ]; then
               cat "$file" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
           done
-
+          # Show test coverage in GitHub Job summary
+          for file in reports/coverage_*.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+          EXIT_CODE=$?
+          exit $EXIT_CODE
+      
       - name: Upload test results
         uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
         if: ${{ always() && (env.GITHUB_WORKFLOW_RUNTIME != 'ACT') }}

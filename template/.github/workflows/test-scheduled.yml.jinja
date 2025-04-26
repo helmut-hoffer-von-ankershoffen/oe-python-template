@@ -38,8 +38,16 @@ jobs:
         env:
           BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL: "{% raw %}${{ secrets.{% endraw %}BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL {% raw %}}}{% endraw %}"
         run: |
+          set +e
           make test_scheduled
           EXIT_CODE=$?
+          # Show failing tests in GitHub Job summary
+          for file in reports/pytest_*.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
           # Provide heartbeat to betterstack for monitoring/alerting if heartbeat url is configured as secret
           if [ -n "$BETTERSTACK_HEARTBEAT_TEST_SCHEDULED_URL" ]; then
             if [ $EXIT_CODE -eq 0 ]; then

@@ -518,7 +518,7 @@ def _get_report_type(session: nox.Session, custom_marker: str | None) -> str:
     return f"{python_version}_{report_type}"
 
 
-def _inject_header(report_file_name: str, report_type: str) -> None:
+def _inject_header(preamble: str, report_type: str, report_file_name: str) -> None:
     """Prepend report file with header indicating the report type.
 
     - Checks if report file actually exists
@@ -526,12 +526,13 @@ def _inject_header(report_file_name: str, report_type: str) -> None:
     - If not, does nothing
 
     Args:
-        report_file_name: Name of the report file
+        preamble: Preamble text to inject
         report_type: Type of the report
+        report_file_name: Name of the report file
     """
     report_file = Path(report_file_name)
     if report_file.is_file():
-        header = f"# pytest: {report_type}\n\n"
+        header = f"#{preamble}{report_type}\n\n"
         content = report_file.read_text(encoding=UTF8)
         content = header + content
         report_file.write_text(content, encoding=UTF8)
@@ -583,18 +584,25 @@ def _run_pytest(
     report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
     pytest_args.extend(["--md-report-output", report_file_name])
 
+    # Remove report file if it exists,
+    # as it's only generated for failing tests on the pytest run below
+    report_file = Path(report_file_name)
+    if report_file.is_file():
+        report_file.unlink()
+
     # Run pytest with the constructed arguments
     session.run(*pytest_args)
 
     # Inject header into the report file indicating the report type
-    _inject_header(report_file_name, report_type)
+    _inject_header("Failing tests with for test execution with ", report_type, report_file_name)
 
 
 @nox.session(python=["3.11", "3.12", "3.13"])
 def test(session: nox.Session) -> None:
     """Run tests with pytest."""
     _setup_venv(session)
-    session.run("rm", "-rf", ".coverage", external=True)
+    if "--keep-coverage" not in session.posargs:
+        session.run("rm", "-rf", ".coverage", external=True)
 
     # Extract custom markers from posargs if present
     custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
@@ -605,6 +613,12 @@ def test(session: nox.Session) -> None:
 
     # Run sequential tests
     _run_pytest(session, "sequential", custom_marker, filtered_posargs, report_type)
+
+    # Generate coverage report in markdown
+    coverage_report_file_name = f"reports/coverage_{report_type}.md"
+    with Path(coverage_report_file_name).open("w", encoding=UTF8) as outfile:
+        session.run("coverage", "report", "--format=markdown", stdout=outfile)
+        _inject_header("Coverage report for ", report_type, coverage_report_file_name)
 
     # Clean up Docker containers
     session.run(
