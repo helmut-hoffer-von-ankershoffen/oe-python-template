@@ -8,7 +8,7 @@ _skip_if_exists:
 _tasks:
   - uv sync --all-extras
   - uv venv
-  - source .venv/bin/activate
+  - . .venv/bin/activate
   - uv run nox -s setup
 
 project_icon:
