@@ -15,6 +15,7 @@ jobs:
     permissions:
       # only required for workflows in private repositories
       actions: read
+      # Obvious
       contents: read
       # required to fetch internal or private CodeQL packs
       packages: read
