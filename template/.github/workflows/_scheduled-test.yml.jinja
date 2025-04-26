@@ -32,13 +32,9 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@ace6d4f5d7802b600276c23ca417e669f1a06f6f # v2.0.3
         with:
-          envkey_ENV: "TEST"
           envkey_{{ import_package_name_case_upper }}_LOGFIRE_TOKEN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_LOGFIRE_TOKEN }}{% endraw %}"
           envkey_{{ import_package_name_case_upper }}_SENTRY_DSN: "{% raw %}${{ secrets.{% endraw %}{{ import_package_name_case_upper }}{% raw %}_SENTRY_DSN }}{% endraw %}"
           fail_on_empty: false
-
-      - name: Lint
-        run: make lint
 
       - name: Audit
         run: make audit

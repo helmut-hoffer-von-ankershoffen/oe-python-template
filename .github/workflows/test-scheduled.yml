@@ -6,8 +6,9 @@ on:
 
 jobs:
   test-scheduled:
+    uses: ./.github/workflows/_scheduled-test.yml
     permissions:
       contents: read
       id-token: write
-    uses: ./.github/workflows/_scheduled-test.yml
+    secrets: inherit
 

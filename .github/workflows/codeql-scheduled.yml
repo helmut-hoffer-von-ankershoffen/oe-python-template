@@ -6,9 +6,10 @@ on:
 
 jobs:
   codeql:
+    uses: ./.github/workflows/_codeql.yml
     permissions:
       actions: read
       contents: read
       packages: read
       security-events: write
-    uses: ./.github/workflows/_codeql.yml
+    secrets: inherit
