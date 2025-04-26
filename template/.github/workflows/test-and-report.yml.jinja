@@ -68,7 +68,8 @@ jobs:
             fi
 
       - name: Smoke tests
-        run: uv run --no-dev {{ pypi_distribution_name }} --help
+        run: |
+          uv run --no-dev {{ pypi_distribution_name }} --help
 
       - name: Lint
         run: make lint
@@ -80,27 +81,40 @@ jobs:
         run: |
           set +e
           make test
-          # Show failing tests in GitHub Job summary
-          for file in reports/pytest_*.md; do
-            if [ -f "$file" ]; then
-              cat "$file" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
           EXIT_CODE=$?
+          # Show test execution in GitHub Job summary
+          found_files=0
+          for file in reports/pytest_*.md; do
+          if [ -f "$file" ]; then
+            cat "$file" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            found_files=1
+          fi
+          done
+          if [ $found_files -eq 0 ]; then
+            echo "# All regular tests passed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
           exit $EXIT_CODE
 
       - name: Test / long running
         run: |
           set +e
           make test_long_running
-          # Show failing tests in GitHub Job summary
+          EXIT_CODE=$?
+          # Show test execution in GitHub Job summary
+          found_files=0
           for file in reports/pytest_*.md; do
-            if [ -f "$file" ]; then
-              cat "$file" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
+          if [ -f "$file" ]; then
+            cat "$file" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            found_files=1
+          fi
           done
+          if [ $found_files -eq 0 ]; then
+            echo "# All long running tests passed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
           # Show test coverage in GitHub Job summary
           for file in reports/coverage_*.md; do
             if [ -f "$file" ]; then
@@ -108,7 +122,6 @@ jobs:
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
           done
-          EXIT_CODE=$?
           exit $EXIT_CODE
       
       - name: Upload test results

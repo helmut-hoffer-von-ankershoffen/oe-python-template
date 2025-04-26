@@ -14,18 +14,18 @@ $ oe-python-template [OPTIONS] COMMAND [ARGS]...
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
 
-🧠 OE Python Template v0.13.14 - built with love in Berlin 🐻
+🧠 OE Python Template v0.15.17 - built with love in Berlin 🐻
 
 **Commands**:
 
-* `gui`: Start graphical user interface (GUI) in...
-* `notebook`: Start notebook in web browser.
+* `gui`: Open graphical user interface (GUI).
+* `notebook`: Run notebook server.
 * `hello`: Hello commands
-* `system`: System commands
+* `system`: Determine health, info and further...
 
 ## `oe-python-template gui`
 
-Start graphical user interface (GUI) in native window.
+Open graphical user interface (GUI).
 
 **Usage**:
 
@@ -39,7 +39,7 @@ $ oe-python-template gui [OPTIONS]
 
 ## `oe-python-template notebook`
 
-Start notebook in web browser.
+Run notebook server.
 
 **Usage**:
 
@@ -111,7 +111,7 @@ $ oe-python-template hello world [OPTIONS]
 
 ## `oe-python-template system`
 
-System commands
+Determine health, info and further utillities.
 
 **Usage**:
 
@@ -256,5 +256,5 @@ $ oe-python-template system sleep [OPTIONS]
 
 **Options**:
 
-* `--seconds INTEGER`: Duration in seconds  [default: 10]
+* `--seconds INTEGER`: Duration in seconds  [default: 2]
 * `--help`: Show this message and exit.

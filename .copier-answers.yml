@@ -1,4 +1,4 @@
-_commit: v0.15.16-2-g6980e79
+_commit: v0.15.17-1-gd36a135
 _src_path: .
 attestations_enabled: true
 author_email: helmuthva@gmail.com
@@ -28,3 +28,4 @@ streamlit_project_key: oe-python-template
 uptime_badge_snippet: '[![Better Stack Uptime](https://uptime.betterstack.com/status-badges/v1/monitor/1vze5.svg)](https://helmut-hoffer-von-ankershoffen.betteruptime.com/)'
 vercel_badge_snippet: '[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/oe-python-template?root=docs)](https://oe-python-template.vercel.app/api/v1/hello/world)'
 vercel_function_enabled: true
+

@@ -17,7 +17,7 @@ Projects generated with this template come with a comprehensive development tool
 4. Unit and E2E testing with [pytest](https://docs.pytest.org/en/stable/) including parallel test execution
 5. Matrix testing in multiple environments with [nox](https://nox.thea.codes/en/stable/)
 6. Test coverage reported with [Codecov](https://codecov.io/) and published as release artifact
-7. CI/CD pipeline automated with [GitHub Actions](https://github.com/features/actions)
+7. CI/CD pipeline automated with [GitHub Actions](https://github.com/features/actions) including scheduled testing, release automation, and multiple reporting channels and formats
 8. CI/CD pipeline can be run locally with [act](https://github.com/nektos/act)
 9. Code quality and security checks with [SonarQube](https://www.sonarsource.com/products/sonarcloud) and [GitHub CodeQL](https://codeql.github.com/)
 10. Dependency monitoring and vulnerability scanning with [pip-audit](https://pypi.org/project/pip-audit/), [trivy](https://trivy.dev/latest/), [Renovate](https://github.com/renovatebot/renovate), and [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)

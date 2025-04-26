@@ -22,6 +22,8 @@ JUNIT_XML = "--junitxml=reports/junit.xml"
 CLI_MODULE = "cli"
 API_VERSIONS = ["v1", "v2"]
 UTF8 = "utf-8"
+PYTHON_VERSION = "3.13"
+TEST_PYTHON_VERSIONS = ["3.11", "3.12", "3.13"]
 DIST_VERCEL_REQUIREMENTS = "dist_vercel/requirements.txt"
 DIST_VERCEL_REQUIRES_DIST_SUPPRESS = ["nicegui[native]"]
 
@@ -61,7 +63,7 @@ def _format_json_with_jq(session: nox.Session, path: str) -> None:
         session.run("mv", f"{path}.tmp", path, stdout=outfile, external=True)
 
 
-@nox.session(python=["3.13"])
+@nox.session(python=[PYTHON_VERSION])
 def lint(session: nox.Session) -> None:
     """Run code formatting checks, linting, and static type checking."""
     _setup_venv(session, True)
@@ -75,7 +77,7 @@ def lint(session: nox.Session) -> None:
     session.run("mypy", "src")
 
 
-@nox.session(python=["3.13"])
+@nox.session(python=[PYTHON_VERSION])
 def audit(session: nox.Session) -> None:
     """Run security audit and license checks."""
     _setup_venv(session, True)
@@ -398,7 +400,7 @@ def _generate_pdf_docs(session: nox.Session) -> None:
         session.error(f"Failed to parse latexmk version information: {e}")
 
 
-@nox.session(python=["3.13"])
+@nox.session(python=[PYTHON_VERSION])
 def docs(session: nox.Session) -> None:
     """Build documentation and concatenate README.
 
@@ -434,7 +436,7 @@ def docs(session: nox.Session) -> None:
         _generate_pdf_docs(session)
 
 
-@nox.session(python=["3.13"], default=False)
+@nox.session(python=[PYTHON_VERSION], default=False)
 def docs_pdf(session: nox.Session) -> None:
     """Setup dev environment post project creation."""  # noqa: DOC501
     _setup_venv(session, True)
@@ -464,6 +466,16 @@ def docs_pdf(session: nox.Session) -> None:
     except (ValueError, AttributeError) as e:
         session.error(f"Failed to parse latexmk version information: {e}")
 
+
+def _prepare_coverage(session: nox.Session) -> None:
+    """Clean coverage data unless keep-coverage flag is specified.
+
+    Args:
+        session: The nox session
+    """
+    if not "--keep-coverage" in session.posargs:
+        session.run("rm", "-rf", ".coverage", external=True)
+    
 
 def _extract_custom_marker(posargs: list[str]) -> tuple[str | None, list[str]]:
     """Extract custom marker from pytest arguments.
@@ -532,7 +544,7 @@ def _inject_header(preamble: str, report_type: str, report_file_name: str) -> No
     """
     report_file = Path(report_file_name)
     if report_file.is_file():
-        header = f"#{preamble}{report_type}\n\n"
+        header = f"# {preamble}{report_type}\n\n"
         content = report_file.read_text(encoding=UTF8)
         content = header + content
         report_file.write_text(content, encoding=UTF8)
@@ -578,7 +590,11 @@ def _run_pytest(
     pytest_args.extend(["-m", marker_value])
 
     # Add additional arguments and report output
-    pytest_args.extend(posargs)
+    # Add any additional posargs except for --keep-coverage
+    for arg in posargs:
+        if arg != "--keep-coverage":
+            pytest_args.append(arg)
+
 
     # Report output as markdown for GitHub step summaries
     report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
@@ -597,30 +613,27 @@ def _run_pytest(
     _inject_header("Failing tests with for test execution with ", report_type, report_file_name)
 
 
-@nox.session(python=["3.11", "3.12", "3.13"])
-def test(session: nox.Session) -> None:
-    """Run tests with pytest."""
-    _setup_venv(session)
-    if "--keep-coverage" not in session.posargs:
-        session.run("rm", "-rf", ".coverage", external=True)
+def _generate_coverage_report(session: nox.Session, report_type: str) -> None:
+    """Generate coverage report in markdown format.
 
-    # Extract custom markers from posargs if present
-    custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
-    report_type = _get_report_type(session, custom_marker)
-
-    # Run parallel tests
-    _run_pytest(session, "not sequential", custom_marker, filtered_posargs, report_type)
-
-    # Run sequential tests
-    _run_pytest(session, "sequential", custom_marker, filtered_posargs, report_type)
-
-    # Generate coverage report in markdown
+    Args:
+        session: The nox session
+        report_type: Report type string for output files
+    """
     coverage_report_file_name = f"reports/coverage_{report_type}.md"
     with Path(coverage_report_file_name).open("w", encoding=UTF8) as outfile:
         session.run("coverage", "report", "--format=markdown", stdout=outfile)
         _inject_header("Coverage report for ", report_type, coverage_report_file_name)
 
-    # Clean up Docker containers
+
+def _cleanup_test_execution(session: nox.Session) -> None:
+    """Clean up post test execution.
+    
+    - Docker containers created by pytest-docker removed
+
+    Args:
+        session: The nox session instance
+    """
     session.run(
         "bash",
         "-c",
@@ -630,6 +643,33 @@ def test(session: nox.Session) -> None:
         ),
         external=True,
     )
+
+
+@nox.session(python=TEST_PYTHON_VERSIONS)
+def test(session: nox.Session) -> None:
+    """Run tests with pytest."""
+    _setup_venv(session)
+    
+    # Conditionally clean coverage data
+    _prepare_coverage(session)
+
+    # Extract custom markers from posargs if present
+    custom_marker, filtered_posargs = _extract_custom_marker(session.posargs)
+ 
+    # Determine report type from python version and custom marker
+    report_type = _get_report_type(session, custom_marker)
+
+    # Run parallel tests
+    _run_pytest(session, "not sequential", custom_marker, filtered_posargs, report_type)
+
+    # Run sequential tests
+    _run_pytest(session, "sequential", custom_marker, filtered_posargs, report_type)
+
+    # Generate coverage report in markdown
+    _generate_coverage_report(session, report_type)
+
+    # Clean up post test execution
+    _cleanup_test_execution(session)
 
 
 @nox.session(default=False)
