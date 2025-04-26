@@ -39,9 +39,7 @@ jobs:
     uses: ./.github/workflows/_test.yml
 
 
-  # CodeQL analysis - runs in parallel with tests
   codeql:
-    # Only run CodeQL on main branch, PRs to main, and tags
     if: (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'pull_request' && github.base_ref == 'main'))
     uses: ./.github/workflows/_codeql.yml
     permissions:
@@ -52,7 +50,6 @@ jobs:
     secrets: inherit
 
 
-  # Package publish job - only runs on tags and depends on lint, audit, test and optionally CodeQL success
   package_publish:
 
     needs: [lint, audit, test, codeql]
@@ -64,7 +61,6 @@ jobs:
       packages: read
     secrets: inherit
 
-  # Docker publish job - only runs on tags and depends on lint, audit, test and optionally CodeQL success  
   docker_publish:
 
     needs: [lint, audit, test, codeql]
@@ -79,7 +75,6 @@ jobs:
     secrets: inherit
 
 
-  # Vercel preview deployment - runs on all branches and PRs
   vercel_preview:
 
     needs: [lint, audit, test, codeql]
@@ -92,10 +87,8 @@ jobs:
       id-token: write  
     secrets: inherit
 
-  # Vercel production deployment - runs on tags and releases
   vercel_production:
 
-    # For production deployments from tags or releases, depend on lint, audit, test, and CodeQL
     needs: [lint, audit, test, codeql]
 
     if: (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'release') && !contains(github.event.head_commit.message, '[skip ci]')
@@ -104,6 +97,5 @@ jobs:
       contents: read
       deployments: write
       id-token: write  
-    # The original workflow included both tags and release events
     secrets: inherit
 

@@ -2,6 +2,11 @@ name: "Scheduled Test"
 
 on:
   workflow_call:
+    secrets:
+      {{ import_package_name_case_upper }}_LOGFIRE_TOKEN:
+        required: false
+      {{ import_package_name_case_upper }}_SENTRY_DSN:
+        required: false
 
 jobs:
   test-scheduled:
