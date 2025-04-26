@@ -565,19 +565,7 @@ def _run_pytest(
     is_sequential = test_type == "sequential"
 
     # Build base pytest arguments
-    pytest_args = [
-        "pytest",
-        "--disable-warnings",
-        JUNIT_XML,
-        "-n",
-        "auto",
-        "--dist",
-        "loadgroup",
-    ]
-
-    # Add coverage append for sequential tests
-    if is_sequential:
-        pytest_args.extend(["--cov-append"])
+    pytest_args = ["pytest", "--disable-warnings", JUNIT_XML, "-n", "auto", "--dist", "loadgroup", "--cov-append"]
 
     # Add act environment filter if needed
     if _is_act_environment():
@@ -594,7 +582,6 @@ def _run_pytest(
     for arg in posargs:
         if arg != "--keep-coverage":
             pytest_args.extend([arg])
-
 
     # Report output as markdown for GitHub step summaries
     report_file_name = f"reports/pytest_{report_type}_{'sequential' if is_sequential else 'parallel'}.md"
