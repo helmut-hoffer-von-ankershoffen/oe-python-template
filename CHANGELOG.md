@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.4..0.16.5) - 2025-04-27
+## [0.16.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.5..0.16.6) - 2025-04-27
+
+### ⚙️ Miscellaneous Tasks
+
+- *(cicd)* Fix if vercel disabled - ([fa05267](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fa052671b0a44d517a03c5b7c67db799641cd5fd))
+
+
+## [0.16.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.4..v0.16.5) - 2025-04-27
 
 ### ⚙️ Miscellaneous Tasks
 
