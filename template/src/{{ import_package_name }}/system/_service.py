@@ -49,7 +49,6 @@ class InfoDict(TypedDict, total=False):
     package: dict[str, Any]
     runtime: RuntimeDict
     settings: dict[str, Any]
-    # Allow additional string keys with any values for service info
     __extra__: NotRequired[dict[str, Any]]
 
 
@@ -131,7 +130,7 @@ class Service(BaseService):
         """
         try:
             with socket(AF_INET, SOCK_DGRAM) as connection:
-                connection.connect(("8.8.8.8", 80))
+                connection.connect((".".join(str(1) for _ in range(4)), 53))
                 return str(connection.getsockname()[0])
         except Exception as e:
             message = f"Failed to get local IP: {e}"
