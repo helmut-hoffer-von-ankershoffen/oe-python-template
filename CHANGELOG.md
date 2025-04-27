@@ -1,6 +1,17 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.2..0.16.3) - 2025-04-27
+## [0.16.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.3..0.16.4) - 2025-04-27
+
+### 🚜 Refactor
+
+- *(system/info)* Ipv4 addresses and some polish - ([830b425](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/830b425a5523edfcb55ac0e26facf4c55c19c2f9))
+
+### ⚙️ Miscellaneous Tasks
+
+- Update - ([92626d7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/92626d72189c544e73313d9b10f675878621c40b))
+
+
+## [0.16.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.2..v0.16.3) - 2025-04-27
 
 ### 🚜 Refactor
 
