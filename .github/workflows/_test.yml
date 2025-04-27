@@ -66,6 +66,8 @@ jobs:
       - name: Smoke tests
         run: |
           uv run --no-dev oe-python-template --help
+          uv run --all-extras oe-python-template info
+          uv run --all-extras oe-python-template health
       
       - name: Test / regular
         run: |

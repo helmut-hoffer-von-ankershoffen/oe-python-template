@@ -602,10 +602,10 @@ def _generate_coverage_report(session: nox.Session) -> None:
     Args:
         session: The nox session
     """
-    coverage_report_file_name = f"reports/coverage.md"
+    coverage_report_file_name = "reports/coverage.md"
     with Path(coverage_report_file_name).open("w", encoding=UTF8) as outfile:
         session.run("coverage", "report", "--format=markdown", stdout=outfile)
-        _inject_headline(f"# Coverage report", coverage_report_file_name)
+        _inject_headline("# Coverage report", coverage_report_file_name)
 
 
 def _cleanup_test_execution(session: nox.Session) -> None:
