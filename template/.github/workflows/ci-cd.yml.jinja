@@ -66,7 +66,7 @@ jobs:
       contents: read
       deployments: write
       id-token: write  
-    secrets: inherit
+    secrets: inherit{% endif %}
 
   package_publish:
 {% if codeql_enabled %}
@@ -96,6 +96,7 @@ jobs:
       packages: write
     secrets: inherit
 
+{% if vercel_function_enabled %}
   vercel_production:
 {% if codeql_enabled %}
     needs: [lint, audit, test, codeql]
