@@ -51,8 +51,7 @@ jobs:
       contents: read
       packages: read
       security-events: write
-    secrets: inherit
-{% endif %}
+    secrets: inherit{% endif %}
 
 {% if vercel_function_enabled %}
   vercel_preview:
@@ -109,5 +108,4 @@ jobs:
       contents: read
       deployments: write
       id-token: write  
-    secrets: inherit
-{% endif %}
+    secrets: inherit{% endif %}

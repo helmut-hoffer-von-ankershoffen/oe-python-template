@@ -54,7 +54,6 @@ jobs:
     secrets: inherit
 
 
-
   vercel_preview:
 
     needs: [lint, audit, test, codeql]
