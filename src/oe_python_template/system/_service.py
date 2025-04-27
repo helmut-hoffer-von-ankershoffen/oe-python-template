@@ -35,7 +35,6 @@ log = get_logger(__name__)
 MEASURE_INTERVAL_SECONDS = 5
 NETWORK_TIMEOUT = 5
 
-
 class RuntimeDict(TypedDict, total=False):
     """Type for runtime information dictionary."""
 
@@ -155,8 +154,8 @@ class Service(BaseService):
         Returns:
             dict[str, Any]: Service configuration.
         """
-        import psutil  # noqa: PLC0415
         from uptime import boottime, uptime  # noqa: PLC0415
+        import psutil  # noqa: PLC0415
 
         bootdatetime = boottime()
         vmem = psutil.virtual_memory()
