@@ -192,7 +192,11 @@ class Service(BaseService):
                             "arch": platform.machine(),
                             "processor": platform.processor(),
                             "count": os.cpu_count(),
-                            "frequency": psutil.cpu_freq(),
+                            "frequency": {
+                                "current": psutil.cpu_freq().max,
+                                "min": psutil.cpu_freq().max,
+                                "max": psutil.cpu_freq().max,
+                            },
                         },
                         "memory": {
                             "percent": vmem.percent,

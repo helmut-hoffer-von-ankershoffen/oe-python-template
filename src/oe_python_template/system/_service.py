@@ -151,8 +151,8 @@ class Service(BaseService):
         Returns:
             dict[str, Any]: Service configuration.
         """
-        import psutil  # noqa: PLC0415
         from uptime import boottime, uptime  # noqa: PLC0415
+        import psutil  # noqa: PLC0415
 
         bootdatetime = boottime()
         vmem = psutil.virtual_memory()
@@ -192,7 +192,11 @@ class Service(BaseService):
                             "arch": platform.machine(),
                             "processor": platform.processor(),
                             "count": os.cpu_count(),
-                            "frequency": psutil.cpu_freq(),
+                            "frequency": {
+                                "current": psutil.cpu_freq().max,
+                                "min": psutil.cpu_freq().max,
+                                "max": psutil.cpu_freq().max,
+                            },
                         },
                         "memory": {
                             "percent": vmem.percent,
