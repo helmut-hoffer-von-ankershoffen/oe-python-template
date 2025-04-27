@@ -153,6 +153,7 @@ class Service(BaseService):
             dict[str, Any]: Service configuration.
         """
         from uptime import boottime, uptime  # noqa: PLC0415
+
         bootdatetime = boottime()
         rtn: InfoDict = {
             "package": {
