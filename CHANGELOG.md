@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.5..0.16.6) - 2025-04-27
+## [0.16.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.6..0.16.7) - 2025-04-27
+
+### ⚡ Performance
+
+- Lazy load boottime - ([fd62d55](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fd62d551ef64e412be90a1fcb75635d10b0cfb2d))
+
+
+## [0.16.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.5..v0.16.6) - 2025-04-27
 
 ### ⚙️ Miscellaneous Tasks
 
