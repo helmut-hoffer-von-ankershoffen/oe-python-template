@@ -14,10 +14,13 @@ class PageBuilder(BasePageBuilder):
             """Homepage of GUI."""
             ui.label(f"{__project_name__} v{__version__}").mark("LABEL_VERSION")
             spinner = ui.spinner("dots", size="lg", color="red")
-            info = await run.cpu_bound(Service().info, True, True)
-            spinner.delete()
-            ui.json_editor({
-                "content": {"json": info},
+            properties = {
+                "content": {"json": "Loading ..."},
                 "readOnly": True,
-            }).mark("JSON_EDITOR_INFO")
+            }
+            editor = ui.json_editor(properties).mark("JSON_EDITOR_INFO")
             ui.link("Home", "/").mark("LINK_HOME")
+            info = await run.cpu_bound(Service().info, True, True)
+            properties["content"] = {"json": info}
+            editor.update()
+            spinner.delete()
