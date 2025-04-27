@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.3..0.16.4) - 2025-04-27
+## [0.16.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.4..0.16.5) - 2025-04-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Smoke - ([0b46ec0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/0b46ec0137968ed25ce62c3740ab7390e96a6608))
+
+
+## [0.16.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.3..v0.16.4) - 2025-04-27
 
 ### 🚜 Refactor
 
