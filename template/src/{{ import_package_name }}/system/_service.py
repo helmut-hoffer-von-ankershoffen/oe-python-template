@@ -31,6 +31,9 @@ from ._settings import Settings
 
 log = get_logger(__name__)
 
+# Note: There is multiple measurements and network calls
+MEASURE_INTERVAL_SECONDS = 5
+NETWORK_TIMEOUT = 5
 
 class RuntimeDict(TypedDict, total=False):
     """Type for runtime information dictionary."""
@@ -103,7 +106,7 @@ class Service(BaseService):
         return token == self._settings.token.get_secret_value()
 
     @staticmethod
-    def _get_public_ipv4(timeout: int = 5) -> str | None:
+    def _get_public_ipv4(timeout: int = NETWORK_TIMEOUT) -> str | None:
         """Get the public IPv4 address of the system.
 
         Args:
@@ -157,8 +160,8 @@ class Service(BaseService):
         bootdatetime = boottime()
         vmem = psutil.virtual_memory()
         swap = psutil.swap_memory()
-        cpu_percent = psutil.cpu_percent(interval=2)
-        cpu_times_percent = psutil.cpu_times_percent(interval=2)
+        cpu_percent = psutil.cpu_percent(interval=MEASURE_INTERVAL_SECONDS)
+        cpu_times_percent = psutil.cpu_times_percent(interval=MEASURE_INTERVAL_SECONDS)
 
         rtn: InfoDict = {
             "package": {
