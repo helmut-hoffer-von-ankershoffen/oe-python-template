@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.12..0.17.0) - 2025-04-27
+## [0.0.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.0..0.0.2) - 2025-04-27
+
+### ⛰️  Features
+
+- *(system/gui)* Spinner and background processing - ([c299663](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c2996632b5fa3aa4816486b1c9d816db044e3fb2))
+
+
+## [0.17.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.12..v0.17.0) - 2025-04-27
 
 ### ⛰️  Features
 
