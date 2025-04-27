@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.10..0.16.11) - 2025-04-27
+## [0.16.12](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.11..0.16.12) - 2025-04-27
+
+### 🐛 Bug Fixes
+
+- *(system/info)* Freq - ([e3c672e](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e3c672edad4c263070a476f9dbb9d6f159fd3edd))
+
+
+## [0.16.11](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.10..v0.16.11) - 2025-04-27
 
 ### 🐛 Bug Fixes
 
