@@ -200,9 +200,6 @@ class Service(BaseService):
                             "available": vmem.available,
                             "used": vmem.used,
                             "free": vmem.free,
-                            "active": vmem.active,
-                            "inactive": vmem.inactive,
-                            "wired": vmem.wired,
                         },
                         "swap": {
                             "percent": swap.percent,
