@@ -157,8 +157,8 @@ class Service(BaseService):
         bootdatetime = boottime()
         vmem = psutil.virtual_memory()
         swap = psutil.swap_memory()
-        cpu_percent = psutil.cpu_percent(interval=5)
-        cpu_times_percent = psutil.cpu_times_percent(interval=5)
+        cpu_percent = psutil.cpu_percent(interval=2)
+        cpu_times_percent = psutil.cpu_times_percent(interval=2)
 
         rtn: InfoDict = {
             "package": {
