@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.8..0.16.9) - 2025-04-27
+## [0.16.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.9..0.16.10) - 2025-04-27
+
+### ⛰️  Features
+
+- *(system/info)* A bit more diagnostics info for support cases - ([c08f1b0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c08f1b04f4d3ef8265c9b1ddcce7ab7a9cc48ca5))
+
+
+## [0.16.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.8..v0.16.9) - 2025-04-27
 
 ### 🚜 Refactor
 
