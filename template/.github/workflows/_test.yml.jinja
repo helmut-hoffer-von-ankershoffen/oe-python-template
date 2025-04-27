@@ -66,8 +66,8 @@ jobs:
       - name: Smoke tests
         run: |
           uv run --no-dev {{ pypi_distribution_name }} --help
-          uv run --all-extras {{ pypi_distribution_name }} info
-          uv run --all-extras {{ pypi_distribution_name }} health
+          uv run --all-extras {{ pypi_distribution_name }} system info
+          uv run --all-extras {{ pypi_distribution_name }} system health
       
       - name: Test / regular
         run: |
