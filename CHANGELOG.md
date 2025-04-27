@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.7..0.16.8) - 2025-04-27
+## [0.16.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.8..0.16.9) - 2025-04-27
+
+### 🚜 Refactor
+
+- *(system/info)* Ip - ([a2f3e75](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a2f3e75c4d4733c13955da67ee092df135265ef2))
+
+
+## [0.16.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.7..v0.16.8) - 2025-04-27
 
 ### 🎨 Styling
 
@@ -940,9 +947,6 @@
 
 - *(nox/pytest)* Pass through extra args - ([fdf19fd](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/fdf19fd000952137094abd31b2481037b0864207))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.8.15](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.8.14..v0.8.15) - 2025-04-01
 
@@ -1530,9 +1534,6 @@
 
 - Bump - ([5cf12b5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5cf12b5157144bc8c813433bf29cbea54c0dacc5))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.4.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.4.4..v0.4.5) - 2025-03-13
 
