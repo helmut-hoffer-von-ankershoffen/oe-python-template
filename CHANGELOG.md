@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.1..0.17.2) - 2025-04-27
+## [0.17.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.2..0.17.3) - 2025-04-27
+
+### ⚙️ Miscellaneous Tasks
+
+- Polish - ([c5cb0ab](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/c5cb0ab6b50a43c8ceaefa1b35ef4656ea0ad904))
+
+
+## [0.17.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.1..v0.17.2) - 2025-04-27
 
 ### 🐛 Bug Fixes
 
