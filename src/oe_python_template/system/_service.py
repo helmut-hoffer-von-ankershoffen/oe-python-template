@@ -12,7 +12,6 @@ from urllib.error import HTTPError
 
 from pydantic_settings import BaseSettings
 from requests import get
-from uptime import boottime, uptime
 
 from ..utils import (  # noqa: TID252
     UNHIDE_SENSITIVE_INFO,
@@ -153,6 +152,7 @@ class Service(BaseService):
         Returns:
             dict[str, Any]: Service configuration.
         """
+        from uptime import boottime, uptime  # noqa: PLC0415
         bootdatetime = boottime()
         rtn: InfoDict = {
             "package": {
