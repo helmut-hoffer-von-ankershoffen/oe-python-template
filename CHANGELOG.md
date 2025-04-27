@@ -1,14 +1,18 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.16.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.0..0.16.2) - 2025-04-26
+## [0.16.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.2..0.16.3) - 2025-04-27
+
+### 🚜 Refactor
+
+- *(test coverage reporting)* Simplify - ([af580f3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/af580f3487157c4459b5c41aea179adf27e5b90d))
+
+
+## [0.16.2](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.16.0..v0.16.2) - 2025-04-26
 
 ### ⚙️ Miscellaneous Tasks
 
 - Cov - ([5d1f765](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/5d1f765425321a6f40e1361d3b6aefef1b24eb3a))
 
-## New Contributors ❤️
-
-* @helmut-hoffer-von-ankershoffen made their first contribution
 
 ## [0.16.0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.15.26..v0.16.0) - 2025-04-26
 
@@ -1786,3 +1790,5 @@
 ## New Contributors ❤️
 
 * @helmut-hoffer-von-ankershoffen made their first contribution
+
+
