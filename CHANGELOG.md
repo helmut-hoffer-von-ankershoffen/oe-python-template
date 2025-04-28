@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.5..0.17.6) - 2025-04-28
+## [0.17.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.6..0.17.7) - 2025-04-28
+
+### 🐛 Bug Fixes
+
+- *(windows)* Don't use pwd - ([83cd102](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/83cd10270896503f7f649c6b95c07b7281cb44a2))
+
+
+## [0.17.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.5..v0.17.6) - 2025-04-28
 
 ### ⚙️ Miscellaneous Tasks
 
