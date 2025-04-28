@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.6..0.17.7) - 2025-04-28
+## [0.17.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.7..0.17.8) - 2025-04-28
+
+### ⚙️ Miscellaneous Tasks
+
+- *(pywin32)* Add for win32 platform - ([4784515](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/47845156d2822691b425831dc4e31792893f22d0))
+
+
+## [0.17.7](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.6..v0.17.7) - 2025-04-28
 
 ### 🐛 Bug Fixes
 
