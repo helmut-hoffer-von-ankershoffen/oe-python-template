@@ -1,4 +1,5 @@
-2025-04-27 18:34:48 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.17.2 (project root /Users/helmut/Code/oe-python-template, pid 50574), parent 'python3.13' (pid 50322)                         boot.py:84
+2025-04-28 11:50:00 INFO     oe_python_template.oe_python_template.utils.boot ⭐ Booting oe_python_template v0.17.4 (project root /Users/helmut/Code/oe-python-template, pid     boot.py:84
+                             83718), parent 'python3.13' (pid 83498)                                                                                                                       
 components:
   schemas:
     Echo:
