@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.3..0.17.4) - 2025-04-28
+## [0.17.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.4..0.17.5) - 2025-04-28
+
+### 📚 Documentation
+
+- Regenerated - ([b93daa0](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/b93daa0f2119d9031b9235185dbfe5fd65b84ce3))
+
+
+## [0.17.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.3..v0.17.4) - 2025-04-28
 
 ### 🐛 Bug Fixes
 
