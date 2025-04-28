@@ -1,6 +1,14 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.2..0.17.3) - 2025-04-27
+## [0.17.4](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.3..0.17.4) - 2025-04-28
+
+### 🐛 Bug Fixes
+
+- Missing heartbeat - ([3b557bb](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/3b557bbfeaa7571652e90d21812bc805cc64b0f1))
+- Missing betterstack heartbeat - ([e3a2858](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e3a2858e79c5ef7e1933443c1790c84801e7621f))
+
+
+## [0.17.3](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.2..v0.17.3) - 2025-04-27
 
 ### ⚙️ Miscellaneous Tasks
 
