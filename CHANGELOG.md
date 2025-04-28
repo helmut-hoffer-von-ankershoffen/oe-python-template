@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.4..0.17.5) - 2025-04-28
+## [0.17.6](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.5..0.17.6) - 2025-04-28
+
+### ⚙️ Miscellaneous Tasks
+
+- Betteruptime - ([a06e765](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a06e76548d7cfd49c645bb0590927a0f77c6cff1))
+
+
+## [0.17.5](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.4..v0.17.5) - 2025-04-28
 
 ### 📚 Documentation
 
