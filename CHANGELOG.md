@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.7..0.17.8) - 2025-04-28
+## [0.17.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.8..0.17.9) - 2025-04-29
+
+### Enh
+
+- (a) sort settings and environ in system info, (b) load_dotenv from add places - ([e3f711b](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/e3f711b29a816acf52efb2026d490b2edfbd5be4))
+
+
+## [0.17.8](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.7..v0.17.8) - 2025-04-28
 
 ### ⚙️ Miscellaneous Tasks
 
