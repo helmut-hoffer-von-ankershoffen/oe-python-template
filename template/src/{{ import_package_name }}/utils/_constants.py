@@ -7,9 +7,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+load_dotenv()
 __project_name__ = __name__.split(".")[0]
 load_dotenv(os.getenv(f"{__project_name__.upper()}_ENV_FILE", Path.home() / f".{__project_name__}/.env"))
-load_dotenv()
 
 __project_path__ = str(Path(__file__).parent.parent.parent)
 __version__ = metadata.version(__project_name__)
