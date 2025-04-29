@@ -1,6 +1,13 @@
 [🧠 OE Python Template](https://oe-python-template.readthedocs.io/en/latest/)
 
-## [0.17.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.8..0.17.9) - 2025-04-29
+## [0.17.10](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.9..0.17.10) - 2025-04-29
+
+### ⛰️  Features
+
+- Load_dotenv reorder - ([a85d0ad](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/commit/a85d0ad90d34dc55e72b623da9e47a421b8d04c9))
+
+
+## [0.17.9](https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/compare/v0.17.8..v0.17.9) - 2025-04-29
 
 ### Enh
 
